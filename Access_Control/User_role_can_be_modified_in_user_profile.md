@@ -1,0 +1,19 @@
+# User role can be modified in user profile
+
+### Target Goal - 
+
+Access the admin panel and use it to delete the user `carlos`
+
+### Analysis/Exploitation -
+
+**Login as user **`wiener`**:**
+
+**In here, we can **`Update email`**. Let’s intercept that POST request /my-account/change-email and sent it to Repeater!**
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/475797ee-1040-4b52-a10f-efc837c9afc9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RSTVLMEJ%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210348Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDzrMEHp6L4YQywPHDM5V9XSSuwJ3vBG6x%2B9OqUt6MXmAiEAr0Jb5tI%2BDd2EFjr%2Fh%2FZw6pcPOD5NzMh2fqzaH7udpG0qiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDB7ZzGG8vTUdarJLnircAzuAP5rKlTQ1GWhIfO7EWzZ0owoTdADzP1%2BZNoF5kLQo3j2Op3VZa37SpFvHRjU3TZSVss9u5wvjwAclhQkjr5NiPRN0xgT0TURch0Ju9rJB4W9iLqRTL%2FOdS5mPIY1LtPhSK6FE0BbYeiqJTwBVkpd9TA8AIqX%2FWCZZRtRdxQcREGWe3w62V57Uk9DBhI72stzWCTiHeoK9jXbNb5xN%2B8pP2pbnEDY8%2BE3vcR6MjS50t47T0CYDYr%2F%2BtYWPCx76WZIv22wS5ZN4b1KyfYCoJi0GiXHS8YAEe4l%2BoscJ8gG%2BknOBNMHF3YmkRCCmQAQSAI7vhMsOadN0OrgBDlirjd2XR0gVmooqX3Udf%2F%2FJPHkCueQ6Fm5O52JApwB%2F02ITLnBKD07gQiB7NFSzkBoTN%2B6OzbemZo%2BBM8iIBWKvc0DQuiCU749b6Tj9ein1%2Fwt8Gpt5Zv3lXeamyAMuYCHKnXMaB9Dy0qWiqaWkTNiRcGWo20cVoOcjX3f6a3Wg96Bo3Qy0B5laXmXHQZyTt6WWXmzZb59V14844tR4wW5sb5L8HC%2F4V4vgv7d51k8wDJxj34TOfOTRr84V1Za3QV11h3y7Inli%2FrDiLg5V9PKOwSFHDRe0hHJf1ncdkI9wMKfIotQGOqUBlTsbjc%2B2t%2F9FyQZrFH12I1BKylqMprXEVso9y%2B46Zei60ZyQxUqFihXvC6nHgWexeC6ENw1hoYZiBbzWcb6zDJqb3e4Yvfu7uoJefrOEGcktsIICvHBIACofj5O23pGRAI5u%2FfbRCAI6Oy0Kz7RwetCDwAxG92MMFPPPASPy%2BqOfnKWPA8AHolVElbqZUKVp5uYWpRtZFU%2B9%2BaISJCeXzLLXBCI2&X-Amz-Signature=de0a56c09eb2fde3892fe42ffca03b1c6281419f48b018908f446a526107e5b2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+**set the **`roleid`** to 2 in request, Which is  user **`administrator`** as in lab description **
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/f18e503d-b0bd-4cc9-ab34-333d21e9922e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RSTVLMEJ%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210348Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDzrMEHp6L4YQywPHDM5V9XSSuwJ3vBG6x%2B9OqUt6MXmAiEAr0Jb5tI%2BDd2EFjr%2Fh%2FZw6pcPOD5NzMh2fqzaH7udpG0qiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDB7ZzGG8vTUdarJLnircAzuAP5rKlTQ1GWhIfO7EWzZ0owoTdADzP1%2BZNoF5kLQo3j2Op3VZa37SpFvHRjU3TZSVss9u5wvjwAclhQkjr5NiPRN0xgT0TURch0Ju9rJB4W9iLqRTL%2FOdS5mPIY1LtPhSK6FE0BbYeiqJTwBVkpd9TA8AIqX%2FWCZZRtRdxQcREGWe3w62V57Uk9DBhI72stzWCTiHeoK9jXbNb5xN%2B8pP2pbnEDY8%2BE3vcR6MjS50t47T0CYDYr%2F%2BtYWPCx76WZIv22wS5ZN4b1KyfYCoJi0GiXHS8YAEe4l%2BoscJ8gG%2BknOBNMHF3YmkRCCmQAQSAI7vhMsOadN0OrgBDlirjd2XR0gVmooqX3Udf%2F%2FJPHkCueQ6Fm5O52JApwB%2F02ITLnBKD07gQiB7NFSzkBoTN%2B6OzbemZo%2BBM8iIBWKvc0DQuiCU749b6Tj9ein1%2Fwt8Gpt5Zv3lXeamyAMuYCHKnXMaB9Dy0qWiqaWkTNiRcGWo20cVoOcjX3f6a3Wg96Bo3Qy0B5laXmXHQZyTt6WWXmzZb59V14844tR4wW5sb5L8HC%2F4V4vgv7d51k8wDJxj34TOfOTRr84V1Za3QV11h3y7Inli%2FrDiLg5V9PKOwSFHDRe0hHJf1ncdkI9wMKfIotQGOqUBlTsbjc%2B2t%2F9FyQZrFH12I1BKylqMprXEVso9y%2B46Zei60ZyQxUqFihXvC6nHgWexeC6ENw1hoYZiBbzWcb6zDJqb3e4Yvfu7uoJefrOEGcktsIICvHBIACofj5O23pGRAI5u%2FfbRCAI6Oy0Kz7RwetCDwAxG92MMFPPPASPy%2BqOfnKWPA8AHolVElbqZUKVp5uYWpRtZFU%2B9%2BaISJCeXzLLXBCI2&X-Amz-Signature=74f37fa67600675873e64f0d5104991657dd746f526b32decb1934a3fdddad41&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+**go to the admin panel (**`/admin`**) and **delete user `carlos`!

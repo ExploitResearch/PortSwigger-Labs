@@ -1,0 +1,42 @@
+# Information disclosure in version control history
+
+### Goal - 
+
+Obtain the password for the `administrator` user then log in and delete the user `carlos`.
+
+### Analysis/Exploitation -
+
+Let’s enumerate hidden directories via `ffuf`
+
+```bash
+ffuf -w /usr/share/seclists/Discovery/Web-Content/dirsearch.txt -u https://0a5d00c3035ad5be807d9a1700a800c4.web-security-academy.net/FUZZ
+```
+
+In here, we found a `/.git` directory! Which is the a GitHub repository directory!
+
+Let’s download all the files via `wget`!
+
+```bash
+wget -b -r https://0a5d00c3035ad5be807d9a1700a800c4.web-security-academy.net/.git
+```
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/8ccb515d-7908-4190-a835-e296c6708b49/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Y7EUKA3S%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210458Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBmWsPdsGo%2Fb4RcsAsMDgj8cZEzRbr%2BWVw5PWDMqFMvIAiEAiwkZwhEyRte27qRocjGU2LVwz4e4U38w5gubFaBsmlwqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDNhd0KimGkFdA%2Bz69SrcAxKnTIwNybTn9s7GXgoeo7cFHzVdOOeeSWWGICba%2FaMXwrynMg7IHu81F7iPo5X0QkjZqSF9BAbsByYwhapixccvZSXKSFWuUVQmRSPsYCy5kbgAs%2BM06Wm8DkusxgqKB07XWhDRO%2FK%2FMTotEHHPVzzHmHu%2B%2FnQhwYIipGGF9illvoVzs0MDCSfn1Vagc7Alhncp516nPF1evIUvQP%2F0VGsdnjgfRfPEs1K0%2BWG8jO4htYfZuHXjLfsmTz4pLkHl%2BdIYmYqc8CJyYaRv6djZeGRNJKVmEFvComiVykyEwJKgFCVpXJcMu2CDfU%2BMKITi4rA2Qxaemqg9Wg4tp01Kzp%2BOJOF5x51gNEk%2BL3RNjsdkeZycppxP%2BwySFZkmtaMSh6yQxeuE84FNSnPZF8pB2AbyjpF47oF7yxRWn1kueVWidlGmUMJ504PNV32AUO%2B%2FYFWvG7TP1mEcpLlPrfyj8kHwg5oIyZ6gKA%2BmzJ%2Bp13xNdcCEzYO9c9xwSX4su28UjVvM7CPDzBev4UVJtWo1T1tQXfreJgqZMHup6LscyW5hQw3DSJHjNt6r9HIEn2YDfv9B7RhNux%2BZk8hoAYOVzcLy8qVid8kvKbCORp9MkjJ28Ui2Rte9PxObgw5RMJTIotQGOqUBZzDWsV19K1iHomI4jPtS5BgOZBGrx%2BAOO0gbhYxRfk%2B1cQxD5rodJuh5dC38pyP%2B11vRKL9g%2F9MRrDMxJj3Y7H1KNFwn7N2pvClsDK0RcVGnvqtIGp4x28l7lcsswzQvuDqqCMpJlss3ii1jJHFyiWfdQEyWDOqSUsYsboLp2OOoYFaurnxbAz7cIeoO5r9X9%2BVHv8REU1XmP54SZrBF0F%2BuP42d&X-Amz-Signature=8b137e20039a7d1f9a7cae62a3bfb6620917f41adc62a9b96924584a2a623952&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+go to that directory and list all files inside it
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/5b98504f-03da-49eb-8983-ff6b4daaad07/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Y7EUKA3S%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210458Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBmWsPdsGo%2Fb4RcsAsMDgj8cZEzRbr%2BWVw5PWDMqFMvIAiEAiwkZwhEyRte27qRocjGU2LVwz4e4U38w5gubFaBsmlwqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDNhd0KimGkFdA%2Bz69SrcAxKnTIwNybTn9s7GXgoeo7cFHzVdOOeeSWWGICba%2FaMXwrynMg7IHu81F7iPo5X0QkjZqSF9BAbsByYwhapixccvZSXKSFWuUVQmRSPsYCy5kbgAs%2BM06Wm8DkusxgqKB07XWhDRO%2FK%2FMTotEHHPVzzHmHu%2B%2FnQhwYIipGGF9illvoVzs0MDCSfn1Vagc7Alhncp516nPF1evIUvQP%2F0VGsdnjgfRfPEs1K0%2BWG8jO4htYfZuHXjLfsmTz4pLkHl%2BdIYmYqc8CJyYaRv6djZeGRNJKVmEFvComiVykyEwJKgFCVpXJcMu2CDfU%2BMKITi4rA2Qxaemqg9Wg4tp01Kzp%2BOJOF5x51gNEk%2BL3RNjsdkeZycppxP%2BwySFZkmtaMSh6yQxeuE84FNSnPZF8pB2AbyjpF47oF7yxRWn1kueVWidlGmUMJ504PNV32AUO%2B%2FYFWvG7TP1mEcpLlPrfyj8kHwg5oIyZ6gKA%2BmzJ%2Bp13xNdcCEzYO9c9xwSX4su28UjVvM7CPDzBev4UVJtWo1T1tQXfreJgqZMHup6LscyW5hQw3DSJHjNt6r9HIEn2YDfv9B7RhNux%2BZk8hoAYOVzcLy8qVid8kvKbCORp9MkjJ28Ui2Rte9PxObgw5RMJTIotQGOqUBZzDWsV19K1iHomI4jPtS5BgOZBGrx%2BAOO0gbhYxRfk%2B1cQxD5rodJuh5dC38pyP%2B11vRKL9g%2F9MRrDMxJj3Y7H1KNFwn7N2pvClsDK0RcVGnvqtIGp4x28l7lcsswzQvuDqqCMpJlss3ii1jJHFyiWfdQEyWDOqSUsYsboLp2OOoYFaurnxbAz7cIeoO5r9X9%2BVHv8REU1XmP54SZrBF0F%2BuP42d&X-Amz-Signature=257f2d527152863469b1b3092e506f68e1cebca8adaeae671de17d6e947253a2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+**Now, we can use **`git`** to view all the commit logs!**
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/e9e5fd1b-927e-4206-8b45-8cd6a00058df/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Y7EUKA3S%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210458Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBmWsPdsGo%2Fb4RcsAsMDgj8cZEzRbr%2BWVw5PWDMqFMvIAiEAiwkZwhEyRte27qRocjGU2LVwz4e4U38w5gubFaBsmlwqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDNhd0KimGkFdA%2Bz69SrcAxKnTIwNybTn9s7GXgoeo7cFHzVdOOeeSWWGICba%2FaMXwrynMg7IHu81F7iPo5X0QkjZqSF9BAbsByYwhapixccvZSXKSFWuUVQmRSPsYCy5kbgAs%2BM06Wm8DkusxgqKB07XWhDRO%2FK%2FMTotEHHPVzzHmHu%2B%2FnQhwYIipGGF9illvoVzs0MDCSfn1Vagc7Alhncp516nPF1evIUvQP%2F0VGsdnjgfRfPEs1K0%2BWG8jO4htYfZuHXjLfsmTz4pLkHl%2BdIYmYqc8CJyYaRv6djZeGRNJKVmEFvComiVykyEwJKgFCVpXJcMu2CDfU%2BMKITi4rA2Qxaemqg9Wg4tp01Kzp%2BOJOF5x51gNEk%2BL3RNjsdkeZycppxP%2BwySFZkmtaMSh6yQxeuE84FNSnPZF8pB2AbyjpF47oF7yxRWn1kueVWidlGmUMJ504PNV32AUO%2B%2FYFWvG7TP1mEcpLlPrfyj8kHwg5oIyZ6gKA%2BmzJ%2Bp13xNdcCEzYO9c9xwSX4su28UjVvM7CPDzBev4UVJtWo1T1tQXfreJgqZMHup6LscyW5hQw3DSJHjNt6r9HIEn2YDfv9B7RhNux%2BZk8hoAYOVzcLy8qVid8kvKbCORp9MkjJ28Ui2Rte9PxObgw5RMJTIotQGOqUBZzDWsV19K1iHomI4jPtS5BgOZBGrx%2BAOO0gbhYxRfk%2B1cQxD5rodJuh5dC38pyP%2B11vRKL9g%2F9MRrDMxJj3Y7H1KNFwn7N2pvClsDK0RcVGnvqtIGp4x28l7lcsswzQvuDqqCMpJlss3ii1jJHFyiWfdQEyWDOqSUsYsboLp2OOoYFaurnxbAz7cIeoO5r9X9%2BVHv8REU1XmP54SZrBF0F%2BuP42d&X-Amz-Signature=2ffa9424958d1daa0c3a1c394d355f422c24933c616f9630b0fb6d61f818f409&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+Log revealing that password was removed so now **print that commit:**
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/3b9fcdfa-4382-4947-ac7c-171876117efe/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Y7EUKA3S%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210458Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBmWsPdsGo%2Fb4RcsAsMDgj8cZEzRbr%2BWVw5PWDMqFMvIAiEAiwkZwhEyRte27qRocjGU2LVwz4e4U38w5gubFaBsmlwqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDNhd0KimGkFdA%2Bz69SrcAxKnTIwNybTn9s7GXgoeo7cFHzVdOOeeSWWGICba%2FaMXwrynMg7IHu81F7iPo5X0QkjZqSF9BAbsByYwhapixccvZSXKSFWuUVQmRSPsYCy5kbgAs%2BM06Wm8DkusxgqKB07XWhDRO%2FK%2FMTotEHHPVzzHmHu%2B%2FnQhwYIipGGF9illvoVzs0MDCSfn1Vagc7Alhncp516nPF1evIUvQP%2F0VGsdnjgfRfPEs1K0%2BWG8jO4htYfZuHXjLfsmTz4pLkHl%2BdIYmYqc8CJyYaRv6djZeGRNJKVmEFvComiVykyEwJKgFCVpXJcMu2CDfU%2BMKITi4rA2Qxaemqg9Wg4tp01Kzp%2BOJOF5x51gNEk%2BL3RNjsdkeZycppxP%2BwySFZkmtaMSh6yQxeuE84FNSnPZF8pB2AbyjpF47oF7yxRWn1kueVWidlGmUMJ504PNV32AUO%2B%2FYFWvG7TP1mEcpLlPrfyj8kHwg5oIyZ6gKA%2BmzJ%2Bp13xNdcCEzYO9c9xwSX4su28UjVvM7CPDzBev4UVJtWo1T1tQXfreJgqZMHup6LscyW5hQw3DSJHjNt6r9HIEn2YDfv9B7RhNux%2BZk8hoAYOVzcLy8qVid8kvKbCORp9MkjJ28Ui2Rte9PxObgw5RMJTIotQGOqUBZzDWsV19K1iHomI4jPtS5BgOZBGrx%2BAOO0gbhYxRfk%2B1cQxD5rodJuh5dC38pyP%2B11vRKL9g%2F9MRrDMxJj3Y7H1KNFwn7N2pvClsDK0RcVGnvqtIGp4x28l7lcsswzQvuDqqCMpJlss3ii1jJHFyiWfdQEyWDOqSUsYsboLp2OOoYFaurnxbAz7cIeoO5r9X9%2BVHv8REU1XmP54SZrBF0F%2BuP42d&X-Amz-Signature=112455e9e49bbed008eb99b73349a1e1df968a804d5b764c14fec818c90be8bf&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+Found `administrator` password: `v2v6cafbhrqnfxq6i622`
+
+**login as **`administrator`** and delete user **`carlos`**!**
+
+
+

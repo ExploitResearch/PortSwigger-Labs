@@ -1,0 +1,29 @@
+# User ID controlled by request parameter, with unpredictable user IDs
+
+### Target Goal - 
+
+Obtain the API key for the user `carlos` and submit it as the solution
+
+### Analysis/Exploitation -
+
+**Login as user **`wiener`**:**
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/f21d9df1-55a3-40a7-a08f-82ba0c4f1f8f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U6SY5TCW%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210350Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCgOZZNc8ZAXoTSq4722Z9BGtVzfiQRuBxatmb%2BdNw2wQIhAO0iOr0xhiX%2FYnzPmRm6MBgVH%2BDfpRgTwzNYMW0kBIiYKogECKz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzHbBmcRiDx%2FgrOt2cq3API3OSKk6kXpA1RA1Vy%2Bz7pO7wDU9U0%2BwaMJl5%2F8G9zU8OrEukk06vHAvRQm2cJhjVRY4HEtj0rI8nO1ha7nCyf7Borz2zMUZn8zSLJ3h6GUbTjl73tYBEsRvXRoViiIXjtKqfcVMpVpd3nDlXaBK8ejeIZD0KrJL2LxzpY%2F2B42Gx%2Bkhk6mCTD%2FOvXgFFi3NpjFhge6bTGVutChoU3ZKbe20iOS2rwLFBTzouxVBugMWGVyfeNSEzKGQILwrbmhuMXyNFR7KtZ%2FwrgUVB6Al8%2BNmEYHXSiluZJfIXjwGDJ4q%2FSeY2r8ZL%2FW1E1HwJqU7PUTSguEalPY2FJezaEF0wrbwJFh9w5DGuoyQwaFX9P%2BIn3f96w9LKTykpMik5Ss5my0ZJl8lusgz5B8sT%2FuO2Gtc8vIwsS8FfAwd2OjrjzJIz8MlkDjuhtgNzTsCj3Y6et3jn432ucD%2BJ2G%2FKC75tc5lSvH1Gd1bW6SvXX2Y8cki0gA7gT6u54P%2FOtI%2FCpx21YVr172s7Dzk%2FakYtLwClmn11BnT4y45lNVYGxdrO%2B%2FmkRwcQMQdr0EcvkKKwovvHZ1wypuIPdYe17PqvfSRQGacUtgf3oBL9qNuPrGij0Rkm4QX1MWvX38LT2vDC4xqLUBjqkAe0EnXR00AEmcaT1oZr3huFAhZQGRVq6AV0%2BK9QA1DtWqsD10CJhNFeiFuYyCm7MzU74goyUmrLFGMZiE9jPrzEx2DeGRsPmCBAUuS8hWzoGSgikV0Q05UtAPxQmeQEwRg%2FioLBtw1IGRYrf%2FA2zf5TEOyurUAP7vqV6yHvn1fTFkdj%2Bx3VXGRw%2FZcpG5Wah8P6tDgHgwERRo9T%2BvJZeo3FzAOIk&X-Amz-Signature=1c5eba0390d05f7ae47e739b1db0fbf610da6f37feeceb9034ce8213e2e808dd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+**it’s using an GUID(Globally Unique Identifier) so we can’t guess other users id**
+
+**In the home page, we can view other people’s posts:**
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/00368789-ce8e-4eb8-9ae5-b88852d1d7f1/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U6SY5TCW%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210350Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCgOZZNc8ZAXoTSq4722Z9BGtVzfiQRuBxatmb%2BdNw2wQIhAO0iOr0xhiX%2FYnzPmRm6MBgVH%2BDfpRgTwzNYMW0kBIiYKogECKz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzHbBmcRiDx%2FgrOt2cq3API3OSKk6kXpA1RA1Vy%2Bz7pO7wDU9U0%2BwaMJl5%2F8G9zU8OrEukk06vHAvRQm2cJhjVRY4HEtj0rI8nO1ha7nCyf7Borz2zMUZn8zSLJ3h6GUbTjl73tYBEsRvXRoViiIXjtKqfcVMpVpd3nDlXaBK8ejeIZD0KrJL2LxzpY%2F2B42Gx%2Bkhk6mCTD%2FOvXgFFi3NpjFhge6bTGVutChoU3ZKbe20iOS2rwLFBTzouxVBugMWGVyfeNSEzKGQILwrbmhuMXyNFR7KtZ%2FwrgUVB6Al8%2BNmEYHXSiluZJfIXjwGDJ4q%2FSeY2r8ZL%2FW1E1HwJqU7PUTSguEalPY2FJezaEF0wrbwJFh9w5DGuoyQwaFX9P%2BIn3f96w9LKTykpMik5Ss5my0ZJl8lusgz5B8sT%2FuO2Gtc8vIwsS8FfAwd2OjrjzJIz8MlkDjuhtgNzTsCj3Y6et3jn432ucD%2BJ2G%2FKC75tc5lSvH1Gd1bW6SvXX2Y8cki0gA7gT6u54P%2FOtI%2FCpx21YVr172s7Dzk%2FakYtLwClmn11BnT4y45lNVYGxdrO%2B%2FmkRwcQMQdr0EcvkKKwovvHZ1wypuIPdYe17PqvfSRQGacUtgf3oBL9qNuPrGij0Rkm4QX1MWvX38LT2vDC4xqLUBjqkAe0EnXR00AEmcaT1oZr3huFAhZQGRVq6AV0%2BK9QA1DtWqsD10CJhNFeiFuYyCm7MzU74goyUmrLFGMZiE9jPrzEx2DeGRsPmCBAUuS8hWzoGSgikV0Q05UtAPxQmeQEwRg%2FioLBtw1IGRYrf%2FA2zf5TEOyurUAP7vqV6yHvn1fTFkdj%2Bx3VXGRw%2FZcpG5Wah8P6tDgHgwERRo9T%2BvJZeo3FzAOIk&X-Amz-Signature=313f9fa69781f7ee8c560afea546a6247f64567ca77dab8fff12247c5560bdee&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+inspect the code and we get carlos GUID
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/99fe921c-ac0e-462e-b241-fda95bfe87c4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U6SY5TCW%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210350Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCgOZZNc8ZAXoTSq4722Z9BGtVzfiQRuBxatmb%2BdNw2wQIhAO0iOr0xhiX%2FYnzPmRm6MBgVH%2BDfpRgTwzNYMW0kBIiYKogECKz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzHbBmcRiDx%2FgrOt2cq3API3OSKk6kXpA1RA1Vy%2Bz7pO7wDU9U0%2BwaMJl5%2F8G9zU8OrEukk06vHAvRQm2cJhjVRY4HEtj0rI8nO1ha7nCyf7Borz2zMUZn8zSLJ3h6GUbTjl73tYBEsRvXRoViiIXjtKqfcVMpVpd3nDlXaBK8ejeIZD0KrJL2LxzpY%2F2B42Gx%2Bkhk6mCTD%2FOvXgFFi3NpjFhge6bTGVutChoU3ZKbe20iOS2rwLFBTzouxVBugMWGVyfeNSEzKGQILwrbmhuMXyNFR7KtZ%2FwrgUVB6Al8%2BNmEYHXSiluZJfIXjwGDJ4q%2FSeY2r8ZL%2FW1E1HwJqU7PUTSguEalPY2FJezaEF0wrbwJFh9w5DGuoyQwaFX9P%2BIn3f96w9LKTykpMik5Ss5my0ZJl8lusgz5B8sT%2FuO2Gtc8vIwsS8FfAwd2OjrjzJIz8MlkDjuhtgNzTsCj3Y6et3jn432ucD%2BJ2G%2FKC75tc5lSvH1Gd1bW6SvXX2Y8cki0gA7gT6u54P%2FOtI%2FCpx21YVr172s7Dzk%2FakYtLwClmn11BnT4y45lNVYGxdrO%2B%2FmkRwcQMQdr0EcvkKKwovvHZ1wypuIPdYe17PqvfSRQGacUtgf3oBL9qNuPrGij0Rkm4QX1MWvX38LT2vDC4xqLUBjqkAe0EnXR00AEmcaT1oZr3huFAhZQGRVq6AV0%2BK9QA1DtWqsD10CJhNFeiFuYyCm7MzU74goyUmrLFGMZiE9jPrzEx2DeGRsPmCBAUuS8hWzoGSgikV0Q05UtAPxQmeQEwRg%2FioLBtw1IGRYrf%2FA2zf5TEOyurUAP7vqV6yHvn1fTFkdj%2Bx3VXGRw%2FZcpG5Wah8P6tDgHgwERRo9T%2BvJZeo3FzAOIk&X-Amz-Signature=d6d5990b12275f9ae1271471a9fd0f8a719d2da542c794949098903b288e00de&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+or we can Click on `carlos` and observe that the URL contains his user ID
+
+copy it and go to my account
+
+change your GUID with Carlos in url and we got the carlos api key
+
+submit the carlos API key

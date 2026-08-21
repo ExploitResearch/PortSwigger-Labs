@@ -2,40 +2,40 @@
 
 A collection of notes, solutions, and techniques from the [PortSwigger Web Security Academy](https://portswigger.net/web-security/) labs, organized by vulnerability category.
 
-## Categories
+## Structure
 
-- [Book Notes](Book_Notes.md) — General Burp Suite usage notes and methodology
-- [Authentication](authentication.md) — Auth bypass, 2FA, password resets
-- [SQL Injection](SQL_Injection.md) — SQLi techniques and labs
-- [SSRF](SSRF.md) — Server-Side Request Forgery
-- [Clickjacking](Clickjacking.md) — Frame-based attacks
-- [XSS](XSS.md) — Cross-Site Scripting (reflected, stored, DOM)
-- [CSRF](CSRF.md) — Cross-Site Request Forgery
-- [Access Control](Access_Control.md) — IDOR, privilege escalation
-- [Path/Directory Traversal](PathDirectory_traversal.md) — File path manipulation
-- [File Upload Vulnerabilities](File_upload_vulnerabilities.md) — Malicious file uploads
-- [OS Command Injection](OS_Command_Injection.md) — Command injection
-- [Business Logic Vulnerabilities](Business_Logic_Vulnerabilities.md) — Logic flaws
-- [Information Disclosure](Information_Disclosure.md) — Data exposure
-- [API Pentesting](API_Pentesting.md) — API security testing
-- [JWT](JWT.md) — JSON Web Token attacks
-- [CORS](CORS.md) — Cross-Origin Resource Sharing
-- [GraphQL](GraphQL.md) — GraphQL vulnerabilities
-- [HTTP Request Smuggling](HTTP_Request_Smuggling.md) — Request smuggling
-- [Race Conditions](Race_Conditions.md) — TOCTOU and race conditions
-- [NoSQL Injection](NoSQL_Injection.md) — NoSQL injection
-- [Web Cache Poisoning](Web_Cache_Poisoning.md) — Cache deception/poisoning
+This repository mirrors the original Notion hierarchy. Each category is a directory containing its own README and individual lab solution pages.
 
-Each category page contains individual lab solutions with step-by-step instructions, Burp Suite techniques, and commands.
-
-## Source
-
-Originally maintained in Notion. Exported and formatted as Markdown for version control.
+| Category | Labs | Description |
+|----------|------|-------------|
+| [Book Notes](Book_Notes/) | 3 | General Burp Suite methodology and web app (in)security theory |
+| [authentication](authentication/) | 4 | Auth bypass, 2FA, password resets, multi-factor |
+| [SQL Injection](SQL_Injection/) | 6 | SQLMap, cheat sheet, examining DB, blind SQLi |
+| [SSRF](SSRF/) | 1 | Server-Side Request Forgery basics |
+| [Clickjacking](Clickjacking/) | 5 | Frame-based attacks with various defenses |
+| [XSS](XSS/) | 3 | Reflected, Stored, DOM-based Cross-Site Scripting |
+| [CSRF](CSRF/) | 12 | Token validation bypass, SameSite bypasses |
+| [Access Control](Access_Control/) | 13 | IDOR, role-based access, multi-step process bypass |
+| [Path/Directory traversal](PathDirectory_traversal/) | 6 | Path traversal with various filter bypasses |
+| [File upload vulnerabilities](File_upload_vulnerabilities/) | 7 | Web shell upload, Content-Type bypass, path traversal |
+| [OS Command Injection](OS_Command_Injection/) | 5 | Simple, blind, with time delays and output redirection |
+| [Business logic vulnerabilities](Business_logic_vulnerabilities/) | 11 | Client-side trust, logic flaws, race conditions |
+| [Information Disclosure](Information_Disclosure/) | 5 | Error messages, debug pages, backup files |
+| [JWT attack](JWT_attack/) | 10 | Signature bypass, weak keys, algorithm confusion |
+| [CORS](CORS/) | 4 | Origin reflection, null origin, insecure protocols |
+| [Race condition](Race_condition/) | 6 | Limit overrun, multi-endpoint, partial construction |
+| [API Pentesting](API_Pentesting/) | — | API security testing notes |
+| [XXE](XXE/) | — | XML External Entity notes |
+| [Extentions](Extentions/) | — | Burp Suite extensions notes |
 
 ## References
 
 - [PortSwigger Web Security Academy](https://portswigger.net/web-security/)
 - [PortSwigger Research Blog](https://portswigger.net/research)
+
+## Source
+
+Originally maintained in [Notion](https://www.notion.so/). Exported and structured as Markdown for version control.
 
 ## License
 

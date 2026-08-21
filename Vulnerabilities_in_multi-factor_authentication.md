@@ -1,6 +1,0 @@
-# Vulnerabilities in multi-factor authentication
-
-## [2FA simple bypass](./2FA_simple_bypass.md)
-
-## [2FA broken logic](./2FA_broken_logic.md)
-
