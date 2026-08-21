@@ -1,0 +1,41 @@
+# JWT authentication bypass via unverified signature
+
+### Goal - 
+
+Modify your session token to gain access to the admin panel at `/admin`, then delete the user `carlos`.
+
+### Analysis/Exploitation -
+
+As the lab application deals with JWTs, Use the extension `JSON Web Tokens (JWT4B)` or `JWT Editor `to avoid having to deal with manual decoding and encoding of the JWTs all the time.
+
+**Login as user **`wiener`
+
+Burp Proxy notifies me that the response contains a JWT and highlight it.
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/92b455f5-de04-4ea3-b55f-51f87f3231b3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665KD3BULP%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T204738Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCxSXJ7Xpl437k8ezQB%2B98B40DcPhApoCOgEc9iOUYjQAIgE9PRuvyRmCGFT7qy%2F2DBIXDgsC89AuZIjLtWGxHGziIqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDN4dP9yXi%2F%2FgLgBaXyrcAwHZoDrO0oATCyTOpcjeYXjNFjXBSerMxBoT3KactUuU4AAwOkUdiVQpm9dkkpzQ1X%2F9%2FK00cR6aJmjZAPk%2FWWYuTIKKeNcH9jlWVpfFRaKsJYLMKAm4BJyTBH8BOJqgMaZBjiPwyd46XM2ZhjJCkLrLppCoHToSv%2FA1s1Pn0%2BTuWA9BQXbfi2MlgJ4LxIPx1rVWwHmxt1sHt3Ik%2F5f71OlN05aoYfpsTvkH4bTHslLSVwoMznpqseZ8Wy6808Xu8nBxZk7dJupne6RftH3R%2FWz6iY5OvvS4CvezX2FRWwXqiqbcopvJwpDVsL5T1BaxT98rL%2B9YmupyuI7Q6WXIDdm6ReshTbmtcJ2DJz9poCC2JrvcnIMG6sbZsvnrR%2FTfQ62eAbKKsc5R7MPuzXcveWQTjZceUHqlqHdC401mZGiavtCAzwY0Tsd1YeaTjw%2Bq6wOJkzfU6SvPCpFMkkhWzWSsIU7hjMOhsf6KGUkczCxfLOFNE5qCy8tRp52rQX9boUwY3myJNDPZQGvRNaQEMQ%2BYRlR1jmJWu9HAB2aZME2vV5v6TvbJVX30U%2FM%2BheGJi%2FKPqtsBA8hy1e0hL44739NPJ3zMkBMxetbznbJR8SqrjuuQ%2FGLW5YOSNsM%2FMNTJotQGOqUBEl2hF8b0fs%2B9EGHAXl56kiKRchVNeCek2ySV4S0zLErUpvTH8xl015Uf0X0zeoat%2BuS5I%2FYMq%2FkfgtliPSTQ%2BBPCGZirSxIEg5mi9nb0CGOwalyJ1KsSsqorzKH1CCPAUdv2PkK4tzsO5ZQ4E5KnK%2FwAsUxTlIqpIm1Mjxhx2rELiYoTBDo6%2Bu35g8gry%2B7pBYFHWNLwkzTp%2F2I8aoz5Kvn9ZmQJ&X-Amz-Signature=4506a17ef8a5ee81e3a370c06138afc26b4813cea054275a8ff97bc591882d7e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+In the header part, the signature’s algorithm is RS256(RSA + SHA-256), and it has a kid(Key ID). 
+In the payload part, it has an issuer(`portswigger`), subject(`wiener`), and expires(`1710394513`).
+
+
+When I try to access the `/admin` page as user `wiener`, I am greeted by the message `Admin interface only available if logged in as an administrator`.
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/4fb19584-4550-46a2-a87e-df88bfb52886/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665KD3BULP%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T204738Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCxSXJ7Xpl437k8ezQB%2B98B40DcPhApoCOgEc9iOUYjQAIgE9PRuvyRmCGFT7qy%2F2DBIXDgsC89AuZIjLtWGxHGziIqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDN4dP9yXi%2F%2FgLgBaXyrcAwHZoDrO0oATCyTOpcjeYXjNFjXBSerMxBoT3KactUuU4AAwOkUdiVQpm9dkkpzQ1X%2F9%2FK00cR6aJmjZAPk%2FWWYuTIKKeNcH9jlWVpfFRaKsJYLMKAm4BJyTBH8BOJqgMaZBjiPwyd46XM2ZhjJCkLrLppCoHToSv%2FA1s1Pn0%2BTuWA9BQXbfi2MlgJ4LxIPx1rVWwHmxt1sHt3Ik%2F5f71OlN05aoYfpsTvkH4bTHslLSVwoMznpqseZ8Wy6808Xu8nBxZk7dJupne6RftH3R%2FWz6iY5OvvS4CvezX2FRWwXqiqbcopvJwpDVsL5T1BaxT98rL%2B9YmupyuI7Q6WXIDdm6ReshTbmtcJ2DJz9poCC2JrvcnIMG6sbZsvnrR%2FTfQ62eAbKKsc5R7MPuzXcveWQTjZceUHqlqHdC401mZGiavtCAzwY0Tsd1YeaTjw%2Bq6wOJkzfU6SvPCpFMkkhWzWSsIU7hjMOhsf6KGUkczCxfLOFNE5qCy8tRp52rQX9boUwY3myJNDPZQGvRNaQEMQ%2BYRlR1jmJWu9HAB2aZME2vV5v6TvbJVX30U%2FM%2BheGJi%2FKPqtsBA8hy1e0hL44739NPJ3zMkBMxetbznbJR8SqrjuuQ%2FGLW5YOSNsM%2FMNTJotQGOqUBEl2hF8b0fs%2B9EGHAXl56kiKRchVNeCek2ySV4S0zLErUpvTH8xl015Uf0X0zeoat%2BuS5I%2FYMq%2FkfgtliPSTQ%2BBPCGZirSxIEg5mi9nb0CGOwalyJ1KsSsqorzKH1CCPAUdv2PkK4tzsO5ZQ4E5KnK%2FwAsUxTlIqpIm1Mjxhx2rELiYoTBDo6%2Bu35g8gry%2B7pBYFHWNLwkzTp%2F2I8aoz5Kvn9ZmQJ&X-Amz-Signature=3b87d1ea615d759ce0e3dbfb4886c39af2d82f66bac63245523a8a258859d827&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+**Now, in the lab’s background, it said:**
+
+> Due to implementation flaws, the server doesn’t verify the signature of any JWTs that it receives.
+
+**To check **Does the website verify the signature? and Accepting arbitrary signatures
+
+**we can just simply modify payload’s subject to **`administrator`**:**
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/59bde2d1-f092-4a12-bbf5-43154bed8476/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665KD3BULP%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T204738Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCxSXJ7Xpl437k8ezQB%2B98B40DcPhApoCOgEc9iOUYjQAIgE9PRuvyRmCGFT7qy%2F2DBIXDgsC89AuZIjLtWGxHGziIqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDN4dP9yXi%2F%2FgLgBaXyrcAwHZoDrO0oATCyTOpcjeYXjNFjXBSerMxBoT3KactUuU4AAwOkUdiVQpm9dkkpzQ1X%2F9%2FK00cR6aJmjZAPk%2FWWYuTIKKeNcH9jlWVpfFRaKsJYLMKAm4BJyTBH8BOJqgMaZBjiPwyd46XM2ZhjJCkLrLppCoHToSv%2FA1s1Pn0%2BTuWA9BQXbfi2MlgJ4LxIPx1rVWwHmxt1sHt3Ik%2F5f71OlN05aoYfpsTvkH4bTHslLSVwoMznpqseZ8Wy6808Xu8nBxZk7dJupne6RftH3R%2FWz6iY5OvvS4CvezX2FRWwXqiqbcopvJwpDVsL5T1BaxT98rL%2B9YmupyuI7Q6WXIDdm6ReshTbmtcJ2DJz9poCC2JrvcnIMG6sbZsvnrR%2FTfQ62eAbKKsc5R7MPuzXcveWQTjZceUHqlqHdC401mZGiavtCAzwY0Tsd1YeaTjw%2Bq6wOJkzfU6SvPCpFMkkhWzWSsIU7hjMOhsf6KGUkczCxfLOFNE5qCy8tRp52rQX9boUwY3myJNDPZQGvRNaQEMQ%2BYRlR1jmJWu9HAB2aZME2vV5v6TvbJVX30U%2FM%2BheGJi%2FKPqtsBA8hy1e0hL44739NPJ3zMkBMxetbznbJR8SqrjuuQ%2FGLW5YOSNsM%2FMNTJotQGOqUBEl2hF8b0fs%2B9EGHAXl56kiKRchVNeCek2ySV4S0zLErUpvTH8xl015Uf0X0zeoat%2BuS5I%2FYMq%2FkfgtliPSTQ%2BBPCGZirSxIEg5mi9nb0CGOwalyJ1KsSsqorzKH1CCPAUdv2PkK4tzsO5ZQ4E5KnK%2FwAsUxTlIqpIm1Mjxhx2rELiYoTBDo6%2Bu35g8gry%2B7pBYFHWNLwkzTp%2F2I8aoz5Kvn9ZmQJ&X-Amz-Signature=d1ffd749169e4a2bdd9ccc5fab798a97da198880cc0d7b9897914ad7fc63af86&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+**To delete user carlos we can use any of following ways:**
+
+1. Send the request to `/admin/delete?username=carlo`
+1. copy the modified cookie value from the request and replace the cookie in browser:
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/80a5122e-8d6b-4c9c-82b3-3c75e54b4d06/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WUON232T%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T204739Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDQjI2t17UfqjgJaSa%2FSs6T6myxGAdvU%2Fneb7VPX4qsAQIgNmH7iMEUnwSgS2HJ5869vChL8Nqk1OnL7Bp1ItsniMIqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCJLhB5wyi87A1zz8SrcA5GLzTcCQ%2BFFVz1iwJtv9VLGU7vHC6nBAVdfLPpDvEzQAHsynNh%2FS3Q21zgAMT5%2BNXwlnHDSG7lNp1WrlS%2B9jH4gdhdEgo%2Bk4B%2F8i4J26xRDcuDjUSujCn%2BwLSYwtk4vVGyugtDG73eVviinMUlNJ07WBDENruFmMKwn%2Bzufly98kTUVM8hpbe5pacsxWyBlD4Jh3DOfQUVoXFx3z91O4RFq%2FPNgCZZ8TUDa2syCnvWb%2ByRqirnhfjf%2B1M7u3fw7IgmbIAoBaIswn5b7yg68mptNM3PzDNyVIMnnaeeNE6gGFlmsTZRG7SStX07xtjVbYW5AyW12xdpQkTgx6VG4M8IIqv254%2FA%2FwlZruIRjYxkv2ANFTpCl6hyL05lDcETleKfyi%2FKLa6IBRwI0nSVVhOJfOHrgXlw9u81FmBuSzqcYuesXha8qwCG90Trw3XXAzgUBwmsNLgL5lMFdy%2BFCRGB5Kpee0FedT7TIoeOSH78hlLtOg3xMfbLRRNMI0oMmbzl2migVcbnmCbfp140u1YVyhn%2FYe0RV%2B9a0PO5N0bNfwBYrj2Wls5zrjnq1Fad6ua9zLEPEhaYH7GC7Ir7fxf1w2AqlLyoEMTNQj8S%2Fjs9A5yPrL%2Fg7%2BMN9yCQRMP3GotQGOqUB7AyVVKSKa%2BamsqUZfbiygrM4vx0rVqPJfsASo2V9i4CVoKpNG7AJ47z1OzwItDSL7CJLsTIkNMp8k8Wyj8aLwKkgvsuyAk50YJUuKx%2BVGBV5om5aeYn3L%2BsFt6qymP%2BUV7Wc9zqaT043t86rtN6Ye81i8CTntIleMHBa2858p%2F5I8eWcpMipDUAGxgQP5YN5OZYhBXtFlfMNUiv7dqAqNHolDd3K&X-Amz-Signature=098278d4f20882e6031a0e5a9924cf9725ac4eaac154c7d59d56fbcae4388876&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+1. use Burp "Match and Replace" functionality to replace the cookie, or even the specific claim, on the fly for all requests. However, just changing the cookie in the browser is much simpler.

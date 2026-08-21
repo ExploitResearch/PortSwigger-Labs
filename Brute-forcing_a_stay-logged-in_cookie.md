@@ -1,0 +1,28 @@
+# Brute-forcing a stay-logged-in cookie
+
+- With Burp running, log in to your own account with the **Stay logged in** option selected. Notice that this sets a `stay-logged-in` cookie.
+- Examine this cookie in the [Inspector](https://portswigger.net/burp/documentation/desktop/tools/inspector) panel and notice that it is Base64-encoded. Its decoded value is `wiener:51dc30ddc473d43a6011e9ebba6ca770`. Study the length and character set of this string and notice that it could be an MD5 hash. Given that the plaintext is your username, you can make an educated guess that this may be a hash of your password. Hash
+your password using MD5 to confirm that this is the case. We now know
+that the cookie is constructed as follows: `base64(username+':'+md5HashOfPassword)`
+- Log out of your account.
+- Send the most recent `GET /my-account` request to Burp Intruder.
+- In Burp Intruder, add a payload position to the `stay-logged-in` cookie and add your own password as a single payload.
+- Under **Payload processing**, add the following rules in order. These rules will be applied sequentially to each payload before the request is submitted.
+  - Hash: `MD5`
+  - Add prefix: `wiener:`
+  - Encode: `Base64-encode`
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/f91009d9-d88e-4a5e-9e1f-e8b23c9a058a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662SCCBP4S%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T204541Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIE9om4MHw3V3WWqFG9y9fCZegmppCKkVy9Y9ZDmJbQhZAiEA20HrgjK8%2FQJsyL8HoFHnpJ4VcrUbXKficqwUq5OtZF4qiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDNG2NJDoTFQKmHst3yrcAxFu%2Btz2Z%2BtmSErvFCFw62pVtkZ6beGnednCeERZ3BrCowTxhHoF9JbJo0f%2F2efiWX1IXhzGtFvF9ZA2KS%2B15ykx4i6CuYS91UWaHgemvfjmGcmiLYYH4OYtV0C8AtQKNEj9M1SP2Lkl2z7SMQn6YvXJIRmboGdemcs5n%2FC%2FVbSari7d%2FG0IPukCQaXZ5acT2Axw77cX6Xt2ITgkS8utaVgIjDKd8kiDss%2B0gqA8LAZbcyZmOGsEQHZwEGgPu4kZJes6ZZ3USsFS%2FkfosBoffyPznVuecx1RzU7F5N66wBcVnSRYgIL1BTZ71%2FcF1XFM4BXXNKSNQ1BUdBHkeeyl8QaQ6JMwvvvvbEBlS4g%2FogyZPTbIZUvHy%2BcKy8Y4e1uFX7ZfDbAw9j1sQHDD0lr5JTCtwL84JHZa2J6Wp205CqRK76ubIxdi4kLE1h1pS%2FpQwNpBhIbE9jl4mk7d8tTNQ%2FzKFLzv9D%2BJp%2FY2aoqCuN8Lhlg4iAmToFO3%2FOjKehh8prd%2Fv1DQExIxUBGcwbUT6E2ZM4xAuqvXY4ktG3M6QocdX9JzteArVQbbrvmmTp94ISgLOKPXHs7WQNbe%2FKkLwICCrXONUCEYXqN1PHrl1LaHQi%2FvbsJMPNdbwA2UMLzGotQGOqUB6cTCXjn1pHeMgzb0Gx07umGPG8d%2B8ZgTRWTyszqBm202rFNj77nWfz824A3kMpAjTZkaje60bnFmOyz0OtdVEcYsCoL4ga21VxSiRm6GzeaJs68bqxsSmnO%2F6sIBvIHeyRvv7EKy2y7EE0OH%2FQviF6aQn2mYM2JiWcKxI4UXThj6iL4HjnEaegGeD9IlrHtr12HJHivBXADX4fmxRJC5NAoI558I&X-Amz-Signature=4c854cc17b6fb8e2e5b450ad3f45401aeada12ce666f3318088ba532595083ea&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+- As the **Update email** button is only displayed when you access the `/my-account` page in an authenticated state, we can use the presence or absence of
+this button to determine whether we've successfully brute-forced the
+cookie. On the **Settings** tab, add a grep match rule to flag any responses containing the string `Update email`. Start the attack.
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/438df8f5-9407-4de1-82b5-5558ec74f5ec/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466ZCCP4ELH%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T204540Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDR%2BgrrXEfqZpsnHO5WB7XXY27EMyQENhmPlqJ1HTn53AiEAlroHRYPwZlJgjJaEQpHQ0ClytKaAC7Xh073hCTC3U58qiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIrJ4RvkZsm1Hm%2FXyCrcA2wPRjm%2BcQI9LPDX1Np7Q6%2FXNtTWPA84oZoI8DCUmLoRvxjf5%2FiLK514mwt5Hse3MhmvKXj9ZJbCjGg6wBQNB0FzyzibRJlVhhniUXnUSoHpIKiIQKA9sxIbeooEU73jKyAmw6ieyYsKGoZjCmSfl8PK2c1UfYYkErVoz%2FFR44PhzMBga0Q5B6D27VlYYcFjrpveMgl8jL4eHo3vJwzQ7X2dV8lqv7qhXl5cFiWQW5Mqk04QXZSSU8laUpEgfKOH8VabuKCUx8odMcmKVv0ckn4FWmblEOtMVySw%2BzPT26bWygoRp6d2VVs3brwJ1SBzS53a2jcRDdDphqKhbzP0AZACMjk2c8QxqkVSEmWRtbGqg2WSk6wdtvv2hpM5qdkPLIK4BDYlUbW0IyRoxdLq5coq5fCw%2FCUhMzz6Iv4RghfUOstWfwBG1nEepsiGeCT53XGWB6e3mrg51H8Sy9oHaUJ%2BKlvabhW8YoMjnBXtT8DgMebwaziQrym863oNTR%2FdfpmzE33r4MFtan1F0%2F2wojRrzTT2vbZas9OK%2BxZHrYqrk7MNzY0JzAV4Aif76k3Uo2Hqc%2FjDdhjf9%2BIreD40Bs%2FL%2FU3x8oWgaFtTfTK3uPRWTQf%2F%2Bswl80HRZLXUMJHGotQGOqUBN%2FI3oIbSvSUjOUy9pPjzVDnA2YZMRMU89OzJeTFLvZhjK%2BBNsb8jhqKcArvLGn%2B7zIh89PuhFSF4Wa%2BU7h%2BF4svZJLOumxr3CgvHZlydFwb46yZJs%2BeBIKIQIdrlNuOJLSqMEl%2BhRE%2FF8abCnjni%2FLjcd869qVpFkZbf8TPqKVBYkxNXmJlJXvXIcJDxeeHLFJmt792kRUgvmFNDdE%2FIzAx%2FMB7A&X-Amz-Signature=aea3ddb5ae5f16a103ccd86fde4286de874f744da50582cffc1ec8ad977941e2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+- Notice that the generated payload was used to
+successfully load your own account page. This confirms that the payload
+processing rules work as expected and you were able to construct a valid cookie for your own account.
+- Make the following adjustments and then repeat this attack:
+  - Remove your own password from the payload list and add the list of [candidate passwords](https://portswigger.net/web-security/authentication/auth-lab-passwords) instead.
+  - Change the **Add prefix** rule to add `carlos:` instead of `wiener:`.
+- When the attack is finished, the lab will be
+solved. Notice that only one request returned a response containing `Update email`. The payload from this request is the valid `stay-logged-in` cookie for Carlos's account.
