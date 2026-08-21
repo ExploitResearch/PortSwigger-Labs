@@ -2,18 +2,18 @@
 
 ## Contents
 
-- [CSRF vulnerability with no defenses](./CSRF_vulnerability_with_no_defenses/README.md)
-- [CSRF where token validation depends on request method](./CSRF_where_token_validation_depends_on_request_method/README.md)
-- [CSRF where token validation depends on token being present](./CSRF_where_token_validation_depends_on_token_being_present/README.md)
-- [CSRF where token is not tied to user session](./CSRF_where_token_is_not_tied_to_user_session/README.md)
-- [CSRF where token is tied to non-session cookie](./CSRF_where_token_is_tied_to_non-session_cookie/README.md)
-- [CSRF where token is duplicated in cookie](./CSRF_where_token_is_duplicated_in_cookie/README.md)
-- [SameSite Lax bypass via method override](./SameSite_Lax_bypass_via_method_override/README.md)
-- [SameSite Strict bypass via client-side redirect](./SameSite_Strict_bypass_via_client-side_redirect/README.md)
-- [SameSite Strict bypass via sibling domain](./SameSite_Strict_bypass_via_sibling_domain/README.md)
-- [SameSite Lax bypass via cookie refresh](./SameSite_Lax_bypass_via_cookie_refresh/README.md)
-- [CSRF where Referer validation depends on header being present](./CSRF_where_Referer_validation_depends_on_header_being_present/README.md)
-- [CSRF with broken Referer validation](./CSRF_with_broken_Referer_validation/README.md)
+- [CSRF vulnerability with no defenses](./CSRF_vulnerability_with_no_defenses.md)
+- [CSRF where token validation depends on request method](./CSRF_where_token_validation_depends_on_request_method.md)
+- [CSRF where token validation depends on token being present](./CSRF_where_token_validation_depends_on_token_being_present.md)
+- [CSRF where token is not tied to user session](./CSRF_where_token_is_not_tied_to_user_session.md)
+- [CSRF where token is tied to non-session cookie](./CSRF_where_token_is_tied_to_non-session_cookie.md)
+- [CSRF where token is duplicated in cookie](./CSRF_where_token_is_duplicated_in_cookie.md)
+- [SameSite Lax bypass via method override](./SameSite_Lax_bypass_via_method_override.md)
+- [SameSite Strict bypass via client-side redirect](./SameSite_Strict_bypass_via_client-side_redirect.md)
+- [SameSite Strict bypass via sibling domain](./SameSite_Strict_bypass_via_sibling_domain.md)
+- [SameSite Lax bypass via cookie refresh](./SameSite_Lax_bypass_via_cookie_refresh.md)
+- [CSRF where Referer validation depends on header being present](./CSRF_where_Referer_validation_depends_on_header_being_present.md)
+- [CSRF with broken Referer validation](./CSRF_with_broken_Referer_validation.md)
 
 ### About CSRF
 
@@ -91,7 +91,7 @@ The SameSite attribute can have three values:
     - Cookies are not sent with any cross-site requests, regardless of the context.
     - This provides the highest level of security but may impact some legitimate use cases.
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/e32e1606-4a0c-423a-9465-1b0cc884214b/2024-02-20_23-44.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662SCBU4SK%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T215441Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQClMaPZEO7UOs8droQxaL1JncJ%2FKKuFsIApogGjAe6bkAIhALpDqJ40A%2FTTLOa6bLD57kwD2F0NcRSpXFN26%2FvpCGiFKogECK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzpgzMH3%2FPavSpXOPoq3ANHOE2W93jGS6tJIGB5XJpySLwajixHj9rBzAQgWS7j1HSkvgxiz%2FyRDb5KlKsK3wVsblC9Z2XPCmeFBqUuQA6SGczsvpBfGF34TD9MeIdNcn%2Bs1DKWc1T%2FOJxUuMixZayY75o3n9j2gGyInOgUMTirmWS3hAWcdxKBMYJyv8X2Sbgfy74FVA9uUXc2FdTbRtSU5DQH6juyqiQcRPJU9cOPMfw%2Fy6AiWIrs43Vk9A2KTc5uBKAjjcL3Uwa4wSK%2FkrdApPKDWB4zou26kW3l%2FEj%2F59tSpROdPpuqYEoiG88wKPyaRIyPF72xhKzOG7de7Y7GeSFpuOohxkK6vanqNCSu72k%2F4zMwmIv1trpGG%2B0HC%2F734QlMyD5278GIbKFRqhDpTpjgXlo7zs7MFrn3VRUjMv%2FDUWTVl5hpOxbS0b5Zp%2BlN7bUhVjAwF9qO8rWh2TozQ3Dln%2FkFxkvoV2PWe8WTJqzjsOGG%2F4c2C781HOpKnGqjJVyTaWWmkYq8%2BI79PP5LNrs0GquzNrsK5Ixvki4nVl1i2J%2Fj3A%2F5PVgvtPQzKlQe%2FOb8TQJVm6pTARRplArSshyQ9wBVmImptDAWM2qw1rfc3MjquUTes4WGAsRo4MkhExJr6lmLDtKJFDCdhKPUBjqkAXliLKAy1imuwIcKYyPdNLchW7aYuMvQ64rOq18O52iMU8JEi8LiV1jlBXFQrgJsGtAudDTouZoQUsHwIro1INafUvgaIHJxrRkiiSbfWymUVfMHh1CZzbJ6%2FybrnGAle4iUqZa%2BoPubfU8ucA8YypZ1a48stkytxSYjSj6mGH11enAdn9Af2NIQIYjquT3abIHoesWexFABToKJErnpxlEU4qar&X-Amz-Signature=01314ecf25c5c4cc73ef97e6e1c68e761dc4779fd1fefc803fed7cf8e0f614f5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/e32e1606-4a0c-423a-9465-1b0cc884214b/2024-02-20_23-44.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XEVR7MBT%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T221831Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGpXTj7RH1RcoReaKs9KnFpP2Kn7bp31jARJ83ARMc8VAiAsILNdREL3ZZBdCsSQOJ08gusftOe3txsS96MG%2FfNAWSqIBAiv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIM%2Be2onq4gRyETBJ29KtwDDoHu%2Bp0wH5jlzEJTBEdXSVgeC7Xf5q7UBi%2FsQ8E3cNyuoC3kSJiQmgtCCz18SA5VjhjsxXVqYb0JU%2BMm7F1bPwr6l96LFus%2BlFEGu3FEUmIJhEiha%2BlRJqQsFD7tp051L5ZUqAuUp1K6vwIwSGwNV1ICKnRlbvDBHXmaBCoKMpZOWlAiR9CZVRCo3NehhNLwvkE1IaOemwGO83XL%2FeudwgxKGO%2FsN8uyCS4SljrxoOieDxWEF%2FFtkUnTc4YFSDAhA4tnw7YeA3LfhGXjAXGhfFbHS3qurNs%2FJTUwC%2Fg7S8hTM9ufg1Byt3eO%2BltrQMG7Vq05WVXOWe053KjNQr89f8SmPUfg9zgxOV9XQBrvovgyBDKrmvMvxE8rPwTaXgOAtDoWw%2BrE7q63hEVcUO1lJg%2FJ9USrrlzLgjQeZFQMYuz92h57581xWvtVdTefOJk7hTxqlnHMryVKtIN5kDnmVVE4w4iMqOgSNUi3Nl7I9U5iQPVfoRvptOhBE3GuHPGIV9ILp%2BBY%2B%2FDJiCzL9ydeEsbddkpiw9hQQelK7yRY3%2BqNY3kkWp2m9g5WXuNJ7PF0J%2FhwPFOjOwIxFmquL9CI%2BWTmdW7dcYxOJ8BDoe0RP%2F2HRBSPqxJbj6swlsYw%2Foaj1AY6pgHVWGVsVriouLgIgBKRfpKn11IuTd8e%2FzgGH4%2BB5lNfJZOvot97VTbKKve%2FQM9Bia5NKHu5AofaktKlTmkVv%2FC%2FubCp%2Buf%2FPm%2B1YBGKsEE%2F79Lji5P1NpHqcxacD88mBbHxUsYdhMEahbvbUlgWZOF36oVtgSwJytTSQLzw8x1IqcieL%2BWEuAM6tJ%2BI1ZOjLse9XqiPdtVcrcShUydN7HT%2BXVHBsOa1&X-Amz-Signature=97ecf3e97201870e060547cab3cc2b128b3906e6a3fec691bd9da659c1bc31f7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
 Two URLs are considered to have the **same site** if they share the exact same scheme and domain name(TLD & TLD+1).
 

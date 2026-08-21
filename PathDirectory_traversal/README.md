@@ -2,12 +2,12 @@
 
 ## Contents
 
-- [File path traversal, simple case](./File_path_traversal,_simple_case/README.md)
-- [File path traversal, traversal sequences blocked with absolute path bypass](./File_path_traversal,_traversal_sequences_blocked_with_absolute_path_bypass/README.md)
-- [File path traversal, traversal sequences stripped non-recursively](./File_path_traversal,_traversal_sequences_stripped_non-recursively/README.md)
-- [File path traversal, traversal sequences stripped with superfluous URL-decode](./File_path_traversal,_traversal_sequences_stripped_with_superfluous_URL-decode/README.md)
-- [File path traversal, validation of start of path](./File_path_traversal,_validation_of_start_of_path/README.md)
-- [File path traversal, validation of file extension with null byte bypass](./File_path_traversal,_validation_of_file_extension_with_null_byte_bypass/README.md)
+- [File path traversal, simple case](./File_path_traversal,_simple_case.md)
+- [File path traversal, traversal sequences blocked with absolute path bypass](./File_path_traversal,_traversal_sequences_blocked_with_absolute_path_bypass.md)
+- [File path traversal, traversal sequences stripped non-recursively](./File_path_traversal,_traversal_sequences_stripped_non-recursively.md)
+- [File path traversal, traversal sequences stripped with superfluous URL-decode](./File_path_traversal,_traversal_sequences_stripped_with_superfluous_URL-decode.md)
+- [File path traversal, validation of start of path](./File_path_traversal,_validation_of_start_of_path.md)
+- [File path traversal, validation of file extension with null byte bypass](./File_path_traversal,_validation_of_file_extension_with_null_byte_bypass.md)
 
 ### Path traversal
 

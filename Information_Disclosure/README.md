@@ -2,11 +2,11 @@
 
 ## Contents
 
-- [Information disclosure in error messages](./Information_disclosure_in_error_messages/README.md)
-- [Information disclosure on debug page](./Information_disclosure_on_debug_page/README.md)
-- [Source code disclosure via backup files](./Source_code_disclosure_via_backup_files/README.md)
-- [Authentication bypass via information disclosure](./Authentication_bypass_via_information_disclosure/README.md)
-- [Information disclosure in version control history](./Information_disclosure_in_version_control_history/README.md)
+- [Information disclosure in error messages](./Information_disclosure_in_error_messages.md)
+- [Information disclosure on debug page](./Information_disclosure_on_debug_page.md)
+- [Source code disclosure via backup files](./Source_code_disclosure_via_backup_files.md)
+- [Authentication bypass via information disclosure](./Authentication_bypass_via_information_disclosure.md)
+- [Information disclosure in version control history](./Information_disclosure_in_version_control_history.md)
 
 |  |  |  |  |
 |---|---|---|---|

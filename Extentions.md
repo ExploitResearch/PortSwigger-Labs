@@ -1,6 +1,6 @@
 # Extentions
 
-## Built-in **Logger**  Vs Logger++
+## <span style="color: #BE5B00">Built-in </span><span style="color: #BE5B00">**Logger**</span><span style="color: #BE5B00">  Vs Logger++</span>
 
 ### Built-in Logger (recommended default)
 

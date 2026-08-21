@@ -2,7 +2,7 @@
 
 ## Contents
 
-- [Basic SSRF against the local server](./Basic_SSRF_against_the_local_server/README.md)
+- [Basic SSRF against the local server](./Basic_SSRF_against_the_local_server.md)
 
 ### SSRF Explained: Server-Side Request Forgery
 

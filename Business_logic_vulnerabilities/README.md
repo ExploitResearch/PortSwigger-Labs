@@ -2,17 +2,17 @@
 
 ## Contents
 
-- [Excessive trust in client-side controls](./Excessive_trust_in_client-side_controls/README.md)
-- [High-level logic vulnerability](./High-level_logic_vulnerability/README.md)
-- [Inconsistent security controls](./Inconsistent_security_controls/README.md)
-- [Flawed enforcement of business rules](./Flawed_enforcement_of_business_rules/README.md)
-- [Low-level logic flaw](./Low-level_logic_flaw/README.md)
-- [Inconsistent handling of exceptional input](./Inconsistent_handling_of_exceptional_input/README.md)
-- [Weak isolation on dual-use endpoint](./Weak_isolation_on_dual-use_endpoint/README.md)
-- [Insufficient workflow validation](./Insufficient_workflow_validation/README.md)
-- [Authentication bypass via flawed state machine](./Authentication_bypass_via_flawed_state_machine/README.md)
-- [Infinite money logic flaw](./Infinite_money_logic_flaw/README.md)
-- [Authentication bypass via encryption oracle](./Authentication_bypass_via_encryption_oracle/README.md)
+- [Excessive trust in client-side controls](./Excessive_trust_in_client-side_controls.md)
+- [High-level logic vulnerability](./High-level_logic_vulnerability.md)
+- [Inconsistent security controls](./Inconsistent_security_controls.md)
+- [Flawed enforcement of business rules](./Flawed_enforcement_of_business_rules.md)
+- [Low-level logic flaw](./Low-level_logic_flaw.md)
+- [Inconsistent handling of exceptional input](./Inconsistent_handling_of_exceptional_input.md)
+- [Weak isolation on dual-use endpoint](./Weak_isolation_on_dual-use_endpoint.md)
+- [Insufficient workflow validation](./Insufficient_workflow_validation.md)
+- [Authentication bypass via flawed state machine](./Authentication_bypass_via_flawed_state_machine.md)
+- [Infinite money logic flaw](./Infinite_money_logic_flaw.md)
+- [Authentication bypass via encryption oracle](./Authentication_bypass_via_encryption_oracle.md)
 
 Business Logic Vulnerabilities are flaws in the design and implementation of an application that allows an attacker to elicit unintended behaviour. This potentially enables attackers to manipulate legitimate functionality to achieve a malicious goal.
 
@@ -31,18 +31,18 @@ For example, they might be able to complete a transaction without going through 
 
 ### **Example 1 – Change Another User’s Password**
 
-**Functionality**
+<u>**Functionality**</u>
 
 The application has a password change for end users and administrators.
 
   - End users need to fill out the username, existing password, new password and confirm new password fields.
   - Administrators only need to fill out the username, new password and confirm new password fields.
 
-**Assumption**
+<u>**Assumption**</u>
 
 The client-side interface presented to users and administrators is different but the password change is controlled for both users by the same function.
 
-**Code**
+<u>**Code**</u>
 
 ```javascript
 String existingPassword = request.getParameter(“existingPassword”);
@@ -56,13 +56,13 @@ trace(“Verifying user’s old password”);
 ...
 ```
 
-**Attack**
+<u>**Attack**</u>
 
 A regular user submits a request to change another user’s password by simply not supplying the existing password.
 
 ### Example 2 – Bypass Checkout Functionality
 
-**Functionality**
+<u>**Functionality**</u>
 
 The application has a “place an order” functionality that follows the following stages:
 • Browse the product catalogue and add items to the shopping basket.
@@ -70,11 +70,11 @@ The application has a “place an order” functionality that follows the follow
 • Enter the payment.
 • Enter delivery information.
 
-**Assumption**
+<u>**Assumption**</u>
 
 The developers assumed that users would always access the stages in the intended sequence.
 
-**Attack**
+<u>**Attack**</u>
 
 The user proceeds directly from stage 2 to stage 4, finalizing the order for delivery without paying for the order.
 • Browse the product catalogue and add items to the shopping basket.
@@ -83,15 +83,15 @@ The user proceeds directly from stage 2 to stage 4, finalizing the order for del
 
 ### Example 3 – Beating a Business Limit
 
-**Functionality**
+<u>**Functionality**</u>
 
 A banking application allows users to transfer funds between bank accounts. As a precaution against fraud, the application prevents users from transferring a value greater than $10,000
 
-**Assumption**
+<u>**Assumption**</u>
 
 The developers put a check in place to ensure that no transaction greater than $10,000 is allowed to go through.
 
-**Code**
+<u>**Code**</u>
 
 ```javascript
 bool CAuthCheck::RequiresApproval(int amount) {
@@ -101,14 +101,14 @@ else return true; }
 ...
 ```
 
-**Attack**
+<u>**Attack**</u>
 
 The developers overlooked the possibility that a user would attempt to process a transfer for a negative amount. Any negative number would clear the approval test because it is less than the threshold value.
 Therefore, a user who wants to transfer $20,000 from account A to account B could simply initiate a transfer -$20,000 from account B to account A bypassing the antifraud defence.
 
 ### Example 4 – Cheating on Bulk Discounts
 
-**Functionality**
+<u>**Functionality**</u>
 
 An e-commerce website allows users to order software products and qualify for bulk discounts if a suitable bundle of items was purchased. The following are the steps involved in the bulk discount functionality:
 
@@ -116,11 +116,11 @@ An e-commerce website allows users to order software products and qualify for bu
   1. If one of the items qualifies for a bulk discount, a discount is applied on the entire cart.
   1. User purchases order
 
-**Assumption**
+<u>**Assumption**</u>
 
 Users will purchase the chosen bundle after the discount is applied. 
 
-**Attack**
+<u>**Attack**</u>
 
 User can exploit this logic flaw by performing the following steps:
 

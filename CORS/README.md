@@ -2,10 +2,10 @@
 
 ## Contents
 
-- [CORS vulnerability with basic origin reflection](./CORS_vulnerability_with_basic_origin_reflection/README.md)
-- [CORS vulnerability with trusted null origin](./CORS_vulnerability_with_trusted_null_origin/README.md)
-- [CORS vulnerability with trusted insecure protocols](./CORS_vulnerability_with_trusted_insecure_protocols/README.md)
-- [CORS vulnerability with internal network pivot attack](./CORS_vulnerability_with_internal_network_pivot_attack/README.md)
+- [CORS vulnerability with basic origin reflection](./CORS_vulnerability_with_basic_origin_reflection.md)
+- [CORS vulnerability with trusted null origin](./CORS_vulnerability_with_trusted_null_origin.md)
+- [CORS vulnerability with trusted insecure protocols](./CORS_vulnerability_with_trusted_insecure_protocols.md)
+- [CORS vulnerability with internal network pivot attack](./CORS_vulnerability_with_internal_network_pivot_attack.md)
 
 ### CORS
 

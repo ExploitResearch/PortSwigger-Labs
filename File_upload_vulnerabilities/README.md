@@ -2,13 +2,13 @@
 
 ## Contents
 
-- [Remote code execution via web shell upload](./Remote_code_execution_via_web_shell_upload/README.md)
-- [Web shell upload via Content-Type restriction bypass](./Web_shell_upload_via_Content-Type_restriction_bypass/README.md)
-- [Web shell upload via path traversal](./Web_shell_upload_via_path_traversal/README.md)
-- [Web shell upload via extension blacklist bypass](./Web_shell_upload_via_extension_blacklist_bypass/README.md)
-- [Web shell upload via obfuscated file extension](./Web_shell_upload_via_obfuscated_file_extension/README.md)
-- [Remote code execution via polyglot web shell upload](./Remote_code_execution_via_polyglot_web_shell_upload/README.md)
-- [Web shell upload via race condition](./Web_shell_upload_via_race_condition/README.md)
+- [Remote code execution via web shell upload](./Remote_code_execution_via_web_shell_upload.md)
+- [Web shell upload via Content-Type restriction bypass](./Web_shell_upload_via_Content-Type_restriction_bypass.md)
+- [Web shell upload via path traversal](./Web_shell_upload_via_path_traversal.md)
+- [Web shell upload via extension blacklist bypass](./Web_shell_upload_via_extension_blacklist_bypass.md)
+- [Web shell upload via obfuscated file extension](./Web_shell_upload_via_obfuscated_file_extension.md)
+- [Remote code execution via polyglot web shell upload](./Remote_code_execution_via_polyglot_web_shell_upload.md)
+- [Web shell upload via race condition](./Web_shell_upload_via_race_condition.md)
 
 ### **File upload vulnerabilities**
 

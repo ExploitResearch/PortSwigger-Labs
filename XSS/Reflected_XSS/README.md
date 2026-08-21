@@ -2,7 +2,7 @@
 
 ## Contents
 
-- [summary payloads](./summary_payloads/README.md)
+- [summary payloads](./summary_payloads.md)
 
 Reflected XSS (Cross-Site Scripting) is a type of web security vulnerability where malicious code is injected into a user's request and reflected back to them by the server, often without proper sanitization. This allows attackers to execute arbitrary code in the victim's browser, potentially leading to:
 

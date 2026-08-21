@@ -2,10 +2,10 @@
 
 ## Contents
 
-- [Querying the database type and version on Oracle](./Querying_the_database_type_and_version_on_Oracle/README.md)
-- [querying the database type and version on MySQL and Microsoft SQL Server](./querying_the_database_type_and_version_on_MySQL_and_Microsoft_SQL_Server/README.md)
-- [Listing the database contents on non-Oracle databases.](./Listing_the_database_contents_on_non-Oracle_databases./README.md)
-- [Listing the database contents on Oracle database.](./Listing_the_database_contents_on_Oracle_database./README.md)
+- [Querying the database type and version on Oracle](./Querying_the_database_type_and_version_on_Oracle.md)
+- [querying the database type and version on MySQL and Microsoft SQL Server](./querying_the_database_type_and_version_on_MySQL_and_Microsoft_SQL_Server.md)
+- [Listing the database contents on non-Oracle databases.](./Listing_the_database_contents_on_non-Oracle_databases..md)
+- [Listing the database contents on Oracle database.](./Listing_the_database_contents_on_Oracle_database..md)
 
 [https://sandunigfdo.medium.com/examining-the-database-in-sql-injection-attacks-d8aab382cba9](https://sandunigfdo.medium.com/examining-the-database-in-sql-injection-attacks-d8aab382cba9)
 

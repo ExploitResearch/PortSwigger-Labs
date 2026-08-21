@@ -2,19 +2,19 @@
 
 ## Contents
 
-- [Unprotected admin functionality](./Unprotected_admin_functionality/README.md)
-- [Unprotected admin functionality with unpredictable URL](./Unprotected_admin_functionality_with_unpredictable_URL/README.md)
-- [User role controlled by request parameter](./User_role_controlled_by_request_parameter/README.md)
-- [User role can be modified in user profile](./User_role_can_be_modified_in_user_profile/README.md)
-- [User ID controlled by request parameter](./User_ID_controlled_by_request_parameter/README.md)
-- [User ID controlled by request parameter, with unpredictable user IDs](./User_ID_controlled_by_request_parameter,_with_unpredictable_user_IDs/README.md)
-- [User ID controlled by request parameter with data leakage in redirect](./User_ID_controlled_by_request_parameter_with_data_leakage_in_redirect/README.md)
-- [User ID controlled by request parameter with password disclosure](./User_ID_controlled_by_request_parameter_with_password_disclosure/README.md)
-- [Insecure direct object references](./Insecure_direct_object_references/README.md)
-- [URL-based access control can be circumvented](./URL-based_access_control_can_be_circumvented/README.md)
-- [Method-based access control can be circumvented](./Method-based_access_control_can_be_circumvented/README.md)
-- [Multi-step process with no access control on one step](./Multi-step_process_with_no_access_control_on_one_step/README.md)
-- [Referer-based access control](./Referer-based_access_control/README.md)
+- [Unprotected admin functionality](./Unprotected_admin_functionality.md)
+- [Unprotected admin functionality with unpredictable URL](./Unprotected_admin_functionality_with_unpredictable_URL.md)
+- [User role controlled by request parameter](./User_role_controlled_by_request_parameter.md)
+- [User role can be modified in user profile](./User_role_can_be_modified_in_user_profile.md)
+- [User ID controlled by request parameter](./User_ID_controlled_by_request_parameter.md)
+- [User ID controlled by request parameter, with unpredictable user IDs](./User_ID_controlled_by_request_parameter,_with_unpredictable_user_IDs.md)
+- [User ID controlled by request parameter with data leakage in redirect](./User_ID_controlled_by_request_parameter_with_data_leakage_in_redirect.md)
+- [User ID controlled by request parameter with password disclosure](./User_ID_controlled_by_request_parameter_with_password_disclosure.md)
+- [Insecure direct object references](./Insecure_direct_object_references.md)
+- [URL-based access control can be circumvented](./URL-based_access_control_can_be_circumvented.md)
+- [Method-based access control can be circumvented](./Method-based_access_control_can_be_circumvented.md)
+- [Multi-step process with no access control on one step](./Multi-step_process_with_no_access_control_on_one_step.md)
+- [Referer-based access control](./Referer-based_access_control.md)
 
 <details><summary>Access Control Basic</summary>
 
@@ -22,9 +22,9 @@ Access control is a fundamental security concept that restricts access to resour
 
 Access control is dependent on authentication and session management:
 
-  - **Authentication** confirms that the user is who they say they are.
-  - **Session management** identifies which subsequent HTTP requests are being made by that same user.
-  - **Access control**** **determines whether the user is allowed to carry out the action that they are attempting to perform.
+  - <span style="color: #BE5B00">**Authentication**</span> confirms that the user is who they say they are.
+  - <span style="color: #BE5B00">**Session management**</span> identifies which subsequent HTTP requests are being made by that same user.
+  - <span style="color: #BE5B00">**Access control**</span>** **determines whether the user is allowed to carry out the action that they are attempting to perform.
 </details>
 
 <details><summary>Access control vs Authentication</summary>

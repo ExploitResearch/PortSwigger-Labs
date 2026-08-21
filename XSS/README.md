@@ -3,8 +3,8 @@
 ## Contents
 
 - [Reflected XSS](./Reflected_XSS/README.md)
-- [Stored XSS](./Stored_XSS/README.md)
-- [DOM-based XSS](./DOM-based_XSS/README.md)
+- [Stored XSS](./Stored_XSS.md)
+- [DOM-based XSS](./DOM-based_XSS.md)
 
 ### Common JavaScript language elements used in malicious payloads to perform cross-site scripting attacks include:
 
