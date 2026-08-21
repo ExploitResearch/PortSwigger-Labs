@@ -17,7 +17,7 @@
 
 JSON web tokens (JWTs) are a standardized format for sending cryptographically signed JSON data between systems. They can theoretically contain any kind of data, but are most commonly used to send information ("claims") about users as part of authentication, session handling, and access control mechanisms.  
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/daecbeb1-1197-4df0-8562-28e9ec26114a/45900f86-61c7-48bf-9d58-8b0cf1f6bae8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466VAPWQTOA%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210459Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD%2F97U%2BR4FQzGzm26HtofRYIFZ7MjTg7Sp3qKgI2fUcMgIgIw4E5FAXo3XzfEHeExv%2FeWwxqCO7yA7XIJZe2EhoGZEqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDLGHkPDfhiVrEyDXAyrcA3OelY5ylILeC9yFJk%2BwJGBMyXeco%2FKG2izc7D0f2atLfjSy%2B1bgkgBl%2BX9ix5ZruAR6Hfi5%2Bqx03R1vkqxxBxMS0OpXY6RlCEA0OkWGywRBBbGhJ%2Fd68Ky5nkR92N%2Fraj%2BwPy7t9WFbTyrZaHIc7FVxxdZmVJBYmz7x4AKZGsddzuVVMm2x0iQtZAKUtK3i%2BrFgTNYN8GJC6oxNdhM2GNC28AzV8DoCADmb2vkDi%2ByZJh0fJG3jrDYGmdES4AzhXCoaLyJob8USNqra4ESePKWQohK6%2Byz0%2FJheqFqrUw8I4iKxshkwLDvZYpFPWtqpcmxXM2kXT9lHmUBYptI1amjp66JVRv2XcAzEXvp5axPmM9p9anojX31Xn3dG%2F4CCCLvyPJxXhRDFBGLLbru6%2Fi74dxa11lAIcocSr1wsteDhxE73M8Ca4GBETS68%2BekY8c0oaZgUrBr7X89zwEuW3U4A26Ak1rj%2Flw77QLHaE7pZwiKNlPCu66f1JbkBQ28G3R68FTxGhj6gZxUAcx7FN469IuYg286DIpIngI96p7ikEi1ZEk%2B9Tq1lYnthCB3VLiS3y3i22VhttUbk62fsPlUuyCkz20PjP9RHAMaPx1Bpy%2FywSS1mL8X6hXEKMP%2FFotQGOqUBgtxGaIWl5iOMS3qyPaDCp%2BPHrQbAkgaNl5Xk8jQpUW2vDd8q0lwIpnRb8LaGFayKXXTVIkX4Zd3%2BY0L5jesdT1NwDEJ5tsTxO7Ipwu4M2twYvcR%2Fd8r%2FozsCuPmVsJWEDzCOlld0av96KVSZV2OI%2FzdeL1Fr6krVZswqBbxOxH1ndEm5VJr2dIXrQc5Y%2BDXpPVR4VemKMJYsDHFUgDf0KqYxf8sG&X-Amz-Signature=ebb9ffe3950cda22a3e3ea1054ffe442db02be663c3ab38a624cee9bb299bcb9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/daecbeb1-1197-4df0-8562-28e9ec26114a/45900f86-61c7-48bf-9d58-8b0cf1f6bae8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YC4ILEI5%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T215625Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF%2FycEFuRHIUqcpk3kFo6wwoaAHAlgaBfVDF4AaJveMAAiA%2FCTiWTrZtHV9%2FplZzulMYuAXWYq4h11g6MLPfDJ02RiqIBAiv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMUrGf2lmBYYRjx0ZmKtwDf5uDrWoOy60tgVzeuj2XKjdOYWvhkIXRfF8RdX8XbBiKw3n1NMF71yEmAS3WFoIVk1WDKINDfKhloflMKiIy7ePBPZFUqPSD0Dgmy8CRQq0ZklkKfuI4G5Mb40%2BQudI%2BlqsMNntwgXGtl8%2FUSiXA9Poy63UNP7lFLc0m%2FcLnPxdfOekjwJByFteF1an2Rq9jZd%2BrpzpdQuJ5ekSfGoMpOxi%2BI1kEaEKJQQH9v2OWkYYDRpkvLthVuoRGenIs8giDUVyuaGX5Nppap6bafYL2ZHee6SHWgWCjyWp6HXd%2FH6ZoQIVMWXo4LanoDkSlWYLAu9uQFMVQ%2BNj%2F%2BLjf5wuYWxsWz%2BPf9vpqzXcesCttLM8wvYekxya4RNiqLw%2B1tXiqpgRV3Osr6fAQEVPJx1bC5zdhpLt4pwmApB2wUIAFY0C1S6VSo448UQxHN8fhZSvqnu9x4j%2FInbOuhZpfi3yT9ik8NScMucTQd87a2wP2olsA9PRrH258CnBqCUvj7au8%2FvcFfmcvTcsu7nr3jjOoKaMsMYuFGhGxN8lJ3N4svh0JKwazo8UNvbb9b07wy07mzLVSm6zpyKFUArnsToGwoEd2bQzPXxHBTZug0jC7tZickD7C6H%2BpBQy9FsQw1Iaj1AY6pgFieG7HtL1MmOfRZeOll7C8w1VnQH%2BRMxMSoi8AH7zDM32P3JmPEbw28NUhxd1p9Or0VbnjYPhdqMPlvOWaXA09DNKol6TmnIPxz5JvhpfYw4MqlXoSldUFWQxc1jxsaibF%2F2Vys1Dp8xqzVqiyUQ8k3Zwe4kPjZO5Xhp0y6b%2B7rCkbu6iZmtlVdlE9ZRZnUluCnZ43ASq9oN7SvWmZ4chsnd5pFshS&X-Amz-Signature=163d01f9a7651a467ca5e43f16f26da475e56dd91922f050c8ac7954c247af0f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
 JWTs consist of three parts: a header, a payload, and a signature. These are each separated by a dot, the structure of a JWT looks like this:
 
@@ -25,7 +25,7 @@ JWTs consist of three parts: a header, a payload, and a signature. These are eac
 xxxxxxxxxx.yyyyyyyyyy.zzzzzzzzzz
 ```
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/4f08393b-6fc8-4bde-a550-7d5212a22911/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466VAPWQTOA%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T210459Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD%2F97U%2BR4FQzGzm26HtofRYIFZ7MjTg7Sp3qKgI2fUcMgIgIw4E5FAXo3XzfEHeExv%2FeWwxqCO7yA7XIJZe2EhoGZEqiAQIrP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDLGHkPDfhiVrEyDXAyrcA3OelY5ylILeC9yFJk%2BwJGBMyXeco%2FKG2izc7D0f2atLfjSy%2B1bgkgBl%2BX9ix5ZruAR6Hfi5%2Bqx03R1vkqxxBxMS0OpXY6RlCEA0OkWGywRBBbGhJ%2Fd68Ky5nkR92N%2Fraj%2BwPy7t9WFbTyrZaHIc7FVxxdZmVJBYmz7x4AKZGsddzuVVMm2x0iQtZAKUtK3i%2BrFgTNYN8GJC6oxNdhM2GNC28AzV8DoCADmb2vkDi%2ByZJh0fJG3jrDYGmdES4AzhXCoaLyJob8USNqra4ESePKWQohK6%2Byz0%2FJheqFqrUw8I4iKxshkwLDvZYpFPWtqpcmxXM2kXT9lHmUBYptI1amjp66JVRv2XcAzEXvp5axPmM9p9anojX31Xn3dG%2F4CCCLvyPJxXhRDFBGLLbru6%2Fi74dxa11lAIcocSr1wsteDhxE73M8Ca4GBETS68%2BekY8c0oaZgUrBr7X89zwEuW3U4A26Ak1rj%2Flw77QLHaE7pZwiKNlPCu66f1JbkBQ28G3R68FTxGhj6gZxUAcx7FN469IuYg286DIpIngI96p7ikEi1ZEk%2B9Tq1lYnthCB3VLiS3y3i22VhttUbk62fsPlUuyCkz20PjP9RHAMaPx1Bpy%2FywSS1mL8X6hXEKMP%2FFotQGOqUBgtxGaIWl5iOMS3qyPaDCp%2BPHrQbAkgaNl5Xk8jQpUW2vDd8q0lwIpnRb8LaGFayKXXTVIkX4Zd3%2BY0L5jesdT1NwDEJ5tsTxO7Ipwu4M2twYvcR%2Fd8r%2FozsCuPmVsJWEDzCOlld0av96KVSZV2OI%2FzdeL1Fr6krVZswqBbxOxH1ndEm5VJr2dIXrQc5Y%2BDXpPVR4VemKMJYsDHFUgDf0KqYxf8sG&X-Amz-Signature=d690794794a793951a4f8917d79f9a5f5abd1b6c1bce647207555a8c17cbdb98&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/4f08393b-6fc8-4bde-a550-7d5212a22911/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YC4ILEI5%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T215625Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF%2FycEFuRHIUqcpk3kFo6wwoaAHAlgaBfVDF4AaJveMAAiA%2FCTiWTrZtHV9%2FplZzulMYuAXWYq4h11g6MLPfDJ02RiqIBAiv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMUrGf2lmBYYRjx0ZmKtwDf5uDrWoOy60tgVzeuj2XKjdOYWvhkIXRfF8RdX8XbBiKw3n1NMF71yEmAS3WFoIVk1WDKINDfKhloflMKiIy7ePBPZFUqPSD0Dgmy8CRQq0ZklkKfuI4G5Mb40%2BQudI%2BlqsMNntwgXGtl8%2FUSiXA9Poy63UNP7lFLc0m%2FcLnPxdfOekjwJByFteF1an2Rq9jZd%2BrpzpdQuJ5ekSfGoMpOxi%2BI1kEaEKJQQH9v2OWkYYDRpkvLthVuoRGenIs8giDUVyuaGX5Nppap6bafYL2ZHee6SHWgWCjyWp6HXd%2FH6ZoQIVMWXo4LanoDkSlWYLAu9uQFMVQ%2BNj%2F%2BLjf5wuYWxsWz%2BPf9vpqzXcesCttLM8wvYekxya4RNiqLw%2B1tXiqpgRV3Osr6fAQEVPJx1bC5zdhpLt4pwmApB2wUIAFY0C1S6VSo448UQxHN8fhZSvqnu9x4j%2FInbOuhZpfi3yT9ik8NScMucTQd87a2wP2olsA9PRrH258CnBqCUvj7au8%2FvcFfmcvTcsu7nr3jjOoKaMsMYuFGhGxN8lJ3N4svh0JKwazo8UNvbb9b07wy07mzLVSm6zpyKFUArnsToGwoEd2bQzPXxHBTZug0jC7tZickD7C6H%2BpBQy9FsQw1Iaj1AY6pgFieG7HtL1MmOfRZeOll7C8w1VnQH%2BRMxMSoi8AH7zDM32P3JmPEbw28NUhxd1p9Or0VbnjYPhdqMPlvOWaXA09DNKol6TmnIPxz5JvhpfYw4MqlXoSldUFWQxc1jxsaibF%2F2Vys1Dp8xqzVqiyUQ8k3Zwe4kPjZO5Xhp0y6b%2B7rCkbu6iZmtlVdlE9ZRZnUluCnZ43ASq9oN7SvWmZ4chsnd5pFshS&X-Amz-Signature=5396f29cbfe488f9ec145e5a2fcad69c7f871ca6d1646fe8f890288da9577fe0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
 The header and payload parts of a JWT are just base64url-encoded JSON objects.
 
@@ -58,6 +58,7 @@ The server that issues the token typically generates the signature by hashing th
 
     - As the signature is directly derived from the rest of the token, changing a single byte of the header or payload results in a mismatched signature.
     - Without knowing the server's secret signing key, it shouldn't be possible to generate the correct signature for a given header or payload.
+
 Example (with HMAC SHA256):
 
 ```text
@@ -72,20 +73,24 @@ HMACSHA256(
   1. **Authentication:** When a user logs in, the server creates a JWT and sends it to the client.
   1. **Authorization:** The client includes the JWT in the headers of subsequent requests. This allows the server to verify the identity of the user and authorize access.
   1. **Information Exchange:** JWTs are often used to transmit information between parties in a secure manner.
+
 ### Use Cases:
 
   - **Authentication:** After a user logs in, the server can issue a JWT as a token of authentication.
   - **Information Exchange:** JWTs can be used to transmit information between different parts of an application or between different applications.
+
 ### Benefits:
 
   - **Compact and URL-Safe:** JWTs are small and can be sent as URL parameters.
   - **Self-Contained:** All the necessary information is contained within the token, reducing the need to query the database.
   - **Stateless:** JWTs are stateless, meaning servers don't need to store sessions.
+
 ### Security Considerations:
 
   - **Secure Transmission:** Use HTTPS to transmit JWTs to prevent interception.
   - **Token Expiry:** Include an expiration time (exp) in the payload to limit the lifespan of a token.
   - **Signature:** Sign the JWT with a secret key or a private key to ensure its integrity.
+
 ## What is the impact of JWT attacks?
 
 The impact of JWT attacks is usually severe. If an attacker is able to create their own valid tokens with arbitrary values, they may be able to escalate their own privileges or impersonate other users, taking full control of their accounts.
@@ -155,5 +160,3 @@ As you can see, these user-controllable parameters each tell the recipient serve
 ### Algorithm confusion attacks
 
 Algorithm confusion attacks (also known as key confusion attacks) occur when an attacker is able to force the server to verify the signature of a JSON web token (JWT) using a different algorithm than is intended by the website's developers. If this case isn't handled properly, this may enable attackers to forge valid JWTs containing arbitrary values without needing to know the server's secret signing key. 
-
-

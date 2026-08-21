@@ -8,6 +8,8 @@
 - [Authentication bypass via information disclosure](./Authentication_bypass_via_information_disclosure/README.md)
 - [Information disclosure in version control history](./Information_disclosure_in_version_control_history/README.md)
 
+|  |  |  |  |
+|---|---|---|---|
 | Type of Information Disclosure | Issue | Potential Impact | Mitigation |
 | **Error Messages** | Detailed error messages containing sensitive information are displayed to users. | Exposure of internal details aiding attackers in understanding the system's architecture. | - Customize error messages for minimal details to end-users.  - Log detailed errors in server logs for administrator review. |
 | **Directory Listing** | Directory listing is enabled, allowing users to view contents that should be protected. | Exposure of sensitive files, scripts, configuration files, temporary files and crash dumps. | - Disable directory listing in web server configurations.  - Ensure sensitive files are not accessible directly. |
@@ -20,4 +22,3 @@
 | **User Account Pages** | Pages displaying user account information may expose sensitive data. | Unauthorized access to personal information of users. | - Implement proper access controls to restrict user account information access.  - Use encryption (HTTPS) to secure communication. |
 | **Backup Files** | Backup files may contain sensitive information if not properly secured. | Unauthorized access to sensitive data in backup files. | - Store backup files in secure locations.  - Encrypt backup files to protect against unauthorized access. |
 | **Version Control History** | Version control histories may contain sensitive information about the application's evolution. | Exposure of historical details that could aid attackers in understanding vulnerabilities. | - Regularly review version control history and sanitize sensitive information.  - Limit access to version control repositories. |
-

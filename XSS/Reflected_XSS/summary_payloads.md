@@ -1,6 +1,5 @@
 # summary payloads
 
-
   1. **XSS between HTML tags**
     - **Nothing encoded**
 ```javascript
@@ -39,4 +38,3 @@ use `‘ or “` to modify payload as required
       - **angle brackets and double quotes HTML-encoded and single quotes escaped**
 
 > 💡 Inside Javascript directly use `print()` & `alert()`
-

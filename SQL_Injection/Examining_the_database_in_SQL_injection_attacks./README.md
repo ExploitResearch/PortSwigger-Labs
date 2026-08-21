@@ -13,6 +13,7 @@ Your ultimate goal of attacking a web application is to extract interesting data
 
 - Database type and version
 - Names of the tables and columns that contain the data you want to access.
+
 Different databases have different ways of querying their type and version. In Order to find that information in a particular web application, you need to try out different queries to find the one that works.
 
 The queries to determine the type and it’s version are as follows:
@@ -22,4 +23,3 @@ The queries to determine the type and it’s version are as follows:
 You can find the names of database tables and columns by querying the table `information_schema.columns`, which contains details of all tables and column names within the database.
 
 `information_schema` is designed to hold database metadata and it is supported by `MS-SQL, MySQL, PostgreSQL` etc. However when you target an Oracle database, you can obtain the same information with slightly different queries.
-

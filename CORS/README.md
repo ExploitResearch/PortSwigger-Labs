@@ -18,6 +18,7 @@ While CORS is a security feature that helps prevent unauthorized requests from o
     - The server then examines this Origin header to determine if the requesting domain is allowed to access the resource.
     - If the server approves the request, it responds with additional CORS headers, such as "Access-Control-Allow-Origin", indicating which origins are allowed to access the resource.
     - If the request is denied, the browser prevents the web page from accessing the response data, enforcing the SOP.
+
 ### [Same-origin policy (SOP)](https://portswigger.net/web-security/cors/same-origin-policy)
 
 The same-origin policy is a restrictive cross-origin specification that limits the ability for a website to interact with resources outside of the source domain. The same-origin policy was defined many years ago in response to potentially malicious cross-domain interactions, such as one website stealing private data from another. It generally allows a domain to issue requests to other domains, but not to access the responses.
@@ -29,7 +30,6 @@ An origin consists of a combination of protocol (e.g., HTTP), domain (e.g., [exa
 The same-origin policy is very restrictive and consequently various approaches have been devised to circumvent the constraints. Many websites interact with subdomains or third-party sites in a way that requires full cross-origin access. A controlled relaxation of the same-origin policy is possible using cross-origin resource sharing (CORS).
 
 The cross-origin resource sharing protocol uses a suite of HTTP headers that define trusted web origins and associated properties such as whether authenticated access is permitted. Browsers permit access to responses to cross-origin requests based upon these header instructions. 
-
 
 The `Access-Control-Allow-Origin` header is included in the response from one website to a request originating from another website, and identifies the permitted origin of the request. A web browser compares the Access-Control-Allow-Origin with the requesting website's origin and permits access to the response if they match.
 The default behavior of cross-origin resource requests is for requests to be passed without credentials like cookies and the Authorization header. However, the cross-domain server can permit reading of the response when credentials are passed to it by setting the CORS `Access-Control-Allow-Credentials` header to true. Now if the requesting website uses JavaScript to declare that it is sending cookies with the request:
@@ -66,6 +66,7 @@ is not permitted as this would be dangerously insecure, exposing any authenticat
     - **Access-Control-Allow-Methods**: Specifies the HTTP methods (e.g., GET, POST, PUT, DELETE) allowed when accessing the resource.
     - **Access-Control-Allow-Headers**: Specifies which headers can be used in the actual request.
     - **Access-Control-Expose-Headers**: Specifies which headers can be exposed to the browser in the response.
+
 **Preflight Requests**:
 
       - Preflight requests are used for certain types of cross-origin requests, such as those that use methods other than GET, POST, or HEAD, or those that use custom headers.
@@ -89,5 +90,3 @@ Avoid using the header `Access-Control-Allow-Origin: null`. Cross-origin resourc
 ### Avoid wildcards in internal networks
 
 Avoid using wildcards in internal networks. Trusting network configuration alone to protect internal resources is not sufficient when internal browsers can access untrusted external domains.
-
-

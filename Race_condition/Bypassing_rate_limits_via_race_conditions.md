@@ -55,6 +55,7 @@ baseball
 - Consider that there may be a race window between:
   - When you submit the login attempt.
   - When the website increments the counter for the number of failed login attempts associated with a particular username.
+
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831133712.png)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831133757.png)
@@ -158,4 +159,3 @@ In here, we found that there’s a **HTTP status code “302 Found”**, which m
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831140456.png)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831140503.png)
-

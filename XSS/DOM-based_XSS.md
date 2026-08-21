@@ -10,7 +10,6 @@ The Document Object Model is what makes dynamic, single-page applications possib
 
 A DOM-based XSS attack is possible if the web application writes data to the Document Object Model without proper sanitization. The attacker can manipulate this data to include XSS content on the web page, for example, malicious JavaScript code.
 
-
 > 💡 Reflected and Stored XSS are server side injection issues while DOM based XSS is a client (browser) side injection issue.
 
 ## Sources and sinks in DOM-based cross-site scripting
@@ -20,23 +19,25 @@ Popular sinks are `document.write`,`(element).innerHTML`, `eval`, `setTimeout`, 
 
 For JavaScript code to be vulnerable to DOM-based XSS, it must take information from a source that can be controlled by the attacker and then pass this information to a sink.
 
-
 > **Using the above example, we can observe that:**
 
 - The HTML page is static and there are no malicious scripts embedded into the page source code, as in the case of other types of XSS attacks.
 That is, the page itself (the HTTP response that is) does not change, but the client side code contained in the page executes differently due to the malicious modifications that have occurred in the DOM environment.
 - The script code never reaches the server if we use the # character. It is seen as a fragment and the browser does not forward it. Therefore, server-side attack detection tools will fail to detect this attack.
 Note that in some cases, depending on the type of the URL, the payload might get to the server and it may be impossible to hide it.
+
 ### **Impact:**
 
 - **Data theft:** Attackers can steal sensitive information like cookies, session tokens, or form data.
 - **Account takeover:** They can hijack user accounts or redirect victims to phishing pages.
 - **Spreading malware:** Downloaded scripts can further compromise systems or launch additional attacks.
 - **Disruption and annoyance:** Malicious code can alter website content, display unwanted messages, or redirect users to malicious websites.
+
 ### **Prevention:**
 
 - **Client-side input validation and sanitization:** Validate and sanitize all user input and data sources before using them in the DOM to prevent code injection.
 - **Content Security Policy (CSP):** Restrict sources allowed to execute scripts, preventing unauthorized code from running.
 - **DOMPurify or similar libraries:** Utilize libraries that safely parse and sanitize HTML content before injecting it into the DOM.
 - **Regular security updates:** Patch vulnerabilities in JavaScript libraries and frameworks promptly.
+
 **[New database]** (database)

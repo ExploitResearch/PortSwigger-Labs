@@ -6,6 +6,7 @@ To solve the lab:
 1. Obtain a valid password reset token for the user `carlos`.
 1. Log in as `carlos`.
 1. Access the admin panel and delete the user `carlos`.
+
 You can log into your account with the following credentials: `wiener:peter`.
 
 > Note:

@@ -22,8 +22,6 @@
 Note**
 It's also possible to brute-force the login using a single cluster bomb attack. However, it's generally much more efficient to enumerate a valid username first if possible.
 
-
 adsl
 
 killer
-

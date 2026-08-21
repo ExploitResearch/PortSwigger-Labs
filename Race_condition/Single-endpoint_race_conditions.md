@@ -12,6 +12,7 @@ To solve the lab:
 1. Change your email address to `carlos@ginandjuice.shop`.
 1. Access the admin panel.
 1. Delete the user `carlos`
+
 You can log in to your own account with the following credentials: `wiener:peter`.
 
 You also have access to an email client, where you can view all emails sent to `@exploit-<YOUR-EXPLOIT-SERVER-ID>.exploit-server.net` addresses.
@@ -55,6 +56,7 @@ After that, it’ll show a message that telling us **go to our email to confirm 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-4/images/Pasted%20image%2020230908163153.png)
 
 - Confirm link endpoint: `/confirm-email?user=wiener&token=Q5jCBYgZvCSPhWvF`
+
 **Click on it:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-4/images/Pasted%20image%2020230908163254.png)
@@ -79,6 +81,7 @@ Note the final state when all operations are complete:
 
 - `session['reset-user'] = victim`
 - `session['reset-token'] = 1234`
+
 The session now contains the victim’s user ID, but the valid reset token is sent to the attacker.
 
 > Note:

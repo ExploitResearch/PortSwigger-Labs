@@ -54,12 +54,14 @@ expand_more
 expand_more
 
   - **Example:** Logging into your bank account (authentication) allows you to see your balance (access control) but not edit other customers' information.
+
 **Working Together:**
 
 Think of them as a two-step process:
 
   1. **Authentication:** Are you really you?
   1. **Access Control:** If so, what can you do here?
+
 Both are essential for robust security. Strong authentication prevents unauthorized access, while granular access control ensures users only have the permissions they need, minimizing damage if credentials are compromised.
 
 </details>
@@ -83,5 +85,3 @@ Context-dependent access control (also known as contextual or situation-based ac
 ## **Vertical privilege escalation**
 
 ## **Horizontal privilege escalation**
-
-

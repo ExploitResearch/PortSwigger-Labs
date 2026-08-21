@@ -8,6 +8,7 @@ Reflected XSS (Cross-Site Scripting) is a type of web security vulnerability whe
 
 - **Stealing sensitive information:** Cookies, session tokens, and other data can be captured and misused.
 - **Taking control of accounts:** Attackers can hijack user sessions or redirect them to malicious websites.
+
 The vulnerability does not directly affect the web server or the database, it may very easily lead to severe consequences and further attacks.
 
 ### **How it Works:**
@@ -17,6 +18,7 @@ The vulnerability does not directly affect the web server or the database, it ma
 1. **Victim clicks the link or submits the form:** The payload is sent to the vulnerable server.
 1. **Server processes the request:** The server, lacking proper validation, incorporates the payload into the response.
 1. **Victim's browser executes the script:** The response reaches the victim's browser, which unknowingly executes the malicious code due to trust in the server.
+
 **Example:**
 
 Imagine a search bar on a website vulnerable to reflected XSS. An attacker might create a link like this:
@@ -33,6 +35,7 @@ If an attacker can control a script that is executed in the victim's browser, th
 - View any information that the user is able to view.
 - Modify any information that the user is able to modify.
 - Initiate interactions with other application users, including malicious attacks, that will appear to originate from the initial victim user.
+
 ### **Prevention:**
 
 - **Server-side input validation and sanitization:** Ensure all user input is rigorously checked and sanitized to remove potentially harmful code before processing.
@@ -40,4 +43,3 @@ If an attacker can control a script that is executed in the victim's browser, th
 - **Content Security Policy (CSP):** Define trusted sources for scripts and other resources to restrict unauthorized execution.
 
 **[New database]** (database)
-

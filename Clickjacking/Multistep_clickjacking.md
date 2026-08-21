@@ -1,6 +1,5 @@
 # Multistep clickjacking
 
-
 create a iframe and above that make double click buttons.First one to hit delete account buton and second one to confirm it.
 
 ```html
@@ -29,4 +28,3 @@ create a iframe and above that make double click buttons.First one to hit delete
 ```
 
 adjust position of click and deliver it to victim
-

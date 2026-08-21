@@ -19,7 +19,6 @@ Business Logic Vulnerabilities are flaws in the design and implementation of an 
 **Note:
 **The term "business logic" simply refers to the set of rules that define how the application operates. As these rules aren't always directly related to a business, the associated vulnerabilities are also known as "application logic vulnerabilities" or simply "logic flaws".
 
-
 Logic flaws are often invisible to people who aren't explicitly looking for them as they typically won't be exposed by normal use of the application. However, an attacker may be able to exploit behavioral quirks by interacting with the application in ways that developers never intended.
 
 One of the main purposes of business logic is to enforce the rules and constraints that were defined when designing the application or functionality. Broadly speaking, the business rules dictate how the application should react when a given scenario occurs. This includes preventing users from doing things that will have a negative impact on the business or that simply don't make sense.
@@ -38,6 +37,7 @@ The application has a password change for end users and administrators.
 
   - End users need to fill out the username, existing password, new password and confirm new password fields.
   - Administrators only need to fill out the username, new password and confirm new password fields.
+
 **Assumption**
 
 The client-side interface presented to users and administrators is different but the password change is controlled for both users by the same function.
@@ -115,6 +115,7 @@ An e-commerce website allows users to order software products and qualify for bu
   1. User adds items in basket.
   1. If one of the items qualifies for a bulk discount, a discount is applied on the entire cart.
   1. User purchases order
+
 **Assumption**
 
 Users will purchase the chosen bundle after the discount is applied. 
@@ -127,6 +128,7 @@ User can exploit this logic flaw by performing the following steps:
   1. The discount is applied on the entire cart.
   1. User goes back to the cart and removes the item that entitled him to a discount.
   1. Although the item is removed, the discount is still approved, and the user purchases the order at a discounted price.
+
 ### Impact of Business Logic Vulnerabilities
 
 The impact is highly variable and depends on the functionality that contains the business logic flaw.
@@ -142,6 +144,7 @@ The impact is highly variable and depends on the functionality that contains the
     - The potential business flow.
     - The assumptions that could have been made by the developers / architects during the design phase.
   - Test each component for all possible use cases that are outside of the intended business flow.
+
 ### Preventing Business Logic Vulnerabilities
 
   - Ensure that there is proper documentation of the application’s design that outlines every assumption that the designer(s) made.

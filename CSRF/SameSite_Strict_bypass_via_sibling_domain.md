@@ -6,7 +6,6 @@ Perform a cross-site websocket hijacking attack to exfiltrate the victim's chat 
 
 ### Analysis/Exploitation -
 
-
 It uses WebSocket in the chat:
 
 ```html
@@ -33,11 +32,9 @@ However, since it’s using WebSocket to communicate the chat, **we can try to t
 
 First, let’s send a test message, and intercept all WebSocket requests via Burp Suite:
 
-
 In the above WebSocket requests, we can see that **it’s vulnerable to CSRF(Cross-Site Request Forgery), as there is no CSRF token or unpredictable values in request parameters.**
 
 **Then, we can refresh the page:**
-
 
 It’ll send a `READY` message to render all chat messages.
 

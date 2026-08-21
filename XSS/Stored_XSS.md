@@ -8,6 +8,7 @@ Stored Cross-Site Scripting (XSS) is a type of web security vulnerability where 
 1. **Malicious script is stored:** The injected code gets saved on the server, becoming part of the website's content.
 1. **Victims unknowingly execute the script:** Every user who visits the infected page unknowingly executes the stored script in their browser.
 1. **Attacker gains control:** The script can steal data, redirect users, or perform other malicious actions, impacting all visitors.
+
 **Example:**
 
 Suppose a forum allows users to post comments without proper filtering. An attacker injects a script like this:
@@ -21,6 +22,7 @@ Every user who views that comment has the script executed, unknowingly sending t
 - **Session Theft:** An attacker can steal session cookies or other sensitive information from users who inadvertently trigger the malicious script.
 - **Defacement:** Stored XSS can be used to deface websites by injecting content that alters the appearance or functionality of the site.
 - **Malicious Actions:** An attacker can perform actions on behalf of the user, such as changing account settings, initiating financial transactions, or manipulating data.
+
 ### Mitigation Strategies for Stored XSS:
 
 1. **Input Validation and Sanitization:**
@@ -31,5 +33,3 @@ Every user who views that comment has the script executed, unknowingly sending t
   - Implement Content Security Policy headers to restrict the types of content that a browser can execute. This helps mitigate the impact of XSS attacks.
 
 **[New database]** (database)
-
-

@@ -16,6 +16,7 @@ It's important to determine whether the token was generated server-side or clien
 
   - Tokens first seen from the client side suggest the key might be exposed to client-side code, necessitating further investigation.
   - Tokens originating server-side indicate a secure process.
+
 ---
 
 1. **Duration (How long is the token valid?)**
@@ -32,6 +33,7 @@ Depending on the application:
 1. **Brute-force HMAC secret**
   1. [JWT authentication bypass via weak signing key](https://app.notion.com/p/f82d109eed5e4e6696fc34299a786809) 
   1. [**See this page.**](https://book.hacktricks.xyz/generic-methodologies-and-resources/brute-force#jwt)
+
 ---
 
 1. **Change the algorithm RS256(asymmetric) to HS256(symmetric) (CVE-2016-5431/CVE-2016-10555)**
@@ -72,4 +74,3 @@ However, it fails to check whether the provided URL belongs to a trusted domain 
 
   - An attacker could potentially **force the server to use an arbitrary file from its filesystem as the verification key**.
 To do so, we can point the `kid `parameter to a predictable, static file, then sign the JWT using a secret that matches the contents of this file. For example, in Linux, `/dev/null `is an empty file, fetching it returns null. Therefore, signing the token with a Base64 encoded null byte will result in a valid signature.
-

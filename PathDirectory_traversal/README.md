@@ -27,6 +27,7 @@ The only direct consequence of a directory traversal attack is access to sensiti
     - An attacker submits input containing "../" or other path traversal sequences to navigate up the directory tree.
   1. **File Access:**
     - If the input is not properly sanitized, the application constructs a file path that goes beyond the intended directory, allowing the attacker to access unauthorized files.
+
 ### Example:
 
 Consider a URL parameter used to load user-specific files:
@@ -55,11 +56,13 @@ If the application does not properly validate the input, this could result in th
     - Avoid using user input to construct relative paths. Prefer absolute paths or store files in a designated location.
   1. **Application Hardening:**
     - Configure the web server and application to run with the least privilege necessary to limit the potential impact of a successful path traversal attack.
+
 > 💡
 
     1. Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
     1. If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.
     1. If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
+
 ### There are three main types of paths: Default, Absolute, and Relative.
 
   1. **Default Path:**
@@ -79,16 +82,19 @@ If the application does not properly validate the input, this could result in th
     - Can be more concise and portable, as it adapts to changes in directory structure.
     - Example: If the current directory is `/home/username/Documents/`, a relative path to `file.txt` might be `../Downloads/file.txt`.
     - Special notations like `..` (parent directory) and `.` (current directory) are used in relative paths.
+
 > 💡 **Examples:**
 
       - Default path: `C:\Program Files\Application\file.txt`
       - Absolute path: `/home/username/Documents/file`
       - Relative path: `../Downloads/file.txt` (relative to `/home/username/Documents/`)
+
 > 
 
     - Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
     - If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.
     - If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
+
 ### Certain sensitive files on Linux-based web servers
 
 Here are some files that are often the target of directory traversal attacks on Linux-based web servers. All these files are always readable by all operating system users:

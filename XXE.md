@@ -52,7 +52,6 @@ Internal DTD
 </person>
 ```
 
-
 External DTD
 
 ```bash
@@ -95,4 +94,3 @@ The syntax for having attributes is also very similar to HTML.
 ```
 
 In the above example `category` is the attribute name and `message` is the attribute value.
-

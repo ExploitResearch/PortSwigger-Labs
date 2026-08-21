@@ -20,6 +20,7 @@ File upload vulnerabilities are when a web server allows users to upload files t
   1. **Uploading a malicious file:** Instead of a legitimate file, the attacker uploads a malicious one disguised as a safe format (e.g., an image file containing malicious code).
   1. **Server lacks proper validation:** If the web application doesn't properly validate the uploaded file, it might be accepted and stored on the server, potentially leading to
 exploitation.
+
 **Potential consequences/Impact:**
 
 The impact of file upload vulnerabilities generally depends on two key factors:
@@ -33,12 +34,14 @@ In the worst case scenario, the file's type isn't validated properly, and the se
   - **Overwriting Existing Files: **If the filename isn't validated properly, this could allow an attacker to overwrite critical files simply by uploading a file with the same name. If the server is also vulnerable to directory traversal, this could mean attackers are even able to upload files to unanticipated locations. An attacker could replace critical files with malicious content.
   - **Malware distribution:** Attackers can use file uploads to distribute malware through infected files disguised as legitimate ones.
   - **Data breaches:** Sensitive information accidentally uploaded by users or extracted from uploaded files can be compromised.
+
 **Common types of vulnerabilities:**
 
   - **Missing file type validation:** The application doesn't check if the uploaded file has the expected type (e.g., image, document).
   - **Lack of content validation:** The application doesn't scan the file content for malicious code or suspicious patterns.
   - **Unsafe file storage:** Uploaded files are stored in publicly accessible locations, allowing unauthorized access.
   - **Directory traversal attacks:** Attackers manipulate file paths to access unauthorized directories on the server.
+
 **Preventing file upload vulnerabilities:**
 
   - **Implement strong file type validation:** Only accept specific file types based on the intended purpose.
@@ -76,6 +79,7 @@ readfile('example.txt');
 
   1. **system:**
     - The `system` function is used to execute an external program.It returns the last line of the command output.
+
 ```php
 <?php
 system("command_here");
@@ -93,6 +97,7 @@ http://example.com/shell.php?cmd=ls%20-l
 
   1. **shell_exec:**
     - The `shell_exec` function is also used to execute commands via the shell and returns the complete output as a string.
+
 ```php
 <?php
 $output = shell_exec("command_here");
@@ -104,7 +109,6 @@ $output = shell_exec('somecommand 2>&1');
 //Running a Python Script
 $output = shell_exec('python /path/to/script.py');
 ```
-
 
 ```php
 +----------------+-----------------+----------------+----------------+
@@ -121,5 +125,3 @@ $output = shell_exec('python /path/to/script.py');
 [https://steflan-security.com/file-upload-restriction-bypass-cheat-sheet/](https://steflan-security.com/file-upload-restriction-bypass-cheat-sheet/)
 
 [https://steflan-security.com/file-upload-restriction-bypass-cheat-sheet/](https://steflan-security.com/file-upload-restriction-bypass-cheat-sheet/)
-
-

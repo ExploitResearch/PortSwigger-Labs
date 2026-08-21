@@ -93,4 +93,3 @@ You can use the provided string value instead of ‘a’ to solve the Lab exerci
 ```text
 ' UNION SELECT NULL, 'NAv682', NULL --
 ```
-

@@ -18,7 +18,6 @@ In the home page, we can purchase **gift cards, **Let’s try to buy 1:
 
 **Then, we can go to our profile page to redeem the gift card:**
 
-
 In Burp Suite HTTP history:
 
 When we clicked the “Redeem” button, it’ll send a POST request to `/gift-card` with parameter `csrf` and `gift-card`. After successful redeem, it’ll redirect us back to `/my-account`, which is our profile page.
@@ -73,10 +72,10 @@ Testing every endpoint is impractical. After mapping out the target site as norm
 
 - **Is this endpoint security critical?** Many endpoints don’t touch critical functionality, so they’re not worth testing.
 - **Is there any collision potential?** For a successful collision, you typically need two or more requests that trigger operations on the same record. For example, consider the following variations of a password reset implementation:
+
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-3/images/Pasted%20image%2020230831185123.png)
 
 With the first example, requesting parallel password resets for two different users is unlikely to cause a collision as it results in changes to two different records. However, the second implementation enables you to edit the same record with requests for two different users.
-
 
 Perhaps the most intuitive form of these race conditions are those that involve sending requests to multiple endpoints at the same time.
 
@@ -91,6 +90,7 @@ In this case, you can potentially add more items to your basket during the race 
 **Now, what if I added another gift card while checkout, what will happened?**
 
 - **Test for under normal conditions:**
+
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-3/images/Pasted%20image%2020230831175144.png)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-3/images/Pasted%20image%2020230831175159.png)
@@ -100,6 +100,7 @@ In this case, you can potentially add more items to your basket during the race 
 Working as expected, purchased a gift card, and another gift card is added to the basket.
 
 - **Single-packet attack:**
+
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-3/images/Pasted%20image%2020230831175819.png)
 
 Nope. No addition gift card order is being placed.
@@ -114,6 +115,7 @@ This common problem is primarily caused by the following two factors:
 
 - **Delays introduced by network architecture -** For example, there may be a delay whenever the front-end server establishes a new connection to the back-end. The protocol used can also have a major impact.
 - **Delays introduced by endpoint-specific processing -** Different endpoints inherently vary in their processing times, sometimes significantly so, depending on what operations they trigger.
+
 Fortunately, there are potential workarounds to both of these issues.
 
 **Connection warming:**
@@ -127,6 +129,7 @@ If the first request still has a longer processing time, but the rest of the req
 If you still see inconsistent response times on a single endpoint, even when using the single-packet technique, this is an indication that the back-end delay is interfering with your attack. You may be able to work around this by using Turbo Intruder to send some connection warming requests before following up with your main attack requests.
 
 - **Perform connection warming:**
+
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-3/images/Pasted%20image%2020230831175928.png)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-3/images/Pasted%20image%2020230831175941.png)
@@ -144,6 +147,7 @@ Hmm… I wonder **what if we can bypass that restriction**…
 **So, if I have 1 gift card in the basket (Any items that fits well with our store credit), then place the order, add an item that exceeds our store credit, and finally place the order again. Will that bypass the restriction and purchase the insufficient store credit item?**
 
 - Create 2 groups:
+
 **Group 1 - Buy jacket:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-3/images/Pasted%20image%2020230831183929.png)
@@ -157,6 +161,7 @@ Hmm… I wonder **what if we can bypass that restriction**…
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-3/images/Pasted%20image%2020230831184010.png)
 
 - Keep sending both groups in parallel until the restriction has been bypassed:
+
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-3/images/Pasted%20image%2020230831184108.png)
 
 Nice! We successfully bypassed the restriction!

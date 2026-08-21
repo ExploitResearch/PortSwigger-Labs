@@ -19,11 +19,13 @@ requests. This could be a search bar, image upload form, or any other functional
     - **Leak sensitive data:** Internal file contents, database records, or other sensitive information might be exposed.
     - **Perform unauthorized actions:** The attacker might be able to manipulate internal systems or services.
     - **Gain server control:** In severe cases, the attacker could exploit vulnerabilities in the accessed resource to gain complete control of the server.
+
 **Here are some common ways SSRF attacks are carried out:**
 
   - **IP addresses:** Attackers might use internal IP addresses or loopback addresses (e.g., 127.0.0.1) to access internal resources.
   - **Local file system:** Attackers might manipulate paths to access files on the server itself.
   - **External services:** Attackers might target external services with sensitive information or functionalities accessible by the server.
+
 **Preventing SSRF attacks:**
 
   - **Validate user input:** Sanitize and validate all user-provided input before using it to construct URLs or make requests.

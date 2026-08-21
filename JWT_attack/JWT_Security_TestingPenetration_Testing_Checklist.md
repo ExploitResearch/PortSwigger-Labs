@@ -2,6 +2,8 @@
 
 ---
 
+|  |  |  |  |  |  |
+|---|---|---|---|---|---|
 | **No.** | **Vulnerability/Test** | **Description** | **Testing Steps** | **Expected Results** | **Security Recommendations** |
 | 1 | Sensitive Information Disclosure in JWT Claims | Sensitive data such as passwords, keys, or internal IPs are included in JWT payloads, which can be decoded client- side, leading to exposure of sensitive information. | 1. Obtain a JWT token from the application. 2. Decode the JWT payload using tools like jwt.io or any Base64 decoder. 3. Inspect the claims for sensitive information like passwords, hashes, or internal data. | No sensitive information should be present in the JWT payload. Presence indicates a vulnerability. | - Do not include sensitive information in JWT claims. - Store sensitive data securely on the server side. - Include only necessary, non-sensitive information in the JWT payload. |
 | 2 | Signature Not Verified | The server does not verify the JWT signature, allowing attackers to modify the token payload without invalidating the token, leading to unauthorized access. | 1. Modify the JWT payload (e.g., change "admin": false to "admin": true) without altering the signature. 2. Use the modified token to access protected resources. 3. Observe if access is granted. | The server should reject tokens with invalid signatures. Acceptance indicates a vulnerability. | - Always verify JWT signatures on the server side. - Use trusted libraries that enforce signature verification. - Avoid disabling signature verification options. |

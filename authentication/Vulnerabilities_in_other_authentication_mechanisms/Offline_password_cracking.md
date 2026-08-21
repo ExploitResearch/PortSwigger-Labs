@@ -10,7 +10,7 @@ Observe that the comment functionality is vulnerable to XSS.
 1. Decode the cookie in Burp Decoder. The result will be: `carlos:26323c16d5f4dabff3bb136f2460a943`
 1. Copy the hash and paste it into a search engine. This will reveal that the password is `onceuponatime`.
 1. Log in to the victim's account, go to the "My account" page, and delete their account to solve the lab.
+
 ### Note
 
 The purpose of this lab is to demonstrate the potential of cracking passwords offline. Most likely, this would be done using a tool like hashcat, for example. When testing your clients' websites, we do not recommend submitting hashes of their real passwords in a search engine.
-
