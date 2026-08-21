@@ -8,7 +8,6 @@ This repository mirrors the original Notion hierarchy. Each category is a direct
 
 | Category | Labs | Description |
 |----------|------|-------------|
-| [Book Notes](Book_Notes/) | 3 | General Burp Suite methodology and web app (in)security theory |
 | [authentication](authentication/) | 4 | Auth bypass, 2FA, password resets, multi-factor |
 | [SQL Injection](SQL_Injection/) | 6 | SQLMap, cheat sheet, examining DB, blind SQLi |
 | [SSRF](SSRF/) | 1 | Server-Side Request Forgery basics |
