@@ -26,6 +26,27 @@ Server-side template injection occurs when user input is incorporated into a tem
 
 The vulnerability exists because the application concatenates user input into a template string instead of passing it as a variable. Template engines like Jinja2, Twig, and FreeMarker evaluate expressions within `{{ }}` or `${ }` delimiters, so user input containing these delimiters is interpreted as template code.
 
+
+### Real-World Impact
+
+An attacker could:
+- Execute arbitrary code on the server (remote code execution)
+- Read sensitive files (configuration, credentials, source code)
+- Access internal services and databases
+- Modify or delete server-side data
+- Pivot to other internal systems
+- Achieve full server compromise
+
+
+### Remediation
+
+- Never concatenate user input into template strings; always use template variables
+- Use sandboxed template environments with restricted function access
+- Implement allowlists for template functions and filters
+- Use logic-less templates (Mustache) where possible
+- Validate and sanitize all template input
+- Run template rendering in isolated containers or with restricted permissions
+
 ### Key Takeaways
 
 - Never concatenate user input into template strings; always use template variables

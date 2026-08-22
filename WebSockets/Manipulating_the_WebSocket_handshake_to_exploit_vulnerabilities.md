@@ -25,6 +25,26 @@ WebSocket vulnerabilities can include message injection (processing user-control
 
 WebSocket messages are often not subject to the same input validation as HTTP requests. Cross-site WebSocket hijacking works because the WebSocket handshake is an HTTP request that can be initiated from any origin without CORS restrictions.
 
+
+### Real-World Impact
+
+An attacker could:
+- Inject malicious WebSocket messages to perform actions as the victim
+- Hijack WebSocket connections across different origins (cross-site WebSocket hijacking)
+- Bypass authentication checks on the WebSocket handshake
+- Exfiltrate real-time data (chat messages, live notifications)
+- Perform man-in-the-middle attacks on WebSocket communications
+
+
+### Remediation
+
+- Validate and sanitize all WebSocket messages like any HTTP input
+- Implement origin checking on WebSocket handshakes (CsrfPreventionFilter)
+- Use CSRF tokens for WebSocket upgrade requests
+- Implement authentication on the WebSocket handshake, not just the initial HTTP request
+- Monitor for unusual WebSocket message patterns and rate-limit
+- Use `wss://` (WebSocket Secure) to prevent eavesdropping
+
 ### Key Takeaways
 
 - Validate and sanitize WebSocket messages like any HTTP input

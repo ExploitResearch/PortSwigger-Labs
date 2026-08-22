@@ -26,6 +26,27 @@ Insecure deserialization occurs when an application deserializes user-controlled
 
 Deserialization vulnerabilities exist because many frameworks allow arbitrary objects to be reconstructed from serialized data. When the application trusts the serialized data without validation, an attacker can inject objects that trigger dangerous methods during construction (magic methods like `__wakeup`, `__destruct`) or via gadget chains that chain method calls to achieve RCE.
 
+
+### Real-World Impact
+
+An attacker could:
+- Modify object properties to bypass authentication or escalate privileges
+- Execute arbitrary code via gadget chains (RCE)
+- Inject malicious objects that trigger dangerous methods during construction
+- Access or modify sensitive data stored in serialized objects
+- Cause denial of service via resource-intensive deserialization
+
+
+### Remediation
+
+- Never deserialize untrusted data
+- Use signed/encrypted serialization for sensitive data
+- Implement allowlists for deserializable types (Java: ObjectInputFilter, .NET: DataContractSerializer)
+- Use JSON instead of native serialization where possible
+- Keep deserialization libraries updated (many have known gadget chain patches)
+- Run deserialization in isolated environments with restricted permissions
+- Monitor for deserialization anomalies
+
 ### Key Takeaways
 
 - Never deserialize untrusted data

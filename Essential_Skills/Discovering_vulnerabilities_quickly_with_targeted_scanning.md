@@ -24,6 +24,24 @@ These labs test essential Burp Suite skills including targeted scanning, handlin
 
 Burp Suite's scanner can identify many vulnerability types automatically, but it needs proper configuration for non-standard data structures. Understanding how to configure scanning is an essential skill for efficient security testing.
 
+
+### Real-World Impact
+
+Proper use of Burp Suite Scanner enables:
+- Rapid identification of vulnerabilities across large attack surfaces
+- Detection of non-standard data structure vulnerabilities (JSON, XML, etc.)
+- More efficient manual testing by automating repetitive scanning tasks
+- Better coverage by testing insertion points that might be missed manually
+
+
+### Remediation
+
+- Configure Burp Scanner with appropriate insertion point types for the target application
+- Use targeted scanning for specific data structures (JSON, XML, GraphQL)
+- Set up crawl-and-scan workflows for comprehensive coverage
+- Always verify scanner findings manually before reporting
+- Use Burp's extension ecosystem for specialized testing
+
 ### Key Takeaways
 
 - Configure Burp Scanner for the target application's data structures

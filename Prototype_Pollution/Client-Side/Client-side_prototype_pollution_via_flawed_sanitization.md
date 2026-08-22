@@ -26,6 +26,28 @@ Prototype pollution occurs when user-controlled input is merged into JavaScript 
 
 JavaScript's prototype chain means that properties on `Object.prototype` are inherited by all objects. When a merge function copies user-controlled properties without checking for `__proto__` or `constructor`, it allows pollution of the prototype chain. This can override default values, trigger unexpected code paths, or inject malicious content.
 
+
+### Real-World Impact
+
+An attacker could:
+- Achieve DOM-based XSS by polluting gadget properties (innerHTML, src, href)
+- Escalate privileges by overriding isAdmin or role properties
+- Execute arbitrary code on the server (RCE) via child_process or require gadgets
+- Exfiltrate sensitive data by overriding object properties used in templates
+- Bypass security filters by clobbering their configuration
+- Cause denial of service by breaking core object methods
+
+
+### Remediation
+
+- Never merge user-controlled input into objects without checking for `__proto__` and `constructor`
+- Use `Object.create(null)` for objects that should not inherit a prototype
+- Use `Map` instead of plain objects for user-controlled key-value pairs
+- Implement input validation that rejects `__proto__`, `constructor`, and `prototype` keys
+- Use `JSON.parse()` with a reviver function that strips dangerous keys
+- Keep dependencies updated (many prototype pollution vulnerabilities are in libraries)
+- Use CSP and sandboxed execution for client-side code
+
 ### Key Takeaways
 
 - Never merge user-controlled input into objects without checking for `__proto__` and `constructor`

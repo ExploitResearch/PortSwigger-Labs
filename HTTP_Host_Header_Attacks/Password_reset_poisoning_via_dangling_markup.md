@@ -26,6 +26,28 @@ HTTP Host header attacks exploit applications that use the `Host` header for sec
 
 The application trusts the `Host` header to determine the server's own hostname, which it uses for generating links, routing, and authentication. Without validation, an attacker can supply a malicious Host value that causes the application to generate links pointing to attacker-controlled domains.
 
+
+### Real-World Impact
+
+An attacker could:
+- Hijack password reset emails by poisoning the Host header (account takeover)
+- Bypass authentication by manipulating virtual host routing
+- Perform web cache poisoning via ambiguous Host headers
+- Access internal services via SSRF through Host header manipulation
+- Poison intermediate caches to serve malicious content to other users
+- Bypass access controls that rely on the Host header for routing
+
+
+### Remediation
+
+- Always validate the Host header against an allowlist of expected domains
+- Use server-side configured base URLs for generating links (password reset, email verification)
+- Reject requests with duplicate or ambiguous Host headers
+- Do not trust X-Forwarded-Host without validation
+- Configure the web server to only accept requests for expected virtual hosts
+- Use absolute URLs in email templates instead of constructing from Host header
+- Implement HSTS to prevent protocol downgrade attacks
+
 ### Key Takeaways
 
 - Always validate the Host header against an allowlist of expected domains

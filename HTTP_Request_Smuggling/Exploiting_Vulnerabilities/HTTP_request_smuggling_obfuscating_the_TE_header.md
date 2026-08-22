@@ -25,6 +25,27 @@ HTTP request smuggling exploits the difference between how front-end and back-en
 
 The HTTP specification allows both `Content-Length` and `Transfer-Encoding` headers, but doesn't specify which takes precedence when both are present. Front-end and back-end servers may disagree on which header to use, creating an opportunity for the attacker to 'smuggle' a second request that the front-end doesn't see.
 
+
+### Real-World Impact
+
+An attacker could:
+- Bypass front-end security controls (WAF, rate limiting, authentication)
+- Capture other users' requests (including credentials and tokens)
+- Perform web cache poisoning to serve malicious content to all users
+- Perform web cache deception to access other users' cached data
+- Deliver stored XSS via the back-end server
+- Cause denial of service by poisoning response queues
+
+
+### Remediation
+
+- Use HTTP/2 end-to-end to avoid CL/TE ambiguities
+- Reject requests with both Content-Length and Transfer-Encoding headers
+- Normalize HTTP/1.1 headers before forwarding (strip conflicting headers)
+- Use strict request validation on both front-end and back-end
+- Configure front-end and back-end to use the same HTTP parsing library
+- Disable HTTP/1.1 connection reuse between front-end and back-end
+
 ### Key Takeaways
 
 - Always use HTTP/2 end-to-end to avoid CL/TE ambiguities

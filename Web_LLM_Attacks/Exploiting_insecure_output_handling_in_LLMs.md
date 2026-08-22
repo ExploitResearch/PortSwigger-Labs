@@ -25,6 +25,29 @@ This lab demonstrates a vulnerability in an application that integrates a Large 
 
 The vulnerability exists because the LLM is integrated with insufficient guardrails. It may have excessive API permissions, process untrusted data without isolation, or its output may be rendered without sanitization. LLM behavior is inherently probabilistic, so exploitation may require multiple attempts.
 
+
+### Real-World Impact
+
+An attacker could:
+- Exploit LLM API access to delete user accounts, modify data, or perform unauthorized actions
+- Inject instructions via data sources (indirect prompt injection) to manipulate LLM behavior
+- Use LLM output without sanitization to achieve XSS or other injection attacks
+- Exfiltrate sensitive data by tricking the LLM into sending it to external services
+- Cause the LLM to perform destructive actions (deleting files, modifying configurations)
+- Bypass security controls by using the LLM as a proxy to access restricted functionality
+
+
+### Remediation
+
+- Follow least-privilege principles for LLM API access (only allow necessary APIs)
+- Implement human-in-the-loop approval for destructive actions
+- Isolate LLM processing of untrusted data (indirect prompt injection defense)
+- Sanitize all LLM output before rendering in the browser (prevent XSS)
+- Monitor and rate-limit LLM API calls
+- Use separate LLM instances for processing trusted vs. untrusted data
+- Implement allowlists for LLM-accessible APIs and block destructive operations by default
+- Log all LLM API calls for forensic analysis
+
 ### Key Takeaways
 
 - LLMs with API access should follow least-privilege principles

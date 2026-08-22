@@ -24,6 +24,27 @@ NoSQL injection occurs when user-controlled input is incorporated into NoSQL dat
 
 The vulnerability exists because the application passes user input directly into NoSQL query functions without validating that the input is a simple string value. By injecting MongoDB operators (prefixed with `$`), an attacker can alter the query logic to return unintended results.
 
+
+### Real-World Impact
+
+An attacker could:
+- Bypass authentication by injecting MongoDB operators ($ne, $gt, $regex)
+- Extract all database contents (user credentials, personal data, session tokens)
+- Modify or delete database records
+- Cause denial of service via expensive regex queries
+- Pivot to other services that trust the NoSQL database
+- Execute JavaScript code if the database allows $where queries
+
+
+### Remediation
+
+- Validate input type (ensure strings are strings, not objects) before passing to database queries
+- Use parameterized queries or ORM methods that prevent operator injection
+- Implement input allowlists that reject `$`-prefixed keys in JSON input
+- Disable JavaScript execution in NoSQL queries ($where)
+- Apply least-privilege database accounts
+- Use a WAF that understands NoSQL injection patterns
+
 ### Key Takeaways
 
 - Always validate input type (string vs. object) before passing to database queries

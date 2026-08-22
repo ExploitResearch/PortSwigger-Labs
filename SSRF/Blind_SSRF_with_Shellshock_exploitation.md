@@ -26,6 +26,26 @@ Server-Side Request Forgery (SSRF) allows an attacker to make the server send re
 
 The application makes server-side HTTP requests using user-controlled URLs without proper validation. Blacklist-based filters can be bypassed using alternative IP formats (0x7f000001, 2130706433), URL encoding, or DNS rebinding. Whitelist filters can be bypassed using open redirects on whitelisted domains.
 
+
+### Real-World Impact
+
+An attacker could:
+- Access internal admin panels not exposed to the internet
+- Steal cloud credentials from metadata endpoints (AWS IAM roles, GCP service accounts)
+- Scan the internal network for vulnerable services
+- Access databases or APIs bound to localhost
+- Exfiltrate data via blind SSRF to attacker-controlled DNS/HTTP servers
+
+
+### Remediation
+
+- Use allowlists (not blocklists) for URL validation
+- Block all private IP ranges (10.x, 172.16-31.x, 192.168.x, 127.x, 169.254.x)
+- Disable unnecessary URL schemes (file://, gopher://, dict://)
+- Do not follow redirects when making server-side requests
+- Use a separate network namespace for outbound requests
+- Implement DNS pinning to prevent DNS rebinding attacks
+
 ### Key Takeaways
 
 - Use allowlists (not blocklists) for URL validation
