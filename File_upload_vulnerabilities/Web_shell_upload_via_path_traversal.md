@@ -27,11 +27,11 @@ Uploading the php file is successful. However, accessing this file just shows th
 
 {% hint style="info" %}
 💡 This behavior is potentially interesting in its own right, as it may provide a way to leak source code, but it nullifies any attempt to create a web shell.
-{% endhint %}
-
-
 
 This kind of configuration often differs between directories. A directory to which user-supplied files are uploaded will likely have much stricter controls than other locations on the filesystem that are assumed to be out of reach for end users. If you can find a way to upload a script to a different directory that's not supposed to contain user-supplied files, the server may execute your script after all.
+
+{% endhint %}
+
 
 **Modify the file path**
 

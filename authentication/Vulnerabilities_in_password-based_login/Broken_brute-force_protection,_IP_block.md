@@ -13,8 +13,8 @@ the username `carlos`. Make a note of the password from the **Payload 2** column
 {% hint style="info" %}
 💡 print carlos 100times with [Repeat Text Generator](https://www.handcoded.co.uk/php/app-1/)
 add valid value at each second line
-{% endhint %}
-
-
 
 `awk ' { print $0; print "*some text"} ' inputfile > outputfile`
+
+{% endhint %}
+

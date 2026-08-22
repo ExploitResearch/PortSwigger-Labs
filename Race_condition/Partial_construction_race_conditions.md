@@ -11,11 +11,11 @@ You can log into your account with the following credentials: `wiener:peter`.
 
 {% hint style="info" %}
 Note:
-{% endhint %}
-
-
 
 Solving this lab requires Burp Suite 2023.9 or higher.
+
+{% endhint %}
+
 
 ## Enumeration
 
@@ -153,7 +153,6 @@ Nice!! We got the same password reset token!!
 {% hint style="info" %}
 Note: Sometimes it may fails, you could send those requests a couple more times.
 {% endhint %}
-
 
 
 ## Exploitation

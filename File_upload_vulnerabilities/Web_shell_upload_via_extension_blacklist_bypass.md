@@ -59,8 +59,10 @@ Now, what if I upload a file called `.htaccess` to override the server configura
 
 ![](./images/8133e72ab08a_005.png)
 
-we can create our own `.htaccess` with the following configuration:
 {% endhint %}
+
+
+we can create our own `.htaccess` with the following configuration:
 
 {% hint style="info" %}
 `AddType application/x-httpd-php .php5`
@@ -80,13 +82,13 @@ Or it can be directly uploaded from Burp Repeater, by sending  `POST /my-account
 
 {% hint style="info" %}
 💡 I noticed that I was able to upload a number of different file extension, possibly even arbitrary ones like `.a2z, .abc` .
-{% endhint %}
-
-
 
 If reusing an upload request of `png` or `php` files for the Repeater it is important to set the Content-Type to `text/plain`. Otherwise, the server will return a `500 Internal Server error` when trying to load something later on.
 
 The application is served by an apache server, so uploading a custom .htaccess file maps an arbitrary extension (`.a2z`) to the executable MIME type `application/x-httpd-php`. As the server uses the `mod_php` module, it knows how to handle this already.
+
+{% endhint %}
+
 
 now we can execute command                                             
 

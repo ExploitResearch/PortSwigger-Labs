@@ -15,10 +15,10 @@ Update the email
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
 
-- A relevant action: change a users email
-- Cookie-based session handling: session cookie
-- No unpredictable request parameters: no csrf token
-{% endhint %}
+  - A relevant action: change a users email
+  - Cookie-based session handling: session cookie
+  - No unpredictable request parameters: no csrf token
+
 **Generate CSRF PoC** (in prof. version.) or  
 **craft a HTML form that performs CSRF attack to the victim:**
 
@@ -37,18 +37,19 @@ send this request into Repeater and simply remove the referrer header,
 The request goes through and the email gets changed
 
 In this case I need to coerce the browser of the victim to not send the referrer header.
+{% endhint %}
 
 {% hint style="info" %}
 💡 **According to **[**Mozilla web docs**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)**, we can use the **`<meta>`** tag to ignore **`Referer`** HTTP header:**
-{% endhint %}
-
-
 
 ![](./images/d402a99e3146_005.png)
 
 ![](./images/d402a99e3146_006.png)
 
 **To bypass that, add a new **`<meta>`** tag to ignore **`Referer`** header:**
+
+{% endhint %}
+
 
  integrate directive into the HTML code itself:
 

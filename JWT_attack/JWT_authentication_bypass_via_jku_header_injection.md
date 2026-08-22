@@ -19,7 +19,6 @@ The server supports the jku(JWK Set URL) parameter in the JWT header. However, i
 {% endhint %}
 
 
-
 ### <span style="color: #337EA9">Upload a malicious JWK Set of </span><span style="color: #337EA9">**new generated RSA key pair:**</span>
 
 ![](./images/76f36b2de177_002.png)

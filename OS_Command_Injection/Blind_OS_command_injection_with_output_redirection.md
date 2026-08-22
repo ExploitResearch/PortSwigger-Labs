@@ -9,15 +9,15 @@ Exploit the blind command injection and redirect the output from the whoami comm
 {% hint style="info" %}
 💡 You can redirect the output from the injected command into a file within the web root that you can access then retrieve using the browser. 
 For example, if the application serves static resources from the filesystem location `/var/www/static`, then you can submit the following input:
-{% endhint %}
-
-
 
 ```bash
 & whoami > /var/www/static/whoami.txt &
 ```
 
 The `>` character sends the output from the `whoami` command to the specified file. You can then use the browser to fetch `https://vulnerable-website.com/whoami.txt` to retrieve the file, and view the output from the injected command.
+
+{% endhint %}
+
 
 In the previous lab, we found that the `email` parameter is vulnerable to blind OS command injection:
 
@@ -51,9 +51,11 @@ Now the file is in `/var/www/images`, but the path to it within the application 
 💡 **summary
 **
 
-1. Find & Confirm blind command injection
+  1. Find & Confirm blind command injection
 -email field
-1. Check location from where application serves static resources, here images 
-1. Redirect output to file at that static location
-1. Check if file was created by accessing it
+  1. Check location from where application serves static resources, here images 
+  1. Redirect output to file at that static location
+  1. Check if file was created by accessing it
+
 {% endhint %}
+

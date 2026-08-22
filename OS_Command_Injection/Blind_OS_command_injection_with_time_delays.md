@@ -11,7 +11,6 @@ Exploit the blind OS command injection vulnerability to cause a 10 second delay.
 {% endhint %}
 
 
-
 As always I start with checking the website. Any type of user input is always worth investigating. Here, I come across a feedback form:
 
 ![](./images/119db21775b3_001.png)
@@ -27,10 +26,9 @@ Fortunately, requesting the feedback page multiple times always contains the sam
 {% hint style="info" %}
 💡 As common with blind injections, the success of the injection must be inferred by a difference in behaviour. This could be a multitude of things:
 
-- Different behaviour of the application based on whether the command was successful or not (e.g. an error message)
-- Timing differences
-- Out-of-band activities that allow us to catch actions performed on the system (e.g. DNS requests)
-{% endhint %}
+  - Different behaviour of the application based on whether the command was successful or not (e.g. an error message)
+  - Timing differences
+  - Out-of-band activities that allow us to catch actions performed on the system (e.g. DNS requests)
 
 The lab description and goal is time based, so I skip straight to that part.
 
@@ -39,6 +37,9 @@ There are multiple ways to introduce time delays on a command prompt, most of wh
 By default, `ping` send one request immediately, followed by one additional request per second until the specified number is reached.
 
 **Please note**: the `-c` parameter is very important here. On Windows, `ping` defaults to four requests and this default could be used to infer the delay. But on Linux,  `ping` defaults to *forever*, so it would never stop (until perhaps some timeout hits). Some other systems exit on the first returned packet. So while it is possible in some circumstances to use the default behaviour (namely: on Windows targets), it is better to just use the `-c` parameter that is supported on all major implementations.
+
+{% endhint %}
+
 
 **Forge a payload**
 

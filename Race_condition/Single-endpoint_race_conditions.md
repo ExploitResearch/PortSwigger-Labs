@@ -19,11 +19,9 @@ You also have access to an email client, where you can view all emails sent to `
 
 {% hint style="info" %}
 Note
+Solving this lab requires Burp Suite 2023.9 or higher.
 {% endhint %}
 
-
-
-Solving this lab requires Burp Suite 2023.9 or higher.
 
 ## Enumeration
 
@@ -90,11 +88,11 @@ The session now contains the victim’s user ID, but the valid reset token is se
 
 {% hint style="info" %}
 Note:
-{% endhint %}
-
-
 
 For this attack to work, the different operations performed by each process must occur in just the right order. It would likely require multiple attempts, or a bit of luck, to achieve the desired outcome.
+
+{% endhint %}
+
 
 Email address confirmations, or any email-based operations, are generally a good target for single-endpoint race conditions. Emails are often sent in a background thread after the server issues the HTTP response to the client, making race conditions more likely.
 

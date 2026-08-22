@@ -31,9 +31,12 @@ Here we don’t get any error and We’ve successfully changed the email address
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
 
-- A relevant action: change a users email
-- Cookie-based session handling: session cookie
-- No unpredictable request parameters: Request method can be changed to GET which does not require CSRF token
+  - A relevant action: change a users email
+  - Cookie-based session handling: session cookie
+  - No unpredictable request parameters: Request method can be changed to GET which does not require CSRF token
+{% endhint %}
+
+
 If you're using Burp Suite Professional, right-click on the request, and from the context menu select Engagement tools / Generate CSRF PoC. Enable the option to include an auto-submit script and click "Regenerate". 
 
 In the community edition, simply get the the form from the HTML of the application and perform the required changes to it (specifically: change the method and action, remove the csrf token and add the auto-submit script)
@@ -46,4 +49,3 @@ In the community edition, simply get the the form from the HTML of the applicati
 - Store the exploit, then click "Deliver to victim" to solve the lab.
 
 ![](./images/5281dc080ffc_005.png)
-{% endhint %}

@@ -44,7 +44,6 @@ For example, if the script is hosted at example.com/shell.php, a user could exec
 {% endhint %}
 
 
-
 Use the avatar upload function to upload malicious PHP file
 
 Calling the file will output the content of the secret file:

@@ -25,14 +25,17 @@ Delete the `csrf` parameter entirely and observe that the request is now accepte
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
 
-- A relevant action: change a users email
-- Cookie-based session handling: session cookie
-- No unpredictable request parameters: csrf token is not mandatory
+  - A relevant action: change a users email
+  - Cookie-based session handling: session cookie
+  - No unpredictable request parameters: csrf token is not mandatory
 
 Testing CSRF Tokens:
 
-1. Change the request method from POST to GET
-1. Remove the CSRF token and see if application accepts request
+  1. Change the request method from POST to GET
+  1. Remove the CSRF token and see if application accepts request
+{% endhint %}
+
+
 In Burp Suite Professional, right-click on the request, and from the context menu select Engagement tools / Generate CSRF PoC. Enable the option to include an auto-submit script and click "Regenerate".
 
 ![](./images/47db7cdfbca4_005.png)
@@ -43,4 +46,3 @@ We can test it locally via the `View exploit` button
 
 - Change the email address in your exploit so that it doesn't match your own.
 - Store the exploit, then click "Deliver to victim" to solve the lab.
-{% endhint %}

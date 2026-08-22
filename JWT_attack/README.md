@@ -143,7 +143,6 @@ The JSON Web Signature (JWS) specification describes an optional `jwk` header pa
 
 {% hint style="info" %}
 **JWK**
-
 A JWK (JSON Web Key) is a standardized format for representing keys as a JSON object.
 
 - `jku` (JSON Web Key Set URL) - Provides a URL from which servers can fetch a set of keys containing the correct key.

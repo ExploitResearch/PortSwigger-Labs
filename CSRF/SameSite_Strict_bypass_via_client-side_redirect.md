@@ -30,9 +30,6 @@ However, in order to exploit CSRF, we first have to **bypass the **`SameSite=Str
 
 {% hint style="info" %}
 💡 **Strict restriction:**
-{% endhint %}
-
-
 
 If a cookie is set with the `SameSite=Strict `attribute, browsers won’t include it in any cross-site requests. You may be able to get around this limitation if you can find a gadget that results in a secondary request within the same site.
 
@@ -41,6 +38,9 @@ One possible gadget is a client-side redirect that dynamically constructs the re
 As far as browsers are concerned, these client-side redirects aren’t really redirects at all; the resulting request is just treated as an ordinary, standalone request. Most importantly, this is a same-site request and, as such, will include all cookies related to the site, regardless of any restrictions that are in place.
 
 If you can manipulate this gadget to elicit a malicious secondary request, this can enable you to bypass any SameSite cookie restrictions completely.
+
+{% endhint %}
+
 
 **Find & Understand the Client Side Redirect**
 

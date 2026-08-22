@@ -15,7 +15,6 @@ A DOM-based XSS attack is possible if the web application writes data to the Doc
 {% endhint %}
 
 
-
 ## Sources and sinks in DOM-based cross-site scripting
 
 Every DOM-based XSS vulnerability has two elements: the source of user input and the target where this user input is written, called a sink. Popular sources that attackers can manipulate are `document.URL`, `document.documentURI`, `location.href`, `location.search`, `location.*`, `window.name`, and `document.referrer`. 

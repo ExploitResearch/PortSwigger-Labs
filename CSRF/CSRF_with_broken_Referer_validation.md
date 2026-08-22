@@ -15,9 +15,10 @@ Update the email
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
 
-- A relevant action: change a users email
-- Cookie-based session handling: session cookie
-- No unpredictable request parameters: no csrf token
+  - A relevant action: change a users email
+  - Cookie-based session handling: session cookie
+  - No unpredictable request parameters: no csrf token
+
 **Generate CSRF PoC** (in prof. v.) or  
 **craft a HTML form that performs CSRF attack to the victim:**
 
@@ -37,8 +38,8 @@ send this request into Repeater
 {% hint style="info" %}
 💡 Testing Referer header for CSRF attacks:
 
-1. Remove the Referer header
-1. Check which portion of the referrer header is the application validating
+  1. Remove the Referer header
+  1. Check which portion of the referrer header is the application validating
 
 1. Remove the Referer header
 
@@ -56,6 +57,9 @@ The website seems to accept any Referer header as long as it contains the expect
 
 ![](./images/0c8bead2f11b_006.png)
 
+{% endhint %}
+
+
 To bypass that check, we can add the `history.pushState()` function in our exploit:
 
 This will cause the `Referer` header in the generated request to contain the URL of the target site in the query string.
@@ -63,15 +67,14 @@ This will cause the `Referer` header in the generated request to contain the URL
 However, this still couldn’t work, as many browsers now strip the query string from the Referer header by default as a security measure.
 
 **To bypass that, we can just add a new **`<meta>`** tag to override that behavior and ensure that the full URL is included in the request:**
-{% endhint %}
 
 {% hint style="info" %}
 💡 Fortunately, the documentation regarding referrer-policy on [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) shows the solution:
-{% endhint %}
-
-
 
 ![](./images/0c8bead2f11b_008.png)
+
+{% endhint %}
+
 
 ![](./images/0c8bead2f11b_009.png)
 

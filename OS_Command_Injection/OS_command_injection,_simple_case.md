@@ -29,6 +29,9 @@ There are multiple ways to execute multiple commands in one line in a shell, sep
 
 <span style="color: #E03E1B">**NOTE :**</span>** when using **`&`**, it must be URLencoded**
 
+{% endhint %}
+
+
 ![](./images/d7cdbb616498_002.png)
 
 From the response, it can be seen that both parameters are injectable, and they are executed in the order productId first, storeId second.
@@ -38,4 +41,3 @@ From the response, it can be seen that both parameters are injectable, and they 
 comment out the remainder of the line after the `whoami` to avoid the error message of the second parameter:
 
 ![](./images/d7cdbb616498_003.png)
-{% endhint %}

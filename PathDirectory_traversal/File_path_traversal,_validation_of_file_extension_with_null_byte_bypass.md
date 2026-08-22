@@ -27,14 +27,10 @@ The application validates that the supplied filename ends with the expected file
 {% endhint %}
 
 
-
 This check may be done by simply comparing the last 4 characters of the filename with the string literal `.jpg`. Any type of such string comparison may be vulnerable to an ancient issue: null termination of strings.
 
 {% hint style="info" %}
 💡 **Some background**
-{% endhint %}
-
-
 
 A lot of low-level software like operating systems are written in C. In that language, strings are defined as sequences of characters that are followed by a null byte (a full byte of all zeros in binary, or %00 in URLencoding). There was no way of checking the length of a string but iterating over it until a null byte was found.
 
@@ -47,6 +43,9 @@ A lot of low-level functionality is still based on C, so terminates a string at 
 But if components treat strings differently, then this different behaviour can be exploited.
 
 For example, a lot of more modern languages have dedicated string types and do neither require nor use null termination for their strings. In this case, I want to access a file, so at some point, the request will be passed from the application to the operating system
+
+{% endhint %}
+
 
 ### The malicious payload
 

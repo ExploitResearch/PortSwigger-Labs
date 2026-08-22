@@ -2,7 +2,6 @@
 
 ## Contents
 
-- [Book Notes](./Book_Notes/README.md)
 - [authentication](./authentication/README.md)
 - [SQL Injection](./SQL_Injection/README.md)
 - [SSRF](./SSRF/README.md)

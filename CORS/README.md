@@ -44,9 +44,6 @@ Access-Control-Allow-Origin: *
 
 {% hint style="info" %}
 💡 **NOTE:**
-{% endhint %}
-
-
 
 Wildcards cannot be used within any other value. For example, the following header is **not** valid:
 
@@ -62,6 +59,9 @@ Access-Control-Allow-Credentials: true
 ```
 
 is not permitted as this would be dangerously insecure, exposing any authenticated content on the target site to everyone.
+
+{% endhint %}
+
 
 ### **CORS Headers**:
 

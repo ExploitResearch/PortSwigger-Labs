@@ -32,9 +32,6 @@ In the `Add to cart` button’s HTML form, we can see that the `quantity` has a 
 
 {% hint style="info" %}
 💡 Another thing worth trying is attempting to create an overflow with the price. The price is stored in some type of numeric variable. Once it exceeds the maximum value, it usually overflows to the lowest possible value and continues to count up from there:
-{% endhint %}
-
-
 
 |  |  |
 |---|---|
@@ -45,6 +42,9 @@ In the `Add to cart` button’s HTML form, we can see that the `quantity` has a 
 | min_value | min_value + 1 |
 
 Of course, the exact values for `min_value` and `max_value` depend on the data types used and could range into very, very high numbers.
+
+{% endhint %}
+
 
 **Now, what if the total price is greater than a maximum value of an integer?** (Integer overflow)
 
@@ -71,11 +71,11 @@ Try to order when total price is negative but Unfortunately, it is prevented by 
 
 {% hint style="info" %}
 💡 The price has exceeded the maximum value permitted for an integer in the back-end programming language (2,147,483,647). As a result, the value has looped back around to the minimum possible value (-2,147,483,648) and starts counting up towards 0 then turn positive again.
-{% endhint %}
-
-
 
 **when the total price reached greater than **`2147483647`**, the value will become negative, then it’ll go back to positive again!**
+
+{% endhint %}
+
 
 ### **Adjusting the total value**
 

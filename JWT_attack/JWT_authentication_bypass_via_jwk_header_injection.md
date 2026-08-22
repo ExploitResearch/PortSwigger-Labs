@@ -19,7 +19,6 @@ The server supports the jwk(JSON Web Key) parameter in the JWT header. This is s
 {% endhint %}
 
 
-
 To exploit that, we can sign a modified JWT using our own RSA private key, then embedding the matching public key in the `jwk` header.
 
 <span style="color: #337EA9">Generate a new RSA key pair:</span>
@@ -35,7 +34,6 @@ Send the post-login `GET /my-account?id=wiener` request to Burp Repeater, then r
 {% hint style="info" %}
 💡 If the request contains an invalid or no JWT as the session cookie, the application redirects to the `/login` page.
 {% endhint %}
-
 
 
 I send the request and the response contains my account page, confirming that the signature verification on the backend used the RSA public key information I injected in the JWT header.

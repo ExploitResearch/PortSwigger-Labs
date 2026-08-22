@@ -17,7 +17,6 @@ parameter values are used to access resources or functions directly.
 {% endhint %}
 
 
-
 ![](./images/0a874cee4a12_001.png)
 
 Submit the Carlos API key
