@@ -45,16 +45,3 @@ Note that in some cases, depending on the type of the URL, the payload might get
 - **Regular security updates:** Patch vulnerabilities in JavaScript libraries and frameworks promptly.
 
 **[New database]** (database)
-
-### Why It Works
-
-The exploit succeeds because this lab contains an xss vulnerability that is triggered by a click. construct a clickjacking attack that fools the user into clicking the "click me" button to call the print() function.
-
-The root cause is a failure in the application's security architecture specific to this clickjacking scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
-
-### Key Takeaways
-
-- This lab contains XSS vulnerability that is triggered by a click, demonstrating how clickjacking vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains an XSS vulnerability that is triggered by a click. Construct a clickjacking attack"
-- Set X-Frame-Options or CSP frame-ancestors — JavaScript frame-busting is bypassable.
