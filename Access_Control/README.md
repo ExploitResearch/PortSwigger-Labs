@@ -31,22 +31,22 @@ Access control is dependent on authentication and session management:
 
 **Authentication:**
 
-    - **Purpose:** Verifies the identity of someone trying to access a system or resource.
+- **Purpose:** Verifies the identity of someone trying to access a system or resource.
 expand_more
 
-    - **Process:** Checks credentials like username and password, biometrics, or multi-factor authentication codes.
+- **Process:** Checks credentials like username and password, biometrics, or multi-factor authentication codes.
 expand_more
 
-    - **Analogy:** Asking for ID at a bar; confirms you are who you say you are, but doesn't tell you what drinks you can order.
+- **Analogy:** Asking for ID at a bar; confirms you are who you say you are, but doesn't tell you what drinks you can order.
 **Access Control:**
 
-    - **Purpose:** Determines what level of access an authenticated user has to a system or resource.
+- **Purpose:** Determines what level of access an authenticated user has to a system or resource.
 expand_more
 
-    - **Process:** Uses rules and policies based on the user's identity, role, and other factors to grant or deny access.
+- **Process:** Uses rules and policies based on the user's identity, role, and other factors to grant or deny access.
 expand_more
 
-    - **Analogy:** Once verified at the bar, your age determines if you can buy alcohol (access control based on your identity).
+- **Analogy:** Once verified at the bar, your age determines if you can buy alcohol (access control based on your identity).
 **Key Differences:**
 
   - **Focus:** Authentication is about **who** you are, while access control is about **what** you can do.

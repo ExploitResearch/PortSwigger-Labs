@@ -14,10 +14,10 @@ CORS allows controlled access to resources located outside of a given domain by 
 While CORS is a security feature that helps prevent unauthorized requests from other domains, it does not protect against all cross-origin attacks, such as cross-site request forgery (CSRF). Poorly configured CORS policies can create potential vulnerabilities, leading to cross-domain attacks. Therefore, it's essential for web developers and administrators to properly configure and implement CORS policies to ensure the security of their web applications.
 
   - **CORS Request Flow**:
-    - When a web page hosted on one domain makes a request to a resource (e.g., an API endpoint) hosted on another domain, the browser sends an HTTP request with an "Origin" header indicating the origin of the requesting page.
-    - The server then examines this Origin header to determine if the requesting domain is allowed to access the resource.
-    - If the server approves the request, it responds with additional CORS headers, such as "Access-Control-Allow-Origin", indicating which origins are allowed to access the resource.
-    - If the request is denied, the browser prevents the web page from accessing the response data, enforcing the SOP.
+- When a web page hosted on one domain makes a request to a resource (e.g., an API endpoint) hosted on another domain, the browser sends an HTTP request with an "Origin" header indicating the origin of the requesting page.
+- The server then examines this Origin header to determine if the requesting domain is allowed to access the resource.
+- If the server approves the request, it responds with additional CORS headers, such as "Access-Control-Allow-Origin", indicating which origins are allowed to access the resource.
+- If the request is denied, the browser prevents the web page from accessing the response data, enforcing the SOP.
 
 ### [Same-origin policy (SOP)](https://portswigger.net/web-security/cors/same-origin-policy)
 
@@ -65,21 +65,21 @@ is not permitted as this would be dangerously insecure, exposing any authenticat
 
 ### **CORS Headers**:
 
-    - **Access-Control-Allow-Origin**: Specifies which origins are allowed to access the resource. It can be set to a specific origin, "*", or a list of origins.
-    - **Access-Control-Allow-Credentials**: Indicates whether the browser should include credentials (such as cookies) in CORS requests.
-    - **Access-Control-Allow-Methods**: Specifies the HTTP methods (e.g., GET, POST, PUT, DELETE) allowed when accessing the resource.
-    - **Access-Control-Allow-Headers**: Specifies which headers can be used in the actual request.
-    - **Access-Control-Expose-Headers**: Specifies which headers can be exposed to the browser in the response.
+- **Access-Control-Allow-Origin**: Specifies which origins are allowed to access the resource. It can be set to a specific origin, "*", or a list of origins.
+- **Access-Control-Allow-Credentials**: Indicates whether the browser should include credentials (such as cookies) in CORS requests.
+- **Access-Control-Allow-Methods**: Specifies the HTTP methods (e.g., GET, POST, PUT, DELETE) allowed when accessing the resource.
+- **Access-Control-Allow-Headers**: Specifies which headers can be used in the actual request.
+- **Access-Control-Expose-Headers**: Specifies which headers can be exposed to the browser in the response.
 
 **Preflight Requests**:
 
-      - Preflight requests are used for certain types of cross-origin requests, such as those that use methods other than GET, POST, or HEAD, or those that use custom headers.
-      - Before sending the actual request, the browser sends an OPTIONS preflight request to the server to determine if the actual request is safe to send.
-      - The server responds to the preflight request with appropriate CORS headers, indicating whether the actual request is allowed.
+  - Preflight requests are used for certain types of cross-origin requests, such as those that use methods other than GET, POST, or HEAD, or those that use custom headers.
+  - Before sending the actual request, the browser sends an OPTIONS preflight request to the server to determine if the actual request is safe to send.
+  - The server responds to the preflight request with appropriate CORS headers, indicating whether the actual request is allowed.
 **Simple Requests**:
 
-      - Simple requests are those that meet certain criteria, such as using only safe methods (GET, POST, HEAD) and not including custom headers beyond a few common ones.
-      - For simple requests, the browser automatically adds the necessary CORS headers to the request, and no preflight request is needed.
+  - Simple requests are those that meet certain criteria, such as using only safe methods (GET, POST, HEAD) and not including custom headers beyond a few common ones.
+  - For simple requests, the browser automatically adds the necessary CORS headers to the request, and no preflight request is needed.
 
 ### **How to prevent CORS-based attacks**
 

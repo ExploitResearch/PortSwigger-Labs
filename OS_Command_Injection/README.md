@@ -41,14 +41,14 @@ Consists of an attacker executing commands on the host operating system via a vu
 **Black-Box Testing**
 
   1. Map the application.
-    - Identify all instances where the web application appears to be interacting with the underlying operating system.
+- Identify all instances where the web application appears to be interacting with the underlying operating system.
   1. Fuzz the application.
-    - Shell metacharacters: <span style="color: #BE9B00">**&, &&, |, ||, ;, \n, `, $().**</span>
+- Shell metacharacters: <span style="color: #BE9B00">**&, &&, |, ||, ;, \n, `, $().**</span>
   1. For in-band command injection, analyze the response of the application to determine if it's vulnerable.
   1. For blind command injection, you need to get creative.
-    - Trigger a time delay using the ping or sleep command.
-    - Output the response of the command in the web root and retrieve the file directly using a browser.
-    - Open an out-of-band channel back to a server you control.
+- Trigger a time delay using the ping or sleep command.
+- Output the response of the command in the web root and retrieve the file directly using a browser.
+- Open an out-of-band channel back to a server you control.
 
 **White-Box Testing**
 
@@ -97,11 +97,11 @@ Sometimes, the input that you control appears within quotation marks in the orig
   1. The most effective way to prevent OS command injection vulnerabilities is to never call out
 to OS commands from application-layer code. Instead, implement the required
 functionality using safer platform APIs.
-    - For example: use <span style="color: #BE9B00">**mkdir()**</span> instead of system <span style="color: #BE9B00">**("mkdir /dir_name")**</span>
+- For example: use <span style="color: #BE9B00">**mkdir()**</span> instead of system <span style="color: #BE9B00">**("mkdir /dir_name")**</span>
   1. It is required to perform OS commands using user-supplied input, then strong input
 validation must be performed.
-    - Validate against a whitelist of permitted values.
-    - Validate that the input is as expected or valid input.
+- Validate against a whitelist of permitted values.
+- Validate that the input is as expected or valid input.
 
 ### Resources
 

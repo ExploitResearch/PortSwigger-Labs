@@ -16,9 +16,9 @@ requests. This could be a search bar, image upload form, or any other functional
   1. **Crafting a malicious URL:** The attacker crafts a malicious URL that points to a resource they want the server to access. This could be an internal server file, a database endpoint, or even an external website containing sensitive information.
   1. **Server makes the request:** The server, unaware of the attacker's manipulation, uses the provided URL to make the request. This can happen because the server trusts the user input or has inadequate validation mechanisms.
   1. **Attacker gains access:** Depending on the accessed resource, the attacker can potentially:
-    - **Leak sensitive data:** Internal file contents, database records, or other sensitive information might be exposed.
-    - **Perform unauthorized actions:** The attacker might be able to manipulate internal systems or services.
-    - **Gain server control:** In severe cases, the attacker could exploit vulnerabilities in the accessed resource to gain complete control of the server.
+- **Leak sensitive data:** Internal file contents, database records, or other sensitive information might be exposed.
+- **Perform unauthorized actions:** The attacker might be able to manipulate internal systems or services.
+- **Gain server control:** In severe cases, the attacker could exploit vulnerabilities in the accessed resource to gain complete control of the server.
 
 **Here are some common ways SSRF attacks are carried out:**
 

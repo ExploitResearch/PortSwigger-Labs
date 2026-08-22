@@ -24,8 +24,8 @@ This indicates that the system providing the CSRF protection does not integrate 
 💡 **Testing CSRF Tokens and CSRF cookies:**
 
   1. Check if the CSRF token is tied to the CSRF cookie
-    - Submit an invalid CSRF token
-    - Submit a valid CSRF token from another user
+- Submit an invalid CSRF token
+- Submit a valid CSRF token from another user
 
 —>we get error and it concludes CSRF token may be tied to session or csrfKey cookie
 

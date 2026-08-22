@@ -29,9 +29,9 @@ CSRF stands for Cross-Site Request Forgery. It is a type of web security vulnera
 ### To protect against CSRF attacks, web developers can implement countermeasures such as:
 
   - **Anti-CSRF Tokens:** Include unique tokens in forms or requests that are checked by the server to ensure that the request is legitimate and originated from the expected source.
-    - CSRF tokens should contain significant entropy and be strongly unpredictable, with the same properties as session tokens in general.
-    - CSRF tokens should be treated as secrets and handled in a secure manner throughout their lifecycle. An approach that is normally effective is to transmit the token to the client within a hidden field of an HTML form that is submitted using the POST method.
-    - When a CSRF token is generated, it should be stored server-side within the user's session data. When a subsequent request is received that requires validation, the server- side application should verify that the request includes a token which matches the value that was stored in the user's session.
+- CSRF tokens should contain significant entropy and be strongly unpredictable, with the same properties as session tokens in general.
+- CSRF tokens should be treated as secrets and handled in a secure manner throughout their lifecycle. An approach that is normally effective is to transmit the token to the client within a hidden field of an HTML form that is submitted using the POST method.
+- When a CSRF token is generated, it should be stored server-side within the user's session data. When a subsequent request is received that requires validation, the server- side application should verify that the request includes a token which matches the value that was stored in the user's session.
   - **SameSite Cookies:** Use the SameSite attribute for cookies to control when cookies are sent with cross-site requests.
 Ideally, you should use the Strict policy by default, then lower this to Lax only if you have a good reason to do so. Never disable SameSite restrictions with SameSite=None unless you're fully aware of the security implications.
 
@@ -82,14 +82,14 @@ The SameSite attribute is used in HTTP cookies to control whether the browser sh
 The SameSite attribute can have three values:
 
   1. **SameSite=None:**
-    - Cookies with this attribute can be sent with both same-site and cross-site requests.
-    - Requires the Secure attribute, meaning the cookie will only be sent over HTTPS connections.
+- Cookies with this attribute can be sent with both same-site and cross-site requests.
+- Requires the Secure attribute, meaning the cookie will only be sent over HTTPS connections.
   1. **SameSite=Lax:**
-    - Cookies are not sent with cross-site requests triggered by a top-level navigation (e.g., clicking a link).
-    - Cross-site requests initiated by third-party elements, such as images or scripts, do not include the cookie.
+- Cookies are not sent with cross-site requests triggered by a top-level navigation (e.g., clicking a link).
+- Cross-site requests initiated by third-party elements, such as images or scripts, do not include the cookie.
   1. **SameSite=Strict:**
-    - Cookies are not sent with any cross-site requests, regardless of the context.
-    - This provides the highest level of security but may impact some legitimate use cases.
+- Cookies are not sent with any cross-site requests, regardless of the context.
+- This provides the highest level of security but may impact some legitimate use cases.
 
 ![](./images/bddb838ab550_001.png)
 

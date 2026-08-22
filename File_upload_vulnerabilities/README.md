@@ -78,7 +78,7 @@ readfile('example.txt');
 ### functions commonly used for executing shell commands 
 
   1. **system:**
-    - The `system` function is used to execute an external program.It returns the last line of the command output.
+- The `system` function is used to execute an external program.It returns the last line of the command output.
 
 ```php
 <?php
@@ -96,7 +96,7 @@ http://example.com/shell.php?cmd=ls%20-l
 ```
 
   1. **shell_exec:**
-    - The `shell_exec` function is also used to execute commands via the shell and returns the complete output as a string.
+- The `shell_exec` function is also used to execute commands via the shell and returns the complete output as a string.
 
 ```php
 <?php

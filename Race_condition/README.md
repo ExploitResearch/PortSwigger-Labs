@@ -21,8 +21,8 @@ Race conditions are considered a common issue for multithreaded applications.
 
   - **Noncritical**: Both processes execute but cause no real issues with what the application does.
   - **Critical**: Both processes execute, which prevents the application from acting as intended  with unpredictable or undefined behavior. 
-    - **Read-write-modify**: Both processes access the resource and return a different value, undermining data integrity.
-    - **Check-then-act**: Both processes check a value, but the first one changes, which means the other process reads the value as null.
+- **Read-write-modify**: Both processes access the resource and return a different value, undermining data integrity.
+- **Check-then-act**: Both processes check a value, but the first one changes, which means the other process reads the value as null.
 
 ### **Examples of race conditions?**
 

@@ -20,13 +20,13 @@ The only direct consequence of a directory traversal attack is access to sensiti
 ### How Path Traversal Works:
 
   1. **User Input:**
-    - The web application takes user input, often in the form of a file path or filename.
+- The web application takes user input, often in the form of a file path or filename.
   1. **Lack of Validation:**
-    - The application does not properly validate or sanitize the user input, allowing it to include special characters or sequences.
+- The application does not properly validate or sanitize the user input, allowing it to include special characters or sequences.
   1. **Traversal Attempts:**
-    - An attacker submits input containing "../" or other path traversal sequences to navigate up the directory tree.
+- An attacker submits input containing "../" or other path traversal sequences to navigate up the directory tree.
   1. **File Access:**
-    - If the input is not properly sanitized, the application constructs a file path that goes beyond the intended directory, allowing the attacker to access unauthorized files.
+- If the input is not properly sanitized, the application constructs a file path that goes beyond the intended directory, allowing the attacker to access unauthorized files.
 
 ### Example:
 
@@ -47,51 +47,51 @@ If the application does not properly validate the input, this could result in th
 ### Mitigation Strategies for Path Traversal:
 
   1. **Input Validation and Sanitization:**
-    - Properly validate and sanitize user input to ensure it adheres to expected formats and does not contain malicious characters.
+- Properly validate and sanitize user input to ensure it adheres to expected formats and does not contain malicious characters.
   1. **Use Whitelists:**
-    - Define a whitelist of allowed characters or patterns and validate user input against this whitelist.
+- Define a whitelist of allowed characters or patterns and validate user input against this whitelist.
   1. **File Path Normalization:**
-    - Normalize file paths before processing them to eliminate unnecessary elements (e.g., "../../") and ensure a consistent format.
+- Normalize file paths before processing them to eliminate unnecessary elements (e.g., "../../") and ensure a consistent format.
   1. **Use Absolute Paths:**
-    - Avoid using user input to construct relative paths. Prefer absolute paths or store files in a designated location.
+- Avoid using user input to construct relative paths. Prefer absolute paths or store files in a designated location.
   1. **Application Hardening:**
-    - Configure the web server and application to run with the least privilege necessary to limit the potential impact of a successful path traversal attack.
+- Configure the web server and application to run with the least privilege necessary to limit the potential impact of a successful path traversal attack.
 
 {% hint style="info" %}
 💡
 
-    1. Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
-    1. If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.
-    1. If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
+1. Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
+1. If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.
+1. If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
 {% endhint %}
 
 
 ### There are three main types of paths: Default, Absolute, and Relative.
 
   1. **Default Path:**
-    - A default path typically refers to the location where an application or system looks for files if no specific path is provided. It's the assumed or predefined location.
-    - The default path is often determined by the operating system or the application itself.
-    - Example (on Windows): `C:\Program Files\Application\file.txt`
-    - Example (on Unix-like systems): `/usr/local/bin/file`
+- A default path typically refers to the location where an application or system looks for files if no specific path is provided. It's the assumed or predefined location.
+- The default path is often determined by the operating system or the application itself.
+- Example (on Windows): `C:\Program Files\Application\file.txt`
+- Example (on Unix-like systems): `/usr/local/bin/file`
   1. **Absolute Path:**
-    - An absolute path provides the full and specific location of a file or directory from the root of the file system.
-    - It starts from the root directory and includes all the directories leading to the target file or directory.
-    - Always provides a fixed and unambiguous location.
-    - Example (on Windows): `C:\Users\Username\Documents\file.txt`
-    - Example (on Unix-like systems): `/home/username/Documents/file`
+- An absolute path provides the full and specific location of a file or directory from the root of the file system.
+- It starts from the root directory and includes all the directories leading to the target file or directory.
+- Always provides a fixed and unambiguous location.
+- Example (on Windows): `C:\Users\Username\Documents\file.txt`
+- Example (on Unix-like systems): `/home/username/Documents/file`
   1. **Relative Path:**
-    - A relative path specifies the location of a file or directory relative to the current working directory.
-    - It does not start from the root directory; instead, it is based on the current location.
-    - Can be more concise and portable, as it adapts to changes in directory structure.
-    - Example: If the current directory is `/home/username/Documents/`, a relative path to `file.txt` might be `../Downloads/file.txt`.
-    - Special notations like `..` (parent directory) and `.` (current directory) are used in relative paths.
+- A relative path specifies the location of a file or directory relative to the current working directory.
+- It does not start from the root directory; instead, it is based on the current location.
+- Can be more concise and portable, as it adapts to changes in directory structure.
+- Example: If the current directory is `/home/username/Documents/`, a relative path to `file.txt` might be `../Downloads/file.txt`.
+- Special notations like `..` (parent directory) and `.` (current directory) are used in relative paths.
 
 {% hint style="info" %}
 💡 **Examples:**
 
-      - Default path: `C:\Program Files\Application\file.txt`
-      - Absolute path: `/home/username/Documents/file`
-      - Relative path: `../Downloads/file.txt` (relative to `/home/username/Documents/`)
+  - Default path: `C:\Program Files\Application\file.txt`
+  - Absolute path: `/home/username/Documents/file`
+  - Relative path: `../Downloads/file.txt` (relative to `/home/username/Documents/`)
 {% endhint %}
 
 

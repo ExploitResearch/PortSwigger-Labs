@@ -56,8 +56,8 @@ Commonly used claims include "iss" (issuer), "exp" (expiration time), "sub" (sub
   1. **Signature:** To create the signature part, you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
 The server that issues the token typically generates the signature by hashing the header and payload. In some cases, they also encrypt the resulting hash. Either way, this process involves a secret signing key. This mechanism provides a way for servers to verify that none of the data within the token has been tampered with since it was issued:
 
-    - As the signature is directly derived from the rest of the token, changing a single byte of the header or payload results in a mismatched signature.
-    - Without knowing the server's secret signing key, it shouldn't be possible to generate the correct signature for a given header or payload.
+- As the signature is directly derived from the rest of the token, changing a single byte of the header or payload results in a mismatched signature.
+- Without knowing the server's secret signing key, it shouldn't be possible to generate the correct signature for a given header or payload.
 
 Example (with HMAC SHA256):
 

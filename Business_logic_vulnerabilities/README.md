@@ -139,18 +139,18 @@ The impact is highly variable and depends on the functionality that contains the
 ### How to Find & Exploit Business Logic Vulnerabilities
 
   - Map the application. Make note of each and every component in the application and how it operates.
-    - If you have access to the code, review the code responsible for each component.
+- If you have access to the code, review the code responsible for each component.
   - For each component determine:
-    - The potential business flow.
-    - The assumptions that could have been made by the developers / architects during the design phase.
+- The potential business flow.
+- The assumptions that could have been made by the developers / architects during the design phase.
   - Test each component for all possible use cases that are outside of the intended business flow.
 
 ### Preventing Business Logic Vulnerabilities
 
   - Ensure that there is proper documentation of the application’s design that outlines every assumption that the designer(s) made.
   - Mandate that all source code is properly commented and includes the following items:
-    1. The purpose and intended use of each code component.
-    1. The assumptions made by each component about anything that is outside of its direct control.
-    1. References to all client-side code that uses the component.
+1. The purpose and intended use of each code component.
+1. The assumptions made by each component about anything that is outside of its direct control.
+1. References to all client-side code that uses the component.
   - Write code as clearly as possible.
   - Perform security-focused code reviews of the application’s design.
