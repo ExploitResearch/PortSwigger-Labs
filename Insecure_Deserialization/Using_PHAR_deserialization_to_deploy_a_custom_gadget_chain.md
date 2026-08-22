@@ -1,0 +1,34 @@
+# Using PHAR deserialization to deploy a custom gadget chain
+
+### Goal -
+
+Solve the PortSwigger lab: Using PHAR deserialization to deploy a custom gadget chain
+
+### Vulnerability / Concept
+
+Insecure deserialization occurs when an application deserializes user-controlled data without validating the integrity or type of the deserialized objects. This can allow attackers to modify object properties, inject unexpected types, or trigger gadget chains that execute arbitrary code.
+
+### Recon / Initial Analysis
+
+1. Identify serialized data in cookies, parameters, or hidden form fields
+2. Decode the serialized data (base64, URL-encoding) to identify the format
+3. Look for object properties that control application behavior (admin flag, user role)
+4. Research known gadget chains for the target language/framework
+
+### Exploitation
+
+1. Identify the serialization format (PHP, Java, Ruby, Python, .NET)
+2. Decode and modify the serialized object to change properties
+3. Re-encode and submit the modified serialized data
+4. For RCE: research and use known gadget chains for the target framework
+
+### Why It Works
+
+Deserialization vulnerabilities exist because many frameworks allow arbitrary objects to be reconstructed from serialized data. When the application trusts the serialized data without validation, an attacker can inject objects that trigger dangerous methods during construction (magic methods like `__wakeup`, `__destruct`) or via gadget chains that chain method calls to achieve RCE.
+
+### Key Takeaways
+
+- Never deserialize untrusted data
+- Use signed/encrypted serialization for sensitive data
+- Implement allowlists for deserializable types
+- Use JSON instead of native serialization where possible

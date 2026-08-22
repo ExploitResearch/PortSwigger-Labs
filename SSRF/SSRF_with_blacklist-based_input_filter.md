@@ -1,0 +1,34 @@
+# SSRF with blacklist-based input filter
+
+### Goal -
+
+Solve the PortSwigger lab: SSRF with blacklist-based input filter
+
+### Vulnerability / Concept
+
+Server-Side Request Forgery (SSRF) allows an attacker to make the server send requests to unintended destinations, including internal services and cloud metadata endpoints.
+
+### Recon / Initial Analysis
+
+1. Identify parameters that accept URLs or hostnames
+2. Test with localhost (127.0.0.1) and internal IPs
+3. Check for input filters (blacklists, whitelists)
+4. Look for open redirect vulnerabilities that can bypass URL filters
+
+### Exploitation
+
+1. Identify the SSRF injection point
+2. Test internal network access via the injection point
+3. Bypass any input filters using techniques like URL encoding, DNS rebinding, or open redirects
+4. Access sensitive internal endpoints or cloud metadata
+
+### Why It Works
+
+The application makes server-side HTTP requests using user-controlled URLs without proper validation. Blacklist-based filters can be bypassed using alternative IP formats (0x7f000001, 2130706433), URL encoding, or DNS rebinding. Whitelist filters can be bypassed using open redirects on whitelisted domains.
+
+### Key Takeaways
+
+- Use allowlists (not blocklists) for URL validation
+- Block access to internal IPs, localhost, and cloud metadata (169.254.169.254)
+- Validate URL scheme (only allow http/https)
+- Be aware of DNS rebinding attacks
