@@ -4,7 +4,7 @@
 
 JSON web tokens (JWTs) are a standardized format for sending cryptographically signed JSON data between systems. They can theoretically contain any kind of data, but are most commonly used to send information ("claims") about users as part of authentication, session handling, and access control mechanisms.  
 
-![](./images/ebff3dfb5d13_001.png)
+![](../images/ebff3dfb5d13_001.png)
 
 JWTs consist of three parts: a header, a payload, and a signature. These are each separated by a dot, the structure of a JWT looks like this:
 
@@ -12,7 +12,7 @@ JWTs consist of three parts: a header, a payload, and a signature. These are eac
 xxxxxxxxxx.yyyyyyyyyy.zzzzzzzzzz
 ```
 
-![](./images/ebff3dfb5d13_002.png)
+![](../images/ebff3dfb5d13_002.png)
 
 The header and payload parts of a JWT are just base64url-encoded JSON objects.
 
@@ -97,7 +97,7 @@ The impact of JWT attacks is usually severe. If an attacker is able to create th
 
 The JWT specification is actually very limited. It only defines a format for representing information ("claims") as a JSON object that can be transferred between two parties. In practice, JWTs aren't really used as a standalone entity. The JWT spec is extended by both the JSON Web Signature (JWS) and JSON Web Encryption (JWE) specifications, which define concrete ways of actually implementing JWTs. 
 
-![](./images/ebff3dfb5d13_003.jpg)
+![](../images/ebff3dfb5d13_003.jpg)
 
  In other words, a JWT is usually either a JWS or JWE token. When people use the term "JWT", they almost always mean a JWS token. JWEs are very similar, except that the actual contents of the token are encrypted rather than just encoded. 
 

@@ -17,7 +17,7 @@ Exploit the DOM XSS vulnerability to call the alert function.
 
 `<script>alert(document.domain)</script>`
 
-![](./images/a71a87eb6161_001.png)
+![](../images/a71a87eb6161_001.png)
 
 **View source page:**
 

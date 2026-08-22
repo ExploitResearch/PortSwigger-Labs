@@ -10,13 +10,13 @@ Credentials - wiener:peter, carlos:montoya
 
 Login as user `wiener`:
 
-![](./images/af10909d02bb_001.png)
+![](../images/af10909d02bb_001.png)
 
 The session cookie and the csrf-tokens are the expected parts. But there is a second cookie `csrfKey`, that looks very similar to a second session value.
 
 All values remain static for the session. When I logout and login again as the same user, the session cookie changes (this is expected) but csrfKey and csrf-token remain the same.
 
-![](./images/af10909d02bb_002.png)
+![](../images/af10909d02bb_002.png)
 
 This indicates that the system providing the CSRF protection does not integrate into the session system, but creates its own type of session that is not in sync. This might violate the **tightly connected** property mentioned earlier.
 
@@ -44,7 +44,7 @@ Submit the "Update email" form, and intercept the resulting request.
 
 **use  the session ID from the current **`carlos`**session, but both **`csrfKey`** as well ass **`csrf`**-token from user **`wiener`
 
-![](./images/af10909d02bb_003.png)
+![](../images/af10909d02bb_003.png)
 
 the request goes through and carlos email get changed:
 
@@ -56,7 +56,7 @@ I can change a victims email with my own CSRF-data. Including the csrf-token in 
 
 So with it we can set any cookie value as we wanted.
 
-![](./images/af10909d02bb_004.png)
+![](../images/af10909d02bb_004.png)
 
 **In **[**Mozilla web docs**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie)**, it said:**
 
@@ -75,7 +75,7 @@ To send multiple cookies, multiple Set-Cookie headers should be sent in the same
 
 Note: The `%3b%20` means `; `, and we need `SameSite` is set to `None`.
 
-![](./images/af10909d02bb_005.png)
+![](../images/af10909d02bb_005.png)
 
 generate csrf poc
 
@@ -85,7 +85,7 @@ Remove the auto-submit `<script>` block, and instead add the following code to i
 <img src="https://YOUR-LAB-ID.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrfKey=YOUR-KEY%3b%20SameSite=None" onerror="document.form
 ```
 
-![](./images/af10909d02bb_006.png)
+![](../images/af10909d02bb_006.png)
 
 ```html
 <html>

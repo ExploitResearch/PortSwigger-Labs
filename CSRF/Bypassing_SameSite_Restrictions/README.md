@@ -14,7 +14,7 @@ The SameSite attribute can have three values:
 - Cookies are not sent with any cross-site requests, regardless of the context.
 - This provides the highest level of security but may impact some legitimate use cases.
 
-![](../images/bddb838ab550_001.png)
+![](../../images/bddb838ab550_001.png)
 
 Two URLs are considered to have the **same site** if they share the exact same scheme and domain name(TLD & TLD+1).
 

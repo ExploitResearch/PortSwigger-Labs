@@ -15,13 +15,13 @@ Perform an XSS attack that calls the alert function.
 
 ‘alert(1)
 
-![](./images/03e492a0f65e_001.png)
+![](../../images/03e492a0f65e_001.png)
 
 we can see both ‘ get escaped
 
 \alert(1)
 
-![](./images/03e492a0f65e_002.png)
+![](../../images/03e492a0f65e_002.png)
 
  \ also get escaped
 
@@ -29,11 +29,11 @@ we can see both ‘ get escaped
 
 It is also removing while </script> at end
 
-![](./images/03e492a0f65e_003.png)
+![](../../images/03e492a0f65e_003.png)
 
 **</script><script> </script**
 
-![](./images/03e492a0f65e_004.png)
+![](../../images/03e492a0f65e_004.png)
 
 But we insert </script> at starting it is closing script tag and then it comes out of that script So now we can insert our script after it
 

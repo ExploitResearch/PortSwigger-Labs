@@ -15,7 +15,7 @@ Exploit the DOM XSS vulnerability to call the alert function.
 
 </select><img src=1 onerror=alert(1)>
 
-![](./images/417917d0701c_001.png)
+![](../images/417917d0701c_001.png)
 
 ## PortSwigger Lab
 

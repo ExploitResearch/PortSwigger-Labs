@@ -23,7 +23,7 @@ In the first `\`, we want to escape the `\` that the server-side application add
 
 we close the JSON object via `}`. Then, commented out `"}` via `//`.
 
-![](./images/c79ae1f47486_001.png)
+![](../images/c79ae1f47486_001.png)
 
 ### Why It Works
 

@@ -8,13 +8,13 @@ use your exploit server to host an HTML page that uses a CSRF attack to change t
 
 Login as user `wiener`:
 
-![](./images/caabe9cbf9e4_001.png)
+![](../images/caabe9cbf9e4_001.png)
 
 it’ll set a new session cookie for us: we can see there is a `SameSite` attribute, which is set to `Strict` restriction.
 
 **Inspect the change-email request **
 
-![](./images/caabe9cbf9e4_002.png)
+![](../images/caabe9cbf9e4_002.png)
 
 It doesn’t have a CSRF token parameter, which helps to prevent CSRF (Cross-Site Request Forgery) attack. So, it may be vulnerable to CSRF.
 
@@ -22,7 +22,7 @@ It send a POST request to `/my-account/change-email`, with parameter `email`, `s
 
 **Change request method to GET**
 
-![](./images/caabe9cbf9e4_003.png)
+![](../images/caabe9cbf9e4_003.png)
 
 It accepts the GET method too
 
@@ -47,19 +47,19 @@ In the home page, we can view different posts And we can leave some comments.
 
 Let’s leave a test comment:
 
-![](./images/caabe9cbf9e4_004.png)
+![](../images/caabe9cbf9e4_004.png)
 
-![](./images/caabe9cbf9e4_005.png)
+![](../images/caabe9cbf9e4_005.png)
 
 After we send the request, it’ll fetch a JavaScript file:
 
-![](./images/caabe9cbf9e4_006.png)
+![](../images/caabe9cbf9e4_006.png)
 
 When we go to `/post/comment/confirmation`, it’ll run that JavaScript:
 
 - After 3 seconds, redirect user to `/post/<postId>`
 
-![](./images/caabe9cbf9e4_007.png)
+![](../images/caabe9cbf9e4_007.png)
 
 However, the GET parameter `postId` is fully under attacker’s control!
 

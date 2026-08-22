@@ -10,7 +10,7 @@ Login as user `wiener`:
 
 Update the email 
 
-![](./images/d402a99e3146_001.png)
+![](../images/d402a99e3146_001.png)
 
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
@@ -24,11 +24,11 @@ Update the email
 
 use the `exploit server` to test CSRF attack!
 
-![](./images/d402a99e3146_002.png)
+![](../images/d402a99e3146_002.png)
 
-![](./images/d402a99e3146_003.png)
+![](../images/d402a99e3146_003.png)
 
-![](./images/d402a99e3146_004.png)
+![](../images/d402a99e3146_004.png)
 
 Since the `Referer` HTTP header can be fully controlled by the attacker, we can bypass this check!
 
@@ -42,9 +42,9 @@ In this case I need to coerce the browser of the victim to not send the referrer
 {% hint style="info" %}
 💡 **According to **[**Mozilla web docs**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)**, we can use the **`<meta>`** tag to ignore **`Referer`** HTTP header:**
 
-![](./images/d402a99e3146_005.png)
+![](../images/d402a99e3146_005.png)
 
-![](./images/d402a99e3146_006.png)
+![](../images/d402a99e3146_006.png)
 
 **To bypass that, add a new **`<meta>`** tag to ignore **`Referer`** header:**
 
@@ -72,11 +72,11 @@ In this case I need to coerce the browser of the victim to not send the referrer
 
 ```
 
-![](./images/d402a99e3146_007.png)
+![](../images/d402a99e3146_007.png)
 
 or As an alternative, update exploit page header with the relevant syntax:
 
-![](./images/d402a99e3146_008.png)
+![](../images/d402a99e3146_008.png)
 
 ### Why It Works
 

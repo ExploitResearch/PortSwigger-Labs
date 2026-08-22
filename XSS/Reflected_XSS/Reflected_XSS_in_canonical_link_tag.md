@@ -15,7 +15,7 @@ Perform an XSS attack on the homepage that injects an attribute that calls the a
 
 **View source page:**
 
-![](./images/92eccbf237d5_001.png)
+![](../../images/92eccbf237d5_001.png)
 
 In here, we can see that there is a `<link>` tag is using **canonical** link tag.
 

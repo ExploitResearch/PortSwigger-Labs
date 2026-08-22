@@ -53,11 +53,11 @@ Consists of an attacker executing commands on the host operating system via a vu
 
 ### **Exploiting In-band Command Injection**
 
-![](./images/96035c9c4ae8_001.png)
+![](../images/96035c9c4ae8_001.png)
 
 ### **Exploiting Blind Command Injection**
 
-![](./images/96035c9c4ae8_002.png)
+![](../images/96035c9c4ae8_002.png)
 
 ### Ways of injecting OS commands
 

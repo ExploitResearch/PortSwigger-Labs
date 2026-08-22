@@ -10,7 +10,7 @@ Login as user `wiener`:
 
 Update the email 
 
-![](./images/0c8bead2f11b_001.png)
+![](../images/0c8bead2f11b_001.png)
 
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
@@ -24,11 +24,11 @@ Update the email
 
 use the `exploit server` to test CSRF attack!
 
-![](./images/0c8bead2f11b_002.png)
+![](../images/0c8bead2f11b_002.png)
 
-![](./images/0c8bead2f11b_003.png)
+![](../images/0c8bead2f11b_003.png)
 
-![](./images/0c8bead2f11b_004.png)
+![](../images/0c8bead2f11b_004.png)
 
 Since the `Referer` HTTP header can be fully controlled by the attacker, we can bypass this check!
 
@@ -55,7 +55,7 @@ The website seems to accept any Referer header as long as it contains the expect
 {% hint style="info" %}
 💡 **According the **[**Mozilla web docs**](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState)**, we can use a JavaScript function called **`history.pushState()`**:**
 
-![](./images/0c8bead2f11b_006.png)
+![](../images/0c8bead2f11b_006.png)
 
 {% endhint %}
 
@@ -70,11 +70,11 @@ However, this still couldn’t work, as many browsers now strip the query string
 {% hint style="info" %}
 💡 Fortunately, the documentation regarding referrer-policy on [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) shows the solution:
 
-![](./images/0c8bead2f11b_008.png)
+![](../images/0c8bead2f11b_008.png)
 
 {% endhint %}
 
-![](./images/0c8bead2f11b_009.png)
+![](../images/0c8bead2f11b_009.png)
 
 ```html
 <html>

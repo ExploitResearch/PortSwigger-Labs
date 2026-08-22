@@ -10,17 +10,17 @@ Login as user `wiener`:
 
 Update the email 
 
-![](./images/47db7cdfbca4_001.png)
+![](../images/47db7cdfbca4_001.png)
 
  if I try to use an empty token (`&csrf=`) or random token  (`&csrf=1234asdf`) 
 
-![](./images/47db7cdfbca4_002.png)
+![](../images/47db7cdfbca4_002.png)
 
-![](./images/47db7cdfbca4_003.png)
+![](../images/47db7cdfbca4_003.png)
 
 Delete the `csrf` parameter entirely and observe that the request is now accepted. So it only validate CSRF token if it is present in request
 
-![](./images/47db7cdfbca4_004.png)
+![](../images/47db7cdfbca4_004.png)
 
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
@@ -37,7 +37,7 @@ Testing CSRF Tokens:
 
 In Burp Suite Professional, right-click on the request, and from the context menu select Engagement tools / Generate CSRF PoC. Enable the option to include an auto-submit script and click "Regenerate".
 
-![](./images/47db7cdfbca4_005.png)
+![](../images/47db7cdfbca4_005.png)
 
 Go to the exploit server, paste your exploit HTML into the "Body" section, and click "Store".
 

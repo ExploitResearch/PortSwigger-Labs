@@ -18,7 +18,7 @@ It is immediately obvious that the csrf token appears twice: in the request body
 (in this case, during the initial visit of the `/login` page)
 1. The backend tracks the csrf tokens as usual, just uses the cookie value as additional line of defense.This is so call the “double submit” defense against CSRF.
 
-![](./images/35949db66cb6_001.png)
+![](../images/35949db66cb6_001.png)
 
 the request goes through and the email get updated.
 
@@ -32,11 +32,11 @@ the blog suffers the same vulnerability in the search feature
 
 **Also, when we sent the request, it’ll set a new cookie value: **`LastSearchTerm=<seach_parameter_value>`**!**
 
-![](./images/35949db66cb6_002.png)
+![](../images/35949db66cb6_002.png)
 
 **we have found that it’s vulnerable to CRLF injection, which enables attacker to add a new cookie!**
 
-![](./images/35949db66cb6_003.png)
+![](../images/35949db66cb6_003.png)
 
 generate csrf poc
 
@@ -46,7 +46,7 @@ Remove the auto-submit `<script>` block, and instead add the following code to i
 <img src="https://0af700c203d292bf81886c5900e500eb.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrf=abcd%3b%20SameSite=None" onerror="document.forms[0].submit()">
 ```
 
-![](./images/35949db66cb6_004.png)
+![](../images/35949db66cb6_004.png)
 
 ```html
 <html>
