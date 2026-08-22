@@ -145,3 +145,62 @@ Nice! We now have administrator privilege!
 What we’ve learned:
 
 1. Single-endpoint race conditions
+
+### Why It Works
+
+The vulnerability exists because the application processes user-controlled input without adequate security validation. In this specific lab, the attack succeeds because:
+
+- The application trusts the user input without proper server-side validation
+- The input reaches a sensitive operation (database query, HTML rendering, system command, etc.) without sanitization
+- The security boundary that should protect the operation is missing or incorrectly implemented
+- The specific payload used exploits the exact weakness in the application's input handling
+
+The PortSwigger lab description confirms this: "This lab's email change feature contains a race condition that enables you to associate an arbitrary email address with your account."
+
+### Attack Flow
+
+**Attack Flow:**
+
+```
+Attacker Input (payload in request)
+        ↓
+Application Functionality (processes user input)
+        ↓
+Server Processing (no validation/sanitization)
+        ↓
+Injection Point (input reaches sensitive operation)
+        ↓
+Exploitation (payload executes as intended)
+        ↓
+Lab Objective Achieved
+```
+
+### Real-World Impact
+
+An attacker could bypass rate limits and brute-force protections, apply discount codes multiple times, withdraw money multiple times, create duplicate accounts, bypass one-time-use restrictions, or exploit TOCTOU vulnerabilities in file operations.
+
+### Detection / Testing Methodology
+
+1. Identify endpoints that perform state-changing operations (purchases, transfers, redemptions)
+2. Test for rate limiting by sending concurrent requests
+3. Use Burp Repeater or Turbo Intruder for parallel requests
+4. Check for single-use restrictions that can be bypassed via race conditions
+5. Test multi-endpoint race conditions (partial construction)
+6. Look for TOCTOU vulnerabilities in file operations
+
+### Remediation
+
+- Implement proper database transactions with appropriate isolation levels
+- Use pessimistic locking (SELECT FOR UPDATE) for critical resources
+- Implement optimistic concurrency control (version checks)
+- Use atomic operations for state changes
+- Rate-limit critical endpoints
+- Design for idempotency where possible
+
+### Key Takeaways
+
+- This lab demonstrates a race conditions vulnerability in a real-world scenario.
+- The vulnerability occurs because user input reaches a sensitive operation without proper validation.
+- The PortSwigger lab confirms: "This lab's email change feature contains a race condition that enables you to associate an arbitrary"
+- Burp Suite is essential for identifying and exploiting this vulnerability.
+- The remediation for this specific vulnerability involves: - Implement proper database transactions with appropriate isolation levels

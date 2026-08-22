@@ -46,3 +46,60 @@ Note that in some cases, depending on the type of the URL, the payload might get
 - **Regular security updates:** Patch vulnerabilities in JavaScript libraries and frameworks promptly.
 
 **[New database]** (database)
+
+### Why It Works
+
+The vulnerability exists because the application processes user-controlled input without adequate security validation. In this specific lab, the attack succeeds because:
+
+- The application trusts the user input without proper server-side validation
+- The input reaches a sensitive operation (database query, HTML rendering, system command, etc.) without sanitization
+- The security boundary that should protect the operation is missing or incorrectly implemented
+- The specific payload used exploits the exact weakness in the application's input handling
+
+The PortSwigger lab description confirms this: "This lab contains an XSS vulnerability that is triggered by a click. Construct a clickjacking attack that fools the user into clicking the "Click me" button to call the print() function."
+
+### Attack Flow
+
+**Attack Flow:**
+
+```
+Attacker Input (payload in request)
+        ↓
+Application Functionality (processes user input)
+        ↓
+Server Processing (no validation/sanitization)
+        ↓
+Injection Point (input reaches sensitive operation)
+        ↓
+Exploitation (payload executes as intended)
+        ↓
+Lab Objective Achieved
+```
+
+### Real-World Impact
+
+An attacker could trick users into performing actions they didn't intend (delete account, change email, transfer funds), capture keystrokes, trigger DOM-based XSS, or perform multi-step clickjacking attacks.
+
+### Detection / Testing Methodology
+
+1. Check if the target page can be framed (no X-Frame-Options or frame-ancestors CSP)
+2. Verify if the page has JavaScript frame-busting (and test bypass via sandbox attribute)
+3. Check if form fields can be pre-filled from URL parameters
+4. Identify state-changing actions that could be clickjacked
+5. Test if the page can be chained with DOM-based XSS
+
+### Remediation
+
+- Set X-Frame-Options: DENY or SAMEORIGIN
+- Use CSP frame-ancestors 'none' or 'self'
+- Do not rely on JavaScript frame-busting scripts (they can be bypassed)
+- Implement both headers and JavaScript for defense-in-depth
+- Do not allow form pre-filling from URL parameters for sensitive forms
+
+### Key Takeaways
+
+- This lab demonstrates a clickjacking vulnerability in a real-world scenario.
+- The vulnerability occurs because user input reaches a sensitive operation without proper validation.
+- The PortSwigger lab confirms: "This lab contains an XSS vulnerability that is triggered by a click. Construct a clickjacking attack"
+- Burp Suite is essential for identifying and exploiting this vulnerability.
+- The remediation for this specific vulnerability involves: - Set X-Frame-Options: DENY or SAMEORIGIN

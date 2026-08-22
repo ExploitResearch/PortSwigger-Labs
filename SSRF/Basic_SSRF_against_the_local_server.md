@@ -5,27 +5,27 @@
 Exploit a server-side request forgery (SSRF) vulnerability to access a restricted admin interface on the local server.
 
 
+
 ### Vulnerability / Concept
 
-Server-Side Request Forgery (SSRF) occurs when an application makes HTTP requests to a user-supplied URL without proper validation. This allows attackers to make the server send requests to unintended destinations, including internal services, cloud metadata endpoints, and localhost services.
+This lab demonstrates a vulnerability in the ssrf category.
 
-Common SSRF targets: internal admin panels, cloud metadata endpoints (169.254.169.254), localhost services, internal network scanning, and blind SSRF via out-of-band (OOB) DNS/HTTP callbacks.
+This lab has a stock check feature which fetches data from an internal system.
 
-The root cause is the server trusting user input as a URL destination without validating the scheme, host, and port against an allowlist.
+The vulnerability exists because the application fails to properly validate, sanitize, or secure the user-controlled input that reaches a sensitive operation. The specific attack surface and exploitation technique depend on the exact vulnerability type demonstrated in this lab.
 
 ### Recon / Initial Analysis
 
-1. Identify parameters that accept URLs or hostnames (image URLs, webhook URLs, import features)
-2. Test with `http://localhost/` or `http://127.0.0.1/` to check internal access
-3. Check for input filters (blacklists, whitelists) by testing alternative IP formats
-4. Test cloud metadata endpoints (`http://169.254.169.254/latest/meta-data/`)
-5. For blind SSRF: use Burp Collaborator to detect out-of-band callbacks
-6. Test URL scheme bypasses (gopher://, file://, dict://)
-7. Check for open redirect vulnerabilities that can be chained with SSRF
+Based on the lab's objective and the PortSwigger solution:
 
-### Vulnerability / Concept
-
-The application makes HTTP requests to a user-supplied URL. By providing `http://localhost/` or `http://127.0.0.1/`, the attacker can access internal services that are not reachable from the outside.
+1. Analyze the application's functionality to identify the attack surface
+2. Browse to /admin and observe that you can't directly access the admin page.
+                    
+                    
+                        Visit a product, click "Check stock", intercept the reques
+3. Use Burp Suite Proxy to intercept and analyze requests
+4. Identify the specific vulnerability type by testing user-controlled input
+5. Determine the appropriate exploitation technique for this lab
 
 ### Exploitation
 
@@ -37,33 +37,60 @@ The application makes HTTP requests to a user-supplied URL. By providing `http:/
 
 ### Why It Works
 
-The application makes server-side HTTP requests using user-controlled URLs without validating the destination. The server has access to internal network resources that external attackers cannot reach directly. By supplying an internal URL, the attacker uses the server as a proxy to access restricted resources.
+The vulnerability exists because the application processes user-controlled input without adequate security validation. In this specific lab, the attack succeeds because:
 
-Blacklist-based filters can be bypassed using alternative IP formats (0x7f000001, 2130706433, 017700000001), DNS rebinding, URL encoding, or redirect chains. Whitelist filters can be bypassed using open redirects on whitelisted domains.
+- The application trusts the user input without proper server-side validation
+- The input reaches a sensitive operation (database query, HTML rendering, system command, etc.) without sanitization
+- The security boundary that should protect the operation is missing or incorrectly implemented
+- The specific payload used exploits the exact weakness in the application's input handling
+
+The PortSwigger lab description confirms this: "This lab has a stock check feature which fetches data from an internal system."
+
+### Attack Flow
+
+**Attack Flow:**
+
+```
+Attacker Input (payload in request)
+        ↓
+Application Functionality (processes user input)
+        ↓
+Server Processing (no validation/sanitization)
+        ↓
+Injection Point (input reaches sensitive operation)
+        ↓
+Exploitation (payload executes as intended)
+        ↓
+Lab Objective Achieved
+```
 
 ### Real-World Impact
 
-An attacker could:
-- Access internal admin panels not exposed to the internet
-- Steal cloud credentials from metadata endpoints (AWS IAM roles, GCP service accounts)
-- Scan the internal network for vulnerable services
-- Access databases or APIs bound to localhost
-- Exfiltrate data via blind SSRF to attacker-controlled DNS/HTTP servers
-- Pivot to other internal services via SSRF chains
+An attacker could access internal admin panels, steal cloud credentials from metadata endpoints (AWS IAM, GCP), scan the internal network, access databases bound to localhost, or exfiltrate data via blind SSRF.
+
+### Detection / Testing Methodology
+
+1. Identify parameters that accept URLs or hostnames
+2. Test with http://localhost/ or http://127.0.0.1/
+3. Check for input filters (blacklists, whitelists)
+4. Test cloud metadata endpoints (169.254.169.254)
+5. For blind SSRF: use Burp Collaborator
+6. Test URL scheme bypasses (gopher://, file://)
+7. Check for open redirect vulnerabilities that chain with SSRF
 
 ### Remediation
 
-- Use allowlists (not blocklists) for URL validation — only allow specific, expected domains
+- Use allowlists (not blocklists) for URL validation
 - Block all private IP ranges (10.x, 172.16-31.x, 192.168.x, 127.x, 169.254.x)
-- Disable unnecessary URL schemes (file://, gopher://, dict://, ftp://)
+- Disable unnecessary URL schemes (file://, gopher://, dict://)
 - Do not follow redirects when making server-side requests
 - Use a separate network namespace for outbound requests
-- Implement DNS pinning to prevent DNS rebinding attacks
+- Implement DNS pinning to prevent DNS rebinding
 
 ### Key Takeaways
 
-- SSRF turns the server into a proxy — the server's network access becomes the attacker's.
-- Cloud metadata endpoints (169.254.169.254) are high-value SSRF targets for credential theft.
-- Blacklist-based URL filters are always bypassable — use allowlists.
-- Open redirects on whitelisted domains can bypass URL allowlist filters.
-- Blind SSRF (via OOB DNS/HTTP) can exfiltrate data even without response reflection.
+- This lab demonstrates a ssrf vulnerability in a real-world scenario.
+- The vulnerability occurs because user input reaches a sensitive operation without proper validation.
+- The PortSwigger lab confirms: "This lab has a stock check feature which fetches data from an internal system."
+- Burp Suite is essential for identifying and exploiting this vulnerability.
+- The remediation for this specific vulnerability involves: - Use allowlists (not blocklists) for URL validation

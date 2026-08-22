@@ -5,21 +5,22 @@
 Access the admin interface and delete the user `carlos`.
 
 
+
 ### Vulnerability / Concept
 
-This lab demonstrates a web security vulnerability that can be exploited to compromise the application's security. The vulnerability allows an attacker to bypass security controls and perform unauthorized actions.
+This lab demonstrates a vulnerability in the jwt category.
 
-The core issue is a failure in the application's security architecture — either insufficient input validation, broken access controls, improper trust boundaries, or insecure handling of user-supplied data. Understanding the root cause is essential for both exploitation and remediation.
+This lab uses a JWT-based mechanism for handling sessions. It uses a robust RSA key pair to sign and verify tokens. However, due to implementation flaws, this mechanism is vulnerable to algorithm confusion attacks.
+
+The vulnerability exists because the application fails to properly validate, sanitize, or secure the user-controlled input that reaches a sensitive operation. The specific attack surface and exploitation technique depend on the exact vulnerability type demonstrated in this lab.
 
 ### Recon / Initial Analysis
 
-1. Identify the attack surface — what user-controlled inputs exist (URL parameters, form fields, headers, cookies)
-2. Analyze the application's behavior with unexpected input
-3. Map the request flow and identify trust boundaries
-4. Test for error messages that reveal implementation details
-5. Compare authenticated vs unauthenticated behavior
-6. Use Burp Suite Proxy to capture and analyze all requests
-7. Check for hidden parameters using Burp Intruder or Param Miner
+1. Analyze the application's functionality and identify user-controlled inputs
+2. Use Burp Suite to intercept and modify requests
+3. Test for the specific jwt vulnerability
+4. Identify the injection point and context
+5. Craft an appropriate payload
 
 ### Analysis/Exploitation -
 
@@ -66,31 +67,60 @@ Now just reload the page in the browser, access the admin panel and delete user 
 
 ### Why It Works
 
-The vulnerability exists because the application fails to properly validate, sanitize, or authorize user input. The broken trust boundary allows an attacker to manipulate the application's behavior by injecting unexpected data that the server processes without adequate security checks.
+The vulnerability exists because the application processes user-controlled input without adequate security validation. In this specific lab, the attack succeeds because:
+
+- The application trusts the user input without proper server-side validation
+- The input reaches a sensitive operation (database query, HTML rendering, system command, etc.) without sanitization
+- The security boundary that should protect the operation is missing or incorrectly implemented
+- The specific payload used exploits the exact weakness in the application's input handling
+
+The PortSwigger lab description confirms this: "This lab uses a JWT-based mechanism for handling sessions. It uses a robust RSA key pair to sign and verify tokens. However, due to implementation flaws, this mechanism is vulnerable to algorithm conf"
+
+### Attack Flow
+
+**Attack Flow:**
+
+```
+Attacker Input (payload in request)
+        ↓
+Application Functionality (processes user input)
+        ↓
+Server Processing (no validation/sanitization)
+        ↓
+Injection Point (input reaches sensitive operation)
+        ↓
+Exploitation (payload executes as intended)
+        ↓
+Lab Objective Achieved
+```
 
 ### Real-World Impact
 
-An attacker could exploit this vulnerability to:
-- Access sensitive data belonging to other users
-- Bypass authentication or authorization controls
-- Perform unauthorized actions on behalf of legitimate users
-- Potentially achieve remote code execution on the server
-- Compromise the integrity or availability of the application
+An attacker could forge admin tokens for full administrative access, impersonate any user, bypass authentication entirely, escalate privileges by modifying role claims, or bypass token expiration.
+
+### Detection / Testing Methodology
+
+1. Identify JWT usage (check cookies, Authorization headers)
+2. Decode the JWT to examine header (alg, kid) and payload (sub, role)
+3. Test if the signature is verified (modify payload, resubmit)
+4. Test if the algorithm can be changed (RS256 to HS256, none)
+5. Look for exposed public keys (JWKS endpoints)
+6. Check if jwk/jku/kid header parameters are processed
+7. Test if weak signing keys can be brute-forced
 
 ### Remediation
 
-- Implement proper server-side input validation for all user-controlled data
-- Use parameterized queries and prepared statements
-- Enforce server-side authorization checks on every request
-- Follow the principle of least privilege
-- Implement security headers (CSP, X-Frame-Options, X-Content-Type-Options)
-- Use a Web Application Firewall (WAF) as defense-in-depth
-- Regularly test for vulnerabilities using automated scanners and manual testing
+- Pin the JWT algorithm to a single expected value (e.g., RS256 only)
+- Never accept 'alg: none' or unsigned tokens
+- Use a well-maintained JWT library that prevents algorithm confusion
+- Do not process user-controlled jwk, jku, or kid header parameters
+- Use strong, random signing keys (256-bit minimum)
+- Implement server-side session revocation despite JWT statelessness
 
 ### Key Takeaways
 
-- Never trust user-controlled input — validate and sanitize everything server-side.
-- Security controls must be enforced server-side, not client-side.
-- Understanding the vulnerability's root cause is essential for proper remediation.
-- Burp Suite is essential for identifying and exploiting web vulnerabilities.
-- Defense in depth — use multiple layers of protection, not just one.
+- This lab demonstrates a jwt vulnerability in a real-world scenario.
+- The vulnerability occurs because user input reaches a sensitive operation without proper validation.
+- The PortSwigger lab confirms: "This lab uses a JWT-based mechanism for handling sessions. It uses a robust RSA key pair to sign and"
+- Burp Suite is essential for identifying and exploiting this vulnerability.
+- The remediation for this specific vulnerability involves: - Pin the JWT algorithm to a single expected value (e.g., RS256 only)

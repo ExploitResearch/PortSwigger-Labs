@@ -4,15 +4,22 @@
 
 Exploit a logic flaw in email address parsing to bypass access controls.
 
+
 ### Vulnerability / Concept
 
-The application processes email addresses differently across components, creating a logic flaw that can be exploited to bypass access controls.
+This lab demonstrates a vulnerability in the logic flaws category.
+
+This lab validates email addresses to prevent attackers from registering addresses from unauthorized domains. There is a parser discrepancy in the validation logic and library used to parse email addresses.
+
+The vulnerability exists because the application fails to properly validate, sanitize, or secure the user-controlled input that reaches a sensitive operation. The specific attack surface and exploitation technique depend on the exact vulnerability type demonstrated in this lab.
 
 ### Recon / Initial Analysis
 
-1. Identify email address handling in the application
-2. Test different email formats (RFC 5321, RFC 5322, Unicode)
-3. Look for discrepancies in how different components parse the same email
+1. Analyze the application's functionality and identify user-controlled inputs
+2. Use Burp Suite to intercept and modify requests
+3. Test for the specific logic flaws vulnerability
+4. Identify the injection point and context
+5. Craft an appropriate payload
 
 ### Exploitation
 
@@ -22,32 +29,59 @@ The application processes email addresses differently across components, creatin
 
 ### Why It Works
 
-Different email parsing libraries may interpret the same email address differently. For example, `user@domain.com` and `user@domain.com.` (with trailing dot) may be treated as the same or different depending on the parser. This discrepancy can be exploited to bypass access controls.
+The vulnerability exists because the application processes user-controlled input without adequate security validation. In this specific lab, the attack succeeds because:
 
+- The application trusts the user input without proper server-side validation
+- The input reaches a sensitive operation (database query, HTML rendering, system command, etc.) without sanitization
+- The security boundary that should protect the operation is missing or incorrectly implemented
+- The specific payload used exploits the exact weakness in the application's input handling
+
+The PortSwigger lab description confirms this: "This lab validates email addresses to prevent attackers from registering addresses from unauthorized domains. There is a parser discrepancy in the validation logic and library used to parse email addr"
+
+### Attack Flow
+
+**Attack Flow:**
+
+```
+Attacker Input (payload in request)
+        ↓
+Application Functionality (processes user input)
+        ↓
+Server Processing (no validation/sanitization)
+        ↓
+Injection Point (input reaches sensitive operation)
+        ↓
+Exploitation (payload executes as intended)
+        ↓
+Lab Objective Achieved
+```
 
 ### Real-World Impact
 
-An attacker could exploit business logic flaws to:
-- Purchase items at reduced or negative prices
-- Bypass multi-step workflows (checkout, authentication flows)
-- Access functionality outside their privilege level
-- Manipulate application state for financial gain
-- Bypass rate limits and brute-force protections
-- Cause inconsistent application behavior that leads to data corruption
+An attacker could purchase items at reduced prices, bypass multi-step workflows, access functionality outside their privilege level, manipulate application state for financial gain, bypass rate limits, or cause data corruption.
 
+### Detection / Testing Methodology
+
+1. Identify business-critical parameters (prices, quantities, discount codes, roles)
+2. Test if client-side values can be modified to affect server-side logic
+3. Test multi-step workflows for sequence bypass (skip steps, replay, out-of-order)
+4. Check for inconsistent handling of exceptional input (very large, negative, unexpected values)
+5. Test rate limits and brute-force protections
+6. Look for encryption oracles and state machine flaws
 
 ### Remediation
 
 - Implement server-side validation for all business-critical parameters (prices, quantities, roles)
 - Never trust client-side values for pricing, permissions, or workflow state
-- Enforce workflow sequence integrity server-side (don't rely on UI ordering)
+- Enforce workflow sequence integrity server-side
 - Use server-side state machines for multi-step processes
 - Implement consistency checks for financial transactions
 - Rate-limit based on business logic, not just request volume
-- Test business logic thoroughly with negative test cases
 
 ### Key Takeaways
 
-- Use consistent email parsing across all components
-- Normalize email addresses before comparison
-- Be aware of RFC ambiguities in email address formats
+- This lab demonstrates a logic flaws vulnerability in a real-world scenario.
+- The vulnerability occurs because user input reaches a sensitive operation without proper validation.
+- The PortSwigger lab confirms: "This lab validates email addresses to prevent attackers from registering addresses from unauthorized"
+- Burp Suite is essential for identifying and exploiting this vulnerability.
+- The remediation for this specific vulnerability involves: - Implement server-side validation for all business-critical parameters (prices, quantities, roles)
