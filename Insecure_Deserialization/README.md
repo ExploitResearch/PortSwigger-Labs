@@ -9,15 +9,15 @@ Insecure deserialization occurs when an application deserializes untrusted data 
 - Python: `pickle.dumps` / `pickle.loads`
 - .NET: `BinaryFormatter`
 
-## Contents
+## Labs
 
-- [Modifying serialized objects](./Modifying_serialized_objects.md)
-- [Modifying serialized data types](./Modifying_serialized_data_types.md)
-- [Using application functionality to exploit insecure deserialization](./Using_application_functionality_to_exploit_insecure_deserialization.md)
 - [Arbitrary object injection in PHP](./Arbitrary_object_injection_in_PHP.md)
+- [Developing a custom gadget chain for Java deserialization](./Developing_a_custom_gadget_chain_for_Java_deserialization.md)
+- [Developing a custom gadget chain for PHP deserialization](./Developing_a_custom_gadget_chain_for_PHP_deserialization.md)
 - [Exploiting Java deserialization with Apache Commons Collections](./Exploiting_Java_deserialization_with_Apache_Commons_Collections.md)
 - [Exploiting PHP deserialization with a pre-built gadget chain](./Exploiting_PHP_deserialization_with_a_pre-built_gadget_chain.md)
 - [Exploiting Ruby deserialization using a documented gadget chain](./Exploiting_Ruby_deserialization_using_a_documented_gadget_chain.md)
-- [Developing a custom gadget chain for Java deserialization](./Developing_a_custom_gadget_chain_for_Java_deserialization.md)
-- [Developing a custom gadget chain for PHP deserialization](./Developing_a_custom_gadget_chain_for_PHP_deserialization.md)
+- [Modifying serialized data types](./Modifying_serialized_data_types.md)
+- [Modifying serialized objects](./Modifying_serialized_objects.md)
 - [Using PHAR deserialization to deploy a custom gadget chain](./Using_PHAR_deserialization_to_deploy_a_custom_gadget_chain.md)
+- [Using application functionality to exploit insecure deserialization](./Using_application_functionality_to_exploit_insecure_deserialization.md)

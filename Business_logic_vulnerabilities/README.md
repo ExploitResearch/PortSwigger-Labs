@@ -1,19 +1,5 @@
 # Business logic vulnerabilities
 
-## Contents
-
-- [Excessive trust in client-side controls](./Excessive_trust_in_client-side_controls.md)
-- [High-level logic vulnerability](./High-level_logic_vulnerability.md)
-- [Inconsistent security controls](./Inconsistent_security_controls.md)
-- [Flawed enforcement of business rules](./Flawed_enforcement_of_business_rules.md)
-- [Low-level logic flaw](./Low-level_logic_flaw.md)
-- [Inconsistent handling of exceptional input](./Inconsistent_handling_of_exceptional_input.md)
-- [Weak isolation on dual-use endpoint](./Weak_isolation_on_dual-use_endpoint.md)
-- [Insufficient workflow validation](./Insufficient_workflow_validation.md)
-- [Authentication bypass via flawed state machine](./Authentication_bypass_via_flawed_state_machine.md)
-- [Infinite money logic flaw](./Infinite_money_logic_flaw.md)
-- [Authentication bypass via encryption oracle](./Authentication_bypass_via_encryption_oracle.md)
-
 Business Logic Vulnerabilities are flaws in the design and implementation of an application that allows an attacker to elicit unintended behaviour. This potentially enables attackers to manipulate legitimate functionality to achieve a malicious goal.
 
 **Note:
@@ -154,3 +140,18 @@ The impact is highly variable and depends on the functionality that contains the
 1. References to all client-side code that uses the component.
   - Write code as clearly as possible.
   - Perform security-focused code reviews of the application’s design.
+
+## Labs
+
+- [Authentication bypass via encryption oracle](./Authentication_bypass_via_encryption_oracle.md)
+- [Authentication bypass via flawed state machine](./Authentication_bypass_via_flawed_state_machine.md)
+- [Bypassing access controls using email address parsing discrepancies](./Bypassing_access_controls_using_email_address_parsing_discrepancies.md)
+- [Excessive trust in client-side controls](./Excessive_trust_in_client-side_controls.md)
+- [Flawed enforcement of business rules](./Flawed_enforcement_of_business_rules.md)
+- [High-level logic vulnerability](./High-level_logic_vulnerability.md)
+- [Inconsistent handling of exceptional input](./Inconsistent_handling_of_exceptional_input.md)
+- [Inconsistent security controls](./Inconsistent_security_controls.md)
+- [Infinite money logic flaw](./Infinite_money_logic_flaw.md)
+- [Insufficient workflow validation](./Insufficient_workflow_validation.md)
+- [Low-level logic flaw](./Low-level_logic_flaw.md)
+- [Weak isolation on dual-use endpoint](./Weak_isolation_on_dual-use_endpoint.md)

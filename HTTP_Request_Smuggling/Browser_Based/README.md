@@ -1,6 +1,6 @@
 # Browser-Based Attacks
 
-Client-side desync and CL.0 attacks.
+Browser-based HTTP request smuggling techniques that exploit how browsers parse and normalize HTTP requests. These labs cover attacks that work through the victim's browser, including client-side desync attacks.
 
 ## Labs
 

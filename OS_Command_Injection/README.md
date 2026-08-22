@@ -1,13 +1,5 @@
 # OS Command Injection 
 
-## Contents
-
-- [OS command injection, simple case](./OS_command_injection,_simple_case.md)
-- [Blind OS command injection with time delays](./Blind_OS_command_injection_with_time_delays.md)
-- [Blind OS command injection with output redirection](./Blind_OS_command_injection_with_output_redirection.md)
-- [Blind OS command injection with out-of-band interaction](./Blind_OS_command_injection_with_out-of-band_interaction.md)
-- [Blind OS command injection with out-of-band data exfiltration](./Blind_OS_command_injection_with_out-of-band_data_exfiltration.md)
-
 OS command injection is also known as shell injection. It allows an attacker to execute operating system (OS) commands on the server that is running an application, and typically fully compromise the application and its data. Often, an attacker can leverage an OS command injection vulnerability to compromise other parts of the hosting infrastructure, and exploit trust relationships to pivot the attack to other systems within the organization.
 
 The better question is what is command injection? well a command injection is way by which an attacker can execute arbitrary commands because of improper data processing or some vulnerability. A command injection can lead to various attacks like JavaScript code injection, HTML Template injection, etc. One such attack is OS Command Injection. In which attacker can execute arbitrary OS commands on target Operating System or server where application is deployed.
@@ -117,3 +109,11 @@ OWASP os Command Injection Defense Cheat Sheet
 OWASP WSTG Testing for Command Injection
 [https://owasp.org/www-project-web-security-testing-guide/latest/4-](https://owasp.org/www-project-web-security-testing-guide/latest/4-)
 Web_Application_Security_Testing/07-Input_Validation_Testing/12-Testing_for_Command
+
+## Labs
+
+- [Blind OS command injection with out-of-band data exfiltration](./Blind_OS_command_injection_with_out-of-band_data_exfiltration.md)
+- [Blind OS command injection with out-of-band interaction](./Blind_OS_command_injection_with_out-of-band_interaction.md)
+- [Blind OS command injection with output redirection](./Blind_OS_command_injection_with_output_redirection.md)
+- [Blind OS command injection with time delays](./Blind_OS_command_injection_with_time_delays.md)
+- [OS command injection, simple case](./OS_command_injection,_simple_case.md)

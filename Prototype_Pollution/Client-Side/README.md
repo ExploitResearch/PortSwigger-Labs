@@ -1,6 +1,6 @@
 # Client-Side Prototype Pollution
 
-Prototype pollution in browser JavaScript leading to DOM XSS.
+Client-side prototype pollution vulnerabilities that can be exploited via the browser's URL hash or query parameters. These labs demonstrate how prototype pollution enables DOM XSS through various client-side gadgets and browser APIs.
 
 ## Labs
 

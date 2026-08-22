@@ -1,14 +1,5 @@
 # Path/Directory traversal
 
-## Contents
-
-- [File path traversal, simple case](./File_path_traversal,_simple_case.md)
-- [File path traversal, traversal sequences blocked with absolute path bypass](./File_path_traversal,_traversal_sequences_blocked_with_absolute_path_bypass.md)
-- [File path traversal, traversal sequences stripped non-recursively](./File_path_traversal,_traversal_sequences_stripped_non-recursively.md)
-- [File path traversal, traversal sequences stripped with superfluous URL-decode](./File_path_traversal,_traversal_sequences_stripped_with_superfluous_URL-decode.md)
-- [File path traversal, validation of start of path](./File_path_traversal,_validation_of_start_of_path.md)
-- [File path traversal, validation of file extension with null byte bypass](./File_path_traversal,_validation_of_file_extension_with_null_byte_bypass.md)
-
 ### Path traversal
 
 Path traversal, also known as directory traversal, is a web security vulnerability that allows attackers to access files and directories on a web server beyond their intended reach by manipulating user input that is used to construct file paths, essentially tricking the server into accessing unauthorized locations.
@@ -65,7 +56,6 @@ If the application does not properly validate the input, this could result in th
 1. If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
 {% endhint %}
 
-
 ### There are three main types of paths: Default, Absolute, and Relative.
 
   1. **Default Path:**
@@ -94,7 +84,6 @@ If the application does not properly validate the input, this could result in th
   - Relative path: `../Downloads/file.txt` (relative to `/home/username/Documents/`)
 {% endhint %}
 
-
 {% hint style="info" %}
 
 - Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
@@ -111,3 +100,12 @@ Here are some files that are often the target of directory traversal attacks on 
   - */proc/mounts* – contains a list of currently mounted file systems. This allows the attacker to try to access these file systems, for example, through follow-up directory traversal attacks.
   - */proc/net/arp* – contains the address resolution protocol (ARP) table, which could be used to discover other connected systems (potential attack targets).
   - */proc/net/tcp* and */proc/net/udp* – contain lists of ongoing TCP/UDP connections, which could be used to discover other connected systems (again, potential attack targets).
+
+## Labs
+
+- [File path traversal, simple case](./File_path_traversal,_simple_case.md)
+- [File path traversal, traversal sequences blocked with absolute path bypass](./File_path_traversal,_traversal_sequences_blocked_with_absolute_path_bypass.md)
+- [File path traversal, traversal sequences stripped non-recursively](./File_path_traversal,_traversal_sequences_stripped_non-recursively.md)
+- [File path traversal, traversal sequences stripped with superfluous URL-decode](./File_path_traversal,_traversal_sequences_stripped_with_superfluous_URL-decode.md)
+- [File path traversal, validation of file extension with null byte bypass](./File_path_traversal,_validation_of_file_extension_with_null_byte_bypass.md)
+- [File path traversal, validation of start of path](./File_path_traversal,_validation_of_start_of_path.md)

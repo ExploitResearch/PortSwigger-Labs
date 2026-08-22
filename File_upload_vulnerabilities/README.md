@@ -1,15 +1,5 @@
 # File upload vulnerabilities
 
-## Contents
-
-- [Remote code execution via web shell upload](./Remote_code_execution_via_web_shell_upload.md)
-- [Web shell upload via Content-Type restriction bypass](./Web_shell_upload_via_Content-Type_restriction_bypass.md)
-- [Web shell upload via path traversal](./Web_shell_upload_via_path_traversal.md)
-- [Web shell upload via extension blacklist bypass](./Web_shell_upload_via_extension_blacklist_bypass.md)
-- [Web shell upload via obfuscated file extension](./Web_shell_upload_via_obfuscated_file_extension.md)
-- [Remote code execution via polyglot web shell upload](./Remote_code_execution_via_polyglot_web_shell_upload.md)
-- [Web shell upload via race condition](./Web_shell_upload_via_race_condition.md)
-
 ### **File upload vulnerabilities**
 
 File upload vulnerabilities are when a web server allows users to upload files to its filesystem without sufficiently validating things like their name, type, contents, or size. This can have serious consequences, allowing attackers to upload malicious files that can compromise the server and user data.
@@ -125,3 +115,13 @@ $output = shell_exec('python /path/to/script.py');
 [https://steflan-security.com/file-upload-restriction-bypass-cheat-sheet/](https://steflan-security.com/file-upload-restriction-bypass-cheat-sheet/)
 
 [https://steflan-security.com/file-upload-restriction-bypass-cheat-sheet/](https://steflan-security.com/file-upload-restriction-bypass-cheat-sheet/)
+
+## Labs
+
+- [Remote code execution via polyglot web shell upload](./Remote_code_execution_via_polyglot_web_shell_upload.md)
+- [Remote code execution via web shell upload](./Remote_code_execution_via_web_shell_upload.md)
+- [Web shell upload via Content-Type restriction bypass](./Web_shell_upload_via_Content-Type_restriction_bypass.md)
+- [Web shell upload via extension blacklist bypass](./Web_shell_upload_via_extension_blacklist_bypass.md)
+- [Web shell upload via obfuscated file extension](./Web_shell_upload_via_obfuscated_file_extension.md)
+- [Web shell upload via path traversal](./Web_shell_upload_via_path_traversal.md)
+- [Web shell upload via race condition](./Web_shell_upload_via_race_condition.md)

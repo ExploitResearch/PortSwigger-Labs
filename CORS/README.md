@@ -1,12 +1,5 @@
 # CORS
 
-## Contents
-
-- [CORS vulnerability with basic origin reflection](./CORS_vulnerability_with_basic_origin_reflection.md)
-- [CORS vulnerability with trusted null origin](./CORS_vulnerability_with_trusted_null_origin.md)
-- [CORS vulnerability with trusted insecure protocols](./CORS_vulnerability_with_trusted_insecure_protocols.md)
-- [CORS vulnerability with internal network pivot attack](./CORS_vulnerability_with_internal_network_pivot_attack.md)
-
 ### CORS
 
 CORS allows controlled access to resources located outside of a given domain by relaxing the same-origin policy for trusted domains. It provides a way for servers to specify which origins (domains, ports, schemes) are allowed to access their resources. This is done through HTTP headers sent by the server in response to requests from other origins. These headers tell the browser which origins are permitted to access the resources, allowing the server to control access to its data and APIs.
@@ -62,7 +55,6 @@ is not permitted as this would be dangerously insecure, exposing any authenticat
 
 {% endhint %}
 
-
 ### **CORS Headers**:
 
 - **Access-Control-Allow-Origin**: Specifies which origins are allowed to access the resource. It can be set to a specific origin, "*", or a list of origins.
@@ -95,3 +87,10 @@ Avoid using the header `Access-Control-Allow-Origin: null`. Cross-origin resourc
 ### Avoid wildcards in internal networks
 
 Avoid using wildcards in internal networks. Trusting network configuration alone to protect internal resources is not sufficient when internal browsers can access untrusted external domains.
+
+## Labs
+
+- [CORS vulnerability with basic origin reflection](./CORS_vulnerability_with_basic_origin_reflection.md)
+- [CORS vulnerability with internal network pivot attack](./CORS_vulnerability_with_internal_network_pivot_attack.md)
+- [CORS vulnerability with trusted insecure protocols](./CORS_vulnerability_with_trusted_insecure_protocols.md)
+- [CORS vulnerability with trusted null origin](./CORS_vulnerability_with_trusted_null_origin.md)

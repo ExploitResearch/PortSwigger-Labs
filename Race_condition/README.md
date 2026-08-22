@@ -1,14 +1,5 @@
 # Race condition
 
-## Contents
-
-- [Limit overrun race conditions        ](./Limit_overrun_race_conditions.md)
-- [Bypassing rate limits via race conditions](./Bypassing_rate_limits_via_race_conditions.md)
-- [Multi-endpoint race conditions](./Multi-endpoint_race_conditions.md)
-- [Single-endpoint race conditions](./Single-endpoint_race_conditions.md)
-- [Exploiting time-sensitive vulnerabilities](./Exploiting_time-sensitive_vulnerabilities.md)
-- [Partial construction race conditions](./Partial_construction_race_conditions.md)
-
 ### **What is a race condition?**
 
 A race condition is when an application attempts to execute multiple independent processes (“threads”) simultaneously to accomplish multiple tasks at once rather than performing in the appropriate sequence. While running multiple processes (“multi-threading”) improves application performance by using computing resources more efficiently, running them simultaneously creates problems when both processes attempt to access the same resource at the same time, causing what’s known as a “collision.”
@@ -52,7 +43,6 @@ Race conditions occasionally occur in [logic gates](https://www.techtarget.com/w
 **Read-modify-write.** This kind of race condition happens when two processes read a value in a program and write back a new value. It often causes a software bug. Like the example above, the expectation is that the two processes will happen sequentially -- the first process produces its value and then the second process reads that value and returns a different one.
 {% endhint %}
 
-
 For example, if checks against a checking account are processed sequentially, the system will make sure there are enough funds in the account to process check A first and then look again to see if there are enough funds to process check B after processing check A. However, if the two checks are processed at the same time, the system may read the same account balance value for both processes and give an incorrect account balance value, causing the account to be overdrawn.
 
 ![](./images/b24449ade7fc_003.png)
@@ -62,7 +52,6 @@ For example, if checks against a checking account are processed sequentially, th
 {% hint style="info" %}
 **Check-then-act.** This race condition happens when two processes check a value on which they will take each take an external action. The processes both check the value, but only one process can take the value with it. The later-occurring process will read the value as null. This results in a potentially out-of-date or unavailable observation being used to determine what the program will do next. For example, if a map application runs two processes simultaneously that require the same location data, one will take the value first so the other can't use it. The later process reads the data as null.
 {% endhint %}
-
 
 ## Limit overrun race conditions
 
@@ -113,3 +102,12 @@ Race conditions are sometimes produced by data races, which occur when two threa
   - **Thread synchronization:** Ensure only one thread executes a specific code section at a time.
   - **Serialization:** Order read and write operations to avoid conflicts. (e.g., in storage access)
   - **Priority schemes:** In networking, prioritize access requests to prevent collisions.
+
+## Labs
+
+- [Bypassing rate limits via race conditions](./Bypassing_rate_limits_via_race_conditions.md)
+- [Exploiting time-sensitive vulnerabilities](./Exploiting_time-sensitive_vulnerabilities.md)
+- [Limit overrun race conditions](./Limit_overrun_race_conditions.md)
+- [Multi-endpoint race conditions](./Multi-endpoint_race_conditions.md)
+- [Partial construction race conditions](./Partial_construction_race_conditions.md)
+- [Single-endpoint race conditions](./Single-endpoint_race_conditions.md)

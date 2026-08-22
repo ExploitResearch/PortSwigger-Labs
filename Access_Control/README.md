@@ -1,21 +1,5 @@
 # Access Control
 
-## Contents
-
-- [Unprotected admin functionality](./Unprotected_admin_functionality.md)
-- [Unprotected admin functionality with unpredictable URL](./Unprotected_admin_functionality_with_unpredictable_URL.md)
-- [User role controlled by request parameter](./User_role_controlled_by_request_parameter.md)
-- [User role can be modified in user profile](./User_role_can_be_modified_in_user_profile.md)
-- [User ID controlled by request parameter](./User_ID_controlled_by_request_parameter.md)
-- [User ID controlled by request parameter, with unpredictable user IDs](./User_ID_controlled_by_request_parameter,_with_unpredictable_user_IDs.md)
-- [User ID controlled by request parameter with data leakage in redirect](./User_ID_controlled_by_request_parameter_with_data_leakage_in_redirect.md)
-- [User ID controlled by request parameter with password disclosure](./User_ID_controlled_by_request_parameter_with_password_disclosure.md)
-- [Insecure direct object references](./Insecure_direct_object_references.md)
-- [URL-based access control can be circumvented](./URL-based_access_control_can_be_circumvented.md)
-- [Method-based access control can be circumvented](./Method-based_access_control_can_be_circumvented.md)
-- [Multi-step process with no access control on one step](./Multi-step_process_with_no_access_control_on_one_step.md)
-- [Referer-based access control](./Referer-based_access_control.md)
-
 <details><summary>Access Control Basic</summary>
 
 Access control is a fundamental security concept that restricts access to resources. It is a way to limit access to systems, networks, physical spaces, and data to authorized users, processes, or devices.
@@ -85,3 +69,19 @@ Context-dependent access control (also known as contextual or situation-based ac
 ## **Vertical privilege escalation**
 
 ## **Horizontal privilege escalation**
+
+## Labs
+
+- [Insecure direct object references](./Insecure_direct_object_references.md)
+- [Method-based access control can be circumvented](./Method-based_access_control_can_be_circumvented.md)
+- [Multi-step process with no access control on one step](./Multi-step_process_with_no_access_control_on_one_step.md)
+- [Referer-based access control](./Referer-based_access_control.md)
+- [URL-based access control can be circumvented](./URL-based_access_control_can_be_circumvented.md)
+- [Unprotected admin functionality](./Unprotected_admin_functionality.md)
+- [Unprotected admin functionality with unpredictable URL](./Unprotected_admin_functionality_with_unpredictable_URL.md)
+- [User ID controlled by request parameter, with unpredictable user IDs](./User_ID_controlled_by_request_parameter,_with_unpredictable_user_IDs.md)
+- [User ID controlled by request parameter](./User_ID_controlled_by_request_parameter.md)
+- [User ID controlled by request parameter with data leakage in redirect](./User_ID_controlled_by_request_parameter_with_data_leakage_in_redirect.md)
+- [User ID controlled by request parameter with password disclosure](./User_ID_controlled_by_request_parameter_with_password_disclosure.md)
+- [User role can be modified in user profile](./User_role_can_be_modified_in_user_profile.md)
+- [User role controlled by request parameter](./User_role_controlled_by_request_parameter.md)

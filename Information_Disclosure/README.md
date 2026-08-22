@@ -1,13 +1,5 @@
 # Information Disclosure
 
-## Contents
-
-- [Information disclosure in error messages](./Information_disclosure_in_error_messages.md)
-- [Information disclosure on debug page](./Information_disclosure_on_debug_page.md)
-- [Source code disclosure via backup files](./Source_code_disclosure_via_backup_files.md)
-- [Authentication bypass via information disclosure](./Authentication_bypass_via_information_disclosure.md)
-- [Information disclosure in version control history](./Information_disclosure_in_version_control_history.md)
-
 |  |  |  |  |
 |---|---|---|---|
 | Type of Information Disclosure | Issue | Potential Impact | Mitigation |
@@ -22,3 +14,11 @@
 | **User Account Pages** | Pages displaying user account information may expose sensitive data. | Unauthorized access to personal information of users. | - Implement proper access controls to restrict user account information access.  - Use encryption (HTTPS) to secure communication. |
 | **Backup Files** | Backup files may contain sensitive information if not properly secured. | Unauthorized access to sensitive data in backup files. | - Store backup files in secure locations.  - Encrypt backup files to protect against unauthorized access. |
 | **Version Control History** | Version control histories may contain sensitive information about the application's evolution. | Exposure of historical details that could aid attackers in understanding vulnerabilities. | - Regularly review version control history and sanitize sensitive information.  - Limit access to version control repositories. |
+
+## Labs
+
+- [Authentication bypass via information disclosure](./Authentication_bypass_via_information_disclosure.md)
+- [Information disclosure in error messages](./Information_disclosure_in_error_messages.md)
+- [Information disclosure in version control history](./Information_disclosure_in_version_control_history.md)
+- [Information disclosure on debug page](./Information_disclosure_on_debug_page.md)
+- [Source code disclosure via backup files](./Source_code_disclosure_via_backup_files.md)

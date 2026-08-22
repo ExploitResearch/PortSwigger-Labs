@@ -1,9 +1,5 @@
 # SSRF
 
-## Contents
-
-- [Basic SSRF against the local server](./Basic_SSRF_against_the_local_server.md)
-
 ### SSRF Explained: Server-Side Request Forgery
 
 SSRF, which stands for **Server-Side Request Forgery**, is a web security vulnerability that allows attackers to manipulate a server into making unintended requests to internal resources or external systems. This can be used to steal sensitive data, perform unauthorized actions, or even gain complete control of the server.
@@ -32,3 +28,13 @@ requests. This could be a search bar, image upload form, or any other functional
   - **Restrict internal access:** Only allow internal resources to be accessed by authorized users and processes.
   - **Whitelist allowed URLs:** Use a whitelist to restrict the server to only access pre-approved external URLs.
   - **Keep software updated:** Regularly update web server software and libraries to patch known vulnerabilities.
+
+## Labs
+
+- [Basic SSRF against another back-end system](./Basic_SSRF_against_another_back-end_system.md)
+- [Basic SSRF against the local server](./Basic_SSRF_against_the_local_server.md)
+- [Blind SSRF with Shellshock exploitation](./Blind_SSRF_with_Shellshock_exploitation.md)
+- [Blind SSRF with out-of-band detection](./Blind_SSRF_with_out-of-band_detection.md)
+- [SSRF with blacklist-based input filter](./SSRF_with_blacklist-based_input_filter.md)
+- [SSRF with filter bypass via open redirection vulnerability](./SSRF_with_filter_bypass_via_open_redirection_vulnerability.md)
+- [SSRF with whitelist-based input filter](./SSRF_with_whitelist-based_input_filter.md)

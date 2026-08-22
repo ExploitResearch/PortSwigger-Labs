@@ -1,18 +1,5 @@
 # JWT attack
 
-## Contents
-
-- [JWT authentication bypass via unverified signature](./JWT_authentication_bypass_via_unverified_signature.md)
-- [JWT authentication bypass via flawed signature verification](./JWT_authentication_bypass_via_flawed_signature_verification.md)
-- [JWT authentication bypass via weak signing key](./JWT_authentication_bypass_via_weak_signing_key.md)
-- [JWT authentication bypass via jwk header injection](./JWT_authentication_bypass_via_jwk_header_injection.md)
-- [JWT authentication bypass via jku header injection](./JWT_authentication_bypass_via_jku_header_injection.md)
-- [JWT authentication bypass via kid header path traversal](./JWT_authentication_bypass_via_kid_header_path_traversal.md)
-- [JWT authentication bypass via algorithm confusion](./JWT_authentication_bypass_via_algorithm_confusion.md)
-- [JWT authentication bypass via algorithm confusion with no exposed key](./JWT_authentication_bypass_via_algorithm_confusion_with_no_exposed_key.md)
-- [JWT Summary Test cases](./JWT_Summary_Test_cases.md)
-- [JWT Security Testing/Penetration Testing Checklist](./JWT_Security_TestingPenetration_Testing_Checklist.md)
-
 ### JWT Tokens
 
 JSON web tokens (JWTs) are a standardized format for sending cryptographically signed JSON data between systems. They can theoretically contain any kind of data, but are most commonly used to send information ("claims") about users as part of authentication, session handling, and access control mechanisms.  
@@ -174,4 +161,17 @@ As you can see, these user-controllable parameters each tell the recipient serve
 
 ### Algorithm confusion attacks
 
-Algorithm confusion attacks (also known as key confusion attacks) occur when an attacker is able to force the server to verify the signature of a JSON web token (JWT) using a different algorithm than is intended by the website's developers. If this case isn't handled properly, this may enable attackers to forge valid JWTs containing arbitrary values without needing to know the server's secret signing key. 
+Algorithm confusion attacks (also known as key confusion attacks) occur when an attacker is able to force the server to verify the signature of a JSON web token (JWT) using a different algorithm than is intended by the website's developers. If this case isn't handled properly, this may enable attackers to forge valid JWTs containing arbitrary values without needing to know the server's secret signing key.
+
+## Labs
+
+- [JWT Security TestingPenetration Testing Checklist](./JWT_Security_TestingPenetration_Testing_Checklist.md)
+- [JWT Summary Test cases](./JWT_Summary_Test_cases.md)
+- [JWT authentication bypass via algorithm confusion](./JWT_authentication_bypass_via_algorithm_confusion.md)
+- [JWT authentication bypass via algorithm confusion with no exposed key](./JWT_authentication_bypass_via_algorithm_confusion_with_no_exposed_key.md)
+- [JWT authentication bypass via flawed signature verification](./JWT_authentication_bypass_via_flawed_signature_verification.md)
+- [JWT authentication bypass via jku header injection](./JWT_authentication_bypass_via_jku_header_injection.md)
+- [JWT authentication bypass via jwk header injection](./JWT_authentication_bypass_via_jwk_header_injection.md)
+- [JWT authentication bypass via kid header path traversal](./JWT_authentication_bypass_via_kid_header_path_traversal.md)
+- [JWT authentication bypass via unverified signature](./JWT_authentication_bypass_via_unverified_signature.md)
+- [JWT authentication bypass via weak signing key](./JWT_authentication_bypass_via_weak_signing_key.md)

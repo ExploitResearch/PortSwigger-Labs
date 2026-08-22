@@ -1,6 +1,6 @@
 # Server-Side Prototype Pollution
 
-Prototype pollution in Node.js leading to RCE.
+Server-side prototype pollution vulnerabilities in Node.js and other JavaScript runtime environments. These labs demonstrate how polluting Object.prototype can lead to privilege escalation, injection of malicious payload via gadgets like child_process, and bypass of input validation.
 
 ## Labs
 
