@@ -26,13 +26,11 @@ Fortunately, requesting the feedback page multiple times always contains the sam
 
 {% hint style="info" %}
 💡 As common with blind injections, the success of the injection must be inferred by a difference in behaviour. This could be a multitude of things:
+
+- Different behaviour of the application based on whether the command was successful or not (e.g. an error message)
+- Timing differences
+- Out-of-band activities that allow us to catch actions performed on the system (e.g. DNS requests)
 {% endhint %}
-
-
-
-  - Different behaviour of the application based on whether the command was successful or not (e.g. an error message)
-  - Timing differences
-  - Out-of-band activities that allow us to catch actions performed on the system (e.g. DNS requests)
 
 The lab description and goal is time based, so I skip straight to that part.
 

@@ -14,13 +14,11 @@ Update the email
 
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
+
+- A relevant action: change a users email
+- Cookie-based session handling: session cookie
+- No unpredictable request parameters: no csrf token
 {% endhint %}
-
-
-
-  - A relevant action: change a users email
-  - Cookie-based session handling: session cookie
-  - No unpredictable request parameters: no csrf token
 **Generate CSRF PoC** (in prof. version.) or  
 **craft a HTML form that performs CSRF attack to the victim:**
 
