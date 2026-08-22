@@ -1,0 +1,15 @@
+# Stealing OAuth access tokens via an open redirect
+
+### Goal -
+
+Solve the PortSwigger lab: Stealing OAuth access tokens via an open redirect
+
+### Vulnerability / Concept
+
+Chain open redirect with OAuth.
+
+### Exploitation
+
+1. Identify the vulnerability type and injection point
+2. Craft the appropriate payload
+3. Deliver the payload and verify the result
