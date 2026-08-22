@@ -44,4 +44,13 @@ Note that in some cases, depending on the type of the URL, the payload might get
 - **DOMPurify or similar libraries:** Utilize libraries that safely parse and sanitize HTML content before injecting it into the DOM.
 - **Regular security updates:** Patch vulnerabilities in JavaScript libraries and frameworks promptly.
 
-**[New database]** (database)
+## Labs
+
+- [DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded](./DOM_XSS_in_AngularJS_expression_with_angle_brackets_and_double_quotes_HTML-encoded.md)
+- [DOM XSS in documentwrite sink using source locationsearch](./DOM_XSS_in_documentwrite_sink_using_source_locationsearch.md)
+- [DOM XSS in documentwrite sink using source locationsearch inside a select element](./DOM_XSS_in_documentwrite_sink_using_source_locationsearch_inside_a_select_element.md)
+- [DOM XSS in innerHTML sink using source locationsearch](./DOM_XSS_in_innerHTML_sink_using_source_locationsearch.md)
+- [DOM XSS in jQuery anchor href attribute sink using locationsearch source](./DOM_XSS_in_jQuery_anchor_href_attribute_sink_using_locationsearch_source.md)
+- [DOM XSS in jQuery selector sink using a hashchange event](./DOM_XSS_in_jQuery_selector_sink_using_a_hashchange_event.md)
+- [Reflected DOM XSS](./Reflected_DOM_XSS.md)
+- [Stored DOM XSS](./Stored_DOM_XSS.md)
