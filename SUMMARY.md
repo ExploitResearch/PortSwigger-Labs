@@ -85,12 +85,12 @@
     - [SameSite Strict bypass via client-side redirect](CSRF/Bypassing_SameSite_Restrictions/SameSite_Strict_bypass_via_client-side_redirect.md)
     - [SameSite Strict bypass via sibling domain](CSRF/Bypassing_SameSite_Restrictions/SameSite_Strict_bypass_via_sibling_domain.md)
   - [Bypassing Token Validation](CSRF/Bypassing_Token_Validation/README.md)
+    - [CSRF vulnerability with no defenses](CSRF/Bypassing_Token_Validation/CSRF_vulnerability_with_no_defenses.md)
     - [CSRF where token is duplicated in cookie](CSRF/Bypassing_Token_Validation/CSRF_where_token_is_duplicated_in_cookie.md)
     - [CSRF where token is not tied to user session](CSRF/Bypassing_Token_Validation/CSRF_where_token_is_not_tied_to_user_session.md)
     - [CSRF where token is tied to non-session cookie](CSRF/Bypassing_Token_Validation/CSRF_where_token_is_tied_to_non-session_cookie.md)
     - [CSRF where token validation depends on request method](CSRF/Bypassing_Token_Validation/CSRF_where_token_validation_depends_on_request_method.md)
     - [CSRF where token validation depends on token being present](CSRF/Bypassing_Token_Validation/CSRF_where_token_validation_depends_on_token_being_present.md)
-  - [CSRF vulnerability with no defenses](CSRF/CSRF_vulnerability_with_no_defenses.md)
 
 - [Clickjacking](Clickjacking/README.md)
   - [Basic clickjacking with CSRF token protection](Clickjacking/Basic_clickjacking_with_CSRF_token_protection.md)
