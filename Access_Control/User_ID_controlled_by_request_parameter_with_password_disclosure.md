@@ -1,5 +1,7 @@
 # User ID controlled by request parameter with password disclosure
 
+**Lab URL:** https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-password-disclosure
+
 ### Target Goal - 
 
 Retrieve the administrator’s password, then use it to delete `carlos`.
@@ -25,9 +27,3 @@ Change the "id" parameter to `administrator`.
 **View the response in Burp and observe that it contains the administrator's password**
 
 **login as **`administrator`** and delete user **`carlos`**!**
-
-## PortSwigger Lab
-
-**Official lab:** User ID controlled by request parameter with password disclosure
-
-**PortSwigger:** https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-password-disclosure

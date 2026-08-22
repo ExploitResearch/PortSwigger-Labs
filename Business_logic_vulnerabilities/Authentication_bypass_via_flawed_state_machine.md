@@ -1,5 +1,7 @@
 # Authentication bypass via flawed state machine
 
+**Lab URL:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-authentication-bypass-via-flawed-state-machine
+
 ### Goal - 
 
 Exploit logic flaw to access the admin panel and delete Carlos
@@ -35,9 +37,3 @@ Using Burp proxy I log in with `wiener:peter` but drop the `GET` request to `/ro
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/fb2712cdedb1_003.png)
 
 Now simply go to the Admin panel and use the link to delete user `carlos`.
-
-## PortSwigger Lab
-
-**Official lab:** Authentication bypass via flawed state machine
-
-**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-authentication-bypass-via-flawed-state-machine

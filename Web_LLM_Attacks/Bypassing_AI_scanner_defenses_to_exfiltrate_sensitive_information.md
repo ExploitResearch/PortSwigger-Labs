@@ -1,5 +1,7 @@
 # Bypassing AI scanner defenses to exfiltrate sensitive information
 
+**Lab URL:** https://portswigger.net/web-security/llm-attacks/ai-powered-scanner-vulnerabilities/lab-bypassing-ai-scanner-defenses-to-exfiltrate-sensitive-information
+
 ### Goal -
 
 Solve the PortSwigger lab: Bypassing AI scanner defenses to exfiltrate sensitive information
@@ -12,20 +14,8 @@ Solve the PortSwigger lab: Bypassing AI scanner defenses to exfiltrate sensitive
 
 ### Why It Works
 
-The exploit succeeds because this lab features an ai-powered scanner that has access to sensitive user data, including api keys, while performing site audits. the scanner has been given the login credentials for carlos so it can 
-
-The official solution confirms: The solution for this lab will be published shortly. Check back soon.
-
-The root cause is a failure in the application's security architecture specific to this llm attacks scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab features an AI-powered scanner that has access to sensitive user data, including API keys, while performing site audits.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab features an AI-powered scanner that has access to sensitive user data, including API keys, "
-- LLM API access should follow least-privilege — block destructive operations by default.
-
-## PortSwigger Lab
-
-**Official lab:** Bypassing AI scanner defenses to exfiltrate sensitive information
-
-**PortSwigger:** https://portswigger.net/web-security/llm-attacks/ai-powered-scanner-vulnerabilities/lab-bypassing-ai-scanner-defenses-to-exfiltrate-sensitive-information
+- This lab features an AI-powered scanner that has access to sensitive user data, including API keys, while performing site audits.

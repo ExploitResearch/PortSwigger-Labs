@@ -1,5 +1,7 @@
 # Web shell upload via path traversal
 
+**Lab URL:** https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-path-traversal
+
 ### Goal - 
 
 To solve the lab, upload a basic PHP web shell and use it to exfiltrate the contents of the file `/home/carlos/secret`
@@ -60,21 +62,8 @@ The response indicates that the path traversal was successful. Accessing the pat
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a vulnerable image upload function. the server is configured to prevent execution of user-supplied files, but this restriction can be bypassed by exploiting a secondary vulnerability
-
-The official solution confirms: Log in and upload an image as your avatar, then go back to your account page. In Burp, go to Proxy &gt; HTTP history and notice that your image was fe
-
-The root cause is a failure in the application's security architecture specific to this file upload scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a vulnerable image upload function. The server is configured to prevent execution of user-supplied files, but this restriction can be bypassed by exploiting a secondary vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains vulnerable image upload function, demonstrating how file upload vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a vulnerable image upload function. The server is configured to prevent execution "
-- Validate file content (magic bytes), not just extensions or Content-Type headers.
-
-## PortSwigger Lab
-
-**Official lab:** Web shell upload via path traversal
-
-**PortSwigger:** https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-path-traversal
+- The vulnerable image upload function. The server is configured to prevent execution of user-supplied files, but this restriction can be bypassed by exploiting a secondary vulnerability is exploitable because user input is processed without adequate validation.

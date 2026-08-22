@@ -1,5 +1,7 @@
 # Password reset poisoning via middleware
 
+**Lab URL:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-password-reset-poisoning-via-middleware
+
 - With Burp running, investigate the password reset functionality.Observe that a link containing a unique reset token is sent via email.
 - Send the `POST /forgot-password` request to Burp Repeater. Notice that the `X-Forwarded-Host` header is supported and you can use it to point the dynamically generated reset link to an arbitrary domain.
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/authentication/Vulnerabilities_in_other_authentication_mechanisms/images/5ccbb779eaf6_001.png)
@@ -21,20 +23,8 @@
 
 ### Why It Works
 
-The exploit succeeds because this lab is vulnerable to password reset poisoning via dangling markup. to solve the lab, log in to carlos's account.
-
-The official solution confirms: Go to the login page and request a password reset for your own account. Go to the exploit server and open the email client to find the password reset 
-
-The root cause is a failure in the application's security architecture specific to this host header scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab is vulnerable to password reset poisoning.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab is vulnerable to password reset poisoning via dangling markup. To solve the lab, log in to "
-- Validate the Host header against an allowlist of expected domains.
-
-## PortSwigger Lab
-
-**Official lab:** Password reset poisoning via middleware
-
-**PortSwigger:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-password-reset-poisoning-via-middleware
+- This lab is vulnerable to password reset poisoning.

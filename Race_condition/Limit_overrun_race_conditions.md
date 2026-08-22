@@ -1,5 +1,7 @@
 # Limit overrun race conditions        
 
+**Lab URL:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-limit-overrun
+
 ### Goal - 
 
  Purchase a **Lightweight L33t Leather Jacket**.
@@ -42,19 +44,8 @@ Now Place the order to solve the lab
 
 ### Why It Works
 
-The exploit succeeds because this lab's purchasing flow contains a race condition that enables you to purchase items for an unintended price.
-
-The root cause is a failure in the application's security architecture specific to this race conditions scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's purchasing flow contains a race condition that enables you to purchase items for an unintended price.
 
 ### Key Takeaways
 
-- This lab contains race condition that enables you to purchase items for an unintended price, demonstrating how race conditions vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's purchasing flow contains a race condition that enables you to purchase items for an unint"
-- Database transactions and locking prevent race condition exploitation.
-
-## PortSwigger Lab
-
-**Official lab:** Limit overrun race conditions
-
-**PortSwigger:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-limit-overrun
+- This lab's purchasing flow contains a race condition that enables you to purchase items for an unintended price.

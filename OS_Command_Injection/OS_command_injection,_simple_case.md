@@ -1,5 +1,7 @@
 # OS command injection, simple case
 
+**Lab URL:** https://portswigger.net/web-security/os-command-injection/lab-simple
+
 ### Goal - 
 
 Exploit command injection to execute whoami command.
@@ -43,21 +45,8 @@ comment out the remainder of the line after the `whoami` to avoid the error me
 
 ### Why It Works
 
-The exploit succeeds because this lab contains an os command injection vulnerability in the product stock checker.
-
-The official solution confirms: Use Burp Suite to intercept and modify a request that checks the stock level. Modify the storeID parameter, giving it the value 1|whoami. Observe that
-
-The root cause is a failure in the application's security architecture specific to this os command injection scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a OS command injection vulnerability in product stock checker, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains OS command, demonstrating how os command injection vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains an OS command injection vulnerability in the product stock checker."
-- Use parameterized command APIs instead of shell string concatenation.
-
-## PortSwigger Lab
-
-**Official lab:** OS command injection, simple case
-
-**PortSwigger:** https://portswigger.net/web-security/os-command-injection/lab-simple
+- The OS command injection vulnerability is exploitable because user input is processed without adequate validation.

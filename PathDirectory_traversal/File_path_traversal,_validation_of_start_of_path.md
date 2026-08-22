@@ -1,5 +1,7 @@
 # File path traversal, validation of start of path
 
+**Lab URL:** https://portswigger.net/web-security/file-path-traversal/lab-validate-start-of-path
+
 ### Goal - 
 
 Retrieve the contents of the `/etc/passwd` file.
@@ -31,9 +33,3 @@ Therefore I can reference any file on the file system when I use a non-canonical
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/c9cba9089fd2_005.png)
 
 Referencing the `/etc/passwd` file
-
-## PortSwigger Lab
-
-**Official lab:** File path traversal, validation of start of path
-
-**PortSwigger:** https://portswigger.net/web-security/file-path-traversal/lab-validate-start-of-path

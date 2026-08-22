@@ -1,5 +1,7 @@
 # Blind OS command injection with output redirection
 
+**Lab URL:** https://portswigger.net/web-security/os-command-injection/lab-blind-output-redirection
+
 ### Goal - 
 
 Exploit the blind command injection and redirect the output from the whoami command to the /var/www/images
@@ -57,9 +59,3 @@ Now the file is in `/var/www/images`, but the path to it within the application 
   1. Check if file was created by accessing it
 
 {% endhint %}
-
-## PortSwigger Lab
-
-**Official lab:** Blind OS command injection with output redirection
-
-**PortSwigger:** https://portswigger.net/web-security/os-command-injection/lab-blind-output-redirection

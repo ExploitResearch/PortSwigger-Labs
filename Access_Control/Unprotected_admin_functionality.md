@@ -1,5 +1,7 @@
 # Unprotected admin functionality
 
+**Lab URL:** https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality
+
 ### Target Goal - 
 
 delete the user `carlos`
@@ -13,9 +15,3 @@ delete the user `carlos`
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/09c257cbe144_002.png)
 
 - Delete `carlos`
-
-## PortSwigger Lab
-
-**Official lab:** Unprotected admin functionality
-
-**PortSwigger:** https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality

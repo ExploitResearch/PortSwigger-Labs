@@ -1,5 +1,7 @@
 # SSRF via flawed request parsing
 
+**Lab URL:** https://portswigger.net/web-security/host-header/exploiting/lab-host-header-ssrf-via-flawed-request-parsing
+
 ### Goal -
 
 Solve the PortSwigger lab: SSRF via flawed request parsing
@@ -13,20 +15,8 @@ Solve the PortSwigger lab: SSRF via flawed request parsing
 
 ### Why It Works
 
-The exploit succeeds because this lab is vulnerable to routing-based ssrf due to its flawed parsing of the request's intended host. you can exploit this to access an insecure intranet admin panel located at an internal ip address
-
-The official solution confirms: Send the GET / request that received a 200 response to Burp Repeater and study the lab's behavior. Observe that the website validates the Host header 
-
-The root cause is a failure in the application's security architecture specific to this host header scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab is vulnerable to routing-based SSRF due to its flawed parsing of the request's intended host.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab is vulnerable to routing-based SSRF due to its flawed parsing of the request's intended hos"
-- Validate the Host header against an allowlist of expected domains.
-
-## PortSwigger Lab
-
-**Official lab:** SSRF via flawed request parsing
-
-**PortSwigger:** https://portswigger.net/web-security/host-header/exploiting/lab-host-header-ssrf-via-flawed-request-parsing
+- This lab is vulnerable to routing-based SSRF due to its flawed parsing of the request's intended host.

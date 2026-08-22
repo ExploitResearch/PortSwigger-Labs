@@ -1,5 +1,7 @@
 # Reflected XSS into HTML context with most tags and attributes blocked
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked
+
 ### Goal -
 
 Perform a reflected XSS attack when most HTML tags and attributes are blocked by the application's input filter.
@@ -11,9 +13,3 @@ Perform a reflected XSS attack when most HTML tags and attributes are blocked by
 3. Test which event handlers are allowed on the unblocked tag
 4. Craft a payload using the allowed tag and handler
 5. Use Burp Intruder to fuzz for allowed tags and attributes
-
-## PortSwigger Lab
-
-**Official lab:** Reflected XSS into HTML context with most tags and attributes blocked
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked

@@ -1,5 +1,7 @@
 # Stored DOM XSS
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-dom-xss-stored
+
 ## Metadata
 
 | Property | Value |
@@ -50,20 +52,8 @@ Which means if we add more than 1 `<` or `>`, it’ll be ignored.
 
 ### Why It Works
 
-The exploit succeeds because this lab demonstrates a stored dom vulnerability in the blog comment functionality. to solve this lab, exploit this vulnerability to call the alert() function.
-
-The official solution confirms: Post a comment containing the following vector: &lt;&gt;&lt;img src=1 onerror=alert(1)&gt; In an attempt to prevent XSS, the website uses the JavaScri
-
-The root cause is a failure in the application's security architecture specific to this cross site scripting scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab demonstrates a stored DOM vulnerability in the blog comment functionality.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab demonstrates a stored DOM vulnerability in the blog comment functionality. To solve this la"
-- Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
-
-## PortSwigger Lab
-
-**Official lab:** Stored DOM XSS
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-dom-xss-stored
+- This lab demonstrates a stored DOM vulnerability in the blog comment functionality.

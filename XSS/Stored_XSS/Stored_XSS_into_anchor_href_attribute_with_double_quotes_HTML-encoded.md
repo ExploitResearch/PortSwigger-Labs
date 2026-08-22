@@ -1,5 +1,7 @@
 # Stored XSS into anchor href attribute with double quotes HTML-encoded
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-href-attribute-double-quotes-html-encoded
+
 ## Metadata
 
 | Property | Value |
@@ -48,21 +50,8 @@ javascript:alert(1)
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a stored cross-site scripting vulnerability in the comment functionality. to solve this lab, submit a comment that calls the alert function when the comment author name is clicked.
-
-The official solution confirms: Post a comment with a random alphanumeric string in the "Website" input, then use Burp Suite to intercept the request and send it to Burp Repeater. Ma
-
-The root cause is a failure in the application's security architecture specific to this cross site scripting scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a stored cross-site scripting vulnerability in comment functionality, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains stored cross-site scripting vulnerability, demonstrating how cross site scripting vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a stored cross-site scripting vulnerability in the comment functionality. To solve"
-- Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
-
-## PortSwigger Lab
-
-**Official lab:** Stored XSS into anchor href attribute with double quotes HTML-encoded
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-href-attribute-double-quotes-html-encoded
+- The stored cross-site scripting vulnerability is exploitable because user input is processed without adequate validation.

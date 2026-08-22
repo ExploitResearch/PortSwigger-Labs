@@ -1,5 +1,7 @@
 # Username enumeration via subtly different responses
 
+**Lab URL:** https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-subtly-different-responses
+
 1. With Burp running, submit an invalid username and password. Send the `POST /login` request to Burp Intruder and add a payload position to the `username` parameter.
 					
 2. On the **Payloads** tab, make sure that the **Simple list** payload type is selected and add the list of candidate usernames.
@@ -25,9 +27,3 @@ It's also possible to brute-force the login using a single cluster bomb attack. 
 adsl
 
 killer
-
-## PortSwigger Lab
-
-**Official lab:** Username enumeration via subtly different responses
-
-**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-subtly-different-responses

@@ -1,5 +1,7 @@
 # SSRF with blacklist-based input filter
 
+**Lab URL:** https://portswigger.net/web-security/ssrf/lab-ssrf-with-blacklist-filter
+
 ### Goal -
 
 Solve the PortSwigger lab: SSRF with blacklist-based input filter
@@ -13,20 +15,8 @@ Solve the PortSwigger lab: SSRF with blacklist-based input filter
 
 ### Why It Works
 
-The exploit succeeds because this lab has a stock check feature which fetches data from an internal system.
-
-The official solution confirms: Visit a product, click "Check stock", intercept the request in Burp Suite, and send it to Burp Repeater. Change the URL in the stockApi parameter to h
-
-The root cause is a failure in the application's security architecture specific to this ssrf scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab has a stock check feature which fetches data from an internal system.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab has a stock check feature which fetches data from an internal system."
-- URL allowlists (not blocklists) and blocking private IP ranges are essential SSRF defenses.
-
-## PortSwigger Lab
-
-**Official lab:** SSRF with blacklist-based input filter
-
-**PortSwigger:** https://portswigger.net/web-security/ssrf/lab-ssrf-with-blacklist-filter
+- This lab has a stock check feature which fetches data from an internal system.

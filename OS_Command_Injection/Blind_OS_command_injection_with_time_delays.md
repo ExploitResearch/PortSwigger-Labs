@@ -1,5 +1,7 @@
 # Blind OS command injection with time delays
 
+**Lab URL:** https://portswigger.net/web-security/os-command-injection/lab-blind-time-delays
+
 ### Goal - 
 
 Exploit the blind OS command injection vulnerability to cause a 10 second delay.
@@ -48,9 +50,3 @@ To cause a 10 seconds delay, ping needs to send 11 requests. **My guess for best
 I notice that I forgot to add a `#` to comment out whatever might be there on the line. While I receive a `500 Internal server error` on this request, if I add the `#` I receive a `200 OK`. So there might be also some type of error based injection possible at the box.
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/119db21775b3_004.png)
-
-## PortSwigger Lab
-
-**Official lab:** Blind OS command injection with time delays
-
-**PortSwigger:** https://portswigger.net/web-security/os-command-injection/lab-blind-time-delays

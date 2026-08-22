@@ -1,5 +1,7 @@
 # Reflected XSS with event handlers and href attributes blocked
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-event-handlers-and-href-attributes-blocked
+
 ### Goal -
 
 Perform a reflected XSS attack when common event handlers and href attributes are blocked by the application's input filter.
@@ -13,21 +15,8 @@ Perform a reflected XSS attack when common event handlers and href attributes ar
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a reflected xss vulnerability with some whitelisted tags, but all events and anchor href attributes are blocked.
-
-The official solution confirms: Visit the following URL, replacing YOUR-LAB-ID with your lab ID: https://YOUR-LAB-ID.web-security-academy.net/?search=%3Csvg%3E%3Ca%3E%3Canimate+attri
-
-The root cause is a failure in the application's security architecture specific to this cross site scripting scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a reflected XSS vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains reflected XSS vulnerability with some whitelisted tags, demonstrating how cross site scripting vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a reflected XSS vulnerability with some whitelisted tags, but all events and ancho"
-- Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
-
-## PortSwigger Lab
-
-**Official lab:** Reflected XSS with event handlers and href attributes blocked
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-event-handlers-and-href-attributes-blocked
+- The reflected XSS vulnerability is exploitable because user input is processed without adequate validation.

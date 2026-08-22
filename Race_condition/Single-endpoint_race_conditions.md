@@ -1,5 +1,7 @@
 # Single-endpoint race conditions
 
+**Lab URL:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-single-endpoint
+
 ## Background
 
 This lab’s email change feature contains a race condition that enables you to associate an arbitrary email address with your account.
@@ -146,19 +148,8 @@ What we’ve learned:
 
 ### Why It Works
 
-The exploit succeeds because this lab's email change feature contains a race condition that enables you to associate an arbitrary email address with your account.
-
-The root cause is a failure in the application's security architecture specific to this race conditions scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's email change feature contains a race condition that enables you to associate an arbitrary email address with your account.
 
 ### Key Takeaways
 
-- This lab contains race condition that enables you to associate an arbitrary email address with your account, demonstrating how race conditions vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's email change feature contains a race condition that enables you to associate an arbitrary"
-- Database transactions and locking prevent race condition exploitation.
-
-## PortSwigger Lab
-
-**Official lab:** Single-endpoint race conditions
-
-**PortSwigger:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-single-endpoint
+- This lab's email change feature contains a race condition that enables you to associate an arbitrary email address with your account.

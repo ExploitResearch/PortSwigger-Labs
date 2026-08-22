@@ -1,5 +1,7 @@
 # DOM XSS in innerHTML sink using source location.search
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-innerhtml-sink
+
 ## Metadata
 
 | Property | Value |
@@ -17,21 +19,8 @@ The value of the `src` attribute is invalid and throws an error. This triggers t
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a dom-based cross-site scripting vulnerability in the search blog functionality. it uses an innerhtml assignment, which changes the html contents of a div element, using data from lo
-
-The official solution confirms: Enter the following into the into the search box: &lt;img src=1 onerror=alert(1)&gt; Click "Search". The value
-
-The root cause is a failure in the application's security architecture specific to this cross site scripting scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a DOM-based cross-site scripting vulnerability in search blog functionality, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains DOM-based cross-site scripting vulnerability, demonstrating how cross site scripting vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a DOM-based cross-site scripting vulnerability in the search blog functionality. I"
-- Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
-
-## PortSwigger Lab
-
-**Official lab:** DOM XSS in innerHTML sink using source location.search
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-innerhtml-sink
+- The DOM-based cross-site scripting vulnerability is exploitable because user input is processed without adequate validation.

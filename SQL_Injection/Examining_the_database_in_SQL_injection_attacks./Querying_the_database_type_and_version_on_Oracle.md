@@ -1,5 +1,7 @@
 # Querying the database type and version on Oracle
 
+**Lab URL:** https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle
+
 **STEP #1**
 
 Determine the number of columns returned from the original query.
@@ -46,19 +48,6 @@ Querying the Oracle database to retrieve database type and version.
 
 The exploit succeeds because this lab contains a sql injection vulnerability in the product category filter. you can use a union attack to retrieve the results from an injected query.
 
-The official solution confirms: Use Burp Suite to intercept and modify the request that sets the product category filter. Determine the number of columns that are being returned by t
-
-The root cause is a failure in the application's security architecture specific to this sql injection scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
-
 ### Key Takeaways
 
-- This lab contains SQL, demonstrating how sql injection vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a SQL injection vulnerability in the product category filter. You can use a UNION "
 - Server-side validation and authorization are the primary defenses.
-
-## PortSwigger Lab
-
-**Official lab:** SQL injection attack, querying the database type and version on Oracle
-
-**PortSwigger:** https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle

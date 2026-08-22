@@ -1,5 +1,7 @@
 # 2FA broken logic
 
+**Lab URL:** https://portswigger.net/web-security/authentication/multi-factor/lab-2fa-broken-logic
+
 - With Burp running, log in to your own account and investigate the 2FA verification process. Notice that in the `POST /login2` request, the `verify` parameter is used to determine which user's account is being accessed.
 - Log out of your account.
 - Send the `GET /login2` request to Burp Repeater. Change the value of the `verify` parameter to `carlos` and send the request. This ensures that a temporary 2FA code is generated for Carlos.
@@ -21,20 +23,8 @@ use turbo intruder
 
 ### Why It Works
 
-The exploit succeeds because this lab's two-factor authentication is vulnerable due to its flawed logic. to solve the lab, access carlos's account page.
-
-The official solution confirms: With Burp running, log in to your own account and investigate the 2FA verification process. Notice that in the POST /login2 request, the verify parame
-
-The root cause is a failure in the application's security architecture specific to this authentication scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's two-factor authentication is vulnerable due to its flawed logic.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's two-factor authentication is vulnerable due to its flawed logic. To solve the lab, access"
-- Consistent error messages and rate-limiting prevent enumeration and brute-force.
-
-## PortSwigger Lab
-
-**Official lab:** 2FA broken logic
-
-**PortSwigger:** https://portswigger.net/web-security/authentication/multi-factor/lab-2fa-broken-logic
+- This lab's two-factor authentication is vulnerable due to its flawed logic.

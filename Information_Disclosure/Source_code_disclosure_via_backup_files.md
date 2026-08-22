@@ -1,5 +1,7 @@
 # Source code disclosure via backup files
 
+**Lab URL:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-via-backup-files
+
 ### Goal - 
 
 Identify and submit the database password, which is hard-coded in the leaked source code.
@@ -26,20 +28,8 @@ In the code, the credentials for the Postgres database connections can be found:
 
 ### Why It Works
 
-The exploit succeeds because this lab leaks its source code via backup files in a hidden directory. to solve the lab, identify and submit the database password, which is hard-coded in the leaked source code.
-
-The official solution confirms: Browse to /robots.txt and notice that it reveals the existence of a /backup directory. Browse to /backup to find the file ProductTemplate.java.bak. Al
-
-The root cause is a failure in the application's security architecture specific to this information disclosure scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab leaks its source code via backup files in a hidden directory.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab leaks its source code via backup files in a hidden directory. To solve the lab, identify an"
-- Disable verbose error messages and debug endpoints in production.
-
-## PortSwigger Lab
-
-**Official lab:** Source code disclosure via backup files
-
-**PortSwigger:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-via-backup-files
+- This lab leaks its source code via backup files in a hidden directory.

@@ -1,5 +1,7 @@
 # CSRF where Referer validation depends on header being present
 
+**Lab URL:** https://portswigger.net/web-security/csrf/bypassing-referer-based-defenses/lab-referer-validation-depends-on-header-being-present
+
 ### Goal - 
 
 use your exploit server to host an HTML page that uses a CSRF attack to change the viewer’s email address.
@@ -80,20 +82,8 @@ or As an alternative, update exploit page header with the relevant syntax:
 
 ### Why It Works
 
-The exploit succeeds because this lab's email change functionality is vulnerable to csrf. it attempts to block cross domain requests but has an insecure fallback.
-
-The official solution confirms: Open Burp's browser and log in to your account. Submit the "Update email" form, and find the resulting request in your Proxy history. Send the request
-
-The root cause is a failure in the application's security architecture specific to this csrf scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's email change functionality is vulnerable to CSRF.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's email change functionality is vulnerable to CSRF. It attempts to block cross domain reque"
-- CSRF tokens, SameSite cookies, and Referer validation together provide defense-in-depth.
-
-## PortSwigger Lab
-
-**Official lab:** CSRF where Referer validation depends on header being present
-
-**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-referer-based-defenses/lab-referer-validation-depends-on-header-being-present
+- This lab's email change functionality is vulnerable to CSRF.

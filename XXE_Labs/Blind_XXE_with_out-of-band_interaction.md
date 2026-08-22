@@ -1,5 +1,7 @@
 # Blind XXE with out-of-band interaction
 
+**Lab URL:** https://portswigger.net/web-security/xxe/blind/lab-xxe-with-out-of-band-interaction
+
 ### Goal -
 
 Solve the PortSwigger lab: Blind XXE with out-of-band interaction
@@ -11,9 +13,3 @@ Solve the PortSwigger lab: Blind XXE with out-of-band interaction
 3. For file read: use `<!ENTITY xxe SYSTEM "file:///etc/passwd">`
 4. For SSRF: use `<!ENTITY xxe SYSTEM "http://internal-service/">`
 5. For blind XXE: use parameter entities and external DTD for OOB exfiltration
-
-## PortSwigger Lab
-
-**Official lab:** Blind XXE with out-of-band interaction
-
-**PortSwigger:** https://portswigger.net/web-security/xxe/blind/lab-xxe-with-out-of-band-interaction

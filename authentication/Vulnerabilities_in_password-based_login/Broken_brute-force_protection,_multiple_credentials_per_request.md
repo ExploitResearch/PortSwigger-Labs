@@ -1,5 +1,7 @@
 # Broken brute-force protection, multiple credentials per request
 
+**Lab URL:** https://portswigger.net/web-security/authentication/password-based/lab-broken-brute-force-protection-multiple-credentials-per-request
+
 ## Edit in VScode text file
 
 - With Burp running, investigate the login page. Notice that the `POST /login` request submits the login credentials in `JSON` format. Send this request to Burp Repeater.
@@ -20,20 +22,8 @@ Here is an easy way to do this:
 
 ### Why It Works
 
-The exploit succeeds because this lab is vulnerable due to a logic flaw in its brute-force protection. to solve the lab, brute-force carlos's password, then access his account page.
-
-The official solution confirms: With Burp running, investigate the login page. Notice that the POST /login request submits the login credentials in JSON format. Send this request to 
-
-The root cause is a failure in the application's security architecture specific to this authentication scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab is vulnerable due to a logic flaw in its brute-force protection.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab is vulnerable due to a logic flaw in its brute-force protection. To solve the lab, brute-fo"
-- Consistent error messages and rate-limiting prevent enumeration and brute-force.
-
-## PortSwigger Lab
-
-**Official lab:** Broken brute-force protection, multiple credentials per request
-
-**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-broken-brute-force-protection-multiple-credentials-per-request
+- This lab is vulnerable due to a logic flaw in its brute-force protection.

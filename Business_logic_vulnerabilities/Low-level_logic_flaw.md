@@ -1,5 +1,7 @@
 # Low-level logic flaw
 
+**Lab URL:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-low-level
+
 ### Goal - 
 
 Exploit logic flaw to buy the Lightweight l33t leather jacket.
@@ -101,20 +103,8 @@ Now Place order
 
 ### Why It Works
 
-The exploit succeeds because this lab doesn't adequately validate user input. you can exploit a logic flaw in its purchasing workflow to buy items for an unintended price. to solve the lab, buy a &quot;lightweight l33t leather ja
-
-The official solution confirms: With Burp running, log in and attempt to buy the leather jacket. The order is rejected because you don't have enough store credit. In the proxy histor
-
-The root cause is a failure in the application's security architecture specific to this logic flaws scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab doesn't adequately validate user input.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab doesn't adequately validate user input. You can exploit a logic flaw in its purchasing work"
-- Validate business-critical parameters server-side — never trust client-supplied values.
-
-## PortSwigger Lab
-
-**Official lab:** Low-level logic flaw
-
-**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-low-level
+- This lab doesn't adequately validate user input.

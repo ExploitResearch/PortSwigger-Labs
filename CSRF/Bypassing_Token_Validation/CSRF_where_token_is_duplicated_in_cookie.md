@@ -1,5 +1,7 @@
 # CSRF where token is duplicated in cookie
 
+**Lab URL:** https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-duplicated-in-cookie
+
 ### Goal - 
 
 use your exploit server to host an HTML page that uses a CSRF attack to change the viewer’s email address.
@@ -64,20 +66,8 @@ Remove the auto-submit `<script>` block, and instead add the following code to i
 
 ### Why It Works
 
-The exploit succeeds because this lab's email change functionality is vulnerable to csrf. it attempts to use the insecure "double submit" csrf prevention technique.
-
-The official solution confirms: Open Burp's browser and log in to your account. Submit the "Update email" form, and find the resulting request in your Proxy history. Send the request
-
-The root cause is a failure in the application's security architecture specific to this csrf scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's email change functionality is vulnerable to CSRF.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's email change functionality is vulnerable to CSRF. It attempts to use the insecure "double"
-- CSRF tokens, SameSite cookies, and Referer validation together provide defense-in-depth.
-
-## PortSwigger Lab
-
-**Official lab:** CSRF where token is duplicated in cookie
-
-**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-duplicated-in-cookie
+- This lab's email change functionality is vulnerable to CSRF.

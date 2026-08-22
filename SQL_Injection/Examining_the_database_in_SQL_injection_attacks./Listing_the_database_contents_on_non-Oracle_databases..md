@@ -1,5 +1,7 @@
 # Listing the database contents on non-Oracle databases.
 
+**Lab URL:** https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle
+
 **both column 1 and 2 contain data type string.**
 
 **STEP #3**
@@ -69,9 +71,3 @@ Retrieve the administrator’s password from the database.
 | 9kn123cwvo54vzhicsns | administrator |
 
 Use the administrator’s password to gain administrator’s access to the web application.
-
-## PortSwigger Lab
-
-**Official lab:** SQL injection attack, listing the database contents on non-Oracle databases
-
-**PortSwigger:** https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle

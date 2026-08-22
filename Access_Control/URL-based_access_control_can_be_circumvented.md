@@ -1,5 +1,7 @@
 # URL-based access control can be circumvented
 
+**Lab URL:** https://portswigger.net/web-security/access-control/lab-url-based-access-control-can-be-circumvented
+
 ### Target Goal - 
 
 Access the admin panel and delete the user `carlos`.
@@ -48,20 +50,8 @@ If we check back to the /admin directory, the Carlos user no longer exists.
 
 ### Why It Works
 
-The exploit succeeds because to solve the lab, access the admin panel and delete the user carlos.
-
-The official solution confirms: Try to load /admin and observe that you get blocked. Notice that the response is very plain, suggesting it may originate from a front-end system. Send
-
-The root cause is a failure in the application's security architecture specific to this access control scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+To solve the lab, access the admin panel and delete the user carlos.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "To solve the lab, access the admin panel and delete the user carlos."
-- Server-side authorization checks must be enforced on every request, not just the UI.
-
-## PortSwigger Lab
-
-**Official lab:** URL-based access control can be circumvented
-
-**PortSwigger:** https://portswigger.net/web-security/access-control/lab-url-based-access-control-can-be-circumvented
+- To solve the lab, access the admin panel and delete the user carlos.

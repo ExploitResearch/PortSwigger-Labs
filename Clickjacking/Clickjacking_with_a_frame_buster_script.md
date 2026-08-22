@@ -1,5 +1,7 @@
 # Clickjacking with a frame buster script
 
+**Lab URL:** https://portswigger.net/web-security/clickjacking/lab-frame-buster-script
+
 ### Goal -
 
 Bypass a frame-busting JavaScript to perform a clickjacking attack.
@@ -13,20 +15,8 @@ Bypass a frame-busting JavaScript to perform a clickjacking attack.
 
 ### Why It Works
 
-The exploit succeeds because this lab is protected by a frame buster which prevents the website from being framed. can you get around the frame buster and conduct a clickjacking attack that changes the users email address?
-
-The official solution confirms: Log in to the account on the target website. Go to the exploit server and paste the following HTML template into the "Body" section: &lt;style&gt; ifr
-
-The root cause is a failure in the application's security architecture specific to this clickjacking scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab is protected by a frame buster which prevents the website from being framed.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab is protected by a frame buster which prevents the website from being framed. Can you get ar"
-- Set X-Frame-Options or CSP frame-ancestors — JavaScript frame-busting is bypassable.
-
-## PortSwigger Lab
-
-**Official lab:** Clickjacking with a frame buster script
-
-**PortSwigger:** https://portswigger.net/web-security/clickjacking/lab-frame-buster-script
+- This lab is protected by a frame buster which prevents the website from being framed.

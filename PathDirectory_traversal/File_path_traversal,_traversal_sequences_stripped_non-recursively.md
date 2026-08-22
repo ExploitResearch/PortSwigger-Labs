@@ -1,5 +1,7 @@
 # File path traversal, traversal sequences stripped non-recursively
 
+**Lab URL:** https://portswigger.net/web-security/file-path-traversal/lab-sequences-stripped-non-recursively
+
 ### Goal - 
 
 Retrieve the contents of the `/etc/passwd` file.
@@ -26,9 +28,3 @@ The application strips path traversal sequences from the user-supplied filename 
 {% endhint %}
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/58831d32ca9e_003.png)
-
-## PortSwigger Lab
-
-**Official lab:** File path traversal, traversal sequences stripped non-recursively
-
-**PortSwigger:** https://portswigger.net/web-security/file-path-traversal/lab-sequences-stripped-non-recursively

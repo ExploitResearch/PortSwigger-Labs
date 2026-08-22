@@ -1,5 +1,7 @@
 # Web shell upload via obfuscated file extension
 
+**Lab URL:** https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-obfuscated-file-extension
+
 ### Goal - 
 
 To solve the lab, upload a basic PHP web shell and use it to exfiltrate the contents of the file `/home/carlos/secret`
@@ -53,21 +55,4 @@ now the execution of command is working
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a vulnerable image upload function. certain file extensions are blacklisted, but this defense can be bypassed using a classic obfuscation technique.
-
-The official solution confirms: Log in and upload an image as your avatar, then go back to your account page. In Burp, go to Proxy &gt; HTTP history and notice that your image was fe
-
-The root cause is a failure in the application's security architecture specific to this file upload scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
-
-### Key Takeaways
-
-- This lab contains vulnerable image upload function, demonstrating how file upload vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but t"
-- Validate file content (magic bytes), not just extensions or Content-Type headers.
-
-## PortSwigger Lab
-
-**Official lab:** Web shell upload via obfuscated file extension
-
-**PortSwigger:** https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-obfuscated-file-extension
+This lab contains a vulnerable image upload function.

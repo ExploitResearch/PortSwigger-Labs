@@ -1,5 +1,7 @@
 # CSRF with broken Referer validation
 
+**Lab URL:** https://portswigger.net/web-security/csrf/bypassing-referer-based-defenses/lab-referer-validation-broken
+
 ### Goal - 
 
 use your exploit server to host an HTML page that uses a CSRF attack to change the viewer’s email address.
@@ -98,20 +100,8 @@ However, this still couldn’t work, as many browsers now strip the query string
 
 ### Why It Works
 
-The exploit succeeds because this lab's email change functionality is vulnerable to csrf. it attempts to detect and block cross domain requests, but the detection mechanism can be bypassed.
-
-The official solution confirms: Open Burp's browser and log in to your account. Submit the "Update email" form, and find the resulting request in your Proxy history. Send the request
-
-The root cause is a failure in the application's security architecture specific to this csrf scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's email change functionality is vulnerable to CSRF.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's email change functionality is vulnerable to CSRF. It attempts to detect and block cross d"
-- CSRF tokens, SameSite cookies, and Referer validation together provide defense-in-depth.
-
-## PortSwigger Lab
-
-**Official lab:** CSRF with broken Referer validation
-
-**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-referer-based-defenses/lab-referer-validation-broken
+- This lab's email change functionality is vulnerable to CSRF.

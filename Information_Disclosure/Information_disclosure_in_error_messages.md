@@ -1,5 +1,7 @@
 # Information disclosure in error messages
 
+**Lab URL:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-error-messages
+
 ### Goal - 
 
 Obtain and submit the version number of this framework.
@@ -34,20 +36,8 @@ Change the value of the `productId` parameter to a non-integer data type, such a
 
 ### Why It Works
 
-The exploit succeeds because this lab discloses sensitive information via its version control history. to solve the lab, obtain the password for the administrator user then log in and delete the user carlos.
-
-The official solution confirms: Open the lab and browse to /.git to reveal the lab's Git version control data. Download a copy of this entire directory. For Linux users, the easiest 
-
-The root cause is a failure in the application's security architecture specific to this information disclosure scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's verbose error messages reveal that it is using a vulnerable version of a third-party framework.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab discloses sensitive information via its version control history. To solve the lab, obtain t"
-- Disable verbose error messages and debug endpoints in production.
-
-## PortSwigger Lab
-
-**Official lab:** Information disclosure in error messages
-
-**PortSwigger:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-error-messages
+- This lab's verbose error messages reveal that it is using a vulnerable version of a third-party framework.

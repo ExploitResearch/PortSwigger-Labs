@@ -1,5 +1,7 @@
 # Reflected DOM XSS
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-dom-xss-reflected
+
 ## Metadata
 
 | Property | Value |
@@ -27,20 +29,8 @@ we close the JSON object via `}`. Then, commented out `"}` via `//`.
 
 ### Why It Works
 
-The exploit succeeds because this lab demonstrates a reflected dom vulnerability. reflected dom vulnerabilities occur when the server-side application processes data from a request and echoes the data in the response. a script on
-
-The official solution confirms: In Burp Suite, go to the Proxy tool and make sure that the Intercept feature is switched on. Back in the lab, go to the target website and use the sea
-
-The root cause is a failure in the application's security architecture specific to this cross site scripting scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab demonstrates a reflected DOM vulnerability.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab demonstrates a reflected DOM vulnerability. Reflected DOM vulnerabilities occur when the se"
-- Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
-
-## PortSwigger Lab
-
-**Official lab:** Reflected DOM XSS
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-dom-xss-reflected
+- This lab demonstrates a reflected DOM vulnerability.

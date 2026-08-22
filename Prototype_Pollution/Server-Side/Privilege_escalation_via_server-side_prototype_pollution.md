@@ -1,5 +1,7 @@
 # Privilege escalation via server-side prototype pollution
 
+**Lab URL:** https://portswigger.net/web-security/prototype-pollution/server-side/lab-privilege-escalation-via-server-side-prototype-pollution
+
 ### Goal -
 
 Solve the PortSwigger lab: Privilege escalation via server-side prototype pollution
@@ -13,18 +15,8 @@ Solve the PortSwigger lab: Privilege escalation via server-side prototype pollut
 
 ### Why It Works
 
-The exploit succeeds because this lab is built on node.js and the express framework. it is vulnerable to server-side prototype pollution because it unsafely merges user-controllable input into a server-side javascript object. thi
-
-The root cause is a failure in the application's security architecture specific to this prototype pollution scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab is built on Node.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab is built on Node.js and the Express framework. It is vulnerable to server-side prototype po"
-- Reject __proto__ and constructor keys in JSON input before merging.
-
-## PortSwigger Lab
-
-**Official lab:** Privilege escalation via server-side prototype pollution
-
-**PortSwigger:** https://portswigger.net/web-security/prototype-pollution/server-side/lab-privilege-escalation-via-server-side-prototype-pollution
+- This lab demonstrates using it unsafely merges user-controllable input into a server-side JavaScript object. This is simple to detect because any polluted properties inherited via the prototype chain are visible in an HTTP response.

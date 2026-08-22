@@ -1,5 +1,7 @@
 # CSRF where token is not tied to user session
 
+**Lab URL:** https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-not-tied-to-user-session
+
 ### Goal - 
 
 use your exploit server to host an HTML page that uses a CSRF attack to change the viewer’s email address.
@@ -74,20 +76,8 @@ We can test it locally via the `View exploit` button
 
 ### Why It Works
 
-The exploit succeeds because this lab's email change functionality is vulnerable to csrf. it uses tokens to try to prevent csrf attacks, but they aren't integrated into the site's session handling system.
-
-The official solution confirms: Open Burp's browser and log in to your account. Submit the "Update email" form, and intercept the resulting request. Make a note of the value of the C
-
-The root cause is a failure in the application's security architecture specific to this csrf scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's email change functionality is vulnerable to CSRF.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's email change functionality is vulnerable to CSRF. It uses tokens to try to prevent CSRF a"
-- CSRF tokens, SameSite cookies, and Referer validation together provide defense-in-depth.
-
-## PortSwigger Lab
-
-**Official lab:** CSRF where token is not tied to user session
-
-**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-not-tied-to-user-session
+- This lab's email change functionality is vulnerable to CSRF.

@@ -1,5 +1,7 @@
 # CSRF where token validation depends on request method
 
+**Lab URL:** https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-validation-depends-on-request-method
+
 ### Goal - 
 
 use your exploit server to host an HTML page that uses a CSRF attack to change the viewer’s email address.
@@ -51,20 +53,8 @@ In the community edition, simply get the the form from the HTML of the applicati
 
 ### Why It Works
 
-The exploit succeeds because this lab's email change functionality is vulnerable to csrf.
-
-The official solution confirms: Open Burp's browser and log in to your account. Submit the "Update email" form, and find the resulting request in your Proxy history. Send the request
-
-The root cause is a failure in the application's security architecture specific to this csrf scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's email change functionality is vulnerable to CSRF.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's email change functionality is vulnerable to CSRF."
-- CSRF tokens, SameSite cookies, and Referer validation together provide defense-in-depth.
-
-## PortSwigger Lab
-
-**Official lab:** CSRF where token validation depends on request method
-
-**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-validation-depends-on-request-method
+- This lab's email change functionality is vulnerable to CSRF.

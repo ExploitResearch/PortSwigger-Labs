@@ -1,5 +1,7 @@
 # SQL injection UNION attack, finding a column containing text
 
+**Lab URL:** https://portswigger.net/web-security/sql-injection/union-attacks/lab-find-column-containing-text
+
 - Determine the [number of columns that are being returned by the query](https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns). Verify that the query is returning three columns, using the following payload in the `category` parameter: `'+UNION+SELECT+NULL,NULL,NULL--`
 - Try replacing each null with the random value provided by the lab, for example: `'+UNION+SELECT+'abcdef',NULL,NULL--`
 - If an error occurs, move on to the next null and try that instead.
@@ -96,21 +98,9 @@ You can use the provided string value instead of ‘a’ to solve the Lab exerci
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a sql injection vulnerability in the product category filter. the results from the query are returned in the application's response so you can use a union attack to retrieve data fro
-
-The official solution confirms: Use Burp Suite to intercept and modify the request that sets the product category filter. Determine the number of columns that are being returned by t
-
-The root cause is a failure in the application's security architecture specific to this sql injection scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a SQL injection vulnerability in product category filter, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains SQL, demonstrating how sql injection vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a SQL injection vulnerability in the product category filter. The results from the"
-- Server-side validation and authorization are the primary defenses.
-
-## PortSwigger Lab
-
-**Official lab:** SQL injection UNION attack, finding a column containing text
-
-**PortSwigger:** https://portswigger.net/web-security/sql-injection/union-attacks/lab-find-column-containing-text
+- This lab demonstrates using a UNION attack to retrieve data from other tables.
+- The SQL injection vulnerability is exploitable because user input is processed without adequate validation.

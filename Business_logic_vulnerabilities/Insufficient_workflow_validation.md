@@ -1,5 +1,7 @@
 # Insufficient workflow validation
 
+**Lab URL:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-insufficient-workflow-validation
+
 ### Goal - 
 
 Exploit logic flaw to buy a “Lightweight l33t leather jacket”
@@ -28,20 +30,8 @@ After all the requests went through, the lab shows success
 
 ### Why It Works
 
-The exploit succeeds because this lab makes flawed assumptions about the sequence of events in the purchasing workflow. to solve the lab, exploit this flaw to buy a &quot;lightweight l33t leather jacket&quot;.
-
-The official solution confirms: With Burp running, log in and buy any item that you can afford with your store credit. Study the proxy history. Observe that when you place an order, 
-
-The root cause is a failure in the application's security architecture specific to this logic flaws scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab makes flawed assumptions about the sequence of events in the purchasing workflow.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab makes flawed assumptions about the sequence of events in the purchasing workflow. To solve "
-- Validate business-critical parameters server-side — never trust client-supplied values.
-
-## PortSwigger Lab
-
-**Official lab:** Insufficient workflow validation
-
-**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-insufficient-workflow-validation
+- This lab makes flawed assumptions about the sequence of events in the purchasing workflow.

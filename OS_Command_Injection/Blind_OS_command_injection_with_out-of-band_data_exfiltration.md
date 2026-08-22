@@ -1,5 +1,7 @@
 # Blind OS command injection with out-of-band data exfiltration
 
+**Lab URL:** https://portswigger.net/web-security/os-command-injection/lab-blind-out-of-band-data-exfiltration
+
 ### Goal - 
 
 Exploit blind OS command injection to issue a DNS lookup to Burp Collaborator
@@ -60,21 +62,8 @@ The username is shown in the DNS request:
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a blind os command injection vulnerability in the feedback function.
-
-The official solution confirms: Use Burp Suite Professional to intercept and modify the request that submits feedback. Go to the Collaborator tab. Click "Copy to clipboard" to copy a
-
-The root cause is a failure in the application's security architecture specific to this os command injection scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a blind OS command injection vulnerability in feedback function, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains blind OS command, demonstrating how os command injection vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a blind OS command injection vulnerability in the feedback function."
-- Use parameterized command APIs instead of shell string concatenation.
-
-## PortSwigger Lab
-
-**Official lab:** Blind OS command injection with out-of-band data exfiltration
-
-**PortSwigger:** https://portswigger.net/web-security/os-command-injection/lab-blind-out-of-band-data-exfiltration
+- The blind OS command injection vulnerability is exploitable because user input is processed without adequate validation.

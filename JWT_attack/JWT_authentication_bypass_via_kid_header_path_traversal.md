@@ -1,5 +1,7 @@
 # JWT authentication bypass via kid header path traversal
 
+**Lab URL:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-kid-header-path-traversal
+
 ## Goal - 
 
 Forge a JWT that gives you access to the admin panel at `/admin`, then delete the user `carlos`.
@@ -42,9 +44,3 @@ Copy the JWT and update session cookie in the browser**, then refresh the page:*
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/c1d1d36c8c1c_004.png)
 
 go to the admin panel and delete user `carlos`
-
-## PortSwigger Lab
-
-**Official lab:** JWT authentication bypass via kid header path traversal
-
-**PortSwigger:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-kid-header-path-traversal

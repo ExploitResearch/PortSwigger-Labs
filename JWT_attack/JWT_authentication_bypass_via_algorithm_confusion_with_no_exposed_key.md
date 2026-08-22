@@ -1,5 +1,7 @@
 # JWT authentication bypass via algorithm confusion with no exposed key
 
+**Lab URL:** https://portswigger.net/web-security/jwt/algorithm-confusion/lab-jwt-authentication-bypass-via-algorithm-confusion-with-no-exposed-key
+
 ### Goal -
 
 Exploit an algorithm confusion vulnerability in JWT verification when the server's public key is not directly exposed.
@@ -13,9 +15,3 @@ Exploit an algorithm confusion vulnerability in JWT verification when the server
 5. Sign a JWT using HS256 with the PEM-encoded public key as the HMAC secret
 6. Modify the JWT payload (e.g., change `sub` to `administrator`)
 7. Submit the forged JWT
-
-## PortSwigger Lab
-
-**Official lab:** JWT authentication bypass via algorithm confusion with no exposed key
-
-**PortSwigger:** https://portswigger.net/web-security/jwt/algorithm-confusion/lab-jwt-authentication-bypass-via-algorithm-confusion-with-no-exposed-key

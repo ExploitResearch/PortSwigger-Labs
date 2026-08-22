@@ -1,5 +1,7 @@
 # H2.CL request smuggling
 
+**Lab URL:** https://portswigger.net/web-security/request-smuggling/advanced/lab-request-smuggling-h2-cl-request-smuggling
+
 ### Goal -
 
 Solve the PortSwigger lab: H2.CL request smuggling
@@ -12,20 +14,8 @@ Solve the PortSwigger lab: H2.CL request smuggling
 
 ### Why It Works
 
-The exploit succeeds because this lab is vulnerable to request smuggling because the front-end server downgrades http/2 requests even if they have an ambiguous length.
-
-The official solution confirms: Using Burp Repeater, try smuggling an arbitrary prefix in the body of an HTTP/2 request by including a Content-Length: 0 header as follows. Remember t
-
-The root cause is a failure in the application's security architecture specific to this request smuggling scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab is vulnerable to request smuggling because the front-end server downgrades HTTP/2 requests even if they have an ambiguous length.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab is vulnerable to request smuggling because the front-end server downgrades HTTP/2 requests "
-- Reject requests with both Content-Length and Transfer-Encoding headers.
-
-## PortSwigger Lab
-
-**Official lab:** H2.CL request smuggling
-
-**PortSwigger:** https://portswigger.net/web-security/request-smuggling/advanced/lab-request-smuggling-h2-cl-request-smuggling
+- This lab is vulnerable to request smuggling because the front-end server downgrades HTTP/2 requests even if they have an ambiguous length.

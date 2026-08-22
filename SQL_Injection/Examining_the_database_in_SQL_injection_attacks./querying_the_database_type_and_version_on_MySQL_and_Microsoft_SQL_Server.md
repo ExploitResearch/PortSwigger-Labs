@@ -1,5 +1,7 @@
 # querying the database type and version on MySQL and Microsoft SQL Server
 
+**Lab URL:** https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle
+
 **STEP #1**
 
 Determine the number of columns returned by the original query.
@@ -55,9 +57,3 @@ Querying the database to retrieve database version.
 ```
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/58df1bceb192_002.png)
-
-## PortSwigger Lab
-
-**Official lab:** SQL injection attack, querying the database type and version on Oracle
-
-**PortSwigger:** https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle

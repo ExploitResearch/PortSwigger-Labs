@@ -1,5 +1,7 @@
 # SQL injection with filter bypass via XML encoding
 
+**Lab URL:** https://portswigger.net/web-security/sql-injection/lab-sql-injection-with-filter-bypass-via-xml-encoding
+
 ### Goal -
 
 Bypass a WAF filter that blocks SQL injection characters by using XML encoding.
@@ -12,16 +14,9 @@ Bypass a WAF filter that blocks SQL injection characters by using XML encoding.
 
 ### Why It Works
 
-The vulnerability exists because user input is incorporated into SQL queries without parameterization. The specific technique demonstrated in this lab involves bypass a waf filter that blocks sql injection characters by using xml encoding..
+The application has a SQL injection vulnerability in its stock check feature, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- Parameterized queries prevent SQL injection entirely.
-- Blind SQL injection can be exploited without visible data via conditional responses or errors.
-- WAF filters can be bypassed using encoding techniques.
-
-## PortSwigger Lab
-
-**Official lab:** SQL injection with filter bypass via XML encoding
-
-**PortSwigger:** https://portswigger.net/web-security/sql-injection/lab-sql-injection-with-filter-bypass-via-xml-encoding
+- This lab demonstrates using a UNION attack to retrieve data from other tables.
+- The SQL injection vulnerability is exploitable because user input is processed without adequate validation.

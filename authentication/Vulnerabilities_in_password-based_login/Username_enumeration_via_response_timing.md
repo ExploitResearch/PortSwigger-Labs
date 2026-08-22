@@ -1,5 +1,7 @@
 # Username enumeration via response timing
 
+**Lab URL:** https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-response-timing
+
 [https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-response-timing](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-response-timing)
 
 - With Burp running, submit an invalid username and password, then send the `POST /login` request to Burp Repeater. Experiment with different usernames and
@@ -42,21 +44,8 @@ consistently takes longer, then make a note of this username.
 
 ### Why It Works
 
-The exploit succeeds because this lab is vulnerable to username enumeration. it uses account locking, but this contains a logic flaw. to solve the lab, enumerate a valid username, brute-force this user's password, then access the
-
-The official solution confirms: With Burp running, investigate the login page and submit an invalid username and password. Send the POST /login request to Burp Intruder. Select Clust
-
-The root cause is a failure in the application's security architecture specific to this authentication scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab is vulnerable to username enumeration using its response times.
 
 ### Key Takeaways
 
-- This lab contains logic flaw, demonstrating how authentication vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab is vulnerable to username enumeration. It uses account locking, but this contains a logic f"
-- Consistent error messages and rate-limiting prevent enumeration and brute-force.
-
-## PortSwigger Lab
-
-**Official lab:** Username enumeration via response timing
-
-**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-response-timing
+- This lab is vulnerable to username enumeration using its response times.

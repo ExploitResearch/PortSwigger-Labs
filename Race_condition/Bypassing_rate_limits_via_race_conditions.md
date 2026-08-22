@@ -1,5 +1,7 @@
 # Bypassing rate limits via race conditions
 
+**Lab URL:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-bypassing-rate-limits
+
 ### Goal - 
 
 Exploit the race condition to bypass the rate limit to Successfully brute-force the password for the user `carlos`. Log in and access the admin panel then Delete the user `carlos`.
@@ -167,18 +169,8 @@ In here, we found that there’s a **HTTP status code “302 Found”**, which m
 
 ### Why It Works
 
-The exploit succeeds because this lab's login mechanism uses rate limiting to defend against brute-force attacks. however, this can be bypassed due to a race condition.
-
-The root cause is a failure in the application's security architecture specific to this race conditions scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's login mechanism uses rate limiting to defend against brute-force attacks.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's login mechanism uses rate limiting to defend against brute-force attacks. However, this c"
-- Database transactions and locking prevent race condition exploitation.
-
-## PortSwigger Lab
-
-**Official lab:** Bypassing rate limits via race conditions
-
-**PortSwigger:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-bypassing-rate-limits
+- This lab's login mechanism uses rate limiting to defend against brute-force attacks.

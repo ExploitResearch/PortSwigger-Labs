@@ -1,5 +1,7 @@
 # Partial construction race conditions
 
+**Lab URL:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-partial-construction
+
 To solve the lab:
 
 1. Identify the vulnerability in the way the website generates password reset tokens.
@@ -191,19 +193,4 @@ What we’ve learned:
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a user registration mechanism. a race condition enables you to bypass email verification and register with an arbitrary email address that you do not own.
-
-The root cause is a failure in the application's security architecture specific to this race conditions scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
-
-### Key Takeaways
-
-- This lab contains user registration mechanism, demonstrating how race conditions vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a user registration mechanism. A race condition enables you to bypass email verifi"
-- Database transactions and locking prevent race condition exploitation.
-
-## PortSwigger Lab
-
-**Official lab:** Partial construction race conditions
-
-**PortSwigger:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-partial-construction
+This lab contains a user registration mechanism.

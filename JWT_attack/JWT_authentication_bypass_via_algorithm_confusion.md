@@ -1,5 +1,7 @@
 # JWT authentication bypass via algorithm confusion
 
+**Lab URL:** https://portswigger.net/web-security/jwt/algorithm-confusion/lab-jwt-authentication-bypass-via-algorithm-confusion
+
 ## Goal - 
 
 first obtain the server's public key. This is exposed via a standard endpoint. Use this key to sign a modified session token that gives you access to the admin panel at `/admin`, then delete the user `carlos`.
@@ -78,9 +80,3 @@ Copy the JWT and update session cookie in the browser**, then refresh the page:*
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/53e030c0e357_008.png)
 
 go to the admin panel and delete user `carlos`
-
-## PortSwigger Lab
-
-**Official lab:** JWT authentication bypass via algorithm confusion
-
-**PortSwigger:** https://portswigger.net/web-security/jwt/algorithm-confusion/lab-jwt-authentication-bypass-via-algorithm-confusion

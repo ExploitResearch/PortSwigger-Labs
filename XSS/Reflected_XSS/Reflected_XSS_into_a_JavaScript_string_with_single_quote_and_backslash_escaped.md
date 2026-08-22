@@ -1,5 +1,7 @@
 # Reflected XSS into a JavaScript string with single quote and backslash escaped
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-string-single-quote-backslash-escaped
+
 ## Metadata
 
 | Property | Value |
@@ -42,9 +44,3 @@ But we insert </script> at starting it is closing script tag and then it comes o
 ```
 
 this payload works and  got alert
-
-## PortSwigger Lab
-
-**Official lab:** Reflected XSS into a JavaScript string with single quote and backslash escaped
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-string-single-quote-backslash-escaped

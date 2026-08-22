@@ -1,5 +1,7 @@
 # Information disclosure in version control history
 
+**Lab URL:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-version-control-history
+
 ### Goal - 
 
 Obtain the password for the `administrator` user then log in and delete the user `carlos`.
@@ -37,9 +39,3 @@ Log revealing that password was removed so now **print that commit:**
 Found `administrator` password: `v2v6cafbhrqnfxq6i622`
 
 **login as **`administrator`** and delete user **`carlos`**!**
-
-## PortSwigger Lab
-
-**Official lab:** Information disclosure in version control history
-
-**PortSwigger:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-version-control-history

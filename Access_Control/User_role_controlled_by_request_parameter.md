@@ -1,5 +1,7 @@
 # User role controlled by request parameter
 
+**Lab URL:** https://portswigger.net/web-security/access-control/lab-user-role-controlled-by-request-parameter
+
 ### Target Goal - 
 
 Access the admin panel and use it to delete the user `carlos`
@@ -26,20 +28,8 @@ Load the admin panel and delete `carlos`.
 
 ### Why It Works
 
-The exploit succeeds because this lab has an admin panel at /admin, which identifies administrators using a forgeable cookie.
-
-The official solution confirms: Browse to /admin and observe that you can't access the admin panel. Browse to the login page. In Burp Proxy, turn interception on and enable response 
-
-The root cause is a failure in the application's security architecture specific to this access control scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab has an admin panel at /admin, which identifies administrators using a forgeable cookie.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab has an admin panel at /admin, which identifies administrators using a forgeable cookie."
-- Server-side authorization checks must be enforced on every request, not just the UI.
-
-## PortSwigger Lab
-
-**Official lab:** User role controlled by request parameter
-
-**PortSwigger:** https://portswigger.net/web-security/access-control/lab-user-role-controlled-by-request-parameter
+- This lab has an admin panel at /admin, which identifies administrators using a forgeable cookie.

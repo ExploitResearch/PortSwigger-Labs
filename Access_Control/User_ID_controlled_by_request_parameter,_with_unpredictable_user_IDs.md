@@ -1,5 +1,7 @@
 # User ID controlled by request parameter, with unpredictable user IDs
 
+**Lab URL:** https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-unpredictable-user-ids
+
 ### Target Goal - 
 
 Obtain the API key for the user `carlos` and submit it as the solution
@@ -30,21 +32,8 @@ submit the carlos API key
 
 ### Why It Works
 
-The exploit succeeds because this lab has user account page that contains the current user's existing password, prefilled in a masked input.
-
-The official solution confirms: Log in using the supplied credentials and access the user account page. Change the &quot;id&quot; parameter in the URL to administrator. View the resp
-
-The root cause is a failure in the application's security architecture specific to this access control scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a horizontal privilege escalation vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains current user's existing password, demonstrating how access control vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab has user account page that contains the current user's existing password, prefilled in a ma"
-- Server-side authorization checks must be enforced on every request, not just the UI.
-
-## PortSwigger Lab
-
-**Official lab:** User ID controlled by request parameter, with unpredictable user IDs
-
-**PortSwigger:** https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-unpredictable-user-ids
+- The horizontal privilege escalation vulnerability is exploitable because user input is processed without adequate validation.

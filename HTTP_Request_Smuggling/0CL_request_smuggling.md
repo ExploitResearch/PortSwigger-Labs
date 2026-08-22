@@ -1,5 +1,7 @@
 # 0.CL request smuggling
 
+**Lab URL:** https://portswigger.net/web-security/request-smuggling/advanced/lab-request-smuggling-0cl-request-smuggling
+
 ### Goal -
 
 Solve the PortSwigger lab: 0.CL request smuggling
@@ -12,18 +14,8 @@ Solve the PortSwigger lab: 0.CL request smuggling
 
 ### Why It Works
 
-The exploit succeeds because carlos visits the homepage every five seconds. to solve the lab, exploit the vulnerability to execute alert() in his browser.
-
-The root cause is a failure in the application's security architecture specific to this request smuggling scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+Carlos visits the homepage every five seconds.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "Carlos visits the homepage every five seconds. To solve the lab, exploit the vulnerability to execut"
-- Reject requests with both Content-Length and Transfer-Encoding headers.
-
-## PortSwigger Lab
-
-**Official lab:** 0.CL request smuggling
-
-**PortSwigger:** https://portswigger.net/web-security/request-smuggling/advanced/lab-request-smuggling-0cl-request-smuggling
+- Carlos visits the homepage every five seconds.

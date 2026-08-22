@@ -1,5 +1,7 @@
 # Scanning non-standard data structures
 
+**Lab URL:** https://portswigger.net/web-security/essential-skills/using-burp-scanner-during-manual-testing/lab-scanning-non-standard-data-structures
+
 ### Goal -
 
 Solve the PortSwigger lab: Scanning non-standard data structures
@@ -12,21 +14,8 @@ Solve the PortSwigger lab: Scanning non-standard data structures
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a vulnerability that is difficult to find manually. it is located in a non-standard data structure.
-
-The official solution confirms: Identify the vulnerability Log in to your account with the provided credentials. In Burp, go to the Proxy &gt; HTTP history tab.
-
-The root cause is a failure in the application's security architecture specific to this essential skills scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a a vulnerability in a non-standard data structure, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains vulnerability that is difficult to find manually, demonstrating how essential skills vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a vulnerability that is difficult to find manually. It is located in a non-standar"
-- Server-side validation and authorization are the primary defenses.
-
-## PortSwigger Lab
-
-**Official lab:** Scanning non-standard data structures
-
-**PortSwigger:** https://portswigger.net/web-security/essential-skills/using-burp-scanner-during-manual-testing/lab-scanning-non-standard-data-structures
+- The a vulnerability is exploitable because user input is processed without adequate validation.

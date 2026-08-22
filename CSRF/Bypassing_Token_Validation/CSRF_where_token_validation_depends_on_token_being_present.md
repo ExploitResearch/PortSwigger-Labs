@@ -1,5 +1,7 @@
 # CSRF where token validation depends on token being present
 
+**Lab URL:** https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-validation-depends-on-token-being-present
+
 ### Goal - 
 
 use your exploit server to host an HTML page that uses a CSRF attack to change the viewer’s email address.
@@ -45,9 +47,3 @@ We can test it locally via the `View exploit` button
 
 - Change the email address in your exploit so that it doesn't match your own.
 - Store the exploit, then click "Deliver to victim" to solve the lab.
-
-## PortSwigger Lab
-
-**Official lab:** CSRF where token validation depends on token being present
-
-**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-validation-depends-on-token-being-present

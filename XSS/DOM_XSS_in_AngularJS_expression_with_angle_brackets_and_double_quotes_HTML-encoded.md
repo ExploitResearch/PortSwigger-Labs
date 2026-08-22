@@ -1,5 +1,7 @@
 # DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-angularjs-expression
+
 ## Metadata
 
 | Property | Value |
@@ -37,21 +39,8 @@ As you can see, the `<>` is HTML encoded.
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a dom-based cross-site scripting vulnerability in a angularjs expression within the search functionality.
-
-The official solution confirms: Enter a random alphanumeric string into the search box. View the page source and observe that your random string is enclosed in an ng-app directive.
-
-The root cause is a failure in the application's security architecture specific to this cross site scripting scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a DOM-based cross-site scripting vulnerability in a AngularJS expression within the search functionality, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains DOM-based cross-site scripting vulnerability, demonstrating how cross site scripting vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a DOM-based cross-site scripting vulnerability in a AngularJS expression within th"
-- Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
-
-## PortSwigger Lab
-
-**Official lab:** DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-angularjs-expression
+- The DOM-based cross-site scripting vulnerability is exploitable because user input is processed without adequate validation.

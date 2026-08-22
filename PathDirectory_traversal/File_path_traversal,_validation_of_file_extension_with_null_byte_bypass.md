@@ -1,5 +1,7 @@
 # File path traversal, validation of file extension with null byte bypass
 
+**Lab URL:** https://portswigger.net/web-security/file-path-traversal/lab-validate-file-extension-null-byte-bypass
+
 ### Goal - 
 
 Retrieve the contents of the `/etc/passwd` file.
@@ -59,21 +61,8 @@ Above I already established that basic path traversal is possible. So a valid fi
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a path traversal vulnerability in the display of product images.
-
-The official solution confirms: Use Burp Suite to intercept and modify a request that fetches a product image. Modify the filename parameter, giving it the value: ../../../etc/passwd
-
-The root cause is a failure in the application's security architecture specific to this file path traversal scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a path traversal vulnerability in display of product images, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains path traversal vulnerability, demonstrating how file path traversal vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a path traversal vulnerability in the display of product images."
-- Canonicalize file paths and validate they stay within the expected directory.
-
-## PortSwigger Lab
-
-**Official lab:** File path traversal, validation of file extension with null byte bypass
-
-**PortSwigger:** https://portswigger.net/web-security/file-path-traversal/lab-validate-file-extension-null-byte-bypass
+- The path traversal vulnerability is exploitable because user input is processed without adequate validation.

@@ -1,5 +1,7 @@
 # Offline password cracking
 
+**Lab URL:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-offline-password-cracking
+
 1. With Burp running, use your own account to investigate the "Stay logged in" functionality. Notice that the `stay-logged-in` cookie is Base64 encoded.
 1. In the **Proxy > HTTP history** tab, go to the **Response** to your login request and highlight the `stay-logged-in` cookie, to see that it is constructed as follows: `username+':'+md5HashOfPassword`
 1. You now need to steal the victim user's cookie.
@@ -17,21 +19,9 @@ The purpose of this lab is to demonstrate the potential of cracking passwords of
 
 ### Why It Works
 
-The exploit succeeds because this lab stores the user's password hash in a cookie. the lab also contains an xss vulnerability in the comment functionality. to solve the lab, obtain carlos's stay-logged-in cookie and use it to cra
-
-The official solution confirms: With Burp running, use your own account to investigate the &quot;Stay logged in&quot; functionality. Notice that the stay-logged-in cookie is Base64 e
-
-The root cause is a failure in the application's security architecture specific to this authentication scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a XSS vulnerability in a cookie, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains XSS vulnerability, demonstrating how authentication vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab stores the user's password hash in a cookie. The lab also contains an XSS vulnerability in "
-- Consistent error messages and rate-limiting prevent enumeration and brute-force.
-
-## PortSwigger Lab
-
-**Official lab:** Offline password cracking
-
-**PortSwigger:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-offline-password-cracking
+- This lab demonstrates using it to crack his password.
+- The XSS vulnerability is exploitable because user input is processed without adequate validation.

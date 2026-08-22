@@ -1,5 +1,7 @@
 # User ID controlled by request parameter with data leakage in redirect
 
+**Lab URL:** https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-data-leakage-in-redirect
+
 ### Target Goal - 
 
 Obtain the API key for the user `carlos` and submit it as the solution
@@ -17,9 +19,3 @@ belonging to `carlos`.
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/e4ef3ed98f03_001.png)
 
 Submit the API key.
-
-## PortSwigger Lab
-
-**Official lab:** User ID controlled by request parameter with data leakage in redirect
-
-**PortSwigger:** https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-data-leakage-in-redirect

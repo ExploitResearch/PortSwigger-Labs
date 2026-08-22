@@ -1,5 +1,7 @@
 # Information disclosure on debug page
 
+**Lab URL:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-on-debug-page
+
 ### Goal - 
 
 Obtain and submit the `SECRET_KEY` environment variable.
@@ -38,21 +40,4 @@ Opening this file in the browser and scrolling through the content shows the ans
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a debug page that discloses sensitive information about the application. to solve the lab, obtain and submit the secret_key environment variable.
-
-The official solution confirms: With Burp running, browse to the home page. Go to the &quot;Target&quot; &gt; &quot;Site Map&quot; tab. Right-click on the top-level entry for the lab
-
-The root cause is a failure in the application's security architecture specific to this information disclosure scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
-
-### Key Takeaways
-
-- This lab contains debug page that discloses sensitive, demonstrating how information disclosure vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a debug page that discloses sensitive information about the application. To solve "
-- Disable verbose error messages and debug endpoints in production.
-
-## PortSwigger Lab
-
-**Official lab:** Information disclosure on debug page
-
-**PortSwigger:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-on-debug-page
+This lab contains a debug page that discloses sensitive information about the application.

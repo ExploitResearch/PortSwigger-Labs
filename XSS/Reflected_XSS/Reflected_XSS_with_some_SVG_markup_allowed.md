@@ -1,5 +1,7 @@
 # Reflected XSS with some SVG markup allowed
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-some-svg-markup-allowed
+
 ## Metadata
 
 | Property | Value |
@@ -23,20 +25,8 @@ Use payload** <svg><animatetransform onbegin=alert(1) attributeName=transform>**
 
 ### Why It Works
 
-The exploit succeeds because this lab has a simple reflected xss vulnerability. the site is blocking common tags but misses some svg tags and events.
-
-The official solution confirms: Inject a standard XSS payload, such as: &lt;img src=1 onerror=alert(1)&gt; Observe that this payload gets blocked. In the next few steps, we'll use Bu
-
-The root cause is a failure in the application's security architecture specific to this cross site scripting scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a simple reflected XSS vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab has a simple reflected XSS vulnerability. The site is blocking common tags but misses some "
-- Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
-
-## PortSwigger Lab
-
-**Official lab:** Reflected XSS with some SVG markup allowed
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-some-svg-markup-allowed
+- The simple reflected XSS vulnerability is exploitable because user input is processed without adequate validation.

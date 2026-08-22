@@ -1,5 +1,7 @@
 # Password reset broken logic
 
+**Lab URL:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-password-reset-broken-logic
+
 - With Burp running, click the **Forgot your password?** link and enter your own username.
 - Click the **Email client** button
 to view the password reset email that was sent. Click the link in the
@@ -16,20 +18,8 @@ reset functionality still works even if you delete the value of the `temp-forgot
 
 ### Why It Works
 
-The exploit succeeds because this lab's password reset functionality is vulnerable. to solve the lab, reset carlos's password then log in and access his &quot;my account&quot; page.
-
-The official solution confirms: With Burp running, click the Forgot your password? link and enter your own username. Click the Email client button to view the password reset email th
-
-The root cause is a failure in the application's security architecture specific to this authentication scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's password reset functionality is vulnerable.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's password reset functionality is vulnerable. To solve the lab, reset Carlos's password the"
-- Consistent error messages and rate-limiting prevent enumeration and brute-force.
-
-## PortSwigger Lab
-
-**Official lab:** Password reset broken logic
-
-**PortSwigger:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-password-reset-broken-logic
+- This lab's password reset functionality is vulnerable.

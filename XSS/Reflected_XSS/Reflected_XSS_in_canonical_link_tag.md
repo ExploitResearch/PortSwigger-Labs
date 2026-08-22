@@ -1,5 +1,7 @@
 # Reflected XSS in canonical link tag
 
+**Lab URL:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-canonical-link-tag
+
 ## Metadata
 
 | Property | Value |
@@ -35,20 +37,8 @@ In here, we can see that there is a `<link>` tag is using **canonical** link tag
 
 ### Why It Works
 
-The exploit succeeds because this lab reflects user input in a canonical link tag and escapes angle brackets.
-
-The official solution confirms: Visit the following URL, replacing YOUR-LAB-ID with your lab ID: https://YOUR-LAB-ID.web-security-academy.net/?%27accesskey=%27x%27onclick=%27alert(1)
-
-The root cause is a failure in the application's security architecture specific to this cross site scripting scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab reflects user input in a canonical link tag and escapes angle brackets.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab reflects user input in a canonical link tag and escapes angle brackets."
-- Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
-
-## PortSwigger Lab
-
-**Official lab:** Reflected XSS in canonical link tag
-
-**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-canonical-link-tag
+- This lab reflects user input in a canonical link tag and escapes angle brackets.

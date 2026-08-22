@@ -1,5 +1,7 @@
 # Basic password reset poisoning
 
+**Lab URL:** https://portswigger.net/web-security/host-header/exploiting/password-reset-poisoning/lab-host-header-basic-password-reset-poisoning
+
 - Go to the login page and notice the "Forgot your password?" functionality. Request a password reset for your own account.
 - Go to the exploit server and open the email client. Observe that you have received an email containing a link to reset your password. Notice that the URL contains the query parameter `temp-forgot-password-token`.
 - Click the link and observe that you are prompted to enter a new password. Reset your password to whatever you want.
@@ -15,20 +17,8 @@ that you've received. Notice that the URL in the email contains your arbitrary H
 
 ### Why It Works
 
-The exploit succeeds because this lab is vulnerable to password reset poisoning. the user carlos will carelessly click on any links in emails that he receives. to solve the lab, log in to carlos's account.
-
-The official solution confirms: Go to the login page and notice the &quot;Forgot your password?&quot; functionality. Request a password reset for your own account. Go to the exploit 
-
-The root cause is a failure in the application's security architecture specific to this host header scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab is vulnerable to password reset poisoning.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab is vulnerable to password reset poisoning. The user carlos will carelessly click on any lin"
-- Validate the Host header against an allowlist of expected domains.
-
-## PortSwigger Lab
-
-**Official lab:** Basic password reset poisoning
-
-**PortSwigger:** https://portswigger.net/web-security/host-header/exploiting/password-reset-poisoning/lab-host-header-basic-password-reset-poisoning
+- This lab is vulnerable to password reset poisoning.

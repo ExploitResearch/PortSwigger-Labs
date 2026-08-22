@@ -1,5 +1,7 @@
 # Clickjacking with form input data prefilled from a URL parameter
 
+**Lab URL:** https://portswigger.net/web-security/clickjacking/lab-prefilled-form-input
+
 ### Goal -
 
 Exploit a clickjacking vulnerability where form fields can be prefilled from URL parameters, allowing the attacker to pre-fill malicious values and trick the user into submitting them.
@@ -38,20 +40,8 @@ Example exploit page:
 
 ### Why It Works
 
-The exploit succeeds because this lab extends the basic clickjacking example in lab: basic clickjacking with csrf token protection. the goal of the lab is to change the email address of the user by prepopulating a form using a ur
-
-The official solution confirms: Log in to the account on the target website. Go to the exploit server and paste the following HTML template into the "Body" section: &lt;style&gt; ifr
-
-The root cause is a failure in the application's security architecture specific to this clickjacking scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab extends the basic clickjacking example in Lab: Basic clickjacking with CSRF token protection.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab extends the basic clickjacking example in Lab: Basic clickjacking with CSRF token protectio"
-- Set X-Frame-Options or CSP frame-ancestors — JavaScript frame-busting is bypassable.
-
-## PortSwigger Lab
-
-**Official lab:** Clickjacking with form input data prefilled from a URL parameter
-
-**PortSwigger:** https://portswigger.net/web-security/clickjacking/lab-prefilled-form-input
+- This lab extends the basic clickjacking example in Lab: Basic clickjacking with CSRF token protection.

@@ -1,5 +1,7 @@
 # Remote code execution via web shell upload
 
+**Lab URL:** https://portswigger.net/web-security/file-upload/lab-file-upload-remote-code-execution-via-web-shell-upload
+
 ### Goal - 
 
 To solve the lab, upload a basic PHP web shell and use it to exfiltrate the contents of the file `/home/carlos/secret`
@@ -60,9 +62,3 @@ curl https://0a7b004f038d0eb58082174300b30087.web-security-academy.net/files/ava
 ```
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/834dbbb7f038_005.png)
-
-## PortSwigger Lab
-
-**Official lab:** Remote code execution via web shell upload
-
-**PortSwigger:** https://portswigger.net/web-security/file-upload/lab-file-upload-remote-code-execution-via-web-shell-upload

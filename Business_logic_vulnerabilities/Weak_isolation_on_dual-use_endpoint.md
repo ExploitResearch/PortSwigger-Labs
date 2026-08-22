@@ -1,5 +1,7 @@
 # Weak isolation on dual-use endpoint
 
+**Lab URL:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-weak-isolation-on-dual-use-endpoint
+
 ### Goal - 
 
 Exploit logic flaw to access the admin panel and delete Carlos
@@ -56,20 +58,8 @@ And I appear to be inside the administrator account. The application states that
 
 ### Why It Works
 
-The exploit succeeds because this lab makes a flawed assumption about the user's privilege level based on their input. as a result, you can exploit the logic of its account management features to gain access to arbitrary users' a
-
-The official solution confirms: With Burp running, log in and access your account page. Change your password. Study the POST /my-account/change-password request in Burp Repeater.
-
-The root cause is a failure in the application's security architecture specific to this logic flaws scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab makes a flawed assumption about the user's privilege level based on their input.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab makes a flawed assumption about the user's privilege level based on their input. As a resul"
-- Validate business-critical parameters server-side — never trust client-supplied values.
-
-## PortSwigger Lab
-
-**Official lab:** Weak isolation on dual-use endpoint
-
-**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-weak-isolation-on-dual-use-endpoint
+- This lab makes a flawed assumption about the user's privilege level based on their input.

@@ -1,5 +1,7 @@
 # SameSite Strict bypass via sibling domain
 
+**Lab URL:** https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-samesite-strict-bypass-via-sibling-domain
+
 ### Goal - 
 
 Perform a cross-site websocket hijacking attack to exfiltrate the victim's chat history and compromise the victim's account.
@@ -46,18 +48,8 @@ attacker’s web page can perform a cross-site request to open a WebSocket
 
 ### Why It Works
 
-The exploit succeeds because this lab's live chat feature is vulnerable to cross-site websocket hijacking (cswsh). to solve the lab, log in to the victim's account.
-
-The root cause is a failure in the application's security architecture specific to this csrf scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab's live chat feature is vulnerable to cross-site WebSocket hijacking (CSWSH).
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab's live chat feature is vulnerable to cross-site WebSocket hijacking (CSWSH). To solve the l"
-- CSRF tokens, SameSite cookies, and Referer validation together provide defense-in-depth.
-
-## PortSwigger Lab
-
-**Official lab:** SameSite Strict bypass via sibling domain
-
-**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-samesite-strict-bypass-via-sibling-domain
+- This lab's live chat feature is vulnerable to cross-site WebSocket hijacking (CSWSH).

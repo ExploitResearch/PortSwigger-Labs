@@ -1,5 +1,7 @@
 # Brute-forcing a stay-logged-in cookie
 
+**Lab URL:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-brute-forcing-a-stay-logged-in-cookie
+
 - With Burp running, log in to your own account with the **Stay logged in** option selected. Notice that this sets a `stay-logged-in` cookie.
 - Examine this cookie in the [Inspector](https://portswigger.net/burp/documentation/desktop/tools/inspector) panel and notice that it is Base64-encoded. Its decoded value is `wiener:51dc30ddc473d43a6011e9ebba6ca770`. Study the length and character set of this string and notice that it could be an MD5 hash. Given that the plaintext is your username, you can make an educated guess that this may be a hash of your password. Hash
 your password using MD5 to confirm that this is the case. We now know
@@ -31,20 +33,8 @@ solved. Notice that only one request returned a response containing `Update emai
 
 ### Why It Works
 
-The exploit succeeds because this lab allows users to stay logged in even after they close their browser session. the cookie used to provide this functionality is vulnerable to brute-forcing.
-
-The official solution confirms: With Burp running, log in to your own account with the Stay logged in option selected. Notice that this sets a stay-logged-in cookie. Examine this coo
-
-The root cause is a failure in the application's security architecture specific to this authentication scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab allows users to stay logged in even after they close their browser session.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab allows users to stay logged in even after they close their browser session. The cookie used"
-- Consistent error messages and rate-limiting prevent enumeration and brute-force.
-
-## PortSwigger Lab
-
-**Official lab:** Brute-forcing a stay-logged-in cookie
-
-**PortSwigger:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-brute-forcing-a-stay-logged-in-cookie
+- This lab allows users to stay logged in even after they close their browser session.

@@ -1,5 +1,7 @@
 # JWT authentication bypass via flawed signature verification
 
+**Lab URL:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-flawed-signature-verification
+
 ### Goal - 
 
 Modify your session token to gain access to the admin panel at `/admin`, then delete the user `carlos`.
@@ -45,9 +47,3 @@ Refresh the page, go to admin panel and delete user carlos
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/78b4034beaf1_006.png)
 {% endhint %}
-
-## PortSwigger Lab
-
-**Official lab:** JWT authentication bypass via flawed signature verification
-
-**PortSwigger:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-flawed-signature-verification

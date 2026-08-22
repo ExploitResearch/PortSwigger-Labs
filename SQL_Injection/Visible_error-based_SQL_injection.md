@@ -1,5 +1,7 @@
 # Visible error-based SQL injection
 
+**Lab URL:** https://portswigger.net/web-security/sql-injection/blind/lab-sql-injection-visible-error-based
+
 1. using Burp's built-in browser, explore the lab functionality.
 1. Go to the **Proxy > HTTP history** tab and find a `GET /` request that contains a `TrackingId` cookie.
 1. In Repeater, append a single quote to the value of your `TrackingId` cookie and send the request. `TrackingId=ogAZZfxtOKUELbuJ'`
@@ -35,21 +37,8 @@ This suggests that the query was run properly, but you're still getting an error
 
 ### Why It Works
 
-The exploit succeeds because this lab contains a sql injection vulnerability. the application uses a tracking cookie for analytics, and performs a sql query containing the value of the submitted cookie. the results of the sql que
-
-The official solution confirms: Using Burp's built-in browser, explore the lab functionality. Go to the Proxy &gt; HTTP history tab and find a GET / request that contains a TrackingI
-
-The root cause is a failure in the application's security architecture specific to this sql injection scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a SQL injection vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- This lab contains SQL, demonstrating how sql injection vulnerabilities manifest in real applications.
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab contains a SQL injection vulnerability. The application uses a tracking cookie for analytic"
-- Server-side validation and authorization are the primary defenses.
-
-## PortSwigger Lab
-
-**Official lab:** Visible error-based SQL injection
-
-**PortSwigger:** https://portswigger.net/web-security/sql-injection/blind/lab-sql-injection-visible-error-based
+- The SQL injection vulnerability is exploitable because user input is processed without adequate validation.

@@ -1,5 +1,7 @@
 # Inconsistent handling of exceptional input
 
+**Lab URL:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-inconsistent-handling-of-exceptional-input
+
 ### Goal - 
 
 Exploit logic flaw to access the admin panel and delete Carlos
@@ -108,20 +110,8 @@ Sure enough, using this string as the email address, I receive the confirmation 
 
 ### Why It Works
 
-The exploit succeeds because this lab doesn't adequately validate user input. you can exploit a logic flaw in its account registration process to gain access to administrative functionality. to solve the lab, access the admin pan
-
-The official solution confirms: While proxying traffic through Burp, open the lab and go to the &quot;Target&quot; &gt; &quot;Site map&quot; tab. Right-click on the lab domain and se
-
-The root cause is a failure in the application's security architecture specific to this logic flaws scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab doesn't adequately validate user input.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab doesn't adequately validate user input. You can exploit a logic flaw in its account registr"
-- Validate business-critical parameters server-side — never trust client-supplied values.
-
-## PortSwigger Lab
-
-**Official lab:** Inconsistent handling of exceptional input
-
-**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-inconsistent-handling-of-exceptional-input
+- This lab doesn't adequately validate user input.

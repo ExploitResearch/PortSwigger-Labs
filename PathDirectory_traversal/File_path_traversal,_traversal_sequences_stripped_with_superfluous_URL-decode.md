@@ -1,5 +1,7 @@
 # File path traversal, traversal sequences stripped with superfluous URL-decode
 
+**Lab URL:** https://portswigger.net/web-security/file-path-traversal/lab-superfluous-url-decode
+
 ### Goal - 
 
 Retrieve the contents of the `/etc/passwd` file.
@@ -57,9 +59,3 @@ Of course, when using Burp Repeater it is much easier to just type the `../../..
 This also encodes the `2 5 e f` characters from the first conversion, leading to a filename of `%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66etc/passwd`, which is also perfectly fine here:
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/5db72fb5f8fa_005.png)
-
-## PortSwigger Lab
-
-**Official lab:** File path traversal, traversal sequences stripped with superfluous URL-decode
-
-**PortSwigger:** https://portswigger.net/web-security/file-path-traversal/lab-superfluous-url-decode

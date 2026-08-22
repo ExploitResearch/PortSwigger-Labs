@@ -1,5 +1,7 @@
 # Authentication bypass via encryption oracle
 
+**Lab URL:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-authentication-bypass-via-encryption-oracle
+
 ### Goal - 
 
 Exploit logic flaw to access the admin panel and delete Carlos
@@ -110,9 +112,3 @@ It appears that the session also contains user information and takes precedence 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/1e8c624545c4_013.png)
 
 Now to the `Admin panel` to remove user `carlos`
-
-## PortSwigger Lab
-
-**Official lab:** Authentication bypass via encryption oracle
-
-**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-authentication-bypass-via-encryption-oracle

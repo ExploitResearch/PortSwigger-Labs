@@ -1,5 +1,7 @@
 # Broken brute-force protection, IP block
 
+**Lab URL:** https://portswigger.net/web-security/authentication/password-based/lab-broken-bruteforce-protection-ip-block
+
 - With Burp running, investigate the login page. Observe that your IP is temporarily blocked if you submit 3 incorrect logins in a row. However, notice that you can reset the counter for the number of failed login attempts by logging in to your own account before this limit is reached.
 - Enter an invalid username and password, then send the `POST /login` request to Burp Intruder. Create a pitchfork attack with payload positions in both the `username` and `password` parameters.
 - On the **Resource pool** tab, add the attack to a resource pool with **Maximum concurrent requests** set to `1`. By only sending one request at a time, you can ensure that your login attempts are sent to the server in the correct order.
@@ -17,9 +19,3 @@ add valid value at each second line
 `awk ' { print $0; print "*some text"} ' inputfile > outputfile`
 
 {% endhint %}
-
-## PortSwigger Lab
-
-**Official lab:** Broken brute-force protection, IP block
-
-**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-broken-bruteforce-protection-ip-block

@@ -1,5 +1,7 @@
 # Multi-step process with no access control on one step
 
+**Lab URL:** https://portswigger.net/web-security/access-control/lab-multi-step-process-with-no-access-control-on-one-step
+
 ### Target Goal - 
 
 Log in using the credentials `wiener:peter` and exploit the flawed access controls to promote yourself to become an administrator
@@ -46,20 +48,8 @@ The admin panel shows that the wiener account has been promoted to admin.
 
 ### Why It Works
 
-The exploit succeeds because this lab has an admin panel with a flawed multi-step process for changing a user's role. you can familiarize yourself with the admin panel by logging in using the credentials administrator:admin.
-
-The official solution confirms: Log in using the admin credentials. Browse to the admin panel, promote carlos, and send the confirmation HTTP request to Burp Repeater. Open a private
-
-The root cause is a failure in the application's security architecture specific to this access control scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+This lab has an admin panel with a flawed multi-step process for changing a user's role.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab has an admin panel with a flawed multi-step process for changing a user's role. You can fam"
-- Server-side authorization checks must be enforced on every request, not just the UI.
-
-## PortSwigger Lab
-
-**Official lab:** Multi-step process with no access control on one step
-
-**PortSwigger:** https://portswigger.net/web-security/access-control/lab-multi-step-process-with-no-access-control-on-one-step
+- This lab has an admin panel with a flawed multi-step process for changing a user's role.

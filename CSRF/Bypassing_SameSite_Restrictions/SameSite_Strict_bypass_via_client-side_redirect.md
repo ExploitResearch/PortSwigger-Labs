@@ -1,5 +1,7 @@
 # SameSite Strict bypass via client-side redirect
 
+**Lab URL:** https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-samesite-strict-bypass-via-client-side-redirect
+
 ### Goal - 
 
 use your exploit server to host an HTML page that uses a CSRF attack to change the viewer’s email address.
@@ -104,9 +106,3 @@ window. location = "https://0ad1003704e4d04e8077d6250056008f.web-security-academ
 ```
 
 - Deliver our final payload to the victim
-
-## PortSwigger Lab
-
-**Official lab:** SameSite Strict bypass via client-side redirect
-
-**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-samesite-strict-bypass-via-client-side-redirect

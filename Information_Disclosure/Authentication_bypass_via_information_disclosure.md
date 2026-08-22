@@ -1,5 +1,7 @@
 # Authentication bypass via information disclosure
 
+**Lab URL:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-authentication-bypass
+
 ### Goal - 
 
 Access the admin interface and delete the user `carlos`.
@@ -48,18 +50,8 @@ Now just reload the page in the browser, access the admin panel and delete user 
 
 ### Why It Works
 
-The exploit succeeds because this lab uses a jwt-based mechanism for handling sessions. it uses a robust rsa key pair to sign and verify tokens. however, due to implementation flaws, this mechanism is vulnerable to algorithm conf
-
-The root cause is a failure in the application's security architecture specific to this jwt scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
+The application has a authentication bypass vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
 
 ### Key Takeaways
 
-- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
-- PortSwigger confirms: "This lab uses a JWT-based mechanism for handling sessions. It uses a robust RSA key pair to sign and"
-- JWT signature verification must pin the algorithm and reject unsigned tokens.
-
-## PortSwigger Lab
-
-**Official lab:** Authentication bypass via information disclosure
-
-**PortSwigger:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-authentication-bypass
+- The authentication bypass vulnerability is exploitable because user input is processed without adequate validation.

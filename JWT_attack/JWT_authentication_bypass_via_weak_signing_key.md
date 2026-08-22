@@ -1,5 +1,7 @@
 # JWT authentication bypass via weak signing key
 
+**Lab URL:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-weak-signing-key
+
 ## Goal - 
 
 First brute-force the website’s secret key. Once you’ve obtained this, use it to sign a modified session token that gives you access to the admin panel at `/admin`, then delete the user `carlos`.
@@ -58,9 +60,3 @@ Now that I know that the JWT is correct for `administrator`, I can replace my se
 **Then refresh the page : **go to the admin panel and delete user `carlos`
 
 go to the admin panel and delete user `carlos`
-
-## PortSwigger Lab
-
-**Official lab:** JWT authentication bypass via weak signing key
-
-**PortSwigger:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-weak-signing-key
