@@ -36,7 +36,6 @@ Due to implementation flaws, the server doesn’t verify the signature of any JW
 
 1. Send the request to `/admin/delete?username=carlo`
 1. copy the modified cookie value from the request and replace the cookie in browser:
-![](./images/0efb99ed06f3_004.png)
 
 1. use Burp "Match and Replace" functionality to replace the cookie, or even the specific claim, on the fly for all requests. However, just changing the cookie in the browser is much simpler.
 {% endhint %}
