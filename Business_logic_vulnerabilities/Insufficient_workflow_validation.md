@@ -39,3 +39,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab makes flawed assumptions about the sequence of events in the purchasing workflow. To solve "
 - Validate business-critical parameters server-side — never trust client-supplied values.
+
+## PortSwigger Lab
+
+**Official lab:** Insufficient workflow validation
+
+**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-insufficient-workflow-validation

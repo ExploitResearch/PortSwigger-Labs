@@ -78,3 +78,9 @@ Copy the JWT and update session cookie in the browser**, then refresh the page:*
 ![](./images/53e030c0e357_008.png)
 
 go to the admin panel and delete user `carlos`
+
+## PortSwigger Lab
+
+**Official lab:** JWT authentication bypass via algorithm confusion
+
+**PortSwigger:** https://portswigger.net/web-security/jwt/algorithm-confusion/lab-jwt-authentication-bypass-via-algorithm-confusion

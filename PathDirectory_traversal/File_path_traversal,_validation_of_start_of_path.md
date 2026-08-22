@@ -31,3 +31,9 @@ Therefore I can reference any file on the file system when I use a non-canonical
 ![](./images/c9cba9089fd2_005.png)
 
 Referencing the `/etc/passwd` file
+
+## PortSwigger Lab
+
+**Official lab:** File path traversal, validation of start of path
+
+**PortSwigger:** https://portswigger.net/web-security/file-path-traversal/lab-validate-start-of-path

@@ -31,3 +31,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab has an admin panel at /admin. It's only accessible to logged-in users with a roleid of 2."
 - Server-side authorization checks must be enforced on every request, not just the UI.
+
+## PortSwigger Lab
+
+**Official lab:** User role can be modified in user profile
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-user-role-can-be-modified-in-user-profile

@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "To solve the lab, use this functionality to cause an HTTP request to the public Burp Collaborator se"
 - URL allowlists (not blocklists) and blocking private IP ranges are essential SSRF defenses.
+
+## PortSwigger Lab
+
+**Official lab:** Blind SSRF with out-of-band detection
+
+**PortSwigger:** https://portswigger.net/web-security/ssrf/blind/lab-out-of-band-detection

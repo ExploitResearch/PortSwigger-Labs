@@ -22,3 +22,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is built on Node.js and the Express framework. It is vulnerable to server-side prototype po"
 - Reject __proto__ and constructor keys in JSON input before merging.
+
+## PortSwigger Lab
+
+**Official lab:** Remote code execution via server-side prototype pollution
+
+**PortSwigger:** https://portswigger.net/web-security/prototype-pollution/server-side/lab-remote-code-execution-via-server-side-prototype-pollution

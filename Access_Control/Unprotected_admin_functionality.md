@@ -13,3 +13,9 @@ delete the user `carlos`
 ![](./images/09c257cbe144_002.png)
 
 - Delete `carlos`
+
+## PortSwigger Lab
+
+**Official lab:** Unprotected admin functionality
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality

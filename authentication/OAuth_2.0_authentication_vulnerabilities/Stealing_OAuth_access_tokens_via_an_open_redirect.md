@@ -9,3 +9,9 @@ Solve the PortSwigger lab: Stealing OAuth access tokens via an open redirect
 1. Identify the vulnerability type and injection point
 2. Craft the appropriate payload
 3. Deliver the payload and verify the result
+
+## PortSwigger Lab
+
+**Official lab:** Stealing OAuth access tokens via an open redirect
+
+**PortSwigger:** https://portswigger.net/web-security/oauth/lab-oauth-stealing-oauth-access-tokens-via-an-open-redirect

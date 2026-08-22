@@ -19,3 +19,9 @@ parameter values are used to access resources or functions directly.
 ![](./images/0a874cee4a12_001.png)
 
 Submit the Carlos API key
+
+## PortSwigger Lab
+
+**Official lab:** User ID controlled by request parameter
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter

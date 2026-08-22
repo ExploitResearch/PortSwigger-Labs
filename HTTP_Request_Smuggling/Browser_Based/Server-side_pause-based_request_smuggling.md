@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to pause-based server-side request smuggling. The front-end server streams re"
 - Reject requests with both Content-Length and Transfer-Encoding headers.
+
+## PortSwigger Lab
+
+**Official lab:** Server-side pause-based request smuggling
+
+**PortSwigger:** https://portswigger.net/web-security/request-smuggling/browser/pause-based-desync/lab-server-side-pause-based-request-smuggling

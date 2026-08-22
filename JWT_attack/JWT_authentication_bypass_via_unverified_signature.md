@@ -39,3 +39,9 @@ Due to implementation flaws, the server doesn’t verify the signature of any JW
 
 1. use Burp "Match and Replace" functionality to replace the cookie, or even the specific claim, on the fly for all requests. However, just changing the cookie in the browser is much simpler.
 {% endhint %}
+
+## PortSwigger Lab
+
+**Official lab:** JWT authentication bypass via unverified signature
+
+**PortSwigger:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-unverified-signature

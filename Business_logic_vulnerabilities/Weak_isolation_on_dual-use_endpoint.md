@@ -67,3 +67,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab makes a flawed assumption about the user's privilege level based on their input. As a resul"
 - Validate business-critical parameters server-side — never trust client-supplied values.
+
+## PortSwigger Lab
+
+**Official lab:** Weak isolation on dual-use endpoint
+
+**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-weak-isolation-on-dual-use-endpoint

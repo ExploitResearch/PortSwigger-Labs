@@ -25,3 +25,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab contains a vulnerable image upload function. Although it performs robust validation on any "
 - Validate file content (magic bytes), not just extensions or Content-Type headers.
+
+## PortSwigger Lab
+
+**Official lab:** Web shell upload via race condition
+
+**PortSwigger:** https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-race-condition

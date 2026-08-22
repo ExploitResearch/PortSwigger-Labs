@@ -54,3 +54,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to username enumeration. It uses account locking, but this contains a logic f"
 - Consistent error messages and rate-limiting prevent enumeration and brute-force.
+
+## PortSwigger Lab
+
+**Official lab:** Username enumeration via response timing
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-response-timing

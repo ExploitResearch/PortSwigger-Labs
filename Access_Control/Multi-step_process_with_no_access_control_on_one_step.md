@@ -57,3 +57,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab has an admin panel with a flawed multi-step process for changing a user's role. You can fam"
 - Server-side authorization checks must be enforced on every request, not just the UI.
+
+## PortSwigger Lab
+
+**Official lab:** Multi-step process with no access control on one step
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-multi-step-process-with-no-access-control-on-one-step

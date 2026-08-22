@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab gives you the option to attach a social media profile to your account so that you can log i"
 - Validate redirect_uri with exact match against a server-side allowlist.
+
+## PortSwigger Lab
+
+**Official lab:** Forced OAuth profile linking
+
+**PortSwigger:** https://portswigger.net/web-security/oauth/lab-oauth-forced-oauth-profile-linking

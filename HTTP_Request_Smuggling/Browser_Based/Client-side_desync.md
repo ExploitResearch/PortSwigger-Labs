@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to client-side desync attacks because the server ignores the Content-Length h"
 - Reject requests with both Content-Length and Transfer-Encoding headers.
+
+## PortSwigger Lab
+
+**Official lab:** Client-side desync
+
+**PortSwigger:** https://portswigger.net/web-security/request-smuggling/browser/client-side-desync/lab-client-side-desync

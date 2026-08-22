@@ -35,3 +35,9 @@ Using Burp proxy I log in with `wiener:peter` but drop the `GET` request to `/ro
 ![](./images/fb2712cdedb1_003.png)
 
 Now simply go to the Admin panel and use the link to delete user `carlos`.
+
+## PortSwigger Lab
+
+**Official lab:** Authentication bypass via flawed state machine
+
+**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-authentication-bypass-via-flawed-state-machine

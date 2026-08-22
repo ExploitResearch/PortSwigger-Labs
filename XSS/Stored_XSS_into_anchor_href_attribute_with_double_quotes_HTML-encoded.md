@@ -60,3 +60,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab contains a stored cross-site scripting vulnerability in the comment functionality. To solve"
 - Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
+
+## PortSwigger Lab
+
+**Official lab:** Stored XSS into anchor href attribute with double quotes HTML-encoded
+
+**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-href-attribute-double-quotes-html-encoded

@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - The PortSwigger lab description confirms: "To solve the lab, use the exploit server to host an HTML/JavaScript payload that uses a cross-site W"
 - Validate WebSocket message origin and sanitize all messages.
+
+## PortSwigger Lab
+
+**Official lab:** Cross-site WebSocket hijacking
+
+**PortSwigger:** https://portswigger.net/web-security/websockets/cross-site-websocket-hijacking/lab

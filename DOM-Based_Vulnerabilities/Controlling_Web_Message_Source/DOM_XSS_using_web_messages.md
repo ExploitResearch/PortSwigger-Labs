@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab uses web messaging and parses the message as JSON. To solve the lab, construct an HTML page"
 - Server-side validation and authorization are the primary defenses.
+
+## PortSwigger Lab
+
+**Official lab:** DOM XSS using web messages
+
+**PortSwigger:** https://portswigger.net/web-security/dom-based/controlling-the-web-message-source/lab-dom-xss-using-web-messages

@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to DOM XSS via client-side prototype pollution. To solve the lab:"
 - Reject __proto__ and constructor keys in JSON input before merging.
+
+## PortSwigger Lab
+
+**Official lab:** DOM XSS via an alternative prototype pollution vector
+
+**PortSwigger:** https://portswigger.net/web-security/prototype-pollution/client-side/lab-prototype-pollution-dom-xss-via-an-alternative-prototype-pollution-vector

@@ -32,3 +32,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab's two-factor authentication is vulnerable due to its flawed logic. To solve the lab, access"
 - Consistent error messages and rate-limiting prevent enumeration and brute-force.
+
+## PortSwigger Lab
+
+**Official lab:** 2FA broken logic
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/multi-factor/lab-2fa-broken-logic

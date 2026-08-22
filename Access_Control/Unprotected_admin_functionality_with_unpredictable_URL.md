@@ -27,3 +27,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab has an unprotected admin panel. It's located at an unpredictable location, but the location"
 - Server-side authorization checks must be enforced on every request, not just the UI.
+
+## PortSwigger Lab
+
+**Official lab:** Unprotected admin functionality with unpredictable URL
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality-with-unpredictable-url

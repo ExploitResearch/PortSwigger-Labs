@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab does not explicitly use deserialization. However, if you combine PHAR deserialization with "
 - Never deserialize untrusted data — use JSON with allowlists instead.
+
+## PortSwigger Lab
+
+**Official lab:** Using PHAR deserialization to deploy a custom gadget chain
+
+**PortSwigger:** https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-using-phar-deserialization-to-deploy-a-custom-gadget-chain

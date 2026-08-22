@@ -21,3 +21,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab validates email addresses to prevent attackers from registering addresses from unauthorized"
 - Validate business-critical parameters server-side — never trust client-supplied values.
+
+## PortSwigger Lab
+
+**Official lab:** Bypassing access controls using email address parsing discrepancies
+
+**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-bypassing-access-controls-using-email-address-parsing-discrepancies

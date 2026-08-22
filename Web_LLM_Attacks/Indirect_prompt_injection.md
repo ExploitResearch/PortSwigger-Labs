@@ -21,3 +21,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to indirect prompt injection. The user carlos frequently uses the live chat t"
 - LLM API access should follow least-privilege — block destructive operations by default.
+
+## PortSwigger Lab
+
+**Official lab:** Indirect prompt injection
+
+**PortSwigger:** https://portswigger.net/web-security/llm-attacks/lab-indirect-prompt-injection

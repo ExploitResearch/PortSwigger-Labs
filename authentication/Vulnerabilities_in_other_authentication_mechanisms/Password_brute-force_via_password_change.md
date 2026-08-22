@@ -28,3 +28,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab's password change functionality makes it vulnerable to brute-force attacks. To solve the la"
 - Consistent error messages and rate-limiting prevent enumeration and brute-force.
+
+## PortSwigger Lab
+
+**Official lab:** Password brute-force via password change
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-password-brute-force-via-password-change

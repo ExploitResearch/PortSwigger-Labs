@@ -42,3 +42,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab has user account page that contains the current user's existing password, prefilled in a ma"
 - Server-side authorization checks must be enforced on every request, not just the UI.
+
+## PortSwigger Lab
+
+**Official lab:** User ID controlled by request parameter, with unpredictable user IDs
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-unpredictable-user-ids

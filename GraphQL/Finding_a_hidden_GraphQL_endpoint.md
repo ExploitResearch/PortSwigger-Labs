@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "The user management functions for this lab are powered by a hidden GraphQL endpoint. You won't be ab"
 - Disable introspection in production and enforce per-field authorization.
+
+## PortSwigger Lab
+
+**Official lab:** Finding a hidden GraphQL endpoint
+
+**PortSwigger:** https://portswigger.net/web-security/graphql/lab-graphql-find-the-endpoint

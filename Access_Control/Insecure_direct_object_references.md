@@ -36,3 +36,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab stores user chat logs directly on the server's file system, and retrieves them using static"
 - Server-side authorization checks must be enforced on every request, not just the UI.
+
+## PortSwigger Lab
+
+**Official lab:** Insecure direct object references
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-insecure-direct-object-references

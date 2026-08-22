@@ -57,3 +57,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab uses a JWT-based mechanism for handling sessions. It uses a robust RSA key pair to sign and"
 - JWT signature verification must pin the algorithm and reject unsigned tokens.
+
+## PortSwigger Lab
+
+**Official lab:** Authentication bypass via information disclosure
+
+**PortSwigger:** https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-authentication-bypass

@@ -25,3 +25,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab has a "Check stock" feature that parses XML input, but does not display any unexpected valu"
 - Disable external entity processing in XML parsers.
+
+## PortSwigger Lab
+
+**Official lab:** Blind XXE with out-of-band interaction via XML parameter entities
+
+**PortSwigger:** https://portswigger.net/web-security/xxe/blind/lab-xxe-with-out-of-band-interaction-using-parameter-entities

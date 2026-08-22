@@ -37,3 +37,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab has an admin panel at /admin, which identifies administrators using a forgeable cookie."
 - Server-side authorization checks must be enforced on every request, not just the UI.
+
+## PortSwigger Lab
+
+**Official lab:** User role controlled by request parameter
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-user-role-controlled-by-request-parameter

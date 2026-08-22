@@ -10,3 +10,9 @@ Solve the PortSwigger lab: Developing a custom gadget chain for PHP deserializat
 2. Decode and modify the serialized object to change properties
 3. Re-encode and submit the modified serialized data
 4. For RCE: research and use known gadget chains for the target framework
+
+## PortSwigger Lab
+
+**Official lab:** Developing a custom gadget chain for PHP deserialization
+
+**PortSwigger:** https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-developing-a-custom-gadget-chain-for-php-deserialization

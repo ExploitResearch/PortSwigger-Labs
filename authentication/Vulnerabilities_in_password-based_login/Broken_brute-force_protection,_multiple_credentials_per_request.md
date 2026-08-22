@@ -31,3 +31,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable due to a logic flaw in its brute-force protection. To solve the lab, brute-fo"
 - Consistent error messages and rate-limiting prevent enumeration and brute-force.
+
+## PortSwigger Lab
+
+**Official lab:** Broken brute-force protection, multiple credentials per request
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-broken-brute-force-protection-multiple-credentials-per-request

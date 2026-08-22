@@ -201,3 +201,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab contains a user registration mechanism. A race condition enables you to bypass email verifi"
 - Database transactions and locking prevent race condition exploitation.
+
+## PortSwigger Lab
+
+**Official lab:** Partial construction race conditions
+
+**PortSwigger:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-partial-construction

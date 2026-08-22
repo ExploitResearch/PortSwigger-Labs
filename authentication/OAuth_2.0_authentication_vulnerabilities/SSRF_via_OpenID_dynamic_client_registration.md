@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab allows client applications to dynamically register themselves with the OAuth service via a "
 - Validate redirect_uri with exact match against a server-side allowlist.
+
+## PortSwigger Lab
+
+**Official lab:** SSRF via OpenID dynamic client registration
+
+**PortSwigger:** https://portswigger.net/web-security/oauth/openid/lab-oauth-ssrf-via-openid-dynamic-client-registration

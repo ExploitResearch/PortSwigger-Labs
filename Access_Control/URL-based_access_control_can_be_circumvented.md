@@ -59,3 +59,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "To solve the lab, access the admin panel and delete the user carlos."
 - Server-side authorization checks must be enforced on every request, not just the UI.
+
+## PortSwigger Lab
+
+**Official lab:** URL-based access control can be circumvented
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-url-based-access-control-can-be-circumvented

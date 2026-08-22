@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab reflects your input in a JavaScript URL, but all is not as it seems. This initially seems l"
 - Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
+
+## PortSwigger Lab
+
+**Official lab:** Reflected XSS in a JavaScript URL with some characters blocked
+
+**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-url-some-characters-blocked

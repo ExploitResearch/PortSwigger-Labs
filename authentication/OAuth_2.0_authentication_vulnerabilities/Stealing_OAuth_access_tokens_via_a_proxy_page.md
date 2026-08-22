@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab uses an OAuth service to allow users to log in with their social media account. Flawed vali"
 - Validate redirect_uri with exact match against a server-side allowlist.
+
+## PortSwigger Lab
+
+**Official lab:** Stealing OAuth access tokens via a proxy page
+
+**PortSwigger:** https://portswigger.net/web-security/oauth/lab-oauth-stealing-oauth-access-tokens-via-a-proxy-page

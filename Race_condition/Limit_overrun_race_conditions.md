@@ -52,3 +52,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab's purchasing flow contains a race condition that enables you to purchase items for an unint"
 - Database transactions and locking prevent race condition exploitation.
+
+## PortSwigger Lab
+
+**Official lab:** Limit overrun race conditions
+
+**PortSwigger:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-limit-overrun

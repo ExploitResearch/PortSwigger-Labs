@@ -55,3 +55,9 @@ Querying the database to retrieve database version.
 ```
 
 ![](./images/58df1bceb192_002.png)
+
+## PortSwigger Lab
+
+**Official lab:** SQL injection attack, querying the database type and version on Oracle
+
+**PortSwigger:** https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle

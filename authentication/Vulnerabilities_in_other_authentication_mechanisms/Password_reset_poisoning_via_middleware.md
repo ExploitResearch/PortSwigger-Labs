@@ -32,3 +32,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to password reset poisoning via dangling markup. To solve the lab, log in to "
 - Validate the Host header against an allowlist of expected domains.
+
+## PortSwigger Lab
+
+**Official lab:** Password reset poisoning via middleware
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-password-reset-poisoning-via-middleware

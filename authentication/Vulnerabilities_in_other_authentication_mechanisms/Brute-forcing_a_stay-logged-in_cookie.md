@@ -42,3 +42,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab allows users to stay logged in even after they close their browser session. The cookie used"
 - Consistent error messages and rate-limiting prevent enumeration and brute-force.
+
+## PortSwigger Lab
+
+**Official lab:** Brute-forcing a stay-logged-in cookie
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-brute-forcing-a-stay-logged-in-cookie

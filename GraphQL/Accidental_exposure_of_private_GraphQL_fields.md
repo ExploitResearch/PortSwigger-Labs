@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "The user management functions for this lab are powered by a GraphQL endpoint. The lab contains an ac"
 - Disable introspection in production and enforce per-field authorization.
+
+## PortSwigger Lab
+
+**Official lab:** Accidental exposure of private GraphQL fields
+
+**PortSwigger:** https://portswigger.net/web-security/graphql/lab-graphql-accidental-field-exposure

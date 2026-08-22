@@ -42,3 +42,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab has some account functionality that is protected by a CSRF token and also has a confirmatio"
 - Set X-Frame-Options or CSP frame-ancestors — JavaScript frame-busting is bypassable.
+
+## PortSwigger Lab
+
+**Official lab:** Multistep clickjacking
+
+**PortSwigger:** https://portswigger.net/web-security/clickjacking/lab-multistep

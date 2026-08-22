@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - The PortSwigger lab description confirms: "The product category filter for this lab is powered by a MongoDB NoSQL database. It is vulnerable to"
 - Parameterized queries would prevent this vulnerability entirely.
+
+## PortSwigger Lab
+
+**Official lab:** Detecting NoSQL injection
+
+**PortSwigger:** https://portswigger.net/web-security/nosql-injection/lab-nosql-injection-detection

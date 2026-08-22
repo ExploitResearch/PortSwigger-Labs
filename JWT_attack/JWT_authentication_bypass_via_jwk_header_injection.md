@@ -45,3 +45,9 @@ Change the `sub` value of the token to `administrator`, perform the `Attack -> E
 Copy the JWT and update session cookie in the browser**, and refresh the page:**
 
 go to the admin panel and delete user `carlos`
+
+## PortSwigger Lab
+
+**Official lab:** JWT authentication bypass via jwk header injection
+
+**PortSwigger:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-jwk-header-injection

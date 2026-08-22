@@ -30,3 +30,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "To solve the lab, perform a cross-site scripting attack that injects a custom tag and automatically "
 - Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
+
+## PortSwigger Lab
+
+**Official lab:** Reflected XSS into HTML context with nothing encoded
+
+**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded

@@ -91,3 +91,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab's email change functionality is vulnerable to CSRF. It attempts to block cross domain reque"
 - CSRF tokens, SameSite cookies, and Referer validation together provide defense-in-depth.
+
+## PortSwigger Lab
+
+**Official lab:** CSRF where Referer validation depends on header being present
+
+**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-referer-based-defenses/lab-referer-validation-depends-on-header-being-present

@@ -17,3 +17,9 @@ add valid value at each second line
 `awk ' { print $0; print "*some text"} ' inputfile > outputfile`
 
 {% endhint %}
+
+## PortSwigger Lab
+
+**Official lab:** Broken brute-force protection, IP block
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-broken-bruteforce-protection-ip-block

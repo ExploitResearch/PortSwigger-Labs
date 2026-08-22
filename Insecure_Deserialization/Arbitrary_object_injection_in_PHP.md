@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab uses a serialization-based session mechanism and is vulnerable to arbitrary object injectio"
 - Never deserialize untrusted data — use JSON with allowlists instead.
+
+## PortSwigger Lab
+
+**Official lab:** Arbitrary object injection in PHP
+
+**PortSwigger:** https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-arbitrary-object-injection-in-php

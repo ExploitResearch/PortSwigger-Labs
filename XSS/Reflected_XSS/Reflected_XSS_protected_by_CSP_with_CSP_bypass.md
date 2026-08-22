@@ -25,3 +25,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab uses CSP and contains a reflected XSS vulnerability."
 - Context-aware output encoding is the primary defense — the correct encoding depends on where input is reflected.
+
+## PortSwigger Lab
+
+**Official lab:** Reflected XSS protected by CSP, with CSP bypass
+
+**PortSwigger:** https://portswigger.net/web-security/cross-site-scripting/content-security-policy/lab-csp-bypass

@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab uses the HTMLJanitor library, which is vulnerable to DOM clobbering. To solve this lab, con"
 - Server-side validation and authorization are the primary defenses.
+
+## PortSwigger Lab
+
+**Official lab:** Clobbering DOM attributes to bypass HTML filters
+
+**PortSwigger:** https://portswigger.net/web-security/dom-based/dom-clobbering/lab-dom-clobbering-attributes-to-bypass-html-filters

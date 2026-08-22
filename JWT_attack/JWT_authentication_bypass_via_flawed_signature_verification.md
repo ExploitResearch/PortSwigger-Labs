@@ -45,3 +45,9 @@ Refresh the page, go to admin panel and delete user carlos
 
 ![](./images/78b4034beaf1_006.png)
 {% endhint %}
+
+## PortSwigger Lab
+
+**Official lab:** JWT authentication bypass via flawed signature verification
+
+**PortSwigger:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-flawed-signature-verification

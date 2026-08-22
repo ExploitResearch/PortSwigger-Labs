@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab contains a DOM-based open-redirection vulnerability. To solve this lab, exploit this vulner"
 - Server-side validation and authorization are the primary defenses.
+
+## PortSwigger Lab
+
+**Official lab:** DOM-based open redirection
+
+**PortSwigger:** https://portswigger.net/web-security/dom-based/open-redirection/lab-dom-open-redirection

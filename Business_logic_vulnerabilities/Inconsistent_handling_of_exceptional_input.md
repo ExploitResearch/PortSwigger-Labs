@@ -119,3 +119,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab doesn't adequately validate user input. You can exploit a logic flaw in its account registr"
 - Validate business-critical parameters server-side — never trust client-supplied values.
+
+## PortSwigger Lab
+
+**Official lab:** Inconsistent handling of exceptional input
+
+**PortSwigger:** https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-inconsistent-handling-of-exceptional-input

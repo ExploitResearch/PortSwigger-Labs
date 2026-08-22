@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to web cache poisoning due to discrepancies in how the cache and the back-end"
 - Validate the Host header against an allowlist of expected domains.
+
+## PortSwigger Lab
+
+**Official lab:** Web cache poisoning via ambiguous requests
+
+**PortSwigger:** https://portswigger.net/web-security/host-header/exploiting/lab-host-header-web-cache-poisoning-via-ambiguous-requests

@@ -29,3 +29,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab stores the user's password hash in a cookie. The lab also contains an XSS vulnerability in "
 - Consistent error messages and rate-limiting prevent enumeration and brute-force.
+
+## PortSwigger Lab
+
+**Official lab:** Offline password cracking
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/other-mechanisms/lab-offline-password-cracking

@@ -36,3 +36,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab contains a path traversal vulnerability in the display of product images."
 - Canonicalize file paths and validate they stay within the expected directory.
+
+## PortSwigger Lab
+
+**Official lab:** File path traversal, traversal sequences blocked with absolute path bypass
+
+**PortSwigger:** https://portswigger.net/web-security/file-path-traversal/lab-absolute-path-bypass

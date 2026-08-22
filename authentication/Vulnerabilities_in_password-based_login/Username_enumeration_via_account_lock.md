@@ -20,3 +20,9 @@ effectively cause each username to be repeated 5 times. Start the attack.
 - In the results, look at the grep extract column. Notice that there are a couple of different error messages, but one of the responses did not contain any error message. Make a note of this
 password.
 - Wait for a minute to allow the account lock to reset. Log in using the username and password that you identified and access the user account page to solve the lab.
+
+## PortSwigger Lab
+
+**Official lab:** Username enumeration via account lock
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-account-lock

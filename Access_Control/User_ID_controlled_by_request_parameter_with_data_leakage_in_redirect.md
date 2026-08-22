@@ -17,3 +17,9 @@ belonging to `carlos`.
 ![](./images/e4ef3ed98f03_001.png)
 
 Submit the API key.
+
+## PortSwigger Lab
+
+**Official lab:** User ID controlled by request parameter with data leakage in redirect
+
+**PortSwigger:** https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-data-leakage-in-redirect

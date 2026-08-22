@@ -57,3 +57,9 @@ Now the file is in `/var/www/images`, but the path to it within the application 
   1. Check if file was created by accessing it
 
 {% endhint %}
+
+## PortSwigger Lab
+
+**Official lab:** Blind OS command injection with output redirection
+
+**PortSwigger:** https://portswigger.net/web-security/os-command-injection/lab-blind-output-redirection

@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is protected by a frame buster which prevents the website from being framed. Can you get ar"
 - Set X-Frame-Options or CSP frame-ancestors — JavaScript frame-busting is bypassable.
+
+## PortSwigger Lab
+
+**Official lab:** Clickjacking with a frame buster script
+
+**PortSwigger:** https://portswigger.net/web-security/clickjacking/lab-frame-buster-script

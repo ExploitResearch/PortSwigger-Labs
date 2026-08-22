@@ -10,3 +10,9 @@ Upload a polyglot file that is both a valid image and a valid PHP web shell to a
 2. Use a tool like `exiftool` or manual crafting to embed PHP in image metadata
 3. Upload the polyglot file
 4. Access the uploaded file to trigger PHP execution
+
+## PortSwigger Lab
+
+**Official lab:** Remote code execution via polyglot web shell upload
+
+**PortSwigger:** https://portswigger.net/web-security/file-upload/lab-file-upload-remote-code-execution-via-polyglot-web-shell-upload

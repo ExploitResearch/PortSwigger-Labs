@@ -55,3 +55,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab contains an OS command injection vulnerability in the product stock checker."
 - Use parameterized command APIs instead of shell string concatenation.
+
+## PortSwigger Lab
+
+**Official lab:** OS command injection, simple case
+
+**PortSwigger:** https://portswigger.net/web-security/os-command-injection/lab-simple

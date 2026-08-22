@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to request smuggling because the front-end server downgrades HTTP/2 requests "
 - Reject requests with both Content-Length and Transfer-Encoding headers.
+
+## PortSwigger Lab
+
+**Official lab:** H2.CL request smuggling
+
+**PortSwigger:** https://portswigger.net/web-security/request-smuggling/advanced/lab-request-smuggling-h2-cl-request-smuggling

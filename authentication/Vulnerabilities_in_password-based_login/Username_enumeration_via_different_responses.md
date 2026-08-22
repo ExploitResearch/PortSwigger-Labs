@@ -11,3 +11,9 @@ Enumerate valid usernames by observing differences in the application's response
 3. Compare the responses (message text, status code, timing, error details)
 4. Use Burp Intruder to test a list of candidate usernames
 5. Identify valid usernames by the difference in responses
+
+## PortSwigger Lab
+
+**Official lab:** Username enumeration via different responses
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses

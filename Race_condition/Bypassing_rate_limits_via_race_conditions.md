@@ -176,3 +176,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab's login mechanism uses rate limiting to defend against brute-force attacks. However, this c"
 - Database transactions and locking prevent race condition exploitation.
+
+## PortSwigger Lab
+
+**Official lab:** Bypassing rate limits via race conditions
+
+**PortSwigger:** https://portswigger.net/web-security/race-conditions/lab-race-conditions-bypassing-rate-limits

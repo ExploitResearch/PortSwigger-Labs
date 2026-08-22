@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab has a stock check feature which fetches data from an internal system."
 - URL allowlists (not blocklists) and blocking private IP ranges are essential SSRF defenses.
+
+## PortSwigger Lab
+
+**Official lab:** Basic SSRF against another back-end system
+
+**PortSwigger:** https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-backend-system

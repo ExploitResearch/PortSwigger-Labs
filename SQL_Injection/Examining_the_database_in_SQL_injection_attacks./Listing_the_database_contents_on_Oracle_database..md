@@ -120,3 +120,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab contains a SQL injection vulnerability in the product category filter. The results from the"
 - Server-side validation and authorization are the primary defenses.
+
+## PortSwigger Lab
+
+**Official lab:** SQL injection attack, listing the database contents on non-Oracle databases
+
+**PortSwigger:** https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle

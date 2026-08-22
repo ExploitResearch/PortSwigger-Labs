@@ -25,3 +25,9 @@ It's also possible to brute-force the login using a single cluster bomb attack. 
 adsl
 
 killer
+
+## PortSwigger Lab
+
+**Official lab:** Username enumeration via subtly different responses
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-subtly-different-responses

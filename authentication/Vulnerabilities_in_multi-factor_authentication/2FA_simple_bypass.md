@@ -19,3 +19,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab's two-factor authentication can be bypassed. You have already obtained a valid username and"
 - Consistent error messages and rate-limiting prevent enumeration and brute-force.
+
+## PortSwigger Lab
+
+**Official lab:** 2FA simple bypass
+
+**PortSwigger:** https://portswigger.net/web-security/authentication/multi-factor/lab-2fa-simple-bypass

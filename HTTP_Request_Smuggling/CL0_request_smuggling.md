@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to CL.0 request smuggling attacks. The back-end server ignores the Content-Le"
 - Reject requests with both Content-Length and Transfer-Encoding headers.
+
+## PortSwigger Lab
+
+**Official lab:** CL.0 request smuggling
+
+**PortSwigger:** https://portswigger.net/web-security/request-smuggling/browser/cl-0/lab-cl-0-request-smuggling

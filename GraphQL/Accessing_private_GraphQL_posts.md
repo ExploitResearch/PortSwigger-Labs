@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "The blog page for this lab contains a hidden blog post that has a secret password. To solve the lab,"
 - Disable introspection in production and enforce per-field authorization.
+
+## PortSwigger Lab
+
+**Official lab:** Accessing private GraphQL posts
+
+**PortSwigger:** https://portswigger.net/web-security/graphql/lab-graphql-reading-private-posts

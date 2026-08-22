@@ -21,3 +21,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "Carlos visits the homepage every five seconds. To solve the lab, exploit the vulnerability to execut"
 - Reject requests with both Content-Length and Transfer-Encoding headers.
+
+## PortSwigger Lab
+
+**Official lab:** 0.CL request smuggling
+
+**PortSwigger:** https://portswigger.net/web-security/request-smuggling/advanced/lab-request-smuggling-0cl-request-smuggling

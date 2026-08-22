@@ -47,3 +47,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab contains a SQL injection vulnerability. The application uses a tracking cookie for analytic"
 - Server-side validation and authorization are the primary defenses.
+
+## PortSwigger Lab
+
+**Official lab:** Visible error-based SQL injection
+
+**PortSwigger:** https://portswigger.net/web-security/sql-injection/blind/lab-sql-injection-visible-error-based

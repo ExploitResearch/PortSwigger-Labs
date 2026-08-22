@@ -55,3 +55,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab's live chat feature is vulnerable to cross-site WebSocket hijacking (CSWSH). To solve the l"
 - CSRF tokens, SameSite cookies, and Referer validation together provide defense-in-depth.
+
+## PortSwigger Lab
+
+**Official lab:** SameSite Strict bypass via sibling domain
+
+**PortSwigger:** https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-samesite-strict-bypass-via-sibling-domain

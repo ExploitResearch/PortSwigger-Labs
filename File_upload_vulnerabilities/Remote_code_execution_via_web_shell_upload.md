@@ -60,3 +60,9 @@ curl https://0a7b004f038d0eb58082174300b30087.web-security-academy.net/files/ava
 ```
 
 ![](./images/834dbbb7f038_005.png)
+
+## PortSwigger Lab
+
+**Official lab:** Remote code execution via web shell upload
+
+**PortSwigger:** https://portswigger.net/web-security/file-upload/lab-file-upload-remote-code-execution-via-web-shell-upload

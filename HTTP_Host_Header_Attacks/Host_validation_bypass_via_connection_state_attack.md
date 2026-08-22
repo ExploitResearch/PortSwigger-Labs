@@ -24,3 +24,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "This lab is vulnerable to routing-based SSRF via the Host header. Although the front-end server may "
 - Validate the Host header against an allowlist of expected domains.
+
+## PortSwigger Lab
+
+**Official lab:** Host validation bypass via connection state attack
+
+**PortSwigger:** https://portswigger.net/web-security/host-header/exploiting/lab-host-header-host-validation-bypass-via-connection-state-attack

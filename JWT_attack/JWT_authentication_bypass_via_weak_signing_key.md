@@ -58,3 +58,9 @@ Now that I know that the JWT is correct for `administrator`, I can replace my se
 **Then refresh the page : **go to the admin panel and delete user `carlos`
 
 go to the admin panel and delete user `carlos`
+
+## PortSwigger Lab
+
+**Official lab:** JWT authentication bypass via weak signing key
+
+**PortSwigger:** https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-weak-signing-key

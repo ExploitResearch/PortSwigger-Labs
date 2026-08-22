@@ -23,3 +23,9 @@ The root cause is a failure in the application's security architecture specific 
 - The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
 - PortSwigger confirms: "The user login mechanism for this lab is powered by a GraphQL API. The API endpoint has a rate limit"
 - Disable introspection in production and enforce per-field authorization.
+
+## PortSwigger Lab
+
+**Official lab:** Bypassing GraphQL brute force protections
+
+**PortSwigger:** https://portswigger.net/web-security/graphql/lab-graphql-brute-force-protection-bypass
