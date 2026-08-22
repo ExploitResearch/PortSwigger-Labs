@@ -52,7 +52,3 @@ now the execution of command is working
 **Let’s **`cat`** the **`secret`** file**
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b1cb4a9eadd0_006.png)
-
-### Why It Works
-
-This lab contains a vulnerable image upload function.

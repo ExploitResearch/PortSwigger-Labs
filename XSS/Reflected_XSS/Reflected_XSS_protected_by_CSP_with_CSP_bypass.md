@@ -12,11 +12,3 @@ Perform a reflected XSS attack that bypasses a Content Security Policy by findin
 2. Check each whitelisted domain for JSONP endpoints or Angular/JS files that evaluate expressions
 3. Craft a payload that loads a script from the whitelisted domain
 4. Use JSONP callback or Angular template injection to execute code
-
-### Why It Works
-
-The application has a reflected XSS vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The reflected XSS vulnerability is exploitable because user input is processed without adequate validation.

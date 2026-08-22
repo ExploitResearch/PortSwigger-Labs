@@ -107,11 +107,3 @@ Retrieve the administrator user’s password from the database.
 | administrator | r1xyd5uo3kcovvqm73jl |
 
 Use the password to get administrators access to the web application.
-
-### Why It Works
-
-The exploit succeeds because this lab contains a sql injection vulnerability in the product category filter.
-
-### Key Takeaways
-
-- Server-side validation and authorization are the primary defenses.

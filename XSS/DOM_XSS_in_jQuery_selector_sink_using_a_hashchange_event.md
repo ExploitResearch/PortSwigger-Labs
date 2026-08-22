@@ -22,11 +22,3 @@ the `iframe`’s `src` attribute points to the vulnerable page with an empty has
 ```
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/4b886ff1713c_001.png)
-
-### Why It Works
-
-The application has a DOM-based cross-site scripting vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The DOM-based cross-site scripting vulnerability is exploitable because user input is processed without adequate validation.

@@ -25,11 +25,3 @@ There is a cookie called `Admin`, and it’s value is `false`**change the value 
 Load the admin panel and delete `carlos`.
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/31af54ec147f_004.png)
-
-### Why It Works
-
-This lab has an admin panel at /admin, which identifies administrators using a forgeable cookie.
-
-### Key Takeaways
-
-- This lab has an admin panel at /admin, which identifies administrators using a forgeable cookie.

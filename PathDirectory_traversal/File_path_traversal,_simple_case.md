@@ -39,11 +39,3 @@ If you don't see it in the `HTTP history`, check if images are filtered out in t
 {% hint style="info" %}
 💡 Start by using `/etc/passwd` as filename and adding some `../` to the beginning. With `../../etc/passwd` it gives a `"No such file"` error, but once I go three levels up, this changes and we get file content
 {% endhint %}
-
-### Why It Works
-
-The application has a path traversal vulnerability in display of product images, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The path traversal vulnerability is exploitable because user input is processed without adequate validation.

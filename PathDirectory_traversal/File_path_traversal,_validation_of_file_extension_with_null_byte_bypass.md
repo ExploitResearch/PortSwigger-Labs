@@ -58,11 +58,3 @@ I need to construct a string that fulfils these requirements:
 Above I already established that basic path traversal is possible. So a valid filename that fulfils the requirements would be `../../../etc/passwd%00Anything.jpg`
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/668fdeb71724_004.png)
-
-### Why It Works
-
-The application has a path traversal vulnerability in display of product images, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The path traversal vulnerability is exploitable because user input is processed without adequate validation.

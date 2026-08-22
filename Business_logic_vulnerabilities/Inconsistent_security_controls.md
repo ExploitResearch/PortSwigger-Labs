@@ -41,11 +41,3 @@ This shows two things:
 1. The existence of an `@dontwannacry.com` email entry is the sole condition for access to the admin panel
 
 So now go to admin panel and **Let’s delete user **`carlos`**:**
-
-### Why It Works
-
-This lab's flawed logic allows arbitrary users to access administrative functionality that should only be available to company employees.
-
-### Key Takeaways
-
-- This lab's flawed logic allows arbitrary users to access administrative functionality that should only be available to company employees.

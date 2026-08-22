@@ -12,11 +12,3 @@ Solve the PortSwigger lab: Arbitrary object injection in PHP
 2. Decode and modify the serialized object to change properties
 3. Re-encode and submit the modified serialized data
 4. For RCE: research and use known gadget chains for the target framework
-
-### Why It Works
-
-This lab uses a serialization-based session mechanism and is vulnerable to arbitrary object injection as a result.
-
-### Key Takeaways
-
-- This lab uses a serialization-based session mechanism and is vulnerable to arbitrary object injection as a result.

@@ -107,11 +107,3 @@ Sure enough, using this string as the email address, I receive the confirmation 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/0807ad76e697_015.png)
 
 **Go to admin panel and delete user **`carlos`**:**
-
-### Why It Works
-
-This lab doesn't adequately validate user input.
-
-### Key Takeaways
-
-- This lab doesn't adequately validate user input.

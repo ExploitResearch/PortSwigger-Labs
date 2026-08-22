@@ -97,11 +97,3 @@ However, this still couldn’t work, as many browsers now strip the query string
 </html>
 
 ```
-
-### Why It Works
-
-This lab's email change functionality is vulnerable to CSRF.
-
-### Key Takeaways
-
-- This lab's email change functionality is vulnerable to CSRF.

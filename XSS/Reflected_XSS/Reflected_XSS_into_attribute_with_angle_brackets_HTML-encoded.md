@@ -30,11 +30,3 @@ the first `"` is used to close string in value so we come out of value
 we don’t use `"` at the end of alert because previous `"` from value will close it
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/39af0f36d9b8_002.png)
-
-### Why It Works
-
-The application has a reflected cross-site scripting vulnerability in search blog functionality where angle brackets are HTML-encoded, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The reflected cross-site scripting vulnerability is exploitable because user input is processed without adequate validation.

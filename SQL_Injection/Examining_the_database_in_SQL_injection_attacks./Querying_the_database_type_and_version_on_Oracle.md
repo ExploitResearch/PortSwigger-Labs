@@ -43,11 +43,3 @@ Querying the Oracle database to retrieve database type and version.
 ```text
 ' UNION SELECT banner, NULL FROM v$version--
 ```
-
-### Why It Works
-
-The exploit succeeds because this lab contains a sql injection vulnerability in the product category filter. you can use a union attack to retrieve the results from an injected query.
-
-### Key Takeaways
-
-- Server-side validation and authorization are the primary defenses.

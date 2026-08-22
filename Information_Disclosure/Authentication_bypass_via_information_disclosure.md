@@ -47,11 +47,3 @@ I use `127.0.0.1` as the content to trick the application to believe that the re
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3beb0bad2d8c_005.png)
 
 Now just reload the page in the browser, access the admin panel and delete user `carlos` to solve the lab:
-
-### Why It Works
-
-The application has a authentication bypass vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The authentication bypass vulnerability is exploitable because user input is processed without adequate validation.

@@ -28,11 +28,3 @@ Hence, we can inject a sink(Dangerous JavaScript function) via DOM(Document Obje
 Note: The `'">` is to close the `<img>` tag, so we can write any JavaScript code.
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/91b2f043542e_001.png)
-
-### Why It Works
-
-The application has a DOM-based cross-site scripting vulnerability in search query tracking functionality, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The DOM-based cross-site scripting vulnerability is exploitable because user input is processed without adequate validation.

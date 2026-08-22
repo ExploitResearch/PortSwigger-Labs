@@ -22,11 +22,3 @@ XSS cheat sheet
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/b93c8bd344a1_001.png)
 
 Use payload** <svg><animatetransform onbegin=alert(1) attributeName=transform>**
-
-### Why It Works
-
-The application has a simple reflected XSS vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The simple reflected XSS vulnerability is exploitable because user input is processed without adequate validation.

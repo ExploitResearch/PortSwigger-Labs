@@ -34,11 +34,3 @@ This suggests that the query was run properly, but you're still getting an error
 1. Send the request. Observe that the error message now leaks the first username from the `users` table: `ERROR: invalid input syntax for type integer: "administrator"`
 1. Now that you know that the `administrator` is the first user in the table, modify the query once again to leak their password: `TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--`
 1. Log in as `administrator` using the stolen password to solve the lab.
-
-### Why It Works
-
-The application has a SQL injection vulnerability in the application, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The SQL injection vulnerability is exploitable because user input is processed without adequate validation.

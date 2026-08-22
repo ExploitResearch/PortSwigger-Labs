@@ -15,11 +15,3 @@ access the admin panel, and using it to delete the user `carlos`
 Go to admin panel and delete carlos
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/360b2846da1f_002.png)
-
-### Why It Works
-
-This lab has an unprotected admin panel.
-
-### Key Takeaways
-
-- This lab has an unprotected admin panel.

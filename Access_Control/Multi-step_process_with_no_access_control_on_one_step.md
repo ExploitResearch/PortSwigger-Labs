@@ -45,11 +45,3 @@ Response displays 302 Found with directory location /admin, which means the URL 
 refresh the page to see we’re an administrator or not
 
 The admin panel shows that the wiener account has been promoted to admin.
-
-### Why It Works
-
-This lab has an admin panel with a flawed multi-step process for changing a user's role.
-
-### Key Takeaways
-
-- This lab has an admin panel with a flawed multi-step process for changing a user's role.

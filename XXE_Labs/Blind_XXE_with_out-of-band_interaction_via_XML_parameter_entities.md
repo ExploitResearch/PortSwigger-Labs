@@ -13,11 +13,3 @@ Solve the PortSwigger lab: Blind XXE with out-of-band interaction via XML parame
 3. For file read: use `<!ENTITY xxe SYSTEM "file:///etc/passwd">`
 4. For SSRF: use `<!ENTITY xxe SYSTEM "http://internal-service/">`
 5. For blind XXE: use parameter entities and external DTD for OOB exfiltration
-
-### Why It Works
-
-This lab has a "Check stock" feature that parses XML input, but does not display any unexpected values, and blocks requests containing regular external entities.
-
-### Key Takeaways
-
-- This lab has a "Check stock" feature that parses XML input, but does not display any unexpected values, and blocks requests containing regular external entities.

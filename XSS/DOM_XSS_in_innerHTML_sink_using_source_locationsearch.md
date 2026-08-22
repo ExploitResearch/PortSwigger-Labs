@@ -16,11 +16,3 @@ To inject `alert()` JavaScript function, we first need to know that `innerHTML`*
 ```
 
 The value of the `src` attribute is invalid and throws an error. This triggers the `onerror` event handler, which then calls the `alert()`
-
-### Why It Works
-
-The application has a DOM-based cross-site scripting vulnerability in search blog functionality, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The DOM-based cross-site scripting vulnerability is exploitable because user input is processed without adequate validation.

@@ -19,11 +19,3 @@ Here is an easy way to do this:
 1. Type your ' (or whatever you want at the end).
 1. Home will move all your cursors to the beginning of the lines.
 1. Type your ' (or whatever you want at the beginning of all the lines).
-
-### Why It Works
-
-This lab is vulnerable due to a logic flaw in its brute-force protection.
-
-### Key Takeaways
-
-- This lab is vulnerable due to a logic flaw in its brute-force protection.

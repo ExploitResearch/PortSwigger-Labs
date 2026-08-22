@@ -166,11 +166,3 @@ In here, we found that there’s a **HTTP status code “302 Found”**, which m
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_013.png)
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_014.png)
-
-### Why It Works
-
-This lab's login mechanism uses rate limiting to defend against brute-force attacks.
-
-### Key Takeaways
-
-- This lab's login mechanism uses rate limiting to defend against brute-force attacks.

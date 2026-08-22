@@ -50,11 +50,3 @@ In the community edition, simply get the the form from the HTML of the applicati
 - Store the exploit, then click "Deliver to victim" to solve the lab.
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/5281dc080ffc_005.png)
-
-### Why It Works
-
-This lab's email change functionality is vulnerable to CSRF.
-
-### Key Takeaways
-
-- This lab's email change functionality is vulnerable to CSRF.

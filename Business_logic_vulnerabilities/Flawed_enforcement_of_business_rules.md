@@ -39,11 +39,3 @@ So if you enter the same code twice in a row, it is rejected However, if you alt
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/7e7135bd2a53_005.png)
 
 Now `Place order`
-
-### Why It Works
-
-This lab has a logic flaw in its purchasing workflow.
-
-### Key Takeaways
-
-- This lab has a logic flaw in its purchasing workflow.

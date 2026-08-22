@@ -20,11 +20,3 @@
 - Load this URL and set a new password for Carlos's account.
 - Log in to Carlos's account using the new password to solve the lab.
 {% endhint %}
-
-### Why It Works
-
-This lab is vulnerable to password reset poisoning.
-
-### Key Takeaways
-
-- This lab is vulnerable to password reset poisoning.

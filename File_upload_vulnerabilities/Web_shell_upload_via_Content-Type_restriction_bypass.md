@@ -46,7 +46,3 @@ via Browser
 via command Curl
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/c755dab55ab2_007.png)
-
-### Why It Works
-
-This lab contains a vulnerable image upload function.

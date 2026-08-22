@@ -24,11 +24,3 @@ javascript:alert(document.cookie)
 ```
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/97583e590fc1_001.png)
-
-### Why It Works
-
-The application has a DOM-based cross-site scripting vulnerability in submit feedback page, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The DOM-based cross-site scripting vulnerability is exploitable because user input is processed without adequate validation.

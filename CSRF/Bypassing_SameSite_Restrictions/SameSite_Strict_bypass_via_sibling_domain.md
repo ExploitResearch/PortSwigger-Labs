@@ -45,11 +45,3 @@ attacker’s web page can perform a cross-site request to open a WebSocket
  on the vulnerable site!
 
 **To do so, I’ll craft a HTML form that automatically send a WebSocket request to **`/chat`** with message **`READY`**, and exfiltrate the victim’s chat history:**
-
-### Why It Works
-
-This lab's live chat feature is vulnerable to cross-site WebSocket hijacking (CSWSH).
-
-### Key Takeaways
-
-- This lab's live chat feature is vulnerable to cross-site WebSocket hijacking (CSWSH).

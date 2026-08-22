@@ -24,11 +24,3 @@ Change the filename to `1.txt` and review the text. Notice a password within the
 It should be **user **`carlos`**’s password!**
 
 Login as carlos with this password
-
-### Why It Works
-
-This lab stores user chat logs directly on the server's file system, and retrieves them using static URLs.
-
-### Key Takeaways
-
-- This lab stores user chat logs directly on the server's file system, and retrieves them using static URLs.

@@ -73,11 +73,3 @@ We can test it locally via the `View exploit` button
 - Change the email address in your exploit so that it doesn't match your own or in use of other user and use new csrf token
 - Store the exploit, then click "Deliver to victim" to solve the lab.
 {% endhint %}
-
-### Why It Works
-
-This lab's email change functionality is vulnerable to CSRF.
-
-### Key Takeaways
-
-- This lab's email change functionality is vulnerable to CSRF.

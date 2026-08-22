@@ -26,11 +26,3 @@ In the first `\`, we want to escape the `\` that the server-side application add
 we close the JSON object via `}`. Then, commented out `"}` via `//`.
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/c79ae1f47486_001.png)
-
-### Why It Works
-
-This lab demonstrates a reflected DOM vulnerability.
-
-### Key Takeaways
-
-- This lab demonstrates a reflected DOM vulnerability.

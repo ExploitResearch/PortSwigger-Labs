@@ -11,11 +11,3 @@ Solve the PortSwigger lab: H2.CL request smuggling
 1. Identify the smuggling variant (CL.TE, TE.CL, TE.TE, H2.CL, etc.)
 2. Craft a smuggled request that will be processed by the back-end server
 3. The smuggled request can bypass front-end security controls, capture other users' requests, or poison the cache
-
-### Why It Works
-
-This lab is vulnerable to request smuggling because the front-end server downgrades HTTP/2 requests even if they have an ambiguous length.
-
-### Key Takeaways
-
-- This lab is vulnerable to request smuggling because the front-end server downgrades HTTP/2 requests even if they have an ambiguous length.

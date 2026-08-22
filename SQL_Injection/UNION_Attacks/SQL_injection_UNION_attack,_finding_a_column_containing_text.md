@@ -95,12 +95,3 @@ You can use the provided string value instead of ‘a’ to solve the Lab exerci
 ```text
 ' UNION SELECT NULL, 'NAv682', NULL --
 ```
-
-### Why It Works
-
-The application has a SQL injection vulnerability in product category filter, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- This lab demonstrates using a UNION attack to retrieve data from other tables.
-- The SQL injection vulnerability is exploitable because user input is processed without adequate validation.

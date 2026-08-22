@@ -16,12 +16,3 @@ Observe that the comment functionality is vulnerable to XSS.
 ### Note
 
 The purpose of this lab is to demonstrate the potential of cracking passwords offline. Most likely, this would be done using a tool like hashcat, for example. When testing your clients' websites, we do not recommend submitting hashes of their real passwords in a search engine.
-
-### Why It Works
-
-The application has a XSS vulnerability in a cookie, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- This lab demonstrates using it to crack his password.
-- The XSS vulnerability is exploitable because user input is processed without adequate validation.

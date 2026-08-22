@@ -12,7 +12,3 @@ Perform a reflected XSS attack when the input is reflected inside a JavaScript t
 2. Test if backticks are encoded (they likely aren't)
 3. Break out of the template literal using a backtick: `` `${alert(1)}` ``
 4. Use the `${...}` expression syntax to execute JavaScript
-
-### Why It Works
-
-The exploit succeeds because this lab contains a reflected cross-site scripting vulnerability in the search blog functionality.

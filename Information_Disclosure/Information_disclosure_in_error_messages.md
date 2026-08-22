@@ -33,11 +33,3 @@ Change the value of the `productId` parameter to a non-integer data type, such a
 **In **`searchsploit`**(An offline version of Exploit-DB), we can see that it’s vulnerable to Remote Code Execution(RCE)!**
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/1af706c709e6_005.png)
-
-### Why It Works
-
-This lab's verbose error messages reveal that it is using a vulnerable version of a third-party framework.
-
-### Key Takeaways
-
-- This lab's verbose error messages reveal that it is using a vulnerable version of a third-party framework.

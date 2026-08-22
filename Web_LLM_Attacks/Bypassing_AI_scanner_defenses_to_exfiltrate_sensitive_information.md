@@ -11,11 +11,3 @@ Solve the PortSwigger lab: Bypassing AI scanner defenses to exfiltrate sensitive
 1. Interact with the LLM to understand its capabilities and API access
 2. Craft a prompt that exploits the specific vulnerability (excessive agency, indirect injection, or insecure output)
 3. Use the LLM's API access to perform the attack (delete users, exfiltrate data, etc.)
-
-### Why It Works
-
-This lab features an AI-powered scanner that has access to sensitive user data, including API keys, while performing site audits.
-
-### Key Takeaways
-
-- This lab features an AI-powered scanner that has access to sensitive user data, including API keys, while performing site audits.

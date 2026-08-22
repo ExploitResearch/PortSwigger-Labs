@@ -63,11 +63,3 @@ If we change it to POST method we  get 401 Unauthorized . **So we’re allowed t
 **send a GET request to **`/admin-roles`**, with parameters: **`username=wiener&action=upgrade`**:**
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/730f8a45256c_005.png)
-
-### Why It Works
-
-This lab implements access controls based partly on the HTTP method of requests.
-
-### Key Takeaways
-
-- This lab implements access controls based partly on the HTTP method of requests.

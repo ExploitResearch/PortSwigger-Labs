@@ -13,11 +13,3 @@ Exploit a server-side request forgery (SSRF) vulnerability to access a restricte
 3. Identify the admin interface on the local server
 4. Access the admin interface through the SSRF
 5. Delete the target user to solve the lab
-
-### Why It Works
-
-This lab has a stock check feature which fetches data from an internal system.
-
-### Key Takeaways
-
-- This lab has a stock check feature which fetches data from an internal system.

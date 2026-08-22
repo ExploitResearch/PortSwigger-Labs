@@ -25,11 +25,3 @@ Checking the directory shows a backup file for some Java code:
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/2082bf838abe_001.png)
 
 In the code, the credentials for the Postgres database connections can be found:
-
-### Why It Works
-
-This lab leaks its source code via backup files in a hidden directory.
-
-### Key Takeaways
-
-- This lab leaks its source code via backup files in a hidden directory.

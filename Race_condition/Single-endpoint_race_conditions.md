@@ -145,11 +145,3 @@ Nice! We now have administrator privilege!
 What we’ve learned:
 
 1. Single-endpoint race conditions
-
-### Why It Works
-
-This lab's email change feature contains a race condition that enables you to associate an arbitrary email address with your account.
-
-### Key Takeaways
-
-- This lab's email change feature contains a race condition that enables you to associate an arbitrary email address with your account.

@@ -39,11 +39,3 @@ Modify the price value to something less than the $100.00 that we have in store 
 Now go back to your browser, and in cart section click `Place Order`.
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/fa1b4a7f9625_004.png)
-
-### Why It Works
-
-This lab doesn't adequately validate user input.
-
-### Key Takeaways
-
-- This lab doesn't adequately validate user input.

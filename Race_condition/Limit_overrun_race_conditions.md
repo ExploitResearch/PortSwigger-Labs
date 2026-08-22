@@ -41,11 +41,3 @@ In our case, the race window is the time of checking the coupon has been applied
 The coupon reduced the original price a lot more! Therefore, the application's apply coupon function is indeed vulnerable to limit overruns race condition!
 
 Now Place the order to solve the lab
-
-### Why It Works
-
-This lab's purchasing flow contains a race condition that enables you to purchase items for an unintended price.
-
-### Key Takeaways
-
-- This lab's purchasing flow contains a race condition that enables you to purchase items for an unintended price.

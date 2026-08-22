@@ -30,11 +30,3 @@ processing rules work as expected and you were able to construct a valid cookie 
   - Change the **Add prefix** rule to add `carlos:` instead of `wiener:`.
 - When the attack is finished, the lab will be
 solved. Notice that only one request returned a response containing `Update email`. The payload from this request is the valid `stay-logged-in` cookie for Carlos's account.
-
-### Why It Works
-
-This lab allows users to stay logged in even after they close their browser session.
-
-### Key Takeaways
-
-- This lab allows users to stay logged in even after they close their browser session.

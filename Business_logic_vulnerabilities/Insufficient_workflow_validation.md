@@ -27,11 +27,3 @@ Let's try to purchase the jacket again, but intercept the calls and change the r
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/aea74cfcd9d7_003.png)
 
 After all the requests went through, the lab shows success
-
-### Why It Works
-
-This lab makes flawed assumptions about the sequence of events in the purchasing workflow.
-
-### Key Takeaways
-
-- This lab makes flawed assumptions about the sequence of events in the purchasing workflow.

@@ -36,11 +36,3 @@ As you can see, the `<>` is HTML encoded.
 
 {{$on.constructor('alert(1)')()}}
 ```
-
-### Why It Works
-
-The application has a DOM-based cross-site scripting vulnerability in a AngularJS expression within the search functionality, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The DOM-based cross-site scripting vulnerability is exploitable because user input is processed without adequate validation.

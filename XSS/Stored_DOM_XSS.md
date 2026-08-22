@@ -49,11 +49,3 @@ Which means if we add more than 1 `<` or `>`, it’ll be ignored.
 <><img src=errorpls onerror=alert(document.domain)>
 
 ```
-
-### Why It Works
-
-This lab demonstrates a stored DOM vulnerability in the blog comment functionality.
-
-### Key Takeaways
-
-- This lab demonstrates a stored DOM vulnerability in the blog comment functionality.

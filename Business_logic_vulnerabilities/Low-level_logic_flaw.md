@@ -100,11 +100,3 @@ My total cart value negative $1221 So add (1221/69.61=17.54) 18 quantiy of potat
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_011.png)
 
 Now Place order
-
-### Why It Works
-
-This lab doesn't adequately validate user input.
-
-### Key Takeaways
-
-- This lab doesn't adequately validate user input.

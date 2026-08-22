@@ -12,7 +12,3 @@ Exploit a race condition in the file upload process to upload and execute a web 
 2. The application uploads the file, checks it, then deletes it
 3. Use Burp Intruder or Turbo Intruder to send many concurrent requests to access the file
 4. One of the requests will hit the window between upload and deletion
-
-### Why It Works
-
-This lab contains a vulnerable image upload function.

@@ -12,7 +12,3 @@ Exploit a basic clickjacking vulnerability where the page has CSRF token protect
 2. Create an HTML page with a transparent iframe pointing to the target
 3. Overlay deceptive UI elements to trick the user into clicking
 4. The user's click triggers an action on the target page
-
-### Why It Works
-
-This lab contains login functionality and a delete account button that is protected by a CSRF token.

@@ -100,11 +100,3 @@ While the attack is running, refreshing of the account page in the browser shows
 After around 400 request the credit score get enough to buy the jacket then stop intruder
 
 Now place the order
-
-### Why It Works
-
-This lab has a logic flaw in its purchasing workflow.
-
-### Key Takeaways
-
-- This lab has a logic flaw in its purchasing workflow.

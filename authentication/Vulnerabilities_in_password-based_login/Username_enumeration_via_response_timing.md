@@ -41,11 +41,3 @@ consistently takes longer, then make a note of this username.
 
 - Log in using the username and password that you identified and access the user account page to solve the lab.
 {% endhint %}
-
-### Why It Works
-
-This lab is vulnerable to username enumeration using its response times.
-
-### Key Takeaways
-
-- This lab is vulnerable to username enumeration using its response times.

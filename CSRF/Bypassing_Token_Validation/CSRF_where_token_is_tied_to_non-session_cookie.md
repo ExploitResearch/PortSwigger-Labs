@@ -102,11 +102,3 @@ Remove the auto-submit `<script>` block, and instead add the following code to i
   </body>
 </html>
 ```
-
-### Why It Works
-
-This lab's email change functionality is vulnerable to CSRF.
-
-### Key Takeaways
-
-- This lab's email change functionality is vulnerable to CSRF.

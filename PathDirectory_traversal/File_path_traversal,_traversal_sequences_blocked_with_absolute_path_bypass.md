@@ -23,11 +23,3 @@ The application prepends this default working directory to the requested filenam
 To bypass this, we can just provide the absolute path of the `/etc/passwd`:
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/37ac64c35968_003.png)
-
-### Why It Works
-
-The application has a path traversal vulnerability in display of product images, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The path traversal vulnerability is exploitable because user input is processed without adequate validation.

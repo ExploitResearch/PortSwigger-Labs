@@ -37,7 +37,3 @@ or Use the default options and start the content discovery. Burp quickly shows t
 Opening this file in the browser and scrolling through the content shows the answer:
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/a9db3d488244_003.png)
-
-### Why It Works
-
-This lab contains a debug page that discloses sensitive information about the application.

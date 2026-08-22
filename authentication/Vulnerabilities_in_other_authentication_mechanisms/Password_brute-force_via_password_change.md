@@ -16,11 +16,3 @@
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/authentication/Vulnerabilities_in_other_authentication_mechanisms/images/4c716c36435f_002.png)
 
 - Click **My account** to solve the lab.
-
-### Why It Works
-
-This lab's password change functionality makes it vulnerable to brute-force attacks.
-
-### Key Takeaways
-
-- This lab demonstrates using the list of candidate passwords to brute-force Carlos's account and access his &quot;My account&quot; page.

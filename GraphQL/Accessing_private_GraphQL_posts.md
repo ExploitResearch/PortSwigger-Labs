@@ -11,7 +11,3 @@ Solve the PortSwigger lab: Accessing private GraphQL posts
 1. Identify the vulnerability type and injection point
 2. Craft the appropriate payload
 3. Deliver the payload and verify the result
-
-### Why It Works
-
-The blog page for this lab contains a hidden blog post that has a secret password.

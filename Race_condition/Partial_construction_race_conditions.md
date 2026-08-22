@@ -190,7 +190,3 @@ Armed with above information, it’s clear that **the password reset token is ge
 What we’ve learned:
 
 1. Exploiting time-sensitive vulnerabilities
-
-### Why It Works
-
-This lab contains a user registration mechanism.

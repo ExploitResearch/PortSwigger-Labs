@@ -12,11 +12,3 @@ Solve the PortSwigger lab: Using PHAR deserialization to deploy a custom gadget 
 2. Decode and modify the serialized object to change properties
 3. Re-encode and submit the modified serialized data
 4. For RCE: research and use known gadget chains for the target framework
-
-### Why It Works
-
-This lab does not explicitly use deserialization.
-
-### Key Takeaways
-
-- This lab does not explicitly use deserialization.

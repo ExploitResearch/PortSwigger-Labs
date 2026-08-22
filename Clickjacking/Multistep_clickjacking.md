@@ -30,11 +30,3 @@ create a iframe and above that make double click buttons.First one to hit delete
 ```
 
 adjust position of click and deliver it to victim
-
-### Why It Works
-
-This lab has some account functionality that is protected by a CSRF token and also has a confirmation dialog to protect against Clickjacking.
-
-### Key Takeaways
-
-- This lab has some account functionality that is protected by a CSRF token and also has a confirmation dialog to protect against Clickjacking.

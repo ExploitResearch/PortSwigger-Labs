@@ -11,11 +11,3 @@ Solve the PortSwigger lab: DOM XSS using web messages
 1. Identify the vulnerability type and injection point
 2. Craft the appropriate payload
 3. Deliver the payload and verify the result
-
-### Why It Works
-
-This lab demonstrates a simple web message vulnerability.
-
-### Key Takeaways
-
-- This lab demonstrates using the exploit server to post a message to the target site that causes the print() function to be called.

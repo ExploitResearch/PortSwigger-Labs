@@ -42,11 +42,3 @@ From the response, it can be seen that both parameters are injectable, and they 
 comment out the remainder of the line after the `whoami` to avoid the error message of the second parameter:
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/d7cdbb616498_003.png)
-
-### Why It Works
-
-The application has a OS command injection vulnerability in product stock checker, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The OS command injection vulnerability is exploitable because user input is processed without adequate validation.

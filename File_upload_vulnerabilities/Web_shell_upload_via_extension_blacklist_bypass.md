@@ -103,7 +103,3 @@ Fetch the carlos secret
 While the extensions with numbers at the end uploaded successful, they were not executed by the server. Uploading and accessing the file as `.phtml` is a different story and executes the script:
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_009.png)
-
-### Why It Works
-
-This lab contains a vulnerable image upload function.

@@ -12,11 +12,3 @@ Perform a reflected XSS attack via a JavaScript URL when certain characters are 
 2. Test which characters are blocked (quotes, angle brackets, etc.)
 3. Use alternative encoding or characters that achieve the same result
 4. Craft a payload using HTML entities, Unicode, or template literals
-
-### Why It Works
-
-This lab reflects your input in a JavaScript URL, but all is not as it seems.
-
-### Key Takeaways
-
-- This lab reflects your input in a JavaScript URL, but all is not as it seems.

@@ -55,11 +55,3 @@ We successfully changed `administrator`’s password!
 Try to logout and login again, this time with the credentials `administrator:peter`:
 
 And I appear to be inside the administrator account. The application states that my username is `administrator` and it provides me with a link to an `Admin panel`. I access it, delete `carlos` and receive a confirmation:
-
-### Why It Works
-
-This lab makes a flawed assumption about the user's privilege level based on their input.
-
-### Key Takeaways
-
-- This lab makes a flawed assumption about the user's privilege level based on their input.

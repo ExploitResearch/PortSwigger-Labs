@@ -33,11 +33,3 @@ In the above GET request, we can see that it includes a `Referer` HTTP header , 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/9f5bc07a9e8d_004.png)
 
 **Let’s refresh the page and we’re administrator now**
-
-### Why It Works
-
-This lab controls access to certain admin functionality based on the Referer header.
-
-### Key Takeaways
-
-- This lab controls access to certain admin functionality based on the Referer header.

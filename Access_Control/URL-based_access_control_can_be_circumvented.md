@@ -47,11 +47,3 @@ The response displays 302 Found with the directory location /admin, which means 
 If we check back to the /admin directory, the Carlos user no longer exists.
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/de1f871fd5cb_008.png)
-
-### Why It Works
-
-To solve the lab, access the admin panel and delete the user carlos.
-
-### Key Takeaways
-
-- To solve the lab, access the admin panel and delete the user carlos.

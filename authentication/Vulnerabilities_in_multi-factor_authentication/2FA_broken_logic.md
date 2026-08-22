@@ -20,11 +20,3 @@ crunch 4 4 0123456789 -o todelete.txt
 use turbo intruder
 
 [https://www.hackingarticles.in/burp-suite-for-pentester-turbo-intruder/](https://www.hackingarticles.in/burp-suite-for-pentester-turbo-intruder/)
-
-### Why It Works
-
-This lab's two-factor authentication is vulnerable due to its flawed logic.
-
-### Key Takeaways
-
-- This lab's two-factor authentication is vulnerable due to its flawed logic.

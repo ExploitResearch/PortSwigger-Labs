@@ -175,11 +175,3 @@ Nice! We successfully bypassed the restriction!
 What we’ve learned:
 
 1. Multi-endpoint race conditions
-
-### Why It Works
-
-This lab's purchasing flow contains a race condition that enables you to purchase items for an unintended price.
-
-### Key Takeaways
-
-- This lab's purchasing flow contains a race condition that enables you to purchase items for an unintended price.

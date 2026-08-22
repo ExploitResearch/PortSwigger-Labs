@@ -59,11 +59,3 @@ or
 The username is shown in the DNS request:
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/aaa55b41f52d_004.png)
-
-### Why It Works
-
-The application has a blind OS command injection vulnerability in feedback function, which can be exploited by crafting input that bypasses the insufficient validation in place.
-
-### Key Takeaways
-
-- The blind OS command injection vulnerability is exploitable because user input is processed without adequate validation.

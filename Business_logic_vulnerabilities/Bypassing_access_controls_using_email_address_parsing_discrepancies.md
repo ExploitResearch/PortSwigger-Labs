@@ -11,11 +11,3 @@ Exploit a logic flaw in email address parsing to bypass access controls.
 1. Identify the email parsing discrepancy
 2. Craft an email address that is parsed differently by different components
 3. Use the discrepancy to bypass access controls
-
-### Why It Works
-
-This lab validates email addresses to prevent attackers from registering addresses from unauthorized domains.
-
-### Key Takeaways
-
-- This lab validates email addresses to prevent attackers from registering addresses from unauthorized domains.

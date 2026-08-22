@@ -79,11 +79,3 @@ In this case I need to coerce the browser of the victim to not send the referrer
 or As an alternative, update exploit page header with the relevant syntax:
 
 ![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/d402a99e3146_008.png)
-
-### Why It Works
-
-This lab's email change functionality is vulnerable to CSRF.
-
-### Key Takeaways
-
-- This lab's email change functionality is vulnerable to CSRF.

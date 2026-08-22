@@ -12,11 +12,3 @@ Solve the PortSwigger lab: 2FA bypass using a brute-force attack
 2. Capture the OTP submission request in Burp
 3. Use Burp Intruder to brute-force the OTP code
 4. Look for a different response (302 redirect) indicating success
-
-### Why It Works
-
-This lab's two-factor authentication is vulnerable to brute-forcing.
-
-### Key Takeaways
-
-- This lab's two-factor authentication is vulnerable to brute-forcing.

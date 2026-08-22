@@ -12,11 +12,3 @@ Solve the PortSwigger lab: Developing a custom gadget chain for Java deserializa
 2. Decode and modify the serialized object to change properties
 3. Re-encode and submit the modified serialized data
 4. For RCE: research and use known gadget chains for the target framework
-
-### Why It Works
-
-This lab uses a serialization-based session mechanism.
-
-### Key Takeaways
-
-- This lab uses a serialization-based session mechanism.
