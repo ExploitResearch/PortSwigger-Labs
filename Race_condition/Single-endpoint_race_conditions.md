@@ -17,7 +17,9 @@ You can log in to your own account with the following credentials: `wiener:peter
 
 You also have access to an email client, where you can view all emails sent to `@exploit-<YOUR-EXPLOIT-SERVER-ID>.exploit-server.net` addresses.
 
-> Note
+{% hint style="info" %}
+Note
+{% endhint %}
 
 Solving this lab requires Burp Suite 2023.9 or higher.
 

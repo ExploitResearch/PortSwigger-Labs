@@ -22,7 +22,9 @@ And indeed, I can back out and return to the images directory. It confirms  path
 
 **In the lab background, it said:**
 
-> The application validates that the supplied filename ends with the expected file extension.
+{% hint style="info" %}
+The application validates that the supplied filename ends with the expected file extension.
+{% endhint %}
 
 This check may be done by simply comparing the last 4 characters of the filename with the string literal `.jpg`. Any type of such string comparison may be vulnerable to an ancient issue: null termination of strings.
 

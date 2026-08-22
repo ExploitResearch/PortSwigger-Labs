@@ -14,7 +14,9 @@ In the header’s `alg`, it tells that **it’s using RS256(RSA + SHA-256) algor
 
 **In the lab’s background, it said:**
 
-> The server supports the jwk(JSON Web Key) parameter in the JWT header. This is sometimes used to embed the correct verification key directly in the token. However, it fails to check whether the provided key came from a trusted source.
+{% hint style="info" %}
+The server supports the jwk(JSON Web Key) parameter in the JWT header. This is sometimes used to embed the correct verification key directly in the token. However, it fails to check whether the provided key came from a trusted source.
+{% endhint %}
 
 To exploit that, we can sign a modified JWT using our own RSA private key, then embedding the matching public key in the `jwk` header.
 

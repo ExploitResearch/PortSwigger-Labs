@@ -10,7 +10,9 @@ Login as user `wiener`:
 
 **In the lab’s background, it said:**
 
-> This lab contains a vulnerable image upload function. It doesn’t perform any validation on the files users upload before storing them on the server’s filesystem.
+{% hint style="info" %}
+This lab contains a vulnerable image upload function. It doesn’t perform any validation on the files users upload before storing them on the server’s filesystem.
+{% endhint %}
 
 Now, If the application doesn’t do any validation on user’s file upload, an attack could upload a web shell to the web server’s filesystem!
 

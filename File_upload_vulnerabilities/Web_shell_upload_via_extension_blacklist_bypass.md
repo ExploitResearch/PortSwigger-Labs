@@ -62,7 +62,9 @@ Now, what if I upload a file called `.htaccess` to override the server configura
 
 we can create our own `.htaccess` with the following configuration:
 
-> `AddType application/x-httpd-php .php5`
+{% hint style="info" %}
+`AddType application/x-httpd-php .php5`
+{% endhint %}
 
 **By doing that, we can execute any file that has **`.php5`** extension!**
 

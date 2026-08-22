@@ -23,7 +23,9 @@ When I try to access the `/admin` page as user `wiener`, I am greeted by the mes
 
 **Now, in the lab’s background, it said:**
 
-> Due to implementation flaws, the server doesn’t verify the signature of any JWTs that it receives.
+{% hint style="info" %}
+Due to implementation flaws, the server doesn’t verify the signature of any JWTs that it receives.
+{% endhint %}
 
 **To check **Does the website verify the signature? and Accepting arbitrary signatures
 

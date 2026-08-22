@@ -59,7 +59,9 @@ So with it we can set any cookie value as we wanted.
 
 **In **[**Mozilla web docs**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie)**, it said:**
 
-> To send multiple cookies, multiple Set-Cookie headers should be sent in the same response.
+{% hint style="info" %}
+To send multiple cookies, multiple Set-Cookie headers should be sent in the same response.
+{% endhint %}
 
 **After I google this a little bit, I found this **[**Medium blog**](https://medium.com/@protostar0/crlf-injection-allow-cookie-injection-in-root-domain-xss-812cd807ba5b)**: which says CRLF injection allow cookie injection?**
 

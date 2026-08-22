@@ -14,7 +14,9 @@ As you can see, in the header’s `alg`, it’s using an algorithm called HS256(
 
 **In the lab’s background, it said:**
 
-> In order to verify the signature, the server uses the kid parameter in JWT header to fetch the relevant key from its filesystem.
+{% hint style="info" %}
+In order to verify the signature, the server uses the kid parameter in JWT header to fetch the relevant key from its filesystem.
+{% endhint %}
 
 {% hint style="info" %}
 💡 An attacker could potentially **force the server to use an arbitrary file from its filesystem as the verification key**.

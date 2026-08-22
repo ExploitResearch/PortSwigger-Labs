@@ -14,7 +14,9 @@ In the header’s `alg`, it tells that **it’s using RS256(RSA + SHA-256) algor
 
 **In the lab’s background, it said:**
 
-> The server supports the jku(JWK Set URL) parameter in the JWT header. However, it fails to check whether the provided URL belongs to a trusted domain before fetching the key.
+{% hint style="info" %}
+The server supports the jku(JWK Set URL) parameter in the JWT header. However, it fails to check whether the provided URL belongs to a trusted domain before fetching the key.
+{% endhint %}
 
 ### <span style="color: #337EA9">Upload a malicious JWK Set of </span><span style="color: #337EA9">**new generated RSA key pair:**</span>
 

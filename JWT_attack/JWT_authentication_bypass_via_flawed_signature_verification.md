@@ -18,7 +18,9 @@ When I try to access the `/admin` page as user `wiener`, I am greeted by the mes
 
 **in the lab’s background, it said:**
 
-> The server is insecurely configured to accept unsigned JWTs.
+{% hint style="info" %}
+The server is insecurely configured to accept unsigned JWTs.
+{% endhint %}
 
 To check Does the website trust the algorithm specified in the token? and **Accepting tokens with no signature**
 

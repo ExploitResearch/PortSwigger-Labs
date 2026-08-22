@@ -21,7 +21,9 @@ Popular sinks are `document.write`,`(element).innerHTML`, `eval`, `setTimeout`, 
 
 For JavaScript code to be vulnerable to DOM-based XSS, it must take information from a source that can be controlled by the attacker and then pass this information to a sink.
 
-> **Using the above example, we can observe that:**
+{% hint style="info" %}
+**Using the above example, we can observe that:**
+{% endhint %}
 
 - The HTML page is static and there are no malicious scripts embedded into the page source code, as in the case of other types of XSS attacks.
 That is, the page itself (the HTTP response that is) does not change, but the client side code contained in the page executes differently due to the malicious modifications that have occurred in the DOM environment.

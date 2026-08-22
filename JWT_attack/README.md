@@ -141,14 +141,19 @@ According to the JWS specification, only the `alg `header parameter is mandatory
   - `jwk` (JSON Web Key) - Provides an embedded JSON object representing the key.
 The JSON Web Signature (JWS) specification describes an optional `jwk` header parameter, which servers can use to embed their public key directly within the token itself in JWK format.
 
-> **JWK**
+{% hint style="info" %}
+**JWK**
+{% endhint %}
 
 A JWK (JSON Web Key) is a standardized format for representing keys as a JSON object.
 
   - `jku` (JSON Web Key Set URL) - Provides a URL from which servers can fetch a set of keys containing the correct key.
 Instead of embedding public keys directly using the `jwk` header parameter, some servers let you use the `jku `(JWK Set URL) header parameter to reference a JWK Set containing the key. When verifying the signature, the server fetches the relevant key from this URL.
 
-> **JWK Set
+{% hint style="info" %}
+**JWK Set
+{% endhint %}
+
 **A JWK Set is a JSON object containing an array of JWKs representing different keys.
 
   - `kid` (Key ID) - Provides an ID that servers can use to identify the correct key in cases where there are multiple keys to choose from. Depending on the format of the key, this

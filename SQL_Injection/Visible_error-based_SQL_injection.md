@@ -3,7 +3,9 @@
 1. using Burp's built-in browser, explore the lab functionality.
 1. Go to the **Proxy > HTTP history** tab and find a `GET /` request that contains a `TrackingId` cookie.
 1. In Repeater, append a single quote to the value of your `TrackingId` cookie and send the request. `TrackingId=ogAZZfxtOKUELbuJ'`
-> In the response, notice the verbose error message. 
+{% hint style="info" %}
+In the response, notice the verbose error message. 
+{% endhint %}
 
 ![](./images/9b0323567157_001.png)
 
