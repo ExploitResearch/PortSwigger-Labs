@@ -71,15 +71,16 @@ is not permitted as this would be dangerously insecure, exposing any authenticat
 - **Access-Control-Allow-Headers**: Specifies which headers can be used in the actual request.
 - **Access-Control-Expose-Headers**: Specifies which headers can be exposed to the browser in the response.
 
-**Preflight Requests**:
+### Preflight Requests
 
-  - Preflight requests are used for certain types of cross-origin requests, such as those that use methods other than GET, POST, or HEAD, or those that use custom headers.
-  - Before sending the actual request, the browser sends an OPTIONS preflight request to the server to determine if the actual request is safe to send.
-  - The server responds to the preflight request with appropriate CORS headers, indicating whether the actual request is allowed.
-**Simple Requests**:
+- Preflight requests are used for certain types of cross-origin requests, such as those that use methods other than GET, POST, or HEAD, or those that use custom headers.
+- Before sending the actual request, the browser sends an OPTIONS preflight request to the server to determine if the actual request is safe to send.
+- The server responds to the preflight request with appropriate CORS headers, indicating whether the actual request is allowed.
 
-  - Simple requests are those that meet certain criteria, such as using only safe methods (GET, POST, HEAD) and not including custom headers beyond a few common ones.
-  - For simple requests, the browser automatically adds the necessary CORS headers to the request, and no preflight request is needed.
+### Simple Requests
+
+- Simple requests are those that meet certain criteria, such as using only safe methods (GET, POST, HEAD) and not including custom headers beyond a few common ones.
+- For simple requests, the browser automatically adds the necessary CORS headers to the request, and no preflight request is needed.
 
 ### **How to prevent CORS-based attacks**
 

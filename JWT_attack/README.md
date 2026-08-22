@@ -29,7 +29,9 @@ xxxxxxxxxx.yyyyyyyyyy.zzzzzzzzzz
 
 The header and payload parts of a JWT are just base64url-encoded JSON objects.
 
-  1. **Header:** The header typically consists of two parts: the type of the token (JWT) and the signing algorithm being used (e.g., HMAC SHA256 or RSA).It header contains metadata about the token itself
+<details>
+<summary><strong>1. Header:</strong> The header typically consists of two parts: the type of the token (JWT) and the signing algorithm being used (e.g., HMAC SHA256 or RSA). It header contains metadata about the token itself</summary>
+
 Example:
 
 ```json
@@ -37,10 +39,13 @@ Example:
   "alg": "HS256",
   "typ": "JWT"
 }
-
 ```
 
-  1. **Payload:** The second part of the token is the payload, which contains claims. Claims are statements about an entity (typically, the user) and additional data.
+</details>
+
+<details>
+<summary><strong>2. Payload:</strong> The second part of the token is the payload, which contains claims. Claims are statements about an entity (typically, the user) and additional data.</summary>
+
 Example:
 
 ```json
@@ -53,7 +58,11 @@ Example:
 
 Commonly used claims include "iss" (issuer), "exp" (expiration time), "sub" (subject), and more.
 
-  1. **Signature:** To create the signature part, you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
+</details>
+
+<details>
+<summary><strong>3. Signature:</strong> To create the signature part, you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.</summary>
+
 The server that issues the token typically generates the signature by hashing the header and payload. In some cases, they also encrypt the resulting hash. Either way, this process involves a secret signing key. This mechanism provides a way for servers to verify that none of the data within the token has been tampered with since it was issued:
 
 - As the signature is directly derived from the rest of the token, changing a single byte of the header or payload results in a mismatched signature.
@@ -68,28 +77,30 @@ HMACSHA256(
 )
 ```
 
+</details>
+
 ### How JWT Works:
 
-  1. **Authentication:** When a user logs in, the server creates a JWT and sends it to the client.
-  1. **Authorization:** The client includes the JWT in the headers of subsequent requests. This allows the server to verify the identity of the user and authorize access.
-  1. **Information Exchange:** JWTs are often used to transmit information between parties in a secure manner.
+1. **Authentication:** When a user logs in, the server creates a JWT and sends it to the client.
+1. **Authorization:** The client includes the JWT in the headers of subsequent requests. This allows the server to verify the identity of the user and authorize access.
+1. **Information Exchange:** JWTs are often used to transmit information between parties in a secure manner.
 
 ### Use Cases:
 
-  - **Authentication:** After a user logs in, the server can issue a JWT as a token of authentication.
-  - **Information Exchange:** JWTs can be used to transmit information between different parts of an application or between different applications.
+- **Authentication:** After a user logs in, the server can issue a JWT as a token of authentication.
+- **Information Exchange:** JWTs can be used to transmit information between different parts of an application or between different applications.
 
 ### Benefits:
 
-  - **Compact and URL-Safe:** JWTs are small and can be sent as URL parameters.
-  - **Self-Contained:** All the necessary information is contained within the token, reducing the need to query the database.
-  - **Stateless:** JWTs are stateless, meaning servers don't need to store sessions.
+- **Compact and URL-Safe:** JWTs are small and can be sent as URL parameters.
+- **Self-Contained:** All the necessary information is contained within the token, reducing the need to query the database.
+- **Stateless:** JWTs are stateless, meaning servers don't need to store sessions.
 
 ### Security Considerations:
 
-  - **Secure Transmission:** Use HTTPS to transmit JWTs to prevent interception.
-  - **Token Expiry:** Include an expiration time (exp) in the payload to limit the lifespan of a token.
-  - **Signature:** Sign the JWT with a secret key or a private key to ensure its integrity.
+- **Secure Transmission:** Use HTTPS to transmit JWTs to prevent interception.
+- **Token Expiry:** Include an expiration time (exp) in the payload to limit the lifespan of a token.
+- **Signature:** Sign the JWT with a secret key or a private key to ensure its integrity.
 
 ## What is the impact of JWT attacks?
 
