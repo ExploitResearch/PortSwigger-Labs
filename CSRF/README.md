@@ -113,5 +113,3 @@ The HTTP Referrer header (which is inadvertently misspelled in the HTTP specific
 |  | - API requires explicit tokens or headers not automatically sent by browsers |
 
 Is CSRF finding valid in a application where only search funtionality is present—> to get some data?
-
-[https://teams.microsoft.com/l/meetup-join/19%3Ameeting_MjkxMmI2NDUtMjc0ZS00M2NmLWIyYzAtZDkwYzM3NjdmN2Nh%40thread.v2/0?context={"Tid"%3A"396b38cc-aa65-492b-bb0e-3d94ed25a97b"%2C"Oid"%3A"85e14178-1d13-413f-a089-31a33c327658"}](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MjkxMmI2NDUtMjc0ZS00M2NmLWIyYzAtZDkwYzM3NjdmN2Nh%40thread.v2/0?context=%7B%22Tid%22%3A%22396b38cc-aa65-492b-bb0e-3d94ed25a97b%22%2C%22Oid%22%3A%2285e14178-1d13-413f-a089-31a33c327658%22%7D)
