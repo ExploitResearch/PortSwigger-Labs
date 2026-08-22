@@ -9,7 +9,7 @@ first obtain the server's public key. This is exposed via a standard endpoint. U
 
 **Login as user **`wiener`**:**
 
-![](./images/53e030c0e357_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/53e030c0e357_001.png)
 
 In the header's `alg`, it's using an algorithm called RS256(RSA + SHA-256), which is an asymmetric algorithm. (Private key & public key)
 
@@ -29,7 +29,7 @@ To exploit algorithm confusion attacks, we need to
 
 Servers sometimes expose their public keys as JSON Web Key (JWK) objects via a standard endpoint mapped to `/jwks.json` or `/.well-known/jwks.json`, for example. These may be stored in an array of JWKs called `keys`. This is known as a JWK Set.
 
-![](./images/53e030c0e357_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/53e030c0e357_002.png)
 
 **Found JWK Set in** `/jwks.json`**.**
 
@@ -43,19 +43,19 @@ Let's assume that we need the key in **X.509 PEM format**. You can convert a JWK
 
 **Go to JWT Editor Keys tab, and click New RSA Key:In the dialog, paste the JWK that you obtained earlier:**
 
-![](./images/53e030c0e357_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/53e030c0e357_003.png)
 
 Right-click on the entry for the key created, then select **Copy Public Key as PEM**.
 
 Use the **Decoder** tab to Base64 encode this PEM key, then copy the resulting string.
 
-![](./images/53e030c0e357_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/53e030c0e357_004.png)
 
 Go back to the JWT Editor Keys tab and click New Symmetric Key, In the dialog click Generate to generate a new key in JWK format:
 
 Replace the generated value for the `k` parameter with a Base64-encoded PEM key that you just copied then **Save the key:**
 
-![](./images/53e030c0e357_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/53e030c0e357_005.png)
 
 ### Modify and sign the JWT
 
@@ -65,17 +65,17 @@ Send the post-login `GET /my-account?id=wiener` request to Burp Repeater, then r
 - In the payload, change the value of the `sub` claim to `administrator`:
 - Finally, at the bottom of the tab, click Sign, then select the symmetric key that you generated in the previous section:
 
-![](./images/53e030c0e357_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/53e030c0e357_006.png)
 
 Now, the modified token is signed using the server's public key as the secret key.
 
 send a GET request to `/my-account`:
 
-![](./images/53e030c0e357_007.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/53e030c0e357_007.png)
 
 Copy the JWT and update session cookie in the browser**, then refresh the page:**
 
-![](./images/53e030c0e357_008.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/53e030c0e357_008.png)
 
 go to the admin panel and delete user `carlos`
 

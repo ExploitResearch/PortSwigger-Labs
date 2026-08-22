@@ -8,11 +8,11 @@ Retrieve the contents of the `/etc/passwd` file.
 
 open any product or open any image in new tab
 
-![](./images/5db72fb5f8fa_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/5db72fb5f8fa_001.png)
 
 apply above filter to see image request and sent it to repeater
 
-![](./images/5db72fb5f8fa_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/5db72fb5f8fa_002.png)
 
 The lab description mentions that the application removes path traversal sequences first, then URLdecodes the remaining.
 
@@ -44,11 +44,11 @@ One possible string would be `%252e%252e%252f`. The server decodes each `%25` to
 
 or we can **use **[**CyberChef**](https://gchq.github.io/CyberChef/)** to do URL encoding:**
 
-![](./images/5db72fb5f8fa_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/5db72fb5f8fa_003.png)
 
 Therefore A valid filename for the path traversal for `../../../etc/passwd`is  `%252e%252e%252f%252e%252e%252f%252e%252e%252fetc/passwd`
 
-![](./images/5db72fb5f8fa_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/5db72fb5f8fa_004.png)
 
 ### An alternative payload
 
@@ -56,7 +56,7 @@ Of course, when using Burp Repeater it is much easier to just type the `../../..
 
 This also encodes the `2 5 e f` characters from the first conversion, leading to a filename of `%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66%25%32%65%25%32%65%25%32%66etc/passwd`, which is also perfectly fine here:
 
-![](./images/5db72fb5f8fa_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/5db72fb5f8fa_005.png)
 
 ## PortSwigger Lab
 

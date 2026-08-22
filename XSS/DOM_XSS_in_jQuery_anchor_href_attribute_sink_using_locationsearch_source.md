@@ -21,7 +21,7 @@ The `returnPath` value likely corresponds to the `Back` link. Let’s try it out
 javascript:alert(document.cookie)
 ```
 
-![](../images/97583e590fc1_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/97583e590fc1_001.png)
 
 ### Why It Works
 

@@ -9,9 +9,9 @@
 - When the attack finished, notice that one response was found that contains the `New passwords do not match` message. Make a note of this password.
 - In the browser, log out of your own account and lock back in with the username `carlos` and the password that you just identified.
 
-![](./images/4c716c36435f_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/authentication/Vulnerabilities_in_other_authentication_mechanisms/images/4c716c36435f_001.png)
 
-![](./images/4c716c36435f_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/authentication/Vulnerabilities_in_other_authentication_mechanisms/images/4c716c36435f_002.png)
 
 - Click **My account** to solve the lab.
 

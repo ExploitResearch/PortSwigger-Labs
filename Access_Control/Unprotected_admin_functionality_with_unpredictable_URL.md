@@ -8,11 +8,11 @@ access the admin panel, and using it to delete the user `carlos`
 
 **On inspecting source code it is found that contains some JavaScript that discloses the URL of the admin panel.**
 
-![](./images/360b2846da1f_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/360b2846da1f_001.png)
 
 Go to admin panel and delete carlos
 
-![](./images/360b2846da1f_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/360b2846da1f_002.png)
 
 ### Why It Works
 

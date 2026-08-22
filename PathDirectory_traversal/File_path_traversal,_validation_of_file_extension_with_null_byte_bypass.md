@@ -8,15 +8,15 @@ Retrieve the contents of the `/etc/passwd` file.
 
 Analyze how the filenames for the images are provided. Here, the absolute path is provided in the HTML:
 
-![](./images/668fdeb71724_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/668fdeb71724_001.png)
 
 The rating image just above uses the `images` directory. Guessing that the product images might be in the same directory, try whether path traversal sequences are possible:
 
 Use Burp Suite to intercept and modify a request that fetches a product image.
 
-![](./images/668fdeb71724_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/668fdeb71724_002.png)
 
-![](./images/668fdeb71724_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/668fdeb71724_003.png)
 
 And indeed, I can back out and return to the images directory. It confirms  path traversal sequences are possible:
 
@@ -55,7 +55,7 @@ I need to construct a string that fulfils these requirements:
 
 Above I already established that basic path traversal is possible. So a valid filename that fulfils the requirements would be `../../../etc/passwd%00Anything.jpg`
 
-![](./images/668fdeb71724_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/668fdeb71724_004.png)
 
 ### Why It Works
 

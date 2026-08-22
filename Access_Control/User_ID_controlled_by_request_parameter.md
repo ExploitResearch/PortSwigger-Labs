@@ -16,7 +16,7 @@ vulnerability. This type of vulnerability arises where user-controller
 parameter values are used to access resources or functions directly.
 {% endhint %}
 
-![](./images/0a874cee4a12_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/0a874cee4a12_001.png)
 
 Submit the Carlos API key
 

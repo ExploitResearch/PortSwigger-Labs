@@ -6,7 +6,7 @@ I try to login with an (allegedly) invalid username and see if it locks me out b
 
 For this, I use the null payload option to generate 50 login attempts. But even after the 50th request, it still states ‘Invalid username or password’ and does not mention any lockout.
 
-![](./images/b063824e09d2_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/authentication/Vulnerabilities_in_password-based_login/images/b063824e09d2_001.png)
 
 That means it does not trigger based on login attempts from one source, but on existing accounts only. So I repeat the last step, this time making multiple requests for each possible username and see whether there is a different behavior or message.
 

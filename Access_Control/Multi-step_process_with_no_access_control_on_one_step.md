@@ -12,29 +12,29 @@ Log in using the credentials `wiener:peter` and exploit the flawed access contro
 
 When administrator try to upgrade a user, it’ll send a POST request to `/admin-roles`, with parameter: `username` and `action` (`upgrade`/`downgrade`).
 
-![](./images/9479c2d43281_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/9479c2d43281_001.png)
 
 After sending a POST request, a confirm page will be prompt, If we click `Yes`, it’ll send a POST request again:
 
 However, this time we see 1 more parameter: `confirmed` is set to `true`.
 
-![](./images/9479c2d43281_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/9479c2d43281_002.png)
 
 **send the both steps POST request to Burp Repeater.**
 
 With above information, we can login as user `wiener`, and try to escalate our privilege to administrator:
 
-![](./images/9479c2d43281_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/9479c2d43281_003.png)
 
 copy wiener’s session id 
 
 Change the session id and username to wiener in both steps post request which we send to repeater
 
-![](./images/9479c2d43281_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/9479c2d43281_004.png)
 
 in first step we get unauthorized
 
-![](./images/9479c2d43281_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/9479c2d43281_005.png)
 
 **But the back-end doesn’t check the second step in upgrading a user’s privilege**
 

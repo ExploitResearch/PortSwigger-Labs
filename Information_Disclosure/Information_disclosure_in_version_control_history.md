@@ -20,19 +20,19 @@ Let’s download all the files via `wget`!
 wget -b -r https://0a5d00c3035ad5be807d9a1700a800c4.web-security-academy.net/.git
 ```
 
-![](./images/3ff9d7cb9bf0_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3ff9d7cb9bf0_001.png)
 
 go to that directory and list all files inside it
 
-![](./images/3ff9d7cb9bf0_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3ff9d7cb9bf0_002.png)
 
 **Now, we can use **`git`** to view all the commit logs!**
 
-![](./images/3ff9d7cb9bf0_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3ff9d7cb9bf0_003.png)
 
 Log revealing that password was removed so now **print that commit:**
 
-![](./images/3ff9d7cb9bf0_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3ff9d7cb9bf0_004.png)
 
 Found `administrator` password: `v2v6cafbhrqnfxq6i622`
 

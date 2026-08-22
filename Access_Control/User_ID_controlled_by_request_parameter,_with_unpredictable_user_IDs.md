@@ -8,17 +8,17 @@ Obtain the API key for the user `carlos` and submit it as the solution
 
 **Login as user **`wiener`**:**
 
-![](./images/9f01d3203bde_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/9f01d3203bde_001.png)
 
 **it’s using an GUID(Globally Unique Identifier) so we can’t guess other users id**
 
 **In the home page, we can view other people’s posts:**
 
-![](./images/9f01d3203bde_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/9f01d3203bde_002.png)
 
 inspect the code and we get carlos GUID
 
-![](./images/9f01d3203bde_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/9f01d3203bde_003.png)
 
 or we can Click on `carlos` and observe that the URL contains his user ID
 

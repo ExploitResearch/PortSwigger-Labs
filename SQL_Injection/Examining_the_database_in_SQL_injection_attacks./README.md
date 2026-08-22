@@ -11,7 +11,7 @@ Different databases have different ways of querying their type and version. In O
 
 The queries to determine the type and it’s version are as follows:
 
-![](../images/c6c9a03c7e64_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/images/c6c9a03c7e64_001.png)
 
 You can find the names of database tables and columns by querying the table `information_schema.columns`, which contains details of all tables and column names within the database.
 

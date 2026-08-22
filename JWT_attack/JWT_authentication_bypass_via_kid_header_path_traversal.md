@@ -8,7 +8,7 @@ Forge a JWT that gives you access to the admin panel at `/admin`, then delete th
 
 **Login as user **`wiener`**:**
 
-![](./images/c1d1d36c8c1c_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/c1d1d36c8c1c_001.png)
 
 As you can see, in the header’s `alg`, it’s using an algorithm called HS256(HMAC + SHA-256), which is a [symmetric algorithm](https://portswigger.net/web-security/jwt/algorithm-confusion#symmetric-vs-asymmetric-algorithms).
 
@@ -27,7 +27,7 @@ To do so, we can point the `kid `parameter to a predictable, static file, then s
 
 ### <span style="color: #337EA9">**Generate a suitable signing key**</span>
 
-![](./images/c1d1d36c8c1c_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/c1d1d36c8c1c_002.png)
 
 ### <span style="color: #337EA9">**Modify and sign the JWT**</span>
 
@@ -35,11 +35,11 @@ To do so, we can point the `kid `parameter to a predictable, static file, then s
 - Modify header’s `kid` claim to a directory traversal payload, which point to `/dev/null`:
 - sign with generated key symmetric key
 
-![](./images/c1d1d36c8c1c_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/c1d1d36c8c1c_003.png)
 
 Copy the JWT and update session cookie in the browser**, then refresh the page:**
 
-![](./images/c1d1d36c8c1c_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/c1d1d36c8c1c_004.png)
 
 go to the admin panel and delete user `carlos`
 

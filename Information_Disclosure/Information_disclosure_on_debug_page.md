@@ -16,7 +16,7 @@ First, I search for common directories within the web root of the application wi
 ffuf -w /usr/share/wordlists/SecLists-master/Discovery/Web-Content/directory-list-2.3-small.txt -u https://0aeb000b03ce98ffc09d247e001c00a4.web-security-academy.net/FUZZ
 ```
 
-![](./images/a9db3d488244_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/a9db3d488244_001.png)
 
 I can now search within this directory for common files with
 
@@ -24,7 +24,7 @@ I can now search within this directory for common files with
 ffuf -w /usr/share/wordlists/SecLists/Discovery-content/Web-Content/common.txt  -u https://0aeb000b03ce98ffc09d247e001c00a4.web-security-academy.net/cgi-bin/FUZZ
 ```
 
-![](./images/a9db3d488244_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/a9db3d488244_002.png)
 
 ### Using Burp Professional
 
@@ -34,7 +34,7 @@ or Use the default options and start the content discovery. Burp quickly shows t
 
 Opening this file in the browser and scrolling through the content shows the answer:
 
-![](./images/a9db3d488244_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/a9db3d488244_003.png)
 
 ### Why It Works
 

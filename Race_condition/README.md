@@ -25,11 +25,11 @@ In computer memory or storage, a race condition may occur if commands to read an
 
 **A race condition can also occur if instructions are processed in the incorrect order.**
 
-![](../images/b24449ade7fc_001.jpg)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/b24449ade7fc_001.jpg)
 
 *Figure 1. Process 1 performs a bit flip, changing the memory value from 0 to 1. Process 2 then performs a bit flip and changes the memory value from 1 to 0.*
 
-![](../images/b24449ade7fc_002.jpg)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/b24449ade7fc_002.jpg)
 
 *Figure 2. When Process 2 is unaware that Process 1 is performing a simultaneous bit flip, the bit has an ending value of 1 when its value should be 0.*
 
@@ -45,7 +45,7 @@ Race conditions occasionally occur in [logic gates](https://www.techtarget.com/w
 
 For example, if checks against a checking account are processed sequentially, the system will make sure there are enough funds in the account to process check A first and then look again to see if there are enough funds to process check B after processing check A. However, if the two checks are processed at the same time, the system may read the same account balance value for both processes and give an incorrect account balance value, causing the account to be overdrawn.
 
-![](../images/b24449ade7fc_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/b24449ade7fc_003.png)
 
 *See how a race condition could develop if a bank receives two checks -- one for $1,000 and the other for $1,500 -- at about the same time, both drawn against a checking account with only $2,000 in it.*
 
@@ -65,11 +65,11 @@ For example, consider an online store that lets you enter a promotional code dur
 
 If you later attempt to reuse this code, the initial checks performed at the start of the process should prevent you from doing this:
 
-![](../images/b24449ade7fc_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/b24449ade7fc_004.png)
 
 Now consider what would happen if a user who has never applied this discount code before tried to apply it twice at almost exactly the same time:
 
-![](../images/b24449ade7fc_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/b24449ade7fc_005.png)
 
 There are many variations of this kind of attack, including:
 

@@ -12,7 +12,7 @@ Let’s click the `Check stock` button, and intercept the request via Burp Sui
 
 When we clicked that button, it’ll send a POST request to `/product/stock`, with parameter `productId=1` and `storeId=1`.
 
-![](./images/d7cdbb616498_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/d7cdbb616498_001.png)
 
 As we have two parameters, I try to inject both with different commands. This way, I can find out which parameter is injectable and in which order they are executed.
 
@@ -31,7 +31,7 @@ There are multiple ways to execute multiple commands in one line in a shell, sep
 
 {% endhint %}
 
-![](./images/d7cdbb616498_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/d7cdbb616498_002.png)
 
 From the response, it can be seen that both parameters are injectable, and they are executed in the order productId first, storeId second.
 
@@ -39,7 +39,7 @@ From the response, it can be seen that both parameters are injectable, and they 
 
 comment out the remainder of the line after the `whoami` to avoid the error message of the second parameter:
 
-![](./images/d7cdbb616498_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/d7cdbb616498_003.png)
 
 ### Why It Works
 

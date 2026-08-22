@@ -8,11 +8,11 @@ Exploit logic flaw to access the admin panel and delete Carlos
 
 I can register a new account and see that employees of DontWannaCry should use their company email. As I do not have one I register a new account with my email address from the email client:
 
-![](./images/b14b568648ba_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/b14b568648ba_001.png)
 
 Once I register, I receive an email with a confirmation link to complete the registration In my email client.
 
-![](./images/b14b568648ba_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/b14b568648ba_002.png)
 
 After confirming the email, I can log into my account.
 
@@ -20,18 +20,18 @@ On doing site-mapping/content-dicovery , discovered the path `/admin`.
 
 **the admin panel is in **`/admin`**,But it’s only available to DontWannaCry user.**
 
-![](./images/b14b568648ba_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/b14b568648ba_003.png)
 
 On the `my account` page, there is update email option. What happens if I simply change it to a `@dontwannacry.com` one? 
 
-![](./images/b14b568648ba_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/b14b568648ba_004.png)
 
 After clicking on the `Update email` button, two things become obvious:
 
 1. My email address is changed straight away
 1. An `Admin panel` link appeared
 
-![](./images/b14b568648ba_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/b14b568648ba_005.png)
 
 This shows two things:
 

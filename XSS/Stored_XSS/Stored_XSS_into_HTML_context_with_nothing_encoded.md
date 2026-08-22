@@ -17,7 +17,7 @@ Exploit the stored XSS vulnerability to call the alert function.
 
 `<script>alert(document.domain)</script>`
 
-![](../../images/90072dedd134_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/90072dedd134_001.png)
 
 ### Why It Works
 

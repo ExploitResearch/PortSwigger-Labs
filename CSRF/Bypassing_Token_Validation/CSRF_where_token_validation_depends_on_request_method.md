@@ -10,13 +10,13 @@ Login as user `wiener`:
 
 Update the email 
 
-![](../images/5281dc080ffc_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/5281dc080ffc_001.png)
 
 When we click the `Update email` button, it’ll send a POST request to `/my-account/change-email` with the parameter `email & csrf  `
 
 check what happens when I simply remove the CSRF-token from the request we get <span style="color: #E03E1B">Missing parameter 'csrf'</span>
 
-![](../images/5281dc080ffc_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/5281dc080ffc_002.png)
 
 The same happens if I try to use an empty token (`&csrf=`) or random token  (`&csrf=1234asdf`) 
 
@@ -24,7 +24,7 @@ we can’t modify our email address, as the form is missing the right CSRF token
 
 To bypass the CSRF token, we can try to change our method from POST to GET by selecting `Change request method` from the context menu.
 
-![](../images/5281dc080ffc_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/5281dc080ffc_003.png)
 
 Here we don’t get any error and We’ve successfully changed the email address to attacker’s controlled value
 
@@ -40,14 +40,14 @@ If you're using Burp Suite Professional, right-click on the request, and from th
 
 In the community edition, simply get the the form from the HTML of the application and perform the required changes to it (specifically: change the method and action, remove the csrf token and add the auto-submit script)
 
-![](../images/5281dc080ffc_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/5281dc080ffc_004.png)
 
 - Go to the exploit server, paste your exploit HTML into the "Body" section, and click "Store".
 - To verify if the exploit will work, try it on yourself by clicking "View exploit" and checking the resulting HTTP request and response.
 - Change the email address in your exploit so that it doesn't match your own.
 - Store the exploit, then click "Deliver to victim" to solve the lab.
 
-![](../images/5281dc080ffc_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/5281dc080ffc_005.png)
 
 ### Why It Works
 

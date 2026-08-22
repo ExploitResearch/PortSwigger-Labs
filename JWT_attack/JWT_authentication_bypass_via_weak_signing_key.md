@@ -8,7 +8,7 @@ First brute-force the website’s secret key. Once you’ve obtained this, use i
 
 **Login as user **`wiener`**:**
 
-![](./images/f82d109eed5e_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/f82d109eed5e_001.png)
 
 In Burp Proxy we can see, the algorithm is HS256(HMAC + SHA-256), which uses an arbitrary, standalone string as the secret key.
 
@@ -18,17 +18,17 @@ So, **what if we know the secret key**? If we know that, **we can create JWTs wi
 
 <span style="color: #337EA9">**Using Hashcat**</span>
 
-![](./images/f82d109eed5e_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/f82d109eed5e_002.png)
 
  [wordlist of common secret keys](https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list).      
 
-![](./images/f82d109eed5e_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/f82d109eed5e_003.png)
 
 After a short time, hashcat is successful in finding the correct key: **secret1**
 
 <span style="color: #337EA9">**Using JohnTheRipper**</span>
 
-![](./images/f82d109eed5e_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/f82d109eed5e_004.png)
 
 I already cracked the password earlier so we can use **—show **to view previously hacked passwords with John The Ripper
 `john --show hashed_passwords.txt`
@@ -39,21 +39,21 @@ now can **use the secret key to generate a valid signature for any JWT header an
 
 <span style="color: #337EA9">**Using **</span>[<span style="color: #337EA9">**jwt.io**</span>](https://jwt.io/)
 
-![](./images/f82d109eed5e_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/f82d109eed5e_005.png)
 
 <span style="color: #337EA9">**Using JWT editor**</span>
 
-![](./images/f82d109eed5e_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/f82d109eed5e_006.png)
 
-![](./images/f82d109eed5e_007.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/f82d109eed5e_007.png)
 
-![](./images/f82d109eed5e_008.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/f82d109eed5e_008.png)
 
 Now that I know that the JWT is correct for `administrator`, I can replace my session cookie with this manipulated token. That way, I do not need to modify requests but can work directly in the browser.
 
 **Let’s copy and paste that newly generated JWT string to our session cookie:**
 
-![](./images/f82d109eed5e_009.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/f82d109eed5e_009.png)
 
 **Then refresh the page : **go to the admin panel and delete user `carlos`
 

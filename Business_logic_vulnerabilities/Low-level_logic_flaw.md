@@ -12,21 +12,21 @@ Let’s try to buy the leather jacket!
 
 When we clicked the `Add to cart` button, **it’ll send a POST request to **`/cart`**, with parameter **`productId=1`**, **`redir=PRODUCT`** and **`quantity=1`**.**
 
-![](./images/5ad590f44e73_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_001.png)
 
 send them to repeater to use them later
 
 On sending the `quantity` to a negative value? Like `-2`, It doesn’t add negative quantity of products. So it dont’t work
 
-![](./images/5ad590f44e73_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_002.png)
 
 We neither can’t add more than 99 quantiy
 
-![](./images/5ad590f44e73_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_003.png)
 
 In the `Add to cart` button’s HTML form, we can see that the `quantity` has a limit, the minimum number is `0`, and the maximum is `99`.
 
-![](./images/5ad590f44e73_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_004.png)
 
 **Note:**The maximum number of items that can be added to the cart is 99 and it is a limit on adding product in single time not on max quantity we can buy, So we can add as many product as we want but max-99 in each request.
 
@@ -47,7 +47,7 @@ Of course, the exact values for `min_value` and `max_value` depend on the data t
 
 **Now, what if the total price is greater than a maximum value of an integer?** (Integer overflow)
 
-![](./images/5ad590f44e73_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_005.png)
 
 **If the total price is greater than **`2147483647`**, will the price went to **`0`**?**
 
@@ -60,13 +60,13 @@ pool.
 - Payload: Null payloads, continue indefinitely
 - Resource Pool: 1 concurrent request
 
-![](./images/5ad590f44e73_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_006.png)
 
 After a couple of refreshes while Burp Intruder sends its request, the page shows a negative number: 
 
 Try to order when total price is negative but Unfortunately, it is prevented by the application:
 
-![](./images/5ad590f44e73_007.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_007.png)
 
 {% hint style="info" %}
 💡 The price has exceeded the maximum value permitted for an integer in the back-end programming language (2,147,483,647). As a result, the value has looped back around to the minimum possible value (-2,147,483,648) and starts counting up towards 0 then turn positive again.
@@ -79,23 +79,23 @@ Try to order when total price is negative but Unfortunately, it is prevented by 
 
 Note that the price of the jacket is stored in cents (133700). 
 
-![](./images/5ad590f44e73_008.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_008.png)
 
 so after around 162 requests of 99 quantity each, the price will turn into negative and after sending another 162 request price will comes near to 0.
 
 Adding 32123 jackets brings the price to $-1221
 
-![](./images/5ad590f44e73_009.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_009.png)
 
 Adding another 1 jacket increases total to $115 which is above our store credit
 
 So find some other product to bring the total price in the range between zero and $100.
 
-![](./images/5ad590f44e73_010.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_010.png)
 
 My total cart value negative $1221 So add (1221/69.61=17.54) 18 quantiy of potato theater
 
-![](./images/5ad590f44e73_011.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/5ad590f44e73_011.png)
 
 Now Place order
 

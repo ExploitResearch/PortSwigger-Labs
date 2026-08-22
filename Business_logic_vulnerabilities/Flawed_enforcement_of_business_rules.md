@@ -10,7 +10,7 @@ Exploit logic flaw to buy the Lightweight l33t leather jacket.
 
 In here, we can see that **there is a code: **`NEWCUST5`** to get a legit discount for new customer:**
 
-![](./images/7e7135bd2a53_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/7e7135bd2a53_001.png)
 
 Let’s try to buy the leather jacket and apply the `NEWCUST5` coupon:
 
@@ -18,15 +18,15 @@ Now the total price is reduced by 5 dollars! Unfortunately, even with the discou
 
 Try to apply the coupon again but this does not work:
 
-![](./images/7e7135bd2a53_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/7e7135bd2a53_002.png)
 
 After poking around the web site, I found that there is a newsletter subscription at the very bottom of the page, sign up for a newsletter since subscriptions often contain nice offers.
 
-![](./images/7e7135bd2a53_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/7e7135bd2a53_003.png)
 
 When signing up for it, a Javascript popup appears with coupon, now we have 1 more coupon! `SIGNUP30`
 
-![](./images/7e7135bd2a53_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/7e7135bd2a53_004.png)
 
 After I apply it, the total price looks better than before. But still not affordable with the store credit available:
 
@@ -34,7 +34,7 @@ Try applying the code`SIGNUP30`, it is rejected because the coupon has already b
 
 So if you enter the same code twice in a row, it is rejected However, if you alternate between the two codes, you can bypass this control. It looks like the 'is-the-discount-code-alread-used' check is only done with the latest discount code applied. So try to alternate the discounts until the price is** **below** **`$100.00`
 
-![](./images/7e7135bd2a53_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/7e7135bd2a53_005.png)
 
 Now `Place order`
 

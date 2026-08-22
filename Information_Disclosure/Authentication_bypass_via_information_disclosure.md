@@ -16,13 +16,13 @@ The one I use here is [ffuf](https://github.com/ffuf/ffuf) together with the gre
 ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt -u https://0aeb000b03ce98ffc09d247e001c00a4.web-security-academy.net/FUZZ
 ```
 
-![](./images/3beb0bad2d8c_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3beb0bad2d8c_001.png)
 
 ### Visiting the endpoint
 
 On visiting this admin page it shows this message:
 
-![](./images/3beb0bad2d8c_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3beb0bad2d8c_002.png)
 
 **It only allows local users, which is using the localhost(**`127.0.0.1`**) IP address.**
 
@@ -32,17 +32,17 @@ On visiting this admin page it shows this message:
 
 Two HTTP methods can be used to obtain additional information, `OPTIONS` and `TRACE`. The latter produces an interesting result:
 
-![](./images/3beb0bad2d8c_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3beb0bad2d8c_003.png)
 
 Notice that the `X-Custom-IP-Authorization` header, containing my IP address, was automatically appended to the request. This is used to determine whether or not the request came from the `localhost` IP address.                 
 
-![](./images/3beb0bad2d8c_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3beb0bad2d8c_004.png)
 
 Now that I know the header, accessing the admin interface becomes easy. I need to ensure the custom header is sent with each request so I add a `Match and Replace` rule to always add this new header to requests.
 
 I use `127.0.0.1` as the content to trick the application to believe that the request originated from `localhost`.
 
-![](./images/3beb0bad2d8c_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Information_Disclosure/images/3beb0bad2d8c_005.png)
 
 Now just reload the page in the browser, access the admin panel and delete user `carlos` to solve the lab:
 

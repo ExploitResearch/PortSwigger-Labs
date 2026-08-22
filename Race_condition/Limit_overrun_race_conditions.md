@@ -6,7 +6,7 @@
 
 ### Analysis/Exploitation -
 
-![](./images/e7e7c62b1122_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/e7e7c62b1122_001.png)
 
 In home page, we can see that the promotion code `PROMO20` for 20% off, and we can purchase some items.
 
@@ -16,13 +16,13 @@ Now, let's try to purchase the "Lightweight L33t Leather Jacket":
 
 **Apply the coupon code** `PROMO20`**:**
 
-![](./images/e7e7c62b1122_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/e7e7c62b1122_002.png)
 
 When we clicked the "Apply" button, it'll send a POST request to `/cart/coupon`, with parameter `csrf` and `coupon`.
 
 We still do not have enough store credit for this purchase after applying coupon.
 
-![](./images/e7e7c62b1122_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/e7e7c62b1122_003.png)
 
 If we try to apply the coupon again, it show an error message **"Coupon already applied"**:
 

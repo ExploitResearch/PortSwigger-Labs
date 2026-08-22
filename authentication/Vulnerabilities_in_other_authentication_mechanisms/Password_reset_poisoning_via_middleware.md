@@ -2,10 +2,10 @@
 
 - With Burp running, investigate the password reset functionality.Observe that a link containing a unique reset token is sent via email.
 - Send the `POST /forgot-password` request to Burp Repeater. Notice that the `X-Forwarded-Host` header is supported and you can use it to point the dynamically generated reset link to an arbitrary domain.
-![](./images/5ccbb779eaf6_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/authentication/Vulnerabilities_in_other_authentication_mechanisms/images/5ccbb779eaf6_001.png)
 
 - notice difference in link normal vs exploited
-![](./images/5ccbb779eaf6_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/authentication/Vulnerabilities_in_other_authentication_mechanisms/images/5ccbb779eaf6_002.png)
 
 {% hint style="info" %}
 💡 we need to click on manipulated link to see reset token in access log

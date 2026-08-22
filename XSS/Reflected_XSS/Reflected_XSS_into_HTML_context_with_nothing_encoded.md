@@ -15,7 +15,7 @@ Exploit XSS vulnerability to call the alert function.
 
 **inject a JavaScript function called **`alert()`** in search function:**
 
-![](../../images/2d7773f68e8a_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/2d7773f68e8a_001.png)
 
 ### Why It Works
 

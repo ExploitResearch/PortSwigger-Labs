@@ -17,7 +17,7 @@ upload the PHP script
 
 Trying to upload the php script shows that PHP files are not allowed to upload:
 
-![](./images/8133e72ab08a_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_001.png)
 
 No file with a PHP extension can be uploaded on the server. Attempts to circumvent this with different capitalization `shell.pHP` or null bytes in the filename `shell.php%00.png` showed no success.
 
@@ -25,19 +25,19 @@ The next step was to try some common alternative extensions for PHP files. The [
 
 To bypass this, we can rename the file extension to `.php5`. This extension tells the web server to use PHP version 5.
 
-![](./images/8133e72ab08a_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_002.png)
 
 We’ve successfully uploaded the web shell!
 
 **Check Can we execute any command?**
 
-![](./images/8133e72ab08a_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_003.png)
 
 Nope we get plain text of webShell we uploaded.This might happen is because **servers typically won’t execute files unless they have been configured to do so.**
 
 In FireFox extension `Wappalyzer`, it will tell us which web server is using:
 
-![](./images/8133e72ab08a_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_004.png)
 
 In this case, **the web server is using **`Apache`**.**
 
@@ -57,7 +57,7 @@ Now, what if I upload a file called `.htaccess` to override the server configura
 
 **After poking around, I found this **[**Medium blog**](https://asreshashank.medium.com/execute-php-scripts-into-html-file-by-modifying-htaccess-file-8517ed1e2066)**:**
 
-![](./images/8133e72ab08a_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_005.png)
 
 {% endhint %}
 
@@ -70,7 +70,7 @@ we can create our own `.htaccess` with the following configuration:
 
 while uploading intercept the request and **Change the **`Content-Type`** to **`text/plain`**:**
 
-![](./images/8133e72ab08a_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_006.png)
 
 Or it can be directly uploaded from Burp Repeater, by sending  `POST /my-account/avatar` request that was used to submit the file upload.Make the following changes:
 
@@ -90,17 +90,17 @@ The application is served by an apache server, so uploading a custom .htaccess f
 
 now we can execute command                                             
 
-![](./images/8133e72ab08a_007.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_007.png)
 
 Fetch the carlos secret
 
-![](./images/8133e72ab08a_008.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_008.png)
 
 ### **Solution  (the easy and unintended way)**
 
 While the extensions with numbers at the end uploaded successful, they were not executed by the server. Uploading and accessing the file as `.phtml` is a different story and executes the script:
 
-![](./images/8133e72ab08a_009.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/8133e72ab08a_009.png)
 
 ### Why It Works
 

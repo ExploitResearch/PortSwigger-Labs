@@ -10,7 +10,7 @@ Determine the number of columns returned by the original query.
 
 The original query must return at least one column. So the error might be in the comment. So let’s try out every possible comment syntax to find out the one that matches.
 
-![](./images/58df1bceb192_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/58df1bceb192_001.png)
 
 ```text
 ' ORDER BY 1#
@@ -54,7 +54,7 @@ Querying the database to retrieve database version.
 ' UNION SELECT @@version , NULL#
 ```
 
-![](./images/58df1bceb192_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/58df1bceb192_002.png)
 
 ## PortSwigger Lab
 

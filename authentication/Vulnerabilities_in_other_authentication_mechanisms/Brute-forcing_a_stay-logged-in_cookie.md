@@ -12,13 +12,13 @@ that the cookie is constructed as follows: `base64(username+':'+md5HashOfPasswor
   - Add prefix: `wiener:`
   - Encode: `Base64-encode`
 
-![](./images/c931fe37d0ae_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/authentication/Vulnerabilities_in_other_authentication_mechanisms/images/c931fe37d0ae_001.png)
 
 - As the **Update email** button is only displayed when you access the `/my-account` page in an authenticated state, we can use the presence or absence of
 this button to determine whether we've successfully brute-forced the
 cookie. On the **Settings** tab, add a grep match rule to flag any responses containing the string `Update email`. Start the attack.
 
-![](./images/c931fe37d0ae_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/authentication/Vulnerabilities_in_other_authentication_mechanisms/images/c931fe37d0ae_002.png)
 
 - Notice that the generated payload was used to
 successfully load your own account page. This confirms that the payload

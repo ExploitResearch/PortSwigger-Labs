@@ -14,7 +14,7 @@ Obtain the API key for the user `carlos` and submit it as the solution
 redirecting you to the home page, it has a body containing the API key
 belonging to `carlos`.
 
-![](./images/e4ef3ed98f03_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/e4ef3ed98f03_001.png)
 
 Submit the API key.
 

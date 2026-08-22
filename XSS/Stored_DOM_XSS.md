@@ -37,7 +37,7 @@ Armed with above information, we can start to bypass the `<>` HTML encoding.
 
 According to W3School, **the **`replace()`** method only replace the first instance.**
 
-![](../images/56f22be1a806_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/56f22be1a806_001.png)
 
 Which means if we add more than 1 `<` or `>`, it’ll be ignored.
 

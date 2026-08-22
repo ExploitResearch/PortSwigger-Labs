@@ -10,7 +10,7 @@ Exploit logic flaw to buy the Lightweight l33t leather jacket.
 
 Attempt to buy the leather jacket. We only have `$100` store credit**,** The order get rejected because of not having enough store credit.
 
-![](./images/fa1b4a7f9625_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/fa1b4a7f9625_001.png)
 
 **analyze the request in burp proxy that have been sent so far**
 
@@ -22,7 +22,7 @@ The request to add product to the cart looks rather promising, as it contains th
 
 Remove any existing cart items. Then, go to Burp Suite’s `Proxy > HTTP history` page and find the add-product request. This is a `POST` request to `/cart`.
 
-![](./images/fa1b4a7f9625_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/fa1b4a7f9625_002.png)
 
 When we clicked add to cart button, **it send a POST request to **`/cart`** with parameter: **`productId=1`**, **`redir=PRODUCT`**, **`quantity=1`**, and **`price=133700`**.**
 
@@ -32,11 +32,11 @@ Now if the input is not sanitized by the server. An attacker can change the quan
 
 Modify the price value to something less than the $100.00 that we have in store credit: notice there are two more zeros in price parameter so **set the price to 100 i.e.($1.00)**
 
-![](./images/fa1b4a7f9625_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/fa1b4a7f9625_003.png)
 
 Now go back to your browser, and in cart section click `Place Order`.
 
-![](./images/fa1b4a7f9625_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/fa1b4a7f9625_004.png)
 
 ### Why It Works
 

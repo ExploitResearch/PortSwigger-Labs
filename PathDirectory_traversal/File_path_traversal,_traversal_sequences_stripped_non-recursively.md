@@ -8,11 +8,11 @@ Retrieve the contents of the `/etc/passwd` file.
 
 open any product or open any image in new tab
 
-![](./images/58831d32ca9e_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/58831d32ca9e_001.png)
 
 apply above filter to see image request and sent it to repeater
 
-![](./images/58831d32ca9e_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/58831d32ca9e_002.png)
 
 As written in the lab description, using simple path traversal sequences like `../` does not lead to an actual path traversal. If the sequences are stripped from the user input in a naive way, it just removes all occurrences of `../` from the filename.
 
@@ -25,7 +25,7 @@ But if just literal `../` sequences are removed, we simply need to provide a str
 The application strips path traversal sequences from the user-supplied filename before using it. **To bypass that, we use nested traversal sequences, like **`....//`**:**
 {% endhint %}
 
-![](./images/58831d32ca9e_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/58831d32ca9e_003.png)
 
 ## PortSwigger Lab
 

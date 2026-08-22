@@ -8,13 +8,13 @@ Modify your session token to gain access to the admin panel at `/admin`, then de
 
 **Login as user **`wiener`**:**
 
-![](./images/78b4034beaf1_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/78b4034beaf1_001.png)
 
 Burp Proxy notifies me that the response contains a JWT and highlight it.
 
 When I try to access the `/admin` page as user `wiener`, I am greeted by the message `Admin interface only available if logged in as an administrator`.
 
-![](./images/78b4034beaf1_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/78b4034beaf1_002.png)
 
 **in the lab’s background, it said:**
 
@@ -29,21 +29,21 @@ To check Does the website trust the algorithm specified in the token? and **Acce
 {% hint style="info" %}
 💡 remove the signature from the JWT, but remember to leave the trailing dot after the payload.
 
-![](./images/78b4034beaf1_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/78b4034beaf1_003.png)
 
 We are still logged-in as wiener, This confirms that the backend trusts and uses the algorithm provided in the token to provide access to authenticated content.
 
 **let’s change the payload’s **`sub`** to **`administrator`**:**so that we get authenticated as administrator
 
-![](./images/78b4034beaf1_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/78b4034beaf1_004.png)
 
 **copy and paste the newly modified JWT  to our session cookie:**
 
-![](./images/78b4034beaf1_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/78b4034beaf1_005.png)
 
 Refresh the page, go to admin panel and delete user carlos
 
-![](./images/78b4034beaf1_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/78b4034beaf1_006.png)
 {% endhint %}
 
 ## PortSwigger Lab

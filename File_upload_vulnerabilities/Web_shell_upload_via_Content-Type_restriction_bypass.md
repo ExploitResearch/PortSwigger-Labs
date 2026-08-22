@@ -12,22 +12,22 @@ In the account settings, I can set both an email address and an avatar image for
 
 upload a normal image file
 
-![](./images/c755dab55ab2_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/c755dab55ab2_001.png)
 
 try to upload the PHP script  
 `<?php system($_GET['cmd']); ?>`
 
-![](./images/c755dab55ab2_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/c755dab55ab2_002.png)
 
 It shows the values for Content-Type that are permitted.
 
-![](./images/c755dab55ab2_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/c755dab55ab2_003.png)
 
 the `Content-Type` is `application/x-php` and it can be fully-controlled by the attacker.
 
 We can just simply change the `Content-Type` from `application/x-php` to `image/jpeg` or `image/png`
 
-![](./images/c755dab55ab2_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/c755dab55ab2_004.png)
 
 The file name remained as `webShell.php` so that the server can execute it. Calling the uploaded script with parameter shows the secret data:
 
@@ -35,15 +35,15 @@ the uploaded file stored in `/files/avatar/<filename>`. Let’s trigger the web 
 
 via BurpSuite
 
-![](./images/c755dab55ab2_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/c755dab55ab2_005.png)
 
 via Browser
 
-![](./images/c755dab55ab2_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/c755dab55ab2_006.png)
 
 via command Curl
 
-![](./images/c755dab55ab2_007.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/c755dab55ab2_007.png)
 
 ### Why It Works
 

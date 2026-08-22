@@ -12,11 +12,11 @@ Exploit the blind OS command injection vulnerability to cause a 10 second delay.
 
 As always I start with checking the website. Any type of user input is always worth investigating. Here, I come across a feedback form:
 
-![](./images/119db21775b3_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/119db21775b3_001.png)
 
 When we clicked the `Submit feedback` button, **it’ll send a POST request to **`/feedback/submit`**, with parameter **`csrf`**, **`name`**, **`email`**, **`subject`**, and **`message`**.**
 
-![](./images/119db21775b3_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/119db21775b3_002.png)
 
 Looking at the request in Burp, I see a possible complication, a csrf token.
 
@@ -43,11 +43,11 @@ By default, `ping` send one request immediately, followed by one additional re
 
 To cause a 10 seconds delay, ping needs to send 11 requests. **My guess for best parameter would be email,** as this will likely be supplied as individual command line argument. I want to execute the ping regardless of the result status of the command before (which is likely some failure as some arguments may be missing), therefore I enclose the ping command with `;`:
 
-![](./images/119db21775b3_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/119db21775b3_003.png)
 
 I notice that I forgot to add a `#` to comment out whatever might be there on the line. While I receive a `500 Internal server error` on this request, if I add the `#` I receive a `200 OK`. So there might be also some type of error based injection possible at the box.
 
-![](./images/119db21775b3_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/119db21775b3_004.png)
 
 ## PortSwigger Lab
 

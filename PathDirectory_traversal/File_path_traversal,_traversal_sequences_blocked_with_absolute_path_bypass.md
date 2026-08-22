@@ -8,11 +8,11 @@ Retrieve the contents of the `/etc/passwd` file.
 
 open any product or open any image in new tab
 
-![](./images/37ac64c35968_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/37ac64c35968_001.png)
 
 apply above filter to see image request and sent it to repeater
 
-![](./images/37ac64c35968_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/37ac64c35968_002.png)
 
 This time however, the application blocks traversal sequences,requesting `../../../etc/passwd` does not lead to any file,If the webserver's default working directory is assumed when no path is explicitly given.
 
@@ -20,7 +20,7 @@ The application prepends this default working directory to the requested filenam
 
 To bypass this, we can just provide the absolute path of the `/etc/passwd`:
 
-![](./images/37ac64c35968_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/PathDirectory_traversal/images/37ac64c35968_003.png)
 
 ### Why It Works
 

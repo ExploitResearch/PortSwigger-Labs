@@ -12,14 +12,14 @@ As the lab application deals with JWTs, Use the extension `JSON Web Tokens (JWT4
 
 Burp Proxy notifies me that the response contains a JWT and highlight it.
 
-![](./images/0efb99ed06f3_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/0efb99ed06f3_001.png)
 
 In the header part, the signature’s algorithm is RS256(RSA + SHA-256), and it has a kid(Key ID). 
 In the payload part, it has an issuer(`portswigger`), subject(`wiener`), and expires(`1710394513`).
 
 When I try to access the `/admin` page as user `wiener`, I am greeted by the message `Admin interface only available if logged in as an administrator`.
 
-![](./images/0efb99ed06f3_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/0efb99ed06f3_002.png)
 
 **Now, in the lab’s background, it said:**
 
@@ -30,7 +30,7 @@ Due to implementation flaws, the server doesn’t verify the signature of any JW
 
 **we can just simply modify payload’s subject to **`administrator`**:**
 
-![](./images/0efb99ed06f3_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/JWT_attack/images/0efb99ed06f3_003.png)
 
 **To delete user carlos we can use any of following ways:**
 

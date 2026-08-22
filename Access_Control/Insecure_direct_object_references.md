@@ -11,13 +11,13 @@ find the password for the user `carlos`, and log into the account.
 
 **It’s sending a GET request to **`/download-transcript/2.txt`**! and we can see our own session’s transcript in response.**
 
-![](./images/78ce20cf5321_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/78ce20cf5321_001.png)
 
 **What if I change the **`2.txt`** to **`1.txt`** Or **`3.txt`**, and so on?**
 
 Change the filename to `1.txt` and review the text. Notice a password within the chat transcript.
 
-![](./images/78ce20cf5321_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/78ce20cf5321_002.png)
 
 It should be **user **`carlos`**’s password!**
 

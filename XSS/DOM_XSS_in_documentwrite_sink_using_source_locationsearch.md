@@ -25,7 +25,7 @@ Hence, we can inject a sink(Dangerous JavaScript function) via DOM(Document Obje
 
 Note: The `'">` is to close the `<img>` tag, so we can write any JavaScript code.
 
-![](../images/91b2f043542e_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/images/91b2f043542e_001.png)
 
 ### Why It Works
 

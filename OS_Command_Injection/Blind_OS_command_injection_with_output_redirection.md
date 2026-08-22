@@ -20,7 +20,7 @@ The `>` character sends the output from the `whoami` command to the specified fi
 
 In the previous lab, we found that the `email` parameter is vulnerable to blind OS command injection:
 
-![](./images/9ac789e31ef7_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/9ac789e31ef7_001.png)
 
 Now, instead of triggering a time delay, we can also **redirect the command’s output to a file, and stored it to where we can access.**
 
@@ -28,7 +28,7 @@ In the home page, we can see there are some product images:
 
 Typically you’ll **stored the output to a static file**, like `images`.As we can see, **they are at **`/image`**.**
 
-![](./images/9ac789e31ef7_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/9ac789e31ef7_002.png)
 
 To redirect command’s output to a file, we can put it to `/var/www/image/<filename>`.since it is mentionted in lab description that Writeable folder is at `/var/www/images/`
 
@@ -37,13 +37,13 @@ To redirect command’s output to a file, we can put it to `/var/www/image/<file
 
 The command to execute is `whoami > /var/www/images/whoami.txt `to write the file. Inject it into the email argument. And as in the previous lab, commenting out the remainder results in a `200 OK`, while not doing so results in `500 Internal Server Error`. Both ways work though.
 
-![](./images/9ac789e31ef7_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/9ac789e31ef7_003.png)
 
 **Access the file**
 
 Now the file is in `/var/www/images`, but the path to it within the application is unknown and perhaps not even accessible directly. But I can utilize the way the application includes its images with a GET request to `/image?filename=`
 
-![](./images/9ac789e31ef7_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/OS_Command_Injection/images/9ac789e31ef7_004.png)
 {% endhint %}
 
 {% hint style="info" %}

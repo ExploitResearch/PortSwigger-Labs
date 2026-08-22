@@ -47,7 +47,7 @@ baseball
 000000
 ```
 
-![](./images/1f025b9ab6dd_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_001.png)
 
 **Experiment with the login function by intentionally submitting incorrect passwords for your own account.**
 
@@ -58,13 +58,13 @@ baseball
   - When you submit the login attempt.
   - When the website increments the counter for the number of failed login attempts associated with a particular username.
 
-![](./images/1f025b9ab6dd_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_001.png)
 
-![](./images/1f025b9ab6dd_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_002.png)
 
-![](./images/1f025b9ab6dd_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_003.png)
 
-![](./images/1f025b9ab6dd_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_004.png)
 
 **Test for race condition!**
 
@@ -72,7 +72,7 @@ When we clicked the “Log in” button, it’ll send a POST request to `/login`
 
 After user lockout is gone, send the login request to Burp Suite’s Repeater 5 times, group them together, select "Send group in parallel", and send it:
 
-![](./images/1f025b9ab6dd_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_005.png)
 
 Observe that More than three requests received the normal `Invalid username and password` response.No more rate limiting!  the login function is vulnerable to race condition.
 
@@ -82,11 +82,11 @@ In the Python editor, choose the `examples/race-single-packet-attack.py` Python 
 
 In order to make it brute force user `carlos`’s password, we’ll need to modify the template to:
 
-![](./images/1f025b9ab6dd_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_006.png)
 
-![](./images/1f025b9ab6dd_007.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_007.png)
 
-![](./images/1f025b9ab6dd_008.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_008.png)
 
 ```python
 def queueRequests(target, wordlists):
@@ -153,17 +153,17 @@ In here, we found that there’s a **HTTP status code “302 Found”**, which m
 
 **Finally, login as **`carlos`** , **navigate to Admin Panel and delete the User Carlos to solve the Lab
 
-![](./images/1f025b9ab6dd_009.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_009.png)
 
-![](./images/1f025b9ab6dd_010.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_010.png)
 
-![](./images/1f025b9ab6dd_011.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_011.png)
 
-![](./images/1f025b9ab6dd_012.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_012.png)
 
-![](./images/1f025b9ab6dd_013.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_013.png)
 
-![](./images/1f025b9ab6dd_014.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1f025b9ab6dd_014.png)
 
 ### Why It Works
 

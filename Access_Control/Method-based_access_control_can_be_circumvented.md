@@ -36,13 +36,13 @@ GET /admin --> 200 OK
 
 familiarize yourself with the admin panel by logging in using the credentials `administrator:admin` 
 
-![](./images/730f8a45256c_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/730f8a45256c_001.png)
 
 Here, administrator can upgrade or downgrade a user.
 
 When we try to upgrade a user:
 
-![](./images/730f8a45256c_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/730f8a45256c_002.png)
 
 **It’s sending a POST request to **`/admin-roles`**, and with the **`username`** and **`action`**.**
 
@@ -50,17 +50,17 @@ Now, let’s log out and login as user `wiener` to do vertical privilege escalat
 
 After login send any GET request to repeater and change the ** **location to** **`/admin-roles`
 
-![](./images/730f8a45256c_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/730f8a45256c_003.png)
 
 As you can see, looks like we can access `/admin-roles` when we’re sending a GET request to `/admin-roles` without any parameters.
 
 If we change it to POST method we  get 401 Unauthorized . **So we’re allowed to send a GET request to **`/admin-roles`
 
-![](./images/730f8a45256c_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/730f8a45256c_004.png)
 
 **send a GET request to **`/admin-roles`**, with parameters: **`username=wiener&action=upgrade`**:**
 
-![](./images/730f8a45256c_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/730f8a45256c_005.png)
 
 ### Why It Works
 

@@ -15,13 +15,13 @@ upload the PHP script
 
 When we clicked the `Upload` button, it’ll send a POST request to `/my-account/avatar`, with parameter `filename`, `user` and `csrf`. Also, the `Content-Type` is `application/x-php`.
 
-![](./images/b096c479528a_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b096c479528a_001.png)
 
 when we click “Back to My Account”, notice that file was fetched using a `GET` request to `/files/avatars/<filename>`. So the uploaded file will located in `/files/avatars/<filename>`.
 
-![](./images/b096c479528a_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b096c479528a_002.png)
 
-![](./images/b096c479528a_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b096c479528a_003.png)
 
 Uploading the php file is successful. However, accessing this file just shows the content of the file. The PHP code is not executed on the server side:
 
@@ -38,25 +38,25 @@ The definition of what files are executed is often done per directory. The `/fil
 
 Change the filename to `../shell.php` to try to store the file on dictionary up. The upload confirmation shows the same path `avatar/` as the previous upload, so the path traversal did not succeed:
 
-![](./images/b096c479528a_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b096c479528a_004.png)
 
 Either some or all of the characters of the path traversal are stripped away, or the application is not vulnerable to this type of attack (but the lab name gives a hint that path traversal possible so find  a way for it).
 
 My first attempt to circumvent the protection is to obfuscate the path traversal with URL-encoding the `../` part:
 
-![](./images/b096c479528a_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b096c479528a_005.png)
 
 accessing file with directory traversal gives error
 
-![](./images/b096c479528a_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b096c479528a_006.png)
 
 if we move up a directory and directly access the file then php get executed
 
-![](./images/b096c479528a_007.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b096c479528a_007.png)
 
 The response indicates that the path traversal was successful. Accessing the path calls the file outside of the avatar directory and executes the PHP on the server, providing the secret string (calling `/files/webShell.php` shows the same)
 
-![](./images/b096c479528a_008.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b096c479528a_008.png)
 
 ### Why It Works
 

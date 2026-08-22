@@ -10,17 +10,17 @@ Retrieve the administrator’s password, then use it to delete `carlos`.
 
 password is** prefilled in a masked input** and we can see by inspecting code
 
-![](./images/d1f96ac1c92a_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/d1f96ac1c92a_001.png)
 
 we can see that our password is reflecting in response
 
-![](./images/d1f96ac1c92a_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/d1f96ac1c92a_002.png)
 
 Change the "id" parameter to `administrator`.
 
-![](./images/d1f96ac1c92a_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/d1f96ac1c92a_003.png)
 
-![](./images/d1f96ac1c92a_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Access_Control/images/d1f96ac1c92a_004.png)
 
 **View the response in Burp and observe that it contains the administrator's password**
 

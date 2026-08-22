@@ -12,7 +12,7 @@
 
 ## Enumeration
 
-![](./images/1458121b3c44_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_001.png)
 
 **Login as user **`wiener`**:**
 
@@ -38,9 +38,9 @@ It behaved as expected. In the first request, the gift card is redeemed, and the
 
 It behaved Same… Maybe `/gift-card` POST endpoint doesn’t vulnerable to race condition?
 
-![](./images/1458121b3c44_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_002.png)
 
-![](./images/1458121b3c44_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_003.png)
 
 Here we tried race condition at single endpoint but the lab name itself indicates that its vulnerable to Multi-endpoint race condition. 
 
@@ -66,7 +66,7 @@ As you can see, this is in fact a multi-step sequence within the span of a singl
 
 To detect and exploit hidden multi-step sequences, we recommend the following methodology, which is summarized from the whitepaper [Smashing the state machine: The true potential of web race conditions](https://portswigger.net/research/smashing-the-state-machine) by PortSwigger Research.
 
-![](./images/1458121b3c44_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_004.png)
 
 **1 - Predict potential collisions:**
 
@@ -75,7 +75,7 @@ Testing every endpoint is impractical. After mapping out the target site as norm
 - **Is this endpoint security critical?** Many endpoints don’t touch critical functionality, so they’re not worth testing.
 - **Is there any collision potential?** For a successful collision, you typically need two or more requests that trigger operations on the same record. For example, consider the following variations of a password reset implementation:
 
-![](./images/1458121b3c44_005.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_005.png)
 
 With the first example, requesting parallel password resets for two different users is unlikely to cause a collision as it results in changes to two different records. However, the second implementation enables you to edit the same record with requests for two different users.
 
@@ -85,7 +85,7 @@ Think about the classic logic flaw in online stores where you add an item to you
 
 A variation of this vulnerability can occur when payment validation and order confirmation are performed during the processing of a single request. The state machine for the order status might look something like this:
 
-![](./images/1458121b3c44_006.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_006.png)
 
 In this case, you can potentially add more items to your basket during the race window between when the payment is validated and when the order is finally confirmed.
 
@@ -93,17 +93,17 @@ In this case, you can potentially add more items to your basket during the race 
 
 - **Test for under normal conditions:**
 
-![](./images/1458121b3c44_007.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_007.png)
 
-![](./images/1458121b3c44_008.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_008.png)
 
-![](./images/1458121b3c44_009.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_009.png)
 
 Working as expected, purchased a gift card, and another gift card is added to the basket.
 
 - **Single-packet attack:**
 
-![](./images/1458121b3c44_010.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_010.png)
 
 Nope. No addition gift card order is being placed.
 
@@ -111,7 +111,7 @@ Nope. No addition gift card order is being placed.
 
 When testing for multi-endpoint race conditions, you may encounter issues trying to line up the race windows for each request, even if you send them all at exactly the same time using the single-packet technique.
 
-![](./images/1458121b3c44_011.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_011.png)
 
 This common problem is primarily caused by the following two factors:
 
@@ -132,17 +132,17 @@ If you still see inconsistent response times on a single endpoint, even when usi
 
 - **Perform connection warming:**
 
-![](./images/1458121b3c44_012.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_012.png)
 
-![](./images/1458121b3c44_013.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_013.png)
 
-![](./images/1458121b3c44_014.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_014.png)
 
 As you can see, in `/cart` POST endpoint, it took a lot longer than the `/checkout` endpoint. Which means this delay is caused by the back-end network architecture rather than the respective processing time of the each endpoint. Therefore, it is not likely to interfere with our attack.
 
 **After some trial and error, when we try to purchase an item that we don’t have enough store credit, it’ll redirect us to **`/cart?err=INSUFFICIENT_FUNDS`**:**
 
-![](./images/1458121b3c44_015.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_015.png)
 
 Hmm… I wonder **what if we can bypass that restriction**…
 
@@ -152,19 +152,19 @@ Hmm… I wonder **what if we can bypass that restriction**…
 
 **Group 1 - Buy jacket:**
 
-![](./images/1458121b3c44_016.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_016.png)
 
-![](./images/1458121b3c44_017.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_017.png)
 
 **Group 2 - Buy gift card:**
 
-![](./images/1458121b3c44_018.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_018.png)
 
-![](./images/1458121b3c44_019.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_019.png)
 
 - Keep sending both groups in parallel until the restriction has been bypassed:
 
-![](./images/1458121b3c44_020.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Race_condition/images/1458121b3c44_020.png)
 
 Nice! We successfully bypassed the restriction!
 

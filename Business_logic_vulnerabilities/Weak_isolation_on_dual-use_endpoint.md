@@ -14,11 +14,11 @@ Why does it contain the username as an input field? I'd expect either the passwo
 
 What happens if I use it and simply change the username to `administrator`?
 
-![](./images/11e553804bdf_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/11e553804bdf_001.png)
 
 We get error Current password is incorrect:
 
-![](./images/11e553804bdf_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/11e553804bdf_002.png)
 
 From this result I can derive a few pieces of information:
 
@@ -34,7 +34,7 @@ To verify that no password was changed despite the error message, I attempt to l
 
 When we clicked the `Change password` button, **it send a POST request to **`/my-account/change-password`**, with parameter **`csrf`**, **`username`**, **`current-password`**, **`new-password-1`**, and **`new-password-2`**.**
 
-![](./images/11e553804bdf_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/11e553804bdf_003.png)
 
 OK, so I have the csrf token, username and the three password parameters.
 
@@ -46,7 +46,7 @@ This depends on whether it always checks the current password on password change
 
 However, if the password check only occurs when the parameter is present, then it will be bad for the application but good for me.
 
-![](./images/11e553804bdf_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/Business_logic_vulnerabilities/images/11e553804bdf_004.png)
 
 We successfully changed `administrator`’s password!
 

@@ -12,7 +12,7 @@ Login as user `wiener`:
 
 Inspect the form and notice that when we refresh the page (ie: on each request of the`/my-account`) each time csrf token gets change even within a session
 
-![](../images/ef68f1710266_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/ef68f1710266_001.png)
 
 **Check whether the tokens are bound to the sessions. **
 
@@ -20,7 +20,7 @@ I reload the `/my-account` page a few times, logout and login again (all as `
 
 Now I use Repeater to take one of my old email change requests, copy the new session data from the fresh login inside and a CSRF-token from before the logout:
 
-![](../images/ef68f1710266_002.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/ef68f1710266_002.png)
 
 And the email change goes through. This means that the tokens are not bound to the current session, which is a serious flaw.
 
@@ -32,11 +32,11 @@ Submit the "Update email" form, and intercept the resulting request.
 
 **use user **`wiener`** CSRF token in user **`carlos`
 
-![](../images/ef68f1710266_003.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/ef68f1710266_003.png)
 
 The request is accepted and carlos email get changed
 
-![](../images/ef68f1710266_004.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/CSRF/images/ef68f1710266_004.png)
 
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:

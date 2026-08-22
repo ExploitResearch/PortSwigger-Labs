@@ -7,7 +7,7 @@
 - In Burp Repeater, observe that you can change the Host header to an arbitrary value and still successfully trigger a password reset. Go back to the email server and look at the new email
 that you've received. Notice that the URL in the email contains your arbitrary Host header instead of the usual domain name.
 - Back in Burp Repeater, change the Host header to your exploit server's domain name (`YOUR-EXPLOIT-SERVER-ID.exploit-server.net`) and change the `username` parameter to `carlos`. Send the request.
-![](./images/30f4987cb066_001.png)
+![](https://raw.githubusercontent.com/ExploitResearch/PortSwigger-Labs/main/HTTP_Host_Header_Attacks/images/30f4987cb066_001.png)
 
 - Go to your exploit server and open the access log. You will see a request for `GET /forgot-password` with the `temp-forgot-password-token` parameter containing Carlos's password reset token. Make a note of this token.
 - Go to your email client and copy the genuine password reset URL from your first email. Visit this URL in the browser, but replace your reset token with the one you obtained from the access log.
