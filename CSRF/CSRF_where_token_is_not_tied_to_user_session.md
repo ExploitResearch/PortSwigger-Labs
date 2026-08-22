@@ -40,24 +40,21 @@ The request is accepted and carlos email get changed
 
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
-{% endhint %}
 
-
-  - A relevant action: change a users email
-  - Cookie-based session handling: session cookie
-  - No unpredictable request parameters: csrf token is not tied to user session
+- A relevant action: change a users email
+- Cookie-based session handling: session cookie
+- No unpredictable request parameters: csrf token is not tied to user session
 
 Testing CSRF Tokens:
 
-  1. Remove the CSRF token and see if application accepts request
-  1. Change the request method from POST to GET
-  1. See if csrf token is tied to user session
+1. Remove the CSRF token and see if application accepts request
+1. Change the request method from POST to GET
+1. See if csrf token is tied to user session
+{% endhint %}
 
 {% hint style="info" %}
 💡 Note that the CSRF tokens are single-use, so you'll need to include a fresh one.
 we also need to use new email and can’t use email assigned to other users.
-{% endhint %}
-
 
 The next steps are easy:
 
@@ -73,3 +70,4 @@ We can test it locally via the `View exploit` button
 
 - Change the email address in your exploit so that it doesn't match your own or in use of other user and use new csrf token
 - Store the exploit, then click "Deliver to victim" to solve the lab.
+{% endhint %}

@@ -53,6 +53,7 @@ Race conditions occasionally occur in [logic gates](https://www.techtarget.com/w
 {% endhint %}
 
 
+
 For example, if checks against a checking account are processed sequentially, the system will make sure there are enough funds in the account to process check A first and then look again to see if there are enough funds to process check B after processing check A. However, if the two checks are processed at the same time, the system may read the same account balance value for both processes and give an incorrect account balance value, causing the account to be overdrawn.
 
 ![](./images/b24449ade7fc_003.png)
@@ -62,6 +63,7 @@ For example, if checks against a checking account are processed sequentially, th
 {% hint style="info" %}
 **Check-then-act.** This race condition happens when two processes check a value on which they will take each take an external action. The processes both check the value, but only one process can take the value with it. The later-occurring process will read the value as null. This results in a potentially out-of-date or unavailable observation being used to determine what the program will do next. For example, if a map application runs two processes simultaneously that require the same location data, one will take the value first so the other can't use it. The later process reads the data as null.
 {% endhint %}
+
 
 
 ## Limit overrun race conditions

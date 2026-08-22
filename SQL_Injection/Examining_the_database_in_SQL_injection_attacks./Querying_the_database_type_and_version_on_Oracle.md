@@ -26,6 +26,7 @@ In Oracle databases, every SELECT statement must include a FROM attribute. So, i
 {% endhint %}
 
 
+
 ```text
 ' UNION SELECT 'a', NULL FROM DUAL-- → Returns status code 200
 ' UNION SELECT 'a', 'a' FROM DUAL--  → Returns status code 200

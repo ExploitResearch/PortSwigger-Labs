@@ -26,8 +26,6 @@ increased depending on the length of the password you entered.
 
 {% hint style="info" %}
 💡 al is username
-{% endhint %}
-
 
 - Notice that one of the response times was significantly longer
 than the others. Repeat this request a few times to make sure it
@@ -40,3 +38,4 @@ consistently takes longer, then make a note of this username.
 ![](./images/a9ce66e89bac_006.png)
 
 - Log in using the username and password that you identified and access the user account page to solve the lab.
+{% endhint %}

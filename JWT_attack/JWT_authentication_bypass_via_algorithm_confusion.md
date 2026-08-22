@@ -17,14 +17,13 @@ In the header's `alg`, it's using an algorithm called RS256(RSA + SHA-256), whic
 
 {% hint style="info" %}
 It uses a robust RSA key pair to sign and verify tokens. However, due to implementation flaws, this mechanism is vulnerable to algorithm confusion attacks.
-{% endhint %}
-
 
 To exploit algorithm confusion attacks, we need to 
 
 1. Obtain the server's public key. 
 1. Convert the public key to a suitable format and **Generate a malicious signing key**
 1. Modify and sign the JWT using the server's public key as the secret key. 
+{% endhint %}
 
 ### <span style="color: #337EA9">1. Obtain the server's public key:</span>
 

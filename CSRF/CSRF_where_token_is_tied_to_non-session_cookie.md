@@ -25,6 +25,7 @@ This indicates that the system providing the CSRF protection does not integrate 
 {% endhint %}
 
 
+
   1. Check if the CSRF token is tied to the CSRF cookie
     - Submit an invalid CSRF token
     - Submit a valid CSRF token from another user
@@ -63,6 +64,7 @@ So with it we can set any cookie value as we wanted.
 {% hint style="info" %}
 To send multiple cookies, multiple Set-Cookie headers should be sent in the same response.
 {% endhint %}
+
 
 
 **After I google this a little bit, I found this **[**Medium blog**](https://medium.com/@protostar0/crlf-injection-allow-cookie-injection-in-root-domain-xss-812cd807ba5b)**: which says CRLF injection allow cookie injection?**

@@ -11,6 +11,7 @@ Exploit the blind OS command injection vulnerability to cause a 10 second delay.
 {% endhint %}
 
 
+
 As always I start with checking the website. Any type of user input is always worth investigating. Here, I come across a feedback form:
 
 ![](./images/119db21775b3_001.png)
@@ -26,6 +27,7 @@ Fortunately, requesting the feedback page multiple times always contains the sam
 {% hint style="info" %}
 💡 As common with blind injections, the success of the injection must be inferred by a difference in behaviour. This could be a multitude of things:
 {% endhint %}
+
 
 
   - Different behaviour of the application based on whether the command was successful or not (e.g. an error message)

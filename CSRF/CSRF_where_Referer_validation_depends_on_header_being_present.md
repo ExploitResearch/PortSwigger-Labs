@@ -17,6 +17,7 @@ Update the email
 {% endhint %}
 
 
+
   - A relevant action: change a users email
   - Cookie-based session handling: session cookie
   - No unpredictable request parameters: no csrf token
@@ -42,6 +43,7 @@ In this case I need to coerce the browser of the victim to not send the referrer
 {% hint style="info" %}
 💡 **According to **[**Mozilla web docs**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)**, we can use the **`<meta>`** tag to ignore **`Referer`** HTTP header:**
 {% endhint %}
+
 
 
 ![](./images/d402a99e3146_005.png)

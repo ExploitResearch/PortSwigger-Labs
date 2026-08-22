@@ -65,6 +65,7 @@ If the application does not properly validate the input, this could result in th
 1. If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
 {% endhint %}
 
+
 ### There are three main types of paths: Default, Absolute, and Relative.
 
   1. **Default Path:**
@@ -87,16 +88,15 @@ If the application does not properly validate the input, this could result in th
 
 {% hint style="info" %}
 💡 **Examples:**
+
+- Default path: `C:\Program Files\Application\file.txt`
+- Absolute path: `/home/username/Documents/file`
+- Relative path: `../Downloads/file.txt` (relative to `/home/username/Documents/`)
+
+- Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
+- If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.
+- If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
 {% endhint %}
-
-
-      - Default path: `C:\Program Files\Application\file.txt`
-      - Absolute path: `/home/username/Documents/file`
-      - Relative path: `../Downloads/file.txt` (relative to `/home/username/Documents/`)
-
-    - Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
-    - If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.
-    - If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
 
 ### Certain sensitive files on Linux-based web servers
 

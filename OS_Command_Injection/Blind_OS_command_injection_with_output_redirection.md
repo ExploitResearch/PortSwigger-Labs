@@ -12,6 +12,7 @@ For example, if the application serves static resources from the filesystem loca
 {% endhint %}
 
 
+
 ```bash
 & whoami > /var/www/static/whoami.txt &
 ```
@@ -34,8 +35,6 @@ To redirect command’s output to a file, we can put it to `/var/www/image/<file
 
 {% hint style="info" %}
 **Note: **In Linux, web root is usually located in <span style="color: #E03E1B">**/var/www/**</span>.
-{% endhint %}
-
 
 The command to execute is `whoami > /var/www/images/whoami.txt `to write the file. Inject it into the email argument. And as in the previous lab, commenting out the remainder results in a `200 OK`, while not doing so results in `500 Internal Server Error`. Both ways work though.
 
@@ -46,15 +45,15 @@ The command to execute is `whoami > /var/www/images/whoami.txt `to write the fil
 Now the file is in `/var/www/images`, but the path to it within the application is unknown and perhaps not even accessible directly. But I can utilize the way the application includes its images with a GET request to `/image?filename=`
 
 ![](./images/9ac789e31ef7_004.png)
+{% endhint %}
 
 {% hint style="info" %}
 💡 **summary
 **
-{% endhint %}
 
-
-  1. Find & Confirm blind command injection
+1. Find & Confirm blind command injection
 -email field
-  1. Check location from where application serves static resources, here images 
-  1. Redirect output to file at that static location
-  1. Check if file was created by accessing it
+1. Check location from where application serves static resources, here images 
+1. Redirect output to file at that static location
+1. Check if file was created by accessing it
+{% endhint %}

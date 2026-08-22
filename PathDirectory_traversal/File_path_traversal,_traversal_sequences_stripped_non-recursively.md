@@ -26,4 +26,5 @@ The application strips path traversal sequences from the user-supplied filename 
 {% endhint %}
 
 
+
 ![](./images/58831d32ca9e_003.png)

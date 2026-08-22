@@ -14,12 +14,10 @@ Update the email
 
 {% hint style="info" %}
 💡 In order for a CSRF attack to be possible:
-{% endhint %}
 
-
-  - A relevant action: change a users email
-  - Cookie-based session handling: session cookie
-  - No unpredictable request parameters: no csrf token
+- A relevant action: change a users email
+- Cookie-based session handling: session cookie
+- No unpredictable request parameters: no csrf token
 **Generate CSRF PoC** (in prof. v.) or  
 **craft a HTML form that performs CSRF attack to the victim:**
 
@@ -34,14 +32,13 @@ use the `exploit server` to test CSRF attack!
 Since the `Referer` HTTP header can be fully controlled by the attacker, we can bypass this check!
 
 send this request into Repeater 
+{% endhint %}
 
 {% hint style="info" %}
 💡 Testing Referer header for CSRF attacks:
-{% endhint %}
 
-
-  1. Remove the Referer header
-  1. Check which portion of the referrer header is the application validating
+1. Remove the Referer header
+1. Check which portion of the referrer header is the application validating
 
 1. Remove the Referer header
 
@@ -52,11 +49,10 @@ It still gives the same error "Invalid referer header”
 Copy the original domain of your lab instance and append it to the Referer header in the form of a query string. 
 
 The website seems to accept any Referer header as long as it contains the expected domain somewhere in the string. 
+{% endhint %}
 
 {% hint style="info" %}
 💡 **According the **[**Mozilla web docs**](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState)**, we can use a JavaScript function called **`history.pushState()`**:**
-{% endhint %}
-
 
 ![](./images/0c8bead2f11b_006.png)
 
@@ -67,10 +63,12 @@ This will cause the `Referer` header in the generated request to contain the URL
 However, this still couldn’t work, as many browsers now strip the query string from the Referer header by default as a security measure.
 
 **To bypass that, we can just add a new **`<meta>`** tag to override that behavior and ensure that the full URL is included in the request:**
+{% endhint %}
 
 {% hint style="info" %}
 💡 Fortunately, the documentation regarding referrer-policy on [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) shows the solution:
 {% endhint %}
+
 
 
 ![](./images/0c8bead2f11b_008.png)

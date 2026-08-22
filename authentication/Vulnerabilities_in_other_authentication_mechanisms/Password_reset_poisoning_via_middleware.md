@@ -9,8 +9,6 @@
 
 {% hint style="info" %}
 💡 we need to click on manipulated link to see reset token in access log
-{% endhint %}
-
 
 - Go to the exploit server and make a note of your exploit server URL.
 - Go back to the request in Burp Repeater and add the `X-Forwarded-Host` header with your exploit server URL: `X-Forwarded-Host: YOUR-EXPLOIT-SERVER-ID.exploit-server.net`
@@ -19,3 +17,4 @@
 - Go back to your email client and copy the valid password reset link (not the one that points to the exploit server).Paste this into the browser and change the value of the `temp-forgot-password-token` parameter to the value that you stole from the victim.
 - Load this URL and set a new password for Carlos's account.
 - Log in to Carlos's account using the new password to solve the lab.
+{% endhint %}

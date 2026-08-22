@@ -25,8 +25,6 @@ When I try to access the `/admin` page as user `wiener`, I am greeted by the mes
 
 {% hint style="info" %}
 Due to implementation flaws, the server doesn’t verify the signature of any JWTs that it receives.
-{% endhint %}
-
 
 **To check **Does the website verify the signature? and Accepting arbitrary signatures
 
@@ -41,3 +39,4 @@ Due to implementation flaws, the server doesn’t verify the signature of any JW
 ![](./images/0efb99ed06f3_004.png)
 
 1. use Burp "Match and Replace" functionality to replace the cookie, or even the specific claim, on the fly for all requests. However, just changing the cookie in the browser is much simpler.
+{% endhint %}

@@ -31,6 +31,7 @@ On visiting this admin page it shows this message:
 {% endhint %}
 
 
+
 Two HTTP methods can be used to obtain additional information, `OPTIONS` and `TRACE`. The latter produces an interesting result:
 
 ![](./images/3beb0bad2d8c_003.png)

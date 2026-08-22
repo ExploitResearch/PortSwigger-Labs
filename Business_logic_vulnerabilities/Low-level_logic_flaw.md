@@ -35,6 +35,7 @@ In the `Add to cart` button’s HTML form, we can see that the `quantity` has a 
 {% endhint %}
 
 
+
 |  |  |
 |---|---|
 | **current value** | **new value after calculating +1** |
@@ -71,6 +72,7 @@ Try to order when total price is negative but Unfortunately, it is prevented by 
 {% hint style="info" %}
 💡 The price has exceeded the maximum value permitted for an integer in the back-end programming language (2,147,483,647). As a result, the value has looped back around to the minimum possible value (-2,147,483,648) and starts counting up towards 0 then turn positive again.
 {% endhint %}
+
 
 
 **when the total price reached greater than **`2147483647`**, the value will become negative, then it’ll go back to positive again!**

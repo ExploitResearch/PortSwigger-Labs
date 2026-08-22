@@ -41,3 +41,4 @@ use `‘ or “` to modify payload as required
 💡 Inside Javascript directly use `print()` & `alert()`
 {% endhint %}
 
+

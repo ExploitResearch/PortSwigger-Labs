@@ -47,6 +47,7 @@ Access-Control-Allow-Origin: *
 {% endhint %}
 
 
+
 Wildcards cannot be used within any other value. For example, the following header is **not** valid:
 
 ```text

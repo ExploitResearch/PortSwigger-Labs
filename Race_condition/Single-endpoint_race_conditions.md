@@ -22,6 +22,7 @@ Note
 {% endhint %}
 
 
+
 Solving this lab requires Burp Suite 2023.9 or higher.
 
 ## Enumeration
@@ -90,6 +91,7 @@ The session now contains the victim’s user ID, but the valid reset token is se
 {% hint style="info" %}
 Note:
 {% endhint %}
+
 
 
 For this attack to work, the different operations performed by each process must occur in just the right order. It would likely require multiple attempts, or a bit of luck, to achieve the desired outcome.

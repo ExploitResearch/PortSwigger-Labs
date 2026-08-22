@@ -8,6 +8,7 @@ In the response, notice the verbose error message.
 {% endhint %}
 
 
+
 ![](./images/9b0323567157_001.png)
 
 This discloses the full SQL query, including the value of your cookie. It also explains that you have an unclosed string literal.Observe that your injection appears inside a single-quoted string.

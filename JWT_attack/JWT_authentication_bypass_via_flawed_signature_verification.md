@@ -20,17 +20,14 @@ When I try to access the `/admin` page as user `wiener`, I am greeted by the mes
 
 {% hint style="info" %}
 The server is insecurely configured to accept unsigned JWTs.
-{% endhint %}
-
 
 To check Does the website trust the algorithm specified in the token? and **Accepting tokens with no signature**
 
 **Change the header’s **`alg`**(algorithm) to **`none`**:**
+{% endhint %}
 
 {% hint style="info" %}
 💡 remove the signature from the JWT, but remember to leave the trailing dot after the payload.
-{% endhint %}
-
 
 ![](./images/78b4034beaf1_003.png)
 
@@ -47,3 +44,4 @@ We are still logged-in as wiener, This confirms that the backend trusts and uses
 Refresh the page, go to admin panel and delete user carlos
 
 ![](./images/78b4034beaf1_006.png)
+{% endhint %}

@@ -18,8 +18,6 @@ As we have two parameters, I try to inject both with different commands. This wa
 
 {% hint style="info" %}
 💡 The script call might look something like this (likely not the exact syntax, but the general idea is the same):
-{% endhint %}
-
 
 ```bash
 echo system("someScript.sh $_REQUEST['productID'] $_REQUEST['storeId']")
@@ -40,3 +38,4 @@ From the response, it can be seen that both parameters are injectable, and they 
 comment out the remainder of the line after the `whoami` to avoid the error message of the second parameter:
 
 ![](./images/d7cdbb616498_003.png)
+{% endhint %}

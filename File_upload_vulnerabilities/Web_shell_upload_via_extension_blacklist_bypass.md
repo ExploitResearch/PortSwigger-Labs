@@ -43,8 +43,6 @@ In this case, **the web server is using **`Apache`**.**
 
 {% hint style="info" %}
 💡 **In Apache server, before executing PHP files requested by a client, developers might have to add the following directives to their **`/etc/apache2/apache2.conf`** file:**
-{% endhint %}
-
 
 ```text
 LoadModule php_module /usr/lib/apache2/modules/libphp.so
@@ -62,11 +60,10 @@ Now, what if I upload a file called `.htaccess` to override the server configura
 ![](./images/8133e72ab08a_005.png)
 
 we can create our own `.htaccess` with the following configuration:
+{% endhint %}
 
 {% hint style="info" %}
 `AddType application/x-httpd-php .php5`
-{% endhint %}
-
 
 **By doing that, we can execute any file that has **`.php5`** extension!**
 
@@ -79,10 +76,12 @@ Or it can be directly uploaded from Burp Repeater, by sending  `POST /my-account
 - Change the value of the `filename` parameter to `.htaccess`.
 - Change the value of the `Content-Type` header to `text/plain`.
 - Replace the contents of the file (your PHP payload) with the following Apache directive: `AddType application/x-httpd-php .php5`
+{% endhint %}
 
 {% hint style="info" %}
 💡 I noticed that I was able to upload a number of different file extension, possibly even arbitrary ones like `.a2z, .abc` .
 {% endhint %}
+
 
 
 If reusing an upload request of `png` or `php` files for the Repeater it is important to set the Content-Type to `text/plain`. Otherwise, the server will return a `500 Internal Server error` when trying to load something later on.

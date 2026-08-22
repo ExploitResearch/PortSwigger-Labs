@@ -19,6 +19,7 @@ The server supports the jku(JWK Set URL) parameter in the JWT header. However, i
 {% endhint %}
 
 
+
 ### <span style="color: #337EA9">Upload a malicious JWK Set of </span><span style="color: #337EA9">**new generated RSA key pair:**</span>
 
 ![](./images/76f36b2de177_002.png)
@@ -48,8 +49,6 @@ Add a new `jku` parameter to the header of the JWT. Set its value to the URL of 
 
 {% hint style="info" %}
 💡 Remember all parameter end with comma , except last one
-{% endhint %}
-
 
 - In the payload, change the value of the `sub` claim to `administrator`.
 - At the bottom of the tab, click **Sign**, then select the RSA key that you generated. Make sure that the **Don't modify header** option is selected, then click **OK**.
@@ -59,3 +58,4 @@ Add a new `jku` parameter to the header of the JWT. Set its value to the URL of 
 Copy the JWT and update session cookie in the browser**, then refresh the page:**
 
 go to the admin panel and delete user `carlos`
+{% endhint %}
