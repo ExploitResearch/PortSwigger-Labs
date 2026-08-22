@@ -9,7 +9,9 @@ To solve the lab:
 
 You can log into your account with the following credentials: `wiener:peter`.
 
-> Note:
+{% hint style="info" %}
+Note:
+{% endhint %}
 
 Solving this lab requires Burp Suite 2023.9 or higher.
 
@@ -130,7 +132,9 @@ It’s extremely important to spot this kind of behavior as it can otherwise mas
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-6/images/Pasted%20image%2020230925144117.png)
 
-> Note: Remember to retrieve the CSRF token.
+{% hint style="info" %}
+Note: Remember to retrieve the CSRF token.
+{% endhint %}
 
 **Then, in our Burp Suite’s Repeater tab, replace the original session token cookie and CSRF token to a request tab:**
 
@@ -144,7 +148,9 @@ It’s extremely important to spot this kind of behavior as it can otherwise mas
 
 Nice!! We got the same password reset token!!
 
-> Note: Sometimes it may fails, you could send those requests a couple more times.
+{% hint style="info" %}
+Note: Sometimes it may fails, you could send those requests a couple more times.
+{% endhint %}
 
 ## Exploitation
 

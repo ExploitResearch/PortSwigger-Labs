@@ -42,7 +42,9 @@ The header `Access-Control-Allow-Origin` supports wildcards. For example:
 Access-Control-Allow-Origin: *
 ```
 
-> 💡 **NOTE:**
+{% hint style="info" %}
+💡 **NOTE:**
+{% endhint %}
 
 Wildcards cannot be used within any other value. For example, the following header is **not** valid:
 

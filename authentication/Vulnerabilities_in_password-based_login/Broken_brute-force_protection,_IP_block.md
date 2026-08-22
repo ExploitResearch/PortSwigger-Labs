@@ -11,6 +11,7 @@ the username `carlos`. Make a note of the password from the **Payload 2** column
 - Log in to Carlos's account using the password that you identified and access his account page to solve the lab.
 
 > 💡 print carlos 100times with [Repeat Text Generator](https://www.handcoded.co.uk/php/app-1/)
+
 add valid value at each second line
 
 `awk ' { print $0; print "*some text"} ' inputfile > outputfile`

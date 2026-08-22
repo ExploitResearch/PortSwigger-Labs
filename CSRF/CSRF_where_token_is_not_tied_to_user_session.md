@@ -51,6 +51,7 @@ Testing CSRF Tokens:
   1. See if csrf token is tied to user session
 
 > 💡 Note that the CSRF tokens are single-use, so you'll need to include a fresh one.
+
 we also need to use new email and can’t use email assigned to other users.
 
 The next steps are easy:

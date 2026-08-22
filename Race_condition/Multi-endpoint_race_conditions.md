@@ -6,7 +6,9 @@
 
 ### Analysis/Exploitation -
 
-> **Tip: **When experimenting, we recommend purchasing the gift card as you can later redeem this to avoid running out of store credit.
+{% hint style="success" %}
+**Tip: **When experimenting, we recommend purchasing the gift card as you can later redeem this to avoid running out of store credit.
+{% endhint %}
 
 ## Enumeration
 

@@ -15,7 +15,7 @@ As you can see, in the header’s `alg`, it’s using an algorithm called HS256(
 **In the lab’s background, it said:**
 
 > In order to verify the signature, the server uses the kid parameter in JWT header to fetch the relevant key from its filesystem.
-
+>
 > 💡 An attacker could potentially **force the server to use an arbitrary file from its filesystem as the verification key**.
 
 To do so, we can point the `kid `parameter to a predictable, static file, then sign the JWT using a secret that matches the contents of this file. For example, in Linux, `/dev/null `is an empty file, fetching it returns null. Therefore, signing the token with a Base64 encoded null byte will result in a valid signature.

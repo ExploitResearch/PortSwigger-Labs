@@ -84,7 +84,9 @@ Note the final state when all operations are complete:
 
 The session now contains the victim’s user ID, but the valid reset token is sent to the attacker.
 
-> Note:
+{% hint style="info" %}
+Note:
+{% endhint %}
 
 For this attack to work, the different operations performed by each process must occur in just the right order. It would likely require multiple attempts, or a bit of luck, to achieve the desired outcome.
 

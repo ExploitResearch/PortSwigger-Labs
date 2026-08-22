@@ -149,6 +149,7 @@ A JWK (JSON Web Key) is a standardized format for representing keys as a JSON ob
 Instead of embedding public keys directly using the `jwk` header parameter, some servers let you use the `jku `(JWK Set URL) header parameter to reference a JWK Set containing the key. When verifying the signature, the server fetches the relevant key from this URL.
 
 > **JWK Set
+
 **A JWK Set is a JSON object containing an array of JWKs representing different keys.
 
   - `kid` (Key ID) - Provides an ID that servers can use to identify the correct key in cases where there are multiple keys to choose from. Depending on the format of the key, this

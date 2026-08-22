@@ -11,6 +11,7 @@ Obtain the API key for the user `carlos` and submit it as the solution
 Change id=carlos in url
 
 > 💡 This is an example of an insecure direct object reference (IDOR) 
+
 vulnerability. This type of vulnerability arises where user-controller 
 parameter values are used to access resources or functions directly.
 
