@@ -24,7 +24,6 @@
   - [Visible error-based SQL injection](SQL_Injection/Visible_error-based_SQL_injection.md)
 
 - [Cross-Site Scripting (XSS)](XSS/README.md)
-  - [Content Security Policy](XSS/Content_Security_Policy/README.md)
   - [Exploiting XSS](XSS/Exploiting_XSS/README.md)
     - [Exploiting XSS to bypass CSRF defenses](XSS/Exploiting_XSS/Exploiting_XSS_to_bypass_CSRF_defenses.md)
     - [Exploiting cross-site scripting to capture passwords](XSS/Exploiting_XSS/Exploiting_cross-site_scripting_to_capture_passwords.md)
@@ -60,7 +59,6 @@
     - [DOM XSS in jQuery selector sink using a hashchange event](XSS/DOM_XSS/DOM_XSS_in_jQuery_selector_sink_using_a_hashchange_event.md)
     - [Reflected DOM XSS](XSS/DOM_XSS/Reflected_DOM_XSS.md)
     - [Stored DOM XSS](XSS/DOM_XSS/Stored_DOM_XSS.md)
-  - [XSS Contexts](XSS/XSS_Contexts/README.md)
 
 - [DOM-Based Vulnerabilities](DOM-Based_Vulnerabilities)
   - [Controlling Web Message Source](DOM-Based_Vulnerabilities/Controlling_Web_Message_Source/README.md)
