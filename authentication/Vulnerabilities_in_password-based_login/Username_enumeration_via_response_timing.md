@@ -28,6 +28,7 @@ increased depending on the length of the password you entered.
 💡 al is username
 {% endhint %}
 
+
 - Notice that one of the response times was significantly longer
 than the others. Repeat this request a few times to make sure it
 consistently takes longer, then make a note of this username.

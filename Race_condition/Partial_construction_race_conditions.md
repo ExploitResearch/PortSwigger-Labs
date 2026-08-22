@@ -13,6 +13,7 @@ You can log into your account with the following credentials: `wiener:peter`.
 Note:
 {% endhint %}
 
+
 Solving this lab requires Burp Suite 2023.9 or higher.
 
 ## Enumeration
@@ -136,6 +137,7 @@ It’s extremely important to spot this kind of behavior as it can otherwise mas
 Note: Remember to retrieve the CSRF token.
 {% endhint %}
 
+
 **Then, in our Burp Suite’s Repeater tab, replace the original session token cookie and CSRF token to a request tab:**
 
 ![](./images/d2355c7081f1_017.png)
@@ -151,6 +153,7 @@ Nice!! We got the same password reset token!!
 {% hint style="info" %}
 Note: Sometimes it may fails, you could send those requests a couple more times.
 {% endhint %}
+
 
 ## Exploitation
 

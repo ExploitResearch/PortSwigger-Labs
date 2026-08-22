@@ -20,6 +20,7 @@ As we have two parameters, I try to inject both with different commands. This wa
 💡 The script call might look something like this (likely not the exact syntax, but the general idea is the same):
 {% endhint %}
 
+
 ```bash
 echo system("someScript.sh $_REQUEST['productID'] $_REQUEST['storeId']")
 ```

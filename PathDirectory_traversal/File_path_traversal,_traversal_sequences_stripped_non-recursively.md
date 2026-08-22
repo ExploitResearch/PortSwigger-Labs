@@ -25,4 +25,5 @@ But if just literal `../` sequences are removed, we simply need to provide a str
 The application strips path traversal sequences from the user-supplied filename before using it. **To bypass that, we use nested traversal sequences, like **`....//`**:**
 {% endhint %}
 
+
 ![](./images/58831d32ca9e_003.png)

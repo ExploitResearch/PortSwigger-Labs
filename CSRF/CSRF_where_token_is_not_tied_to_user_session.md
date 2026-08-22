@@ -42,6 +42,7 @@ The request is accepted and carlos email get changed
 💡 In order for a CSRF attack to be possible:
 {% endhint %}
 
+
   - A relevant action: change a users email
   - Cookie-based session handling: session cookie
   - No unpredictable request parameters: csrf token is not tied to user session
@@ -56,6 +57,7 @@ Testing CSRF Tokens:
 💡 Note that the CSRF tokens are single-use, so you'll need to include a fresh one.
 we also need to use new email and can’t use email assigned to other users.
 {% endhint %}
+
 
 The next steps are easy:
 

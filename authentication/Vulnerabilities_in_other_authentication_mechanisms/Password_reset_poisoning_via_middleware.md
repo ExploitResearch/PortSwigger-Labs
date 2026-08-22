@@ -11,6 +11,7 @@
 💡 we need to click on manipulated link to see reset token in access log
 {% endhint %}
 
+
 - Go to the exploit server and make a note of your exploit server URL.
 - Go back to the request in Burp Repeater and add the `X-Forwarded-Host` header with your exploit server URL: `X-Forwarded-Host: YOUR-EXPLOIT-SERVER-ID.exploit-server.net`
 - Change the `username` parameter to `carlos` and send the request.

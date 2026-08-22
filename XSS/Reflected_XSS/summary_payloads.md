@@ -40,3 +40,4 @@ use `‘ or “` to modify payload as required
 {% hint style="info" %}
 💡 Inside Javascript directly use `print()` & `alert()`
 {% endhint %}
+

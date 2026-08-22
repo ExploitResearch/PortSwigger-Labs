@@ -10,6 +10,7 @@ Exploit the race condition to bypass the rate limit to Successfully brute-force 
 Note
 {% endhint %}
 
+
   - Solving this lab requires Burp Suite 2023.9 or higher. You should also use the latest version of the Turbo Intruder, which is available from the [BApp Store](https://portswigger.net/bappstore/9abaa233088242e8be252cd4ff534988).
   - You have a time limit of 15 mins. If you don’t solve the lab within the time limit, you can reset the lab. However, Carlos’s password changes each time.
 ### list of potential passwords:
@@ -115,6 +116,7 @@ def handleResponse(req, interesting):
 {% hint style="info" %}
 💡 Ways to provide wordlist in turbo intruder
 {% endhint %}
+
 
 ```python
 # assign the list from your clipboard

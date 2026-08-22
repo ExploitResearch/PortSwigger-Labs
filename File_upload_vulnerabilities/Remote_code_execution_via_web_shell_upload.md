@@ -14,6 +14,7 @@ Login as user `wiener`:
 This lab contains a vulnerable image upload function. It doesn’t perform any validation on the files users upload before storing them on the server’s filesystem.
 {% endhint %}
 
+
 Now, If the application doesn’t do any validation on user’s file upload, an attack could upload a web shell to the web server’s filesystem!
 
 **But before we do that, let’s upload a normal file, and intercept the request via Burp Suite:**
@@ -42,6 +43,7 @@ The command to be executed is obtained from the user's input via the $_GET super
 For example, if the script is hosted at example.com/shell.php, a user could execute a command by visiting:
 **http://example.com/shell.php?cmd=ls%20-l**
 {% endhint %}
+
 
 Use the avatar upload function to upload malicious PHP file
 

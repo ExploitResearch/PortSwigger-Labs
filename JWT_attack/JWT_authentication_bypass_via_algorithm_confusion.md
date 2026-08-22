@@ -19,6 +19,7 @@ In the header's `alg`, it's using an algorithm called RS256(RSA + SHA-256), whic
 It uses a robust RSA key pair to sign and verify tokens. However, due to implementation flaws, this mechanism is vulnerable to algorithm confusion attacks.
 {% endhint %}
 
+
 To exploit algorithm confusion attacks, we need to 
 
 1. Obtain the server's public key. 

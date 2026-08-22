@@ -11,6 +11,7 @@ Exploit the blind command injection and redirect the output from the whoami comm
 For example, if the application serves static resources from the filesystem location `/var/www/static`, then you can submit the following input:
 {% endhint %}
 
+
 ```bash
 & whoami > /var/www/static/whoami.txt &
 ```
@@ -35,6 +36,7 @@ To redirect command’s output to a file, we can put it to `/var/www/image/<file
 **Note: **In Linux, web root is usually located in <span style="color: #E03E1B">**/var/www/**</span>.
 {% endhint %}
 
+
 The command to execute is `whoami > /var/www/images/whoami.txt `to write the file. Inject it into the email argument. And as in the previous lab, commenting out the remainder results in a `200 OK`, while not doing so results in `500 Internal Server Error`. Both ways work though.
 
 ![](./images/9ac789e31ef7_003.png)
@@ -49,6 +51,7 @@ Now the file is in `/var/www/images`, but the path to it within the application 
 💡 **summary
 **
 {% endhint %}
+
 
   1. Find & Confirm blind command injection
 -email field

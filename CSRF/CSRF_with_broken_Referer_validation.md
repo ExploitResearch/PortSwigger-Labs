@@ -16,6 +16,7 @@ Update the email
 💡 In order for a CSRF attack to be possible:
 {% endhint %}
 
+
   - A relevant action: change a users email
   - Cookie-based session handling: session cookie
   - No unpredictable request parameters: no csrf token
@@ -38,6 +39,7 @@ send this request into Repeater
 💡 Testing Referer header for CSRF attacks:
 {% endhint %}
 
+
   1. Remove the Referer header
   1. Check which portion of the referrer header is the application validating
 
@@ -55,6 +57,7 @@ The website seems to accept any Referer header as long as it contains the expect
 💡 **According the **[**Mozilla web docs**](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState)**, we can use a JavaScript function called **`history.pushState()`**:**
 {% endhint %}
 
+
 ![](./images/0c8bead2f11b_006.png)
 
 To bypass that check, we can add the `history.pushState()` function in our exploit:
@@ -68,6 +71,7 @@ However, this still couldn’t work, as many browsers now strip the query string
 {% hint style="info" %}
 💡 Fortunately, the documentation regarding referrer-policy on [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) shows the solution:
 {% endhint %}
+
 
 ![](./images/0c8bead2f11b_008.png)
 

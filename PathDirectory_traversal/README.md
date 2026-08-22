@@ -59,11 +59,11 @@ If the application does not properly validate the input, this could result in th
 
 {% hint style="info" %}
 💡
-{% endhint %}
 
-    1. Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
-    1. If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.
-    1. If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
+1. Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
+1. If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.
+1. If you cannot create a whitelist because you use arbitrary filenames, for example, if users upload the files, store filenames in the database and use table row identifiers in user input. You can also use URL mappings to identify files with no risk of path traversal.
+{% endhint %}
 
 ### There are three main types of paths: Default, Absolute, and Relative.
 
@@ -88,6 +88,7 @@ If the application does not properly validate the input, this could result in th
 {% hint style="info" %}
 💡 **Examples:**
 {% endhint %}
+
 
       - Default path: `C:\Program Files\Application\file.txt`
       - Absolute path: `/home/username/Documents/file`

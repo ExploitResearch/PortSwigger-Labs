@@ -15,4 +15,5 @@ the username `carlos`. Make a note of the password from the **Payload 2** column
 add valid value at each second line
 {% endhint %}
 
+
 `awk ' { print $0; print "*some text"} ' inputfile > outputfile`

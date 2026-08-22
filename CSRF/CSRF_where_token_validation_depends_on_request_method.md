@@ -32,6 +32,7 @@ Here we don’t get any error and We’ve successfully changed the email address
 💡 In order for a CSRF attack to be possible:
 {% endhint %}
 
+
   - A relevant action: change a users email
   - Cookie-based session handling: session cookie
   - No unpredictable request parameters: Request method can be changed to GET which does not require CSRF token

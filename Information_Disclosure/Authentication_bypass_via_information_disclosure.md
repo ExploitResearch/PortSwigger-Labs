@@ -30,6 +30,7 @@ On visiting this admin page it shows this message:
 💡 A common way of propagating originating IPs to a web server (used in proxy or load balancing scenarios) is the `X-Forwarded-For` header. This, however, does not work here (and the lab description states it is a custom header anyway).
 {% endhint %}
 
+
 Two HTTP methods can be used to obtain additional information, `OPTIONS` and `TRACE`. The latter produces an interesting result:
 
 ![](./images/3beb0bad2d8c_003.png)

@@ -15,5 +15,6 @@
 💡 For a `UNION` query to work, two key requirements must be met:
 {% endhint %}
 
+
   - The individual queries must return the same number of columns.
   - The data types in each column must be compatible between the individual queries.

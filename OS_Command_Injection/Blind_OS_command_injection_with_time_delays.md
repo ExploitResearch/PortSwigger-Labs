@@ -10,6 +10,7 @@ Exploit the blind OS command injection vulnerability to cause a 10 second delay.
 💡 blind OS command injection works the same but it does not return the output from the command within its HTTP response. So how do we know that if there exists a blind OS command injection.Blind vulnerabilities can still be exploited, but different techniques are required, one technique is with time delay. An OS command that can take some time to execute will be perfect to test it.
 {% endhint %}
 
+
 As always I start with checking the website. Any type of user input is always worth investigating. Here, I come across a feedback form:
 
 ![](./images/119db21775b3_001.png)
@@ -25,6 +26,7 @@ Fortunately, requesting the feedback page multiple times always contains the sam
 {% hint style="info" %}
 💡 As common with blind injections, the success of the injection must be inferred by a difference in behaviour. This could be a multitude of things:
 {% endhint %}
+
 
   - Different behaviour of the application based on whether the command was successful or not (e.g. an error message)
   - Timing differences

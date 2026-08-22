@@ -25,6 +25,7 @@ Discover the column which contains data type string.
 In Oracle databases, every SELECT statement must include a FROM attribute. So, injecting an **`' UNION SELECT NULL`**produces an error regardless of the number of columns. You can satisfy this requirement by providing a globally accessible table **`DUAL`**.**
 {% endhint %}
 
+
 ```text
 ' UNION SELECT 'a', NULL FROM DUAL-- → Returns status code 200
 ' UNION SELECT 'a', 'a' FROM DUAL--  → Returns status code 200

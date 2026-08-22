@@ -10,6 +10,7 @@
 **Tip: **When experimenting, we recommend purchasing the gift card as you can later redeem this to avoid running out of store credit.
 {% endhint %}
 
+
 ## Enumeration
 
 ![](./images/1458121b3c44_001.png)

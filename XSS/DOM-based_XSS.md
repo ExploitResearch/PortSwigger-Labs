@@ -14,6 +14,7 @@ A DOM-based XSS attack is possible if the web application writes data to the Doc
 💡 Reflected and Stored XSS are server side injection issues while DOM based XSS is a client (browser) side injection issue.
 {% endhint %}
 
+
 ## Sources and sinks in DOM-based cross-site scripting
 
 Every DOM-based XSS vulnerability has two elements: the source of user input and the target where this user input is written, called a sink. Popular sources that attackers can manipulate are `document.URL`, `document.documentURI`, `location.href`, `location.search`, `location.*`, `window.name`, and `document.referrer`. 
@@ -24,6 +25,7 @@ For JavaScript code to be vulnerable to DOM-based XSS, it must take information 
 {% hint style="info" %}
 **Using the above example, we can observe that:**
 {% endhint %}
+
 
 - The HTML page is static and there are no malicious scripts embedded into the page source code, as in the case of other types of XSS attacks.
 That is, the page itself (the HTTP response that is) does not change, but the client side code contained in the page executes differently due to the malicious modifications that have occurred in the DOM environment.

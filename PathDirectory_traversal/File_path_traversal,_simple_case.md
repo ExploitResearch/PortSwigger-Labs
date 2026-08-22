@@ -37,3 +37,4 @@ If you don't see it in the `HTTP history`, check if images are filtered out in t
 {% hint style="info" %}
 💡 Start by using `/etc/passwd` as filename and adding some `../` to the beginning. With `../../etc/passwd` it gives a `"No such file"` error, but once I go three levels up, this changes and we get file content
 {% endhint %}
+
