@@ -364,4 +364,3 @@
   - [Finding and exploiting an unused API endpoint](API_Pentesting/Finding_and_exploiting_an_unused_API_endpoint.md)
 
 - [Extentions](Extentions.md)
-- [XXE](XXE.md)
