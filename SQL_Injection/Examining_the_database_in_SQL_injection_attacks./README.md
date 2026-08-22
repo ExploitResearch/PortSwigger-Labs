@@ -18,7 +18,7 @@ Different databases have different ways of querying their type and version. In O
 
 The queries to determine the type and it’s version are as follows:
 
-![](https://miro.medium.com/v2/resize:fit:575/1*3lTHBW_ZVgM5vELJPtR9jw.png)
+![](./images/c6c9a03c7e64_001.png)
 
 You can find the names of database tables and columns by querying the table `information_schema.columns`, which contains details of all tables and column names within the database.
 

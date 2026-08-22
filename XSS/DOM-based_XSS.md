@@ -10,7 +10,9 @@ The Document Object Model is what makes dynamic, single-page applications possib
 
 A DOM-based XSS attack is possible if the web application writes data to the Document Object Model without proper sanitization. The attacker can manipulate this data to include XSS content on the web page, for example, malicious JavaScript code.
 
-> 💡 Reflected and Stored XSS are server side injection issues while DOM based XSS is a client (browser) side injection issue.
+{% hint style="info" %}
+💡 Reflected and Stored XSS are server side injection issues while DOM based XSS is a client (browser) side injection issue.
+{% endhint %}
 
 ## Sources and sinks in DOM-based cross-site scripting
 

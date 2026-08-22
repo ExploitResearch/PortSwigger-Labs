@@ -10,7 +10,7 @@ Determine the number of columns returned by the original query.
 
 The original query must return at least one column. So the error might be in the comment. So let’s try out every possible comment syntax to find out the one that matches.
 
-![](https://miro.medium.com/v2/resize:fit:700/1*-aQ6zdO7BerMo3NiT9K7CQ.png)
+![](./images/58df1bceb192_001.png)
 
 ```text
 ' ORDER BY 1#
@@ -54,4 +54,4 @@ Querying the database to retrieve database version.
 ' UNION SELECT @@version , NULL#
 ```
 
-![](https://miro.medium.com/v2/resize:fit:700/0*qT3yqLkgyj9Tvzi-)
+![](./images/58df1bceb192_002.png)

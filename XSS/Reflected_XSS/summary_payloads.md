@@ -37,4 +37,6 @@ use `‘ or “` to modify payload as required
 
       - **angle brackets and double quotes HTML-encoded and single quotes escaped**
 
-> 💡 Inside Javascript directly use `print()` & `alert()`
+{% hint style="info" %}
+💡 Inside Javascript directly use `print()` & `alert()`
+{% endhint %}

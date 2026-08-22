@@ -16,7 +16,9 @@ username=identified-user&password=§invalid-password§
 1. When the attack is finished, look at the Status column. Notice that each request received a response with a 200 status code except for one, which got a 302 response. This suggests that the login attempt was successful - make a note of the password in the Payload column.
 1. Log in using the username and password that you identified and access the user account page to solve the
 
-> 💡 It's also possible to brute-force the login using a single cluster bomb attack. However, it's generally much more efficient to enumerate a valid username first if possible.
+{% hint style="info" %}
+💡 It's also possible to brute-force the login using a single cluster bomb attack. However, it's generally much more efficient to enumerate a valid username first if possible.
+{% endhint %}
 
 ajax
 

@@ -57,7 +57,9 @@ If the application does not properly validate the input, this could result in th
   1. **Application Hardening:**
     - Configure the web server and application to run with the least privilege necessary to limit the potential impact of a successful path traversal attack.
 
-> 💡
+{% hint style="info" %}
+💡
+{% endhint %}
 
     1. Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
     1. If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.
@@ -83,11 +85,15 @@ If the application does not properly validate the input, this could result in th
     - Example: If the current directory is `/home/username/Documents/`, a relative path to `file.txt` might be `../Downloads/file.txt`.
     - Special notations like `..` (parent directory) and `.` (current directory) are used in relative paths.
 
-> 💡 **Examples:**
+{% hint style="info" %}
+💡 **Examples:**
+{% endhint %}
 
       - Default path: `C:\Program Files\Application\file.txt`
       - Absolute path: `/home/username/Documents/file`
       - Relative path: `../Downloads/file.txt` (relative to `/home/username/Documents/`)
+
+> 
 
     - Avoid passing any filenames in user input. This includes not just direct user input but also other data sources that can be manipulated by the attacker, for example, cookies.
     - If your application requires you to use filenames from user input and there is no way around it, create a whitelist of safe files.

@@ -10,8 +10,6 @@
 - Right-click on this request and select **Show response in browser**. Copy the URL and load it in the browser. The page loads and you are logged in as `carlos`.
 - Click **My account** to access Carlos's account page and solve the lab.
 
-![](https://i.stack.imgur.com/kXJrl.gif)
-
 Here is an easy way to do this:
 
 1. Ctrl+A to select all or select your desired text.

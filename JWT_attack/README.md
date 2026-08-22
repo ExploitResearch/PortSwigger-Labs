@@ -17,7 +17,7 @@
 
 JSON web tokens (JWTs) are a standardized format for sending cryptographically signed JSON data between systems. They can theoretically contain any kind of data, but are most commonly used to send information ("claims") about users as part of authentication, session handling, and access control mechanisms.  
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/daecbeb1-1197-4df0-8562-28e9ec26114a/45900f86-61c7-48bf-9d58-8b0cf1f6bae8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662OIKPFSF%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T222043Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDYFNJCVMhPymtzpJBvffZAMeWRXNfY9lLRgLVH%2F2NPlgIgLB6jz8%2FpLPqkr8shBEJvXkQCO%2F7QNKAgTqkj3%2FH1SEsqiAQIrv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDOE6IpJ2khjVAr%2FP4SrcA%2FVFdnDbSEbsBcoqZpmKWiSjefddaGhuFhwghBndR3MbvAoDf4a0EtvoM38qM2zADbpnrl%2BVUqwxfzQ6nt7x3l3ewmGRvegH1OtEj7MOQSWzbvS1E8C3zozWMC8hZ98kAo44yc%2BPFhn%2FJ%2F6noHTsk3SoYsTMhHRP%2Bnl79Nqu21bAwVhHG7iMyXdjYTOSDDdJw6TP%2FvcDkrDdwPQLKPmCIYVB2ltid4CVpNkkQSuXR6ZyOtR%2BTM9H2GvY3JcXHQefove2zAs3O%2Fl5tmE3EYEc8598EG9sIzJnRf0E1%2FmptnpvQ%2FyJkFLHymyGMdyWVQrootqHuOIgNqf585py11RR%2B0SrHv6eqRURu%2FHvKgsZBfisYBHrgM5X01MV12qtzzgLJZoQYqcCCp%2F9BtFAsTWM9m0CvU0LXi57A%2BjrwDOWr4%2BAxMpmN3vLwVHK0pQrftjjo1RMG1PQW%2F6RpED7EkVHK5Hj%2FqI9pocEimHTuxH5DdrBNsYaQONVyfsFZDnoAti2ciortCnvuP62xoU0cuHXMKQ48nBkslVuSj49A8t7QfOM2%2FovOxig%2FL7hUTHCEZpVmMqG5KUfv%2Bg5kKs5K4AvJLq1otFX8ospXvywXL%2Bgp%2BQsz7GGCzwuRaYPzOm%2BMNSDo9QGOqUBP%2Bqo6y%2BnHuM8Eg3e8NUlThYW2tdOWUpJaGMFaBcmWOsCgnv64Z7lPXf28T1AnJ7w%2F90QHdm1qqCbodZxEZVzzCdY8ItKyczWLIw9Nafn9Dqn9WOErBX%2Bi%2BKJXKP%2FaUL9zgaodqI4ZDjW1euO8JZ0VA38UxISmqRBGXTEzwu5h5IWwMf2Ir5AFRCQfq2k6xoRylqI09hcJwZolnevzK%2BlVU2J6ocM&X-Amz-Signature=b6112054d2c12b6d49a9dab6ea38fe48c809288ccea29480cab9a099e6de1539&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![](./images/ebff3dfb5d13_001.png)
 
 JWTs consist of three parts: a header, a payload, and a signature. These are each separated by a dot, the structure of a JWT looks like this:
 
@@ -25,7 +25,7 @@ JWTs consist of three parts: a header, a payload, and a signature. These are eac
 xxxxxxxxxx.yyyyyyyyyy.zzzzzzzzzz
 ```
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/b2aeba79-db56-4c12-b5d6-e1ce387d4f27/4f08393b-6fc8-4bde-a550-7d5212a22911/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662OIKPFSF%2F20260821%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260821T222043Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDYFNJCVMhPymtzpJBvffZAMeWRXNfY9lLRgLVH%2F2NPlgIgLB6jz8%2FpLPqkr8shBEJvXkQCO%2F7QNKAgTqkj3%2FH1SEsqiAQIrv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDOE6IpJ2khjVAr%2FP4SrcA%2FVFdnDbSEbsBcoqZpmKWiSjefddaGhuFhwghBndR3MbvAoDf4a0EtvoM38qM2zADbpnrl%2BVUqwxfzQ6nt7x3l3ewmGRvegH1OtEj7MOQSWzbvS1E8C3zozWMC8hZ98kAo44yc%2BPFhn%2FJ%2F6noHTsk3SoYsTMhHRP%2Bnl79Nqu21bAwVhHG7iMyXdjYTOSDDdJw6TP%2FvcDkrDdwPQLKPmCIYVB2ltid4CVpNkkQSuXR6ZyOtR%2BTM9H2GvY3JcXHQefove2zAs3O%2Fl5tmE3EYEc8598EG9sIzJnRf0E1%2FmptnpvQ%2FyJkFLHymyGMdyWVQrootqHuOIgNqf585py11RR%2B0SrHv6eqRURu%2FHvKgsZBfisYBHrgM5X01MV12qtzzgLJZoQYqcCCp%2F9BtFAsTWM9m0CvU0LXi57A%2BjrwDOWr4%2BAxMpmN3vLwVHK0pQrftjjo1RMG1PQW%2F6RpED7EkVHK5Hj%2FqI9pocEimHTuxH5DdrBNsYaQONVyfsFZDnoAti2ciortCnvuP62xoU0cuHXMKQ48nBkslVuSj49A8t7QfOM2%2FovOxig%2FL7hUTHCEZpVmMqG5KUfv%2Bg5kKs5K4AvJLq1otFX8ospXvywXL%2Bgp%2BQsz7GGCzwuRaYPzOm%2BMNSDo9QGOqUBP%2Bqo6y%2BnHuM8Eg3e8NUlThYW2tdOWUpJaGMFaBcmWOsCgnv64Z7lPXf28T1AnJ7w%2F90QHdm1qqCbodZxEZVzzCdY8ItKyczWLIw9Nafn9Dqn9WOErBX%2Bi%2BKJXKP%2FaUL9zgaodqI4ZDjW1euO8JZ0VA38UxISmqRBGXTEzwu5h5IWwMf2Ir5AFRCQfq2k6xoRylqI09hcJwZolnevzK%2BlVU2J6ocM&X-Amz-Signature=e868884e6daaeee1e0d411ac61f4e9fda84a46b531ec2d5762fae3b22ce72115&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![](./images/ebff3dfb5d13_002.png)
 
 The header and payload parts of a JWT are just base64url-encoded JSON objects.
 
@@ -99,7 +99,7 @@ The impact of JWT attacks is usually severe. If an attacker is able to create th
 
 The JWT specification is actually very limited. It only defines a format for representing information ("claims") as a JSON object that can be transferred between two parties. In practice, JWTs aren't really used as a standalone entity. The JWT spec is extended by both the JSON Web Signature (JWS) and JSON Web Encryption (JWE) specifications, which define concrete ways of actually implementing JWTs. 
 
-![](https://portswigger.net/web-security/jwt/images/jwt-jws-jwe.jpg)
+![](./images/ebff3dfb5d13_003.jpg)
 
  In other words, a JWT is usually either a JWS or JWE token. When people use the term "JWT", they almost always mean a JWS token. JWEs are very similar, except that the actual contents of the token are encrypted rather than just encoded. 
 
@@ -149,7 +149,6 @@ A JWK (JSON Web Key) is a standardized format for representing keys as a JSON ob
 Instead of embedding public keys directly using the `jwk` header parameter, some servers let you use the `jku `(JWK Set URL) header parameter to reference a JWK Set containing the key. When verifying the signature, the server fetches the relevant key from this URL.
 
 > **JWK Set
-
 **A JWK Set is a JSON object containing an array of JWKs representing different keys.
 
   - `kid` (Key ID) - Provides an ID that servers can use to identify the correct key in cases where there are multiple keys to choose from. Depending on the format of the key, this
