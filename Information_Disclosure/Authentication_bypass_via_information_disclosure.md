@@ -4,24 +4,6 @@
 
 Access the admin interface and delete the user `carlos`.
 
-
-
-### Vulnerability / Concept
-
-This lab demonstrates a vulnerability in the jwt category.
-
-This lab uses a JWT-based mechanism for handling sessions. It uses a robust RSA key pair to sign and verify tokens. However, due to implementation flaws, this mechanism is vulnerable to algorithm confusion attacks.
-
-The vulnerability exists because the application fails to properly validate, sanitize, or secure the user-controlled input that reaches a sensitive operation. The specific attack surface and exploitation technique depend on the exact vulnerability type demonstrated in this lab.
-
-### Recon / Initial Analysis
-
-1. Analyze the application's functionality and identify user-controlled inputs
-2. Use Burp Suite to intercept and modify requests
-3. Test for the specific jwt vulnerability
-4. Identify the injection point and context
-5. Craft an appropriate payload
-
 ### Analysis/Exploitation -
 
 After browsing around a bit and logging in with the known credentials, nothing too interesting appears. Time to check the requests in Burp. Nothing too interesting there either.
@@ -48,7 +30,6 @@ On visiting this admin page it shows this message:
 💡 A common way of propagating originating IPs to a web server (used in proxy or load balancing scenarios) is the `X-Forwarded-For` header. This, however, does not work here (and the lab description states it is a custom header anyway).
 {% endhint %}
 
-
 Two HTTP methods can be used to obtain additional information, `OPTIONS` and `TRACE`. The latter produces an interesting result:
 
 ![](./images/3beb0bad2d8c_003.png)
@@ -67,60 +48,12 @@ Now just reload the page in the browser, access the admin panel and delete user 
 
 ### Why It Works
 
-The vulnerability exists because the application processes user-controlled input without adequate security validation. In this specific lab, the attack succeeds because:
+The exploit succeeds because this lab uses a jwt-based mechanism for handling sessions. it uses a robust rsa key pair to sign and verify tokens. however, due to implementation flaws, this mechanism is vulnerable to algorithm conf
 
-- The application trusts the user input without proper server-side validation
-- The input reaches a sensitive operation (database query, HTML rendering, system command, etc.) without sanitization
-- The security boundary that should protect the operation is missing or incorrectly implemented
-- The specific payload used exploits the exact weakness in the application's input handling
-
-The PortSwigger lab description confirms this: "This lab uses a JWT-based mechanism for handling sessions. It uses a robust RSA key pair to sign and verify tokens. However, due to implementation flaws, this mechanism is vulnerable to algorithm conf"
-
-### Attack Flow
-
-**Attack Flow:**
-
-```
-Attacker Input (payload in request)
-        ↓
-Application Functionality (processes user input)
-        ↓
-Server Processing (no validation/sanitization)
-        ↓
-Injection Point (input reaches sensitive operation)
-        ↓
-Exploitation (payload executes as intended)
-        ↓
-Lab Objective Achieved
-```
-
-### Real-World Impact
-
-An attacker could forge admin tokens for full administrative access, impersonate any user, bypass authentication entirely, escalate privileges by modifying role claims, or bypass token expiration.
-
-### Detection / Testing Methodology
-
-1. Identify JWT usage (check cookies, Authorization headers)
-2. Decode the JWT to examine header (alg, kid) and payload (sub, role)
-3. Test if the signature is verified (modify payload, resubmit)
-4. Test if the algorithm can be changed (RS256 to HS256, none)
-5. Look for exposed public keys (JWKS endpoints)
-6. Check if jwk/jku/kid header parameters are processed
-7. Test if weak signing keys can be brute-forced
-
-### Remediation
-
-- Pin the JWT algorithm to a single expected value (e.g., RS256 only)
-- Never accept 'alg: none' or unsigned tokens
-- Use a well-maintained JWT library that prevents algorithm confusion
-- Do not process user-controlled jwk, jku, or kid header parameters
-- Use strong, random signing keys (256-bit minimum)
-- Implement server-side session revocation despite JWT statelessness
+The root cause is a failure in the application's security architecture specific to this jwt scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
 
 ### Key Takeaways
 
-- This lab demonstrates a jwt vulnerability in a real-world scenario.
-- The vulnerability occurs because user input reaches a sensitive operation without proper validation.
-- The PortSwigger lab confirms: "This lab uses a JWT-based mechanism for handling sessions. It uses a robust RSA key pair to sign and"
-- Burp Suite is essential for identifying and exploiting this vulnerability.
-- The remediation for this specific vulnerability involves: - Pin the JWT algorithm to a single expected value (e.g., RS256 only)
+- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
+- PortSwigger confirms: "This lab uses a JWT-based mechanism for handling sessions. It uses a robust RSA key pair to sign and"
+- JWT signature verification must pin the algorithm and reject unsigned tokens.

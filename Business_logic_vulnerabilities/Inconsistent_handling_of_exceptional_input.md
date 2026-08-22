@@ -4,26 +4,6 @@
 
 Exploit logic flaw to access the admin panel and delete Carlos
 
-
-
-### Vulnerability / Concept
-
-This lab demonstrates a vulnerability in the logic flaws category.
-
-This lab doesn't adequately validate user input. You can exploit a logic flaw in its account registration process to gain access to administrative functionality. To solve the lab, access the admin panel and delete the user carlos.
-
-The vulnerability exists because the application fails to properly validate, sanitize, or secure the user-controlled input that reaches a sensitive operation. The specific attack surface and exploitation technique depend on the exact vulnerability type demonstrated in this lab.
-
-### Recon / Initial Analysis
-
-Based on the lab's objective and the PortSwigger solution:
-
-1. Analyze the application's functionality to identify the attack surface
-2. While proxying traffic through Burp, open the lab and go to the &quot;Target&quot; &gt; &quot;Site map&quot; tab. Right-click on the lab domain and select &quot;Engagement tools&quot; &gt; &quot;Disco
-3. Use Burp Suite Proxy to intercept and analyze requests
-4. Identify the specific vulnerability type by testing user-controlled input
-5. Determine the appropriate exploitation technique for this lab
-
 ### Analysis/Exploitation 
 
 I can register a new account and see that employees of DontWannaCry should use their company email. As I do not have one I register a new account with my email address from the email client:
@@ -128,59 +108,14 @@ Sure enough, using this string as the email address, I receive the confirmation 
 
 ### Why It Works
 
-The vulnerability exists because the application processes user-controlled input without adequate security validation. In this specific lab, the attack succeeds because:
+The exploit succeeds because this lab doesn't adequately validate user input. you can exploit a logic flaw in its account registration process to gain access to administrative functionality. to solve the lab, access the admin pan
 
-- The application trusts the user input without proper server-side validation
-- The input reaches a sensitive operation (database query, HTML rendering, system command, etc.) without sanitization
-- The security boundary that should protect the operation is missing or incorrectly implemented
-- The specific payload used exploits the exact weakness in the application's input handling
+The official solution confirms: While proxying traffic through Burp, open the lab and go to the &quot;Target&quot; &gt; &quot;Site map&quot; tab. Right-click on the lab domain and se
 
-The PortSwigger lab description confirms this: "This lab doesn't adequately validate user input. You can exploit a logic flaw in its account registration process to gain access to administrative functionality. To solve the lab, access the admin pan"
-
-### Attack Flow
-
-**Attack Flow:**
-
-```
-Attacker Input (payload in request)
-        ↓
-Application Functionality (processes user input)
-        ↓
-Server Processing (no validation/sanitization)
-        ↓
-Injection Point (input reaches sensitive operation)
-        ↓
-Exploitation (payload executes as intended)
-        ↓
-Lab Objective Achieved
-```
-
-### Real-World Impact
-
-An attacker could purchase items at reduced prices, bypass multi-step workflows, access functionality outside their privilege level, manipulate application state for financial gain, bypass rate limits, or cause data corruption.
-
-### Detection / Testing Methodology
-
-1. Identify business-critical parameters (prices, quantities, discount codes, roles)
-2. Test if client-side values can be modified to affect server-side logic
-3. Test multi-step workflows for sequence bypass (skip steps, replay, out-of-order)
-4. Check for inconsistent handling of exceptional input (very large, negative, unexpected values)
-5. Test rate limits and brute-force protections
-6. Look for encryption oracles and state machine flaws
-
-### Remediation
-
-- Implement server-side validation for all business-critical parameters (prices, quantities, roles)
-- Never trust client-side values for pricing, permissions, or workflow state
-- Enforce workflow sequence integrity server-side
-- Use server-side state machines for multi-step processes
-- Implement consistency checks for financial transactions
-- Rate-limit based on business logic, not just request volume
+The root cause is a failure in the application's security architecture specific to this logic flaws scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
 
 ### Key Takeaways
 
-- This lab demonstrates a logic flaws vulnerability in a real-world scenario.
-- The vulnerability occurs because user input reaches a sensitive operation without proper validation.
-- The PortSwigger lab confirms: "This lab doesn't adequately validate user input. You can exploit a logic flaw in its account registr"
-- Burp Suite is essential for identifying and exploiting this vulnerability.
-- The remediation for this specific vulnerability involves: - Implement server-side validation for all business-critical parameters (prices, quantities, roles)
+- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
+- PortSwigger confirms: "This lab doesn't adequately validate user input. You can exploit a logic flaw in its account registr"
+- Validate business-critical parameters server-side — never trust client-supplied values.

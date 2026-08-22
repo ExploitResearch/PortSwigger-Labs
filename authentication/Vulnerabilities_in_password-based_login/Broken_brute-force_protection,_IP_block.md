@@ -17,4 +17,3 @@ add valid value at each second line
 `awk ' { print $0; print "*some text"} ' inputfile > outputfile`
 
 {% endhint %}
-

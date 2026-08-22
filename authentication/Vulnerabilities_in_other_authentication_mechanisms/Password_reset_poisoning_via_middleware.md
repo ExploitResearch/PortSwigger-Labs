@@ -21,59 +21,14 @@
 
 ### Why It Works
 
-The vulnerability exists because the application processes user-controlled input without adequate security validation. In this specific lab, the attack succeeds because:
+The exploit succeeds because this lab is vulnerable to password reset poisoning via dangling markup. to solve the lab, log in to carlos's account.
 
-- The application trusts the user input without proper server-side validation
-- The input reaches a sensitive operation (database query, HTML rendering, system command, etc.) without sanitization
-- The security boundary that should protect the operation is missing or incorrectly implemented
-- The specific payload used exploits the exact weakness in the application's input handling
+The official solution confirms: Go to the login page and request a password reset for your own account. Go to the exploit server and open the email client to find the password reset 
 
-The PortSwigger lab description confirms this: "This lab is vulnerable to password reset poisoning via dangling markup. To solve the lab, log in to Carlos's account."
-
-### Attack Flow
-
-**Attack Flow:**
-
-```
-Attacker Input (payload in request)
-        ↓
-Application Functionality (processes user input)
-        ↓
-Server Processing (no validation/sanitization)
-        ↓
-Injection Point (input reaches sensitive operation)
-        ↓
-Exploitation (payload executes as intended)
-        ↓
-Lab Objective Achieved
-```
-
-### Real-World Impact
-
-An attacker could hijack password reset emails (account takeover), bypass authentication via virtual host routing, perform web cache poisoning, access internal services via SSRF, or poison intermediate caches.
-
-### Detection / Testing Methodology
-
-1. Test if the application accepts arbitrary Host headers
-2. Check if password reset emails include the Host header value
-3. Test if routing is affected by Host header manipulation
-4. Check for duplicate Host headers or X-Forwarded-Host support
-5. Test for web cache poisoning via ambiguous Host headers
-6. Check if internal services can be accessed via Host header SSRF
-
-### Remediation
-
-- Always validate the Host header against an allowlist of expected domains
-- Use server-side configured base URLs for generating links
-- Reject requests with duplicate or ambiguous Host headers
-- Do not trust X-Forwarded-Host without validation
-- Configure the web server to only accept expected virtual hosts
-- Use absolute URLs in email templates
+The root cause is a failure in the application's security architecture specific to this host header scenario — the server does not properly validate or secure the user-controlled input that reaches the vulnerable operation.
 
 ### Key Takeaways
 
-- This lab demonstrates a host header vulnerability in a real-world scenario.
-- The vulnerability occurs because user input reaches a sensitive operation without proper validation.
-- The PortSwigger lab confirms: "This lab is vulnerable to password reset poisoning via dangling markup. To solve the lab, log in to "
-- Burp Suite is essential for identifying and exploiting this vulnerability.
-- The remediation for this specific vulnerability involves: - Always validate the Host header against an allowlist of expected domains
+- The vulnerability is exploitable because user input reaches a sensitive operation without adequate server-side validation.
+- PortSwigger confirms: "This lab is vulnerable to password reset poisoning via dangling markup. To solve the lab, log in to "
+- Validate the Host header against an allowlist of expected domains.

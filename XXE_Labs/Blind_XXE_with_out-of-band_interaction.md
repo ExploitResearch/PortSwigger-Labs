@@ -4,17 +4,6 @@
 
 Solve the PortSwigger lab: Blind XXE with out-of-band interaction
 
-### Vulnerability / Concept
-
-XXE injection occurs when an application processes XML input that contains references to external entities. By defining malicious entities, an attacker can read server files, perform SSRF, or exfiltrate data out-of-band.
-
-### Recon / Initial Analysis
-
-1. Identify XML input points (file uploads, SOAP endpoints, SVG uploads, Office documents)
-2. Test if the XML parser processes external entities
-3. For blind XXE: set up an out-of-band listener (Burp Collaborator)
-4. Check for XInclude support (for partial XML injection)
-
 ### Exploitation
 
 1. Identify the XML processing point
@@ -22,36 +11,3 @@ XXE injection occurs when an application processes XML input that contains refer
 3. For file read: use `<!ENTITY xxe SYSTEM "file:///etc/passwd">`
 4. For SSRF: use `<!ENTITY xxe SYSTEM "http://internal-service/">`
 5. For blind XXE: use parameter entities and external DTD for OOB exfiltration
-
-### Why It Works
-
-The XML parser is configured to process external entity definitions. The `SYSTEM` keyword allows entities to reference external resources (files, URLs). By injecting these entities, the attacker can read files, make network requests, or trigger errors that disclose sensitive data.
-
-
-### Real-World Impact
-
-An attacker could:
-- Read arbitrary files on the server (/etc/passwd, configuration files, source code)
-- Perform SSRF to access internal services and cloud metadata endpoints
-- Exfiltrate data via out-of-band (OOB) DNS/HTTP channels
-- Cause denial of service via billion laughs or quadratic blowup attacks
-- Execute code if the XML parser supports XInclude with unsafe defaults
-- Scan internal networks by observing error messages or response times
-
-
-### Remediation
-
-- Disable external entity processing in XML parsers (DOCTYPE, external entities, parameter entities)
-- Use JSON instead of XML where possible
-- Validate and sanitize XML input against a strict schema
-- For blind XXE: monitor for outbound DNS/HTTP connections (network-level detection)
-- Disable XInclude processing unless explicitly required
-- Use a WAF that understands XXE attack patterns
-- Keep XML parser libraries updated
-
-### Key Takeaways
-
-- Disable external entity processing in XML parsers
-- Use JSON instead of XML where possible
-- Validate and sanitize XML input
-- For blind XXE: monitor for outbound DNS/HTTP connections
