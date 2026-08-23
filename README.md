@@ -10,4 +10,5 @@ Begin by thoroughly examining the web application provided by PortSwigger. Look 
 
 - [Extentions](./Extentions.md)
 - [SUMMARY](./SUMMARY.md)
-- [XXE](./XXE.md)
+
+
